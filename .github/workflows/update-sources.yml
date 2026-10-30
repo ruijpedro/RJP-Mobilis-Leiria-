@@ -1,0 +1,25 @@
+name: Verificar fontes Mobilis
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '16 5,17 * * *'
+permissions:
+  contents: write
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar fontes públicas
+        env:
+          MOBILIS_VERIFIED_GTFS_URL: ${{ vars.MOBILIS_VERIFIED_GTFS_URL }}
+        run: python scripts/update_sources.py
+      - name: Guardar índice atualizado
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/mobilis-sources.json
+          git diff --cached --quiet || (git commit -m 'Atualizar catálogo Mobilis' && git push)
