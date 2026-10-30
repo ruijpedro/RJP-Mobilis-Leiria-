@@ -29,18 +29,31 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      # GitHub ubuntu-latest includes Android SDK command-line tools.
-      # Avoid setup-android@v3 invoking the removed legacy 'tools' package.
-      - name: Preparar Android SDK
+      - name: Preparar Android SDK (sdkmanager por caminho absoluto)
         shell: bash
         run: |
-          echo "ANDROID_HOME=${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          set -euo pipefail
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          echo "ANDROID_HOME=$SDK_ROOT" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> "$GITHUB_ENV"
+          SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          if [ ! -x "$SDKMANAGER" ]; then
+            SDKMANAGER="$(find "$SDK_ROOT/cmdline-tools" -mindepth 3 -maxdepth 3 -path '*/bin/sdkmanager' -type f 2>/dev/null | sort -V | tail -1)"
+          fi
+          if [ -z "$SDKMANAGER" ] || [ ! -x "$SDKMANAGER" ]; then
+            echo "Não foi encontrado sdkmanager em $SDK_ROOT/cmdline-tools" >&2
+            exit 1
+          fi
+          echo "sdkmanager: $SDKMANAGER"
+          "$SDKMANAGER" --version
+          (yes | "$SDKMANAGER" --sdk_root="$SDK_ROOT" --licenses > /dev/null) || true
+          "$SDKMANAGER" --sdk_root="$SDK_ROOT" --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - run: npm install
       - run: npm run build
       - run: npx cap add android
       - run: npx cap sync android
+      - name: Aplicar ícone RJP Mobilis na APK
+        run: python3 scripts/install_android_icons.py
       - run: chmod +x android/gradlew && cd android && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
