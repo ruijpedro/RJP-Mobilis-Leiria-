@@ -1,6 +1,8 @@
 import {fetchGTFS,validateFeedURL} from './feedSync.js';
 import {loadData,saveData} from './store.js';
-const INDEX_PATH='/data/mobilis-sources.json';
+// No Android, os assets do pacote não mudam após a instalação.
+// Definir VITE_MOBILIS_CATALOG_URL para apontar para o catálogo HTTPS publicado.
+const INDEX_PATH=import.meta.env?.VITE_MOBILIS_CATALOG_URL || '/data/mobilis-sources.json';
 const LAST_CHECK='rjp-mobilis-last-check-v17';
 const INTERVAL=6*60*60*1000;
 export function validateIndex(obj){

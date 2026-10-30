@@ -1,0 +1,40 @@
+{
+  "operator": "Mobilis Leiria",
+  "stops": [
+    {
+      "id": "paragem-exemplo-a",
+      "name": "PARAGEM DE EXEMPLO A (não real)",
+      "lat": 39.75,
+      "lon": -8.81
+    },
+    {
+      "id": "paragem-exemplo-b",
+      "name": "PARAGEM DE EXEMPLO B (não real)",
+      "lat": 39.76,
+      "lon": -8.8
+    }
+  ],
+  "trips": [
+    {
+      "id": "exemplo-nao-aprovado",
+      "line": "7",
+      "service_date": "20261102",
+      "headsign": "Demonstração",
+      "approved": false,
+      "source_url": "https://mobilis.pt/linhas/linha-7/",
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "stops": [
+        {
+          "stop_id": "paragem-exemplo-a",
+          "arrival": "07:00",
+          "departure": "07:00"
+        },
+        {
+          "stop_id": "paragem-exemplo-b",
+          "arrival": "07:10",
+          "departure": "07:10"
+        }
+      ]
+    }
+  ]
+}

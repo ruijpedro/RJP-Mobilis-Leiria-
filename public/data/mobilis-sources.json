@@ -1,187 +1,44 @@
 {
   "network": "Mobilis Leiria",
-  "checkedAt": "2026-10-30T11:23:31.024916+00:00",
+  "checkedAt": null,
   "feedUrl": null,
   "officialLines": [
     {
       "number": 1,
-      "url": "https://mobilis.pt/linhas/linha-1/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-1.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-1.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-1/"
     },
     {
       "number": 2,
-      "url": "https://mobilis.pt/linhas/linha-2/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-2.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-2.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-2/"
     },
     {
       "number": 3,
-      "url": "https://mobilis.pt/linhas/linha-3/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-3-TELHEIRO-P_PEDRA.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-3-P_PEDRA-TELHEIRO.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2016/04/ESPINHA-Linha-3-COMPLETA.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-3/"
     },
     {
       "number": 4,
-      "url": "https://mobilis.pt/linhas/linha-4/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-4.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-4.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-4/"
     },
     {
       "number": 5,
-      "url": "https://mobilis.pt/linhas/linha-5/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-5.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-5.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-5/"
     },
     {
       "number": 6,
-      "url": "https://mobilis.pt/linhas/linha-6/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-6-LEIRIA-PARCEIROS.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-6-PARCEIROS-LEIRIA.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2016/04/ESPINHA-Linha-6-COMPLETA.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-6/"
     },
     {
       "number": 7,
-      "url": "https://mobilis.pt/linhas/linha-7/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-7.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-7.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-7/"
     },
     {
       "number": 8,
-      "url": "https://mobilis.pt/linhas/linha-8/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-8.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-8.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-8/"
     },
     {
       "number": 9,
-      "url": "https://mobilis.pt/linhas/linha-9/",
-      "reachable": true,
-      "timetables": [
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-9.svg",
-          "reachable": true
-        },
-        {
-          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-9.svg",
-          "reachable": true
-        }
-      ]
+      "url": "https://mobilis.pt/linhas/linha-9/"
     }
   ],
-  "note": "Fontes verificadas. Ligações de ficheiros indisponíveis não são usadas para calcular horários. GTFS não confirmado."
+  "note": "Nenhum feed GTFS público validado. A app não deve fabricar viagens."
 }

@@ -1,0 +1,12 @@
+{
+  "line": "7",
+  "stop": "Escola Básica do Vidigal",
+  "dayType": "weekday",
+  "times": [
+    "07:17",
+    "08:07"
+  ],
+  "source": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-time-7-Lisboa-2460-3784393-309401193-10954025-0",
+  "dataStatus": "external_unverified",
+  "eligibleForRouting": false
+}
