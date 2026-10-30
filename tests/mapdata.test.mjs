@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{validStops,linesForStop,routeShapes}from'../src/mapdata.js';
+test('mapa só apresenta paragens geolocalizadas',()=>{assert.equal(validStops([{stop_lat:'39.74',stop_lon:'-8.80'},{stop_lat:'',stop_lon:''}]).length,1)});
+test('linhas e destinos dependem do serviço válido',()=>{const data={routes:[{route_id:'7',route_short_name:'7'}],trips:[{trip_id:'t',route_id:'7',service_id:'daily',trip_headsign:'Leiria'}],stopTimes:[{stop_id:'v',trip_id:'t',departure_time:'09:00:00'}],calendar:[],calendarDates:[]};assert.equal(linesForStop(data,'v').length,1);assert.equal(linesForStop(data,'v')[0].destination,'Leiria')});
+test('sem shapes não inventa traçado oficial',()=>{assert.deepEqual(routeShapes({shapes:[],trips:[]},'7'),[])});

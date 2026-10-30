@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{activeService,distanceMeters,nearbyStops,searchStops}from '../src/gtfs.js';
+test('procura destino por nome de local',()=>{const r=searchStops([{stop_id:'l',stop_name:'Lg. José Lúcio'},{stop_id:'v',stop_name:'Escola Básica do Vidigal'}],'Teatro José Lúcio da Silva');assert.equal(r[0].stop_id,'l')});
+test('ordena paragens por distância geográfica',()=>{const stops=[{stop_id:'a',stop_lat:'39.7',stop_lon:'-8.8'},{stop_id:'b',stop_lat:'39.71',stop_lon:'-8.8'}];assert.equal(nearbyStops(stops,39.709,-8.8)[0].stop_id,'b');assert.ok(distanceMeters(stops[0],stops[1])>1000)});
+test('calendário usa dia local em vez de UTC',()=>{const c=[{service_id:'a',start_date:'20261030',end_date:'20261030',friday:'1'}];assert.equal(activeService('a',new Date('2026-10-30T23:30:00'),c,[]),true)});

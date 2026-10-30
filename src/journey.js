@@ -1,0 +1,4 @@
+const seconds = value => { const p=String(value||'').split(':').map(Number); return p.length>=2&&p.every(Number.isFinite)?p[0]*3600+p[1]*60+(p[2]||0):NaN; };
+export function secondsUntilArrival(result){if(!result?.legs?.length)return 0;return Math.max(0,seconds(result.legs.at(-1).arrival)-seconds(result.legs[0].departure));}
+export function formatDuration(s){const m=Math.round(s/60);return m>=60?`${Math.floor(m/60)} h ${String(m%60).padStart(2,'0')} min`:`${m} min`;}
+export function nearestDestinationStop(stops,lat,lon){const rad=Math.PI/180;return stops.filter(s=>s.stop_lat&&s.stop_lon).map(s=>{const a=(Number(s.stop_lat)-lat)*rad,b=(Number(s.stop_lon)-lon)*rad;return {...s,meters:12742000*Math.asin(Math.min(1,Math.sqrt(Math.sin(a/2)**2+Math.cos(lat*rad)*Math.cos(Number(s.stop_lat)*rad)*Math.sin(b/2)**2)))}}).sort((a,b)=>a.meters-b.meters)[0]??null}
