@@ -1,6 +1,88 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-10-30T21:31:02.021254+00:00",
   "approvedForRouting": false,
-  "documents": [],
-  "note": "Nenhum horário validado automaticamente."
+  "note": "Horas extraídas sem a relação linha/paragem/sentido/coluna NÃO podem ser usadas para calcular viagens. Exigem revisão humana.",
+  "documents": [
+    {
+      "line": 1,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "3492af70e94116e3d45618bc4fdf35d3e75d975839304bf3a12b237426e8d585"
+    },
+    {
+      "line": 2,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "d345d56ec7612d92fbfeda20784f3c19c64eded32286f79dfe6f0ca3194fcf63"
+    },
+    {
+      "line": 3,
+      "url": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "bdbc97c9870d0d6ed2f2c35688d90f2d54779625c863f197578c04cffe2cf7f4"
+    },
+    {
+      "line": 4,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "10abfa75c9eca48a489f106d2c30b2b6a93fdc296512735904ae129e2f089206"
+    },
+    {
+      "line": 5,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "fe9cb0cc61403c33679d49f0e370143441ee06b47c2f651469337c14e61dded4"
+    },
+    {
+      "line": 6,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "401cccc6a2ca78b4f6742dbd4268d953b5e57155f0038f70b7f27408d4390ad8"
+    },
+    {
+      "line": 7,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "95719d18007f7c5463ea202a83bc661650457f6841391aa801aa3f06044b5182"
+    },
+    {
+      "line": 8,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "29d25a9fb9be206d4d39b04a924f95da51b847e6da6fe7b99d0c1b03515f3f39"
+    },
+    {
+      "line": 9,
+      "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "verified": false,
+      "requiresReview": true,
+      "status": "sem_horas_legíveis",
+      "timesCandidate": [],
+      "sha256": "ed62b46b659347a29e6be304ca1e61fe5d38157b891f13b17352d47323c974ae"
+    }
+  ]
 }

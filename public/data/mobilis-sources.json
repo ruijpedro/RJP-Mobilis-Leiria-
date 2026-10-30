@@ -1,44 +1,376 @@
 {
   "network": "Mobilis Leiria",
-  "checkedAt": null,
+  "checkedAt": "2026-10-30T21:30:06.938851+00:00",
   "feedUrl": null,
   "officialLines": [
     {
       "number": 1,
-      "url": "https://mobilis.pt/linhas/linha-1/"
+      "url": "https://mobilis.pt/linhas/linha-1/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 1",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-1.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 1",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-1.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 1",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 2,
-      "url": "https://mobilis.pt/linhas/linha-2/"
+      "url": "https://mobilis.pt/linhas/linha-2/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 2",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-2.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 2",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-2.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 2",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 3,
-      "url": "https://mobilis.pt/linhas/linha-3/"
+      "url": "https://mobilis.pt/linhas/linha-3/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - linha-3",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-3-TELHEIRO-P_PEDRA.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 3 TELHEIRO- P_PEDRA",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-3-P_PEDRA-TELHEIRO.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 3 P_PEDRA-TELHEIRO",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2016/04/ESPINHA-Linha-3-COMPLETA.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 3 COMPLETA",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 4,
-      "url": "https://mobilis.pt/linhas/linha-4/"
+      "url": "https://mobilis.pt/linhas/linha-4/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 4",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-4.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 4",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-4.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 4",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 5,
-      "url": "https://mobilis.pt/linhas/linha-5/"
+      "url": "https://mobilis.pt/linhas/linha-5/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 5",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-5.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 5",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-5.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 5",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 6,
-      "url": "https://mobilis.pt/linhas/linha-6/"
+      "url": "https://mobilis.pt/linhas/linha-6/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 6",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-6-LEIRIA-PARCEIROS.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 6 LEIRIA-PARCEIROS",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-6-PARCEIROS-LEIRIA.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 6 PARCEIROS-LEIRIA",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2016/04/ESPINHA-Linha-6-COMPLETA.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 6 COMPLETA",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 7,
-      "url": "https://mobilis.pt/linhas/linha-7/"
+      "url": "https://mobilis.pt/linhas/linha-7/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 7",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-7.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 7",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-7.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 7",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 8,
-      "url": "https://mobilis.pt/linhas/linha-8/"
+      "url": "https://mobilis.pt/linhas/linha-8/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 8",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-8.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 8",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-8.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 8",
+          "structured": false
+        }
+      ]
     },
     {
       "number": 9,
-      "url": "https://mobilis.pt/linhas/linha-9/"
+      "url": "https://mobilis.pt/linhas/linha-9/",
+      "reachable": true,
+      "timetables": [
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+          "reachable": true,
+          "status": 200,
+          "format": "PDF",
+          "label": "Documento publicado pelo operador",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/themes/mobilis/includes/images/icons/seta-dl.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - 00-1857-356-03 - CM Leiria - PDF LINHA 9",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/HORARIOS-Linha-9.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - HORARIOS Linha 9",
+          "structured": false
+        },
+        {
+          "url": "https://mobilis.pt/wp-content/uploads/2026/08/ESPINHA-Linha-9.svg",
+          "reachable": true,
+          "status": 200,
+          "format": "SVG",
+          "label": "Mobilis - ESPINHA Linha 9",
+          "structured": false
+        }
+      ]
     }
   ],
-  "note": "Nenhum feed GTFS público validado. A app não deve fabricar viagens."
+  "note": "Imagens e PDFs identificados não constituem horários estruturados nem ativam o planeador. Fontes verificadas. Ligações de ficheiros indisponíveis não são usadas para calcular horários. GTFS só publicado após validação estrutural e de operador.",
+  "feedCoverage": null
 }
