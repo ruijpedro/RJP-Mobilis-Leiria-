@@ -59,3 +59,7 @@ No separador Mapa, toque em **Encontrar a paragem mais próxima** e autorize a l
 - Um botão no último troço ativa `watchPosition` para avisar quando o GPS estiver a cerca de 350 m da paragem de saída. Vibrará quando o dispositivo suportar.
 - O acompanhamento exige a app aberta, GPS ativo e permissão de localização. A distância é em linha reta e não representa uma previsão da posição do autocarro.
 - Os resultados dependem de um GTFS válido importado; as sugestões de nomes (ex.: teatro) têm de ser associadas à paragem. Não há dados em tempo real nem previsão de trânsito.
+
+
+## Correção GitHub Actions (2026-10-30)
+A ação `android-actions/setup-android@v3` foi removida do workflow porque tentava instalar o pacote SDK legado `tools`, que já não existe. O runner Ubuntu inclui o Android SDK; instalamos explicitamente `platform-tools`, `platforms;android-35` e `build-tools;35.0.0`. Esta correção não altera a app nem valida, por si, a compilação Android.
