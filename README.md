@@ -1,69 +1,23 @@
-# RJP Mobilis Leiria V1.1
+# RJP Mobilis Leiria V1.7 — atualização automática
 
-Planeador independente de transportes urbanos de Leiria (WebApp e Android).
+Aplicação WebApp e Android. Ao abrir, a aplicação procura automaticamente o catálogo `/data/mobilis-sources.json` e, se existir URL oficial GTFS validado, descarrega o arquivo, guarda os horários em IndexedDB e calcula percursos origem/destino, transbordos e horas programadas de chegada. Revalida a cada 6 horas e permite atualização manual por botão. Mantém os dados anteriores em caso de falha.
 
-## Instalação
+## Limite atual de cobertura
 
-```sh
-npm install
-npm test
-npm run dev
-npm run build
-```
+**Ainda não há uma fonte GTFS completa da Mobilis confirmada.** O catálogo incluído tem `feedUrl: null`, logo a atualização não consegue ainda alimentar o planeador de toda a rede. A app inclui consulta às páginas oficiais 1 a 9 e alguns horários pontuais históricos, que exigem confirmação. Não se apresentam tempos fictícios de viagens.
 
-No GitHub Actions, o workflow gera `dist/` e uma APK Android de depuração. A app utiliza React, Vite e Capacitor.
+## Publicação sem download de horários pelo utilizador
 
-## Funcionalidades
+- Publicar a WebApp (`dist/`) em hospedagem HTTPS (ex.: GitHub Pages). A WebApp consulta automaticamente `/data/mobilis-sources.json` nesse domínio.
+- O workflow `Verificar fontes Mobilis` atualiza duas vezes por dia o catálogo e confirma páginas do operador.
+- Quando obtiver URL GTFS **validado e autorizado** definir a variável de repositório `MOBILIS_VERIFIED_GTFS_URL` (Settings → Secrets and variables → Actions → Variables). O workflow publicará o URL no catálogo; a fonte deve permitir CORS na WebApp.
+- **Atenção:** atualizar o ficheiro no repositório não atualiza por si uma WebApp já publicada; configurar o deployment contínuo a partir de `main`.
+- No Android encapsulado via Capacitor, `/data/...` aponta para ativos empacotados; para atualizações sem APK é preciso hospedar o catálogo externamente e configurar o URL em `src/autoSource.js`. Uma alternativa é usar o mesmo domínio HTTPS da WebApp. Não afirmar atualização remota em Android sem essa configuração.
 
-- Importação manual de GTFS Schedule `.zip` e persistência offline em IndexedDB.
-- Pesquisa de paragens e de locais conhecidos (ex.: Teatro José Lúcio da Silva, Vidigal, Campo Amarelo), associando nomes a paragens quando existem correspondências.
-- Planeamento por horário e data, viagens diretas ou até 2 transbordos, horários de passagem.
-- Localização GPS de paragens mais próximas, favoritos e partida pela paragem escolhida.
+Para testar: `npm install`, `npm test`, `npm run build`. Para APK: GitHub Actions → WebApp e Android. O processo não foi validado nesta sessão com npm devido a acesso limitado à rede.
 
-## Limitações e transparência
+## V1.8 — verificação automática de fontes
 
-**Não inclui dados GTFS oficiais integrados**: o operador deve disponibilizar ficheiro autorizado. Não há garantia de disponibilidade de GTFS público ou informação em tempo real. Nomes de locais são aproximações textuais às paragens e não implicam que o destino seja na própria paragem. A app não verifica percursos pedonais, nem transbordos a pé entre paragens distintas. O horário é programado e pode divergir do real.
+O workflow `Verificar fontes Mobilis` consulta as nove páginas oficiais duas vezes por dia, descobre anexos PDF/SVG e testa se os endereços realmente respondem. O catálogo `public/data/mobilis-sources.json` expõe os estados na interface. **Isto não é extração automática de tabelas** e não substitui um GTFS oficial. A recolha e validação de tempos entre paragens continua pendente. Sem estes dados, o planeador indica ausência de ligação confirmada e não inventa horas de chegada.
 
-Fonte de consulta: https://mobilis.pt/linhas/linha-7/
-
-## V1.2 — Mapa interativo
-
-O ecrã inicial é agora o **Mapa** (OpenStreetMap + Leaflet), com paragens georreferenciadas provenientes do GTFS carregado pelo utilizador. Ao selecionar uma paragem apresenta as linhas e respetivos destinos (`trip_headsign`), bem como as próximas partidas programadas de acordo com a data e hora escolhidas em Percursos. A escolha da linha filtra as paragens e apresenta o traçado do `shapes.txt` quando disponível. Sem `shapes.txt`, a aplicação não desenha um traçado, evitando inventar ruas ou sequências. Os botões de cada paragem permitem usá-la como origem/destino do planeador.
-
-**Importante:** Não contém uma base real de paragens e horários da Mobilis pré-carregada; requer importar GTFS válido de fonte autorizada. Quando não há dados, mostra apenas o mapa de Leiria. Não existe autocarro em tempo real sem API validada. Para o mapa-base online é necessária Internet; os horários GTFS guardam-se localmente.
-
-## V1.3 — Atualizar GTFS pela Internet
-
-Na área Dados é possível configurar o URL HTTPS de um ZIP GTFS fornecido por uma fonte autorizada. O botão **Atualizar horários pela Internet** descarrega, valida e importa os horários; só substitui a base local após uma importação bem-sucedida. O URL fica guardado no dispositivo. Limite de 30 MB. Falhas de rede, formato ou CORS mantêm os dados anteriores. O sistema não consulta automaticamente PDFs nem deduz horários a partir de mapas.
-
-**Não foi identificada uma URL GTFS oficial pública e validada para a Mobilis.** A fonte não é predefinida. Para utilização real em Leiria, confirmar direitos de utilização, cobertura e vigência do ficheiro. Não apresentar localização de veículos em tempo real sem integração autorizada.
-
-## V1.4 — Consulta oficial verificada
-
-Novo separador **Oficiais** com ligação às páginas da Mobilis para as linhas 1–9 e transcrição da tabela da paragem **Vidigal** na linha 7, conferida no PDF oficial de 1 de setembro de 2026 (10 passagens em dias úteis, 3 em sábados/domingos/feriados). A seleção de data distingue fins de semana; **feriados que calhem em dias úteis devem ser confirmados no PDF**, porque esta versão ainda não tem calendário de feriados.
-
-PDF fonte: https://mobilis.pt/media/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf
-
-As horas não representam previsões em tempo real. Os restantes horários e as coordenadas de paragens da rede continuam a depender de dados GTFS válidos. Nenhum transbordo da linha 7 para uma suposta linha 10 foi confirmado.
-
-### Testes
-
-`node --test tests/official.test.mjs` valida a consulta oficial. Os restantes testes dependem de `npm install` (JSZip e restantes dependências). Se a rede não permitir instalar dependências, não afirmar que a aplicação foi compilada.
-
-## V1.5 — GPS / paragem mais próxima
-
-No separador Mapa, toque em **Encontrar a paragem mais próxima** e autorize a localização. A app determina as paragens georreferenciadas mais próximas com distância em linha reta, destaca a mais próxima, disponibiliza acesso às linhas e partidas programadas existentes e abre o percurso pedonal no Google Maps. Quando já existe autorização de localização, a app consulta-a ao carregar a base de paragens. O GPS requer HTTPS ou localhost, permissões do sistema e uma base GTFS com coordenadas. A distância de caminhada real pode ser superior. Sem base de paragens não é possível identificar paragens próximas.
-
-## V1.6 — Planeador origem → destino e avisos de saída
-- Após escolher paragens concretas, mostra a(s) linha(s), a hora programada de partida e de chegada, a duração completa incluindo esperas e os transbordos.
-- Um botão no último troço ativa `watchPosition` para avisar quando o GPS estiver a cerca de 350 m da paragem de saída. Vibrará quando o dispositivo suportar.
-- O acompanhamento exige a app aberta, GPS ativo e permissão de localização. A distância é em linha reta e não representa uma previsão da posição do autocarro.
-- Os resultados dependem de um GTFS válido importado; as sugestões de nomes (ex.: teatro) têm de ser associadas à paragem. Não há dados em tempo real nem previsão de trânsito.
-
-
-## Correção GitHub Actions (2026-10-30)
-A ação `android-actions/setup-android@v3` foi removida do workflow porque tentava instalar o pacote SDK legado `tools`, que já não existe. O runner Ubuntu inclui o Android SDK; instalamos explicitamente `platform-tools`, `platforms;android-35` e `build-tools;35.0.0`. Esta correção não altera a app nem valida, por si, a compilação Android.
-
-
-## Correção SDK e identidade gráfica
-O workflow usa agora o caminho absoluto do `sdkmanager` em `ANDROID_HOME/cmdline-tools/latest/bin` com procura por versão de reserva; não depende de `sdkmanager` estar no PATH. O script `scripts/install_android_icons.py` copia os ícones para os recursos Android após `npx cap sync android`. O ícone e símbolo PNG estão em `assets/`. O ecrã de apresentação gerado é apenas um conceito visual; os horários nele ilustrados não são dados reais.
+**Nota:** o PDF da linha 7 anteriormente registado pode devolver HTTP 404. A V1.8 assinala a transcrição histórica como não verificada e liga à página oficial em vez do PDF quebrado. Para concluir a funcionalidade solicitada é necessário obter horários completos e atuais, incluindo a sequência de paragens e calendário de cada circulação, e publicá-los num GTFS validado.
