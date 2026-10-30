@@ -13,7 +13,9 @@ jobs:
           node-version: '22'
       - run: npm install
       - run: npm test
-      - run: npm run build
+      - env:
+          VITE_MOBILIS_CATALOG_URL: ${{ vars.VITE_MOBILIS_CATALOG_URL }}
+        run: npm run build
       - uses: actions/upload-artifact@v4
         with:
           name: RJP-Mobilis-WebApp
@@ -49,7 +51,9 @@ jobs:
           (yes | "$SDKMANAGER" --sdk_root="$SDK_ROOT" --licenses > /dev/null) || true
           "$SDKMANAGER" --sdk_root="$SDK_ROOT" --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - run: npm install
-      - run: npm run build
+      - env:
+          VITE_MOBILIS_CATALOG_URL: ${{ vars.VITE_MOBILIS_CATALOG_URL }}
+        run: npm run build
       - run: npx cap add android
       - run: npx cap sync android
       - name: Aplicar ícone RJP Mobilis na APK

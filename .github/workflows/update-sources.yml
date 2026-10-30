@@ -13,13 +13,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Preparar leitor PDF
+        run: python -m pip install pypdf==5.9.0
       - name: Verificar fontes públicas
         env:
           MOBILIS_VERIFIED_GTFS_URL: ${{ vars.MOBILIS_VERIFIED_GTFS_URL }}
-        run: python scripts/update_sources.py
+        run: |
+          python scripts/update_sources.py
+          python scripts/extract_schedule_candidates.py
       - name: Guardar índice atualizado
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/data/mobilis-sources.json
+          git add public/data/mobilis-sources.json public/data/mobilis-review-queue.json
           git diff --cached --quiet || (git commit -m 'Atualizar catálogo Mobilis' && git push)
