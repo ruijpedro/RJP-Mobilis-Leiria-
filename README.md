@@ -63,3 +63,7 @@ No separador Mapa, toque em **Encontrar a paragem mais próxima** e autorize a l
 
 ## Correção GitHub Actions (2026-10-30)
 A ação `android-actions/setup-android@v3` foi removida do workflow porque tentava instalar o pacote SDK legado `tools`, que já não existe. O runner Ubuntu inclui o Android SDK; instalamos explicitamente `platform-tools`, `platforms;android-35` e `build-tools;35.0.0`. Esta correção não altera a app nem valida, por si, a compilação Android.
+
+
+## Correção SDK e identidade gráfica
+O workflow usa agora o caminho absoluto do `sdkmanager` em `ANDROID_HOME/cmdline-tools/latest/bin` com procura por versão de reserva; não depende de `sdkmanager` estar no PATH. O script `scripts/install_android_icons.py` copia os ícones para os recursos Android após `npx cap sync android`. O ícone e símbolo PNG estão em `assets/`. O ecrã de apresentação gerado é apenas um conceito visual; os horários nele ilustrados não são dados reais.
