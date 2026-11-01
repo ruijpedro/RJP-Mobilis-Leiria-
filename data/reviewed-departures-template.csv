@@ -1,0 +1,1 @@
+line,service_id,trip_id,stop_id,stop_name,stop_lat,stop_lon,stop_sequence,arrival_time,departure_time,headsign,start_date,end_date,days,source_url,reviewed

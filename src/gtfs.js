@@ -1,10 +1,16 @@
 import JSZip from 'jszip';
 export function csvParse(source){const rows=[];let row=[],field='',quote=false;for(let i=0;i<source.length;i++){const c=source[i];if(c==='"'){if(quote&&source[i+1]==='"'){field+='"';i++}else quote=!quote}else if(c===','&&!quote){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!quote){if(c==='\r'&&source[i+1]==='\n')i++;row.push(field);if(row.some(Boolean))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(Boolean))rows.push(row);const headers=(rows.shift()||[]).map(x=>x.replace(/^\uFEFF/,''));return rows.map(r=>Object.fromEntries(headers.map((h,j)=>[h,r[j]??''])))}
-export async function importGTFS(file){const zip=await JSZip.loadAsync(file);const read=async n=>{const f=Object.values(zip.files).find(f=>f.name.toLowerCase().split('/').pop()===n);return f?csvParse(await f.async('string')):[]};const [stops,routes,trips,stopTimes,calendar,calendarDates,shapes]=await Promise.all(['stops.txt','routes.txt','trips.txt','stop_times.txt','calendar.txt','calendar_dates.txt','shapes.txt'].map(read));if(!stops.length||!routes.length||!trips.length||!stopTimes.length)throw Error('GTFS incompleto: são necessários stops, routes, trips e stop_times.');if(!calendar.length&&!calendarDates.length)throw Error('GTFS sem calendário: não é possível confirmar em que dias circulam os autocarros.');if(!stopTimes.some(st=>st.stop_id&&st.trip_id&&st.arrival_time&&st.departure_time))throw Error('GTFS sem horários por paragem utilizáveis.');return{stops,routes,trips,stopTimes,calendar,calendarDates,shapes,updatedAt:new Date().toISOString(),source:file.name}}
+export async function importGTFS(file){const zip=await JSZip.loadAsync(file);const read=async n=>{const f=Object.values(zip.files).find(f=>f.name.toLowerCase().split('/').pop()===n);return f?csvParse(await f.async('string')):[]};const [stops,routes,trips,stopTimes,calendar,calendarDates]=await Promise.all(['stops.txt','routes.txt','trips.txt','stop_times.txt','calendar.txt','calendar_dates.txt'].map(read));if(!stops.length||!routes.length||!trips.length||!stopTimes.length)throw Error('GTFS incompleto: são necessários stops, routes, trips e stop_times.');return{stops,routes,trips,stopTimes,calendar,calendarDates,updatedAt:new Date().toISOString(),source:file.name}}
 export function seconds(time){const p=String(time||'').split(':').map(Number);return p.length>=2&&p.every(Number.isFinite)?p[0]*3600+p[1]*60+(p[2]||0):NaN}
-export function activeService(service,date,calendar,calendarDates){const d=[date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('');const override=calendarDates.find(c=>c.service_id===service&&c.date===d);if(override)return override.exception_type==='1';const c=calendar.find(c=>c.service_id===service);if(!c)return false;const day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'][date.getDay()];return c.start_date<=d&&d<=c.end_date&&c[day]==='1'}
+export function activeService(service,date,calendar,calendarDates){const d=[date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('');const override=calendarDates.find(c=>c.service_id===service&&c.date===d);if(override)return override.exception_type==='1';const c=calendar.find(c=>c.service_id===service);if(!c)return !calendar.length&&!calendarDates.length;const day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'][date.getDay()];return c.start_date<=d&&d<=c.end_date&&c[day]==='1'}
 export function upcoming(data,stopId,date=new Date(),limit=20){const trips=new Map(data.trips.map(t=>[t.trip_id,t]));const route=new Map(data.routes.map(r=>[r.route_id,r]));const since=date.getHours()*3600+date.getMinutes()*60;return data.stopTimes.filter(s=>s.stop_id===stopId&&seconds(s.departure_time)>=since).flatMap(s=>{const t=trips.get(s.trip_id);if(!t||!activeService(t.service_id,date,data.calendar,data.calendarDates))return [];const r=route.get(t.route_id);return[{time:s.departure_time,line:r?.route_short_name||r?.route_long_name||'?',headsign:t.trip_headsign||r?.route_long_name||'',tripId:t.trip_id}]}).sort((a,b)=>seconds(a.time)-seconds(b.time)).slice(0,limit)}
-export function plan(data,fromId,toId,date=new Date(),maxTransfers=2){
+export function durationMinutes(a,b){const x=seconds(a),y=seconds(b);return Number.isFinite(x)&&Number.isFinite(y)&&y>=x?Math.round((y-x)/60):null}
+export function formatGTFSSeconds(value){
+ const n=Math.round(value);const h=Math.floor(n/3600);const m=Math.floor((n%3600)/60);
+ return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;
+}
+// Correções de atraso por viagem GTFS, nunca por todas as circulações de uma linha.
+export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  const dep=date.getHours()*3600+date.getMinutes()*60;
  const groups=new Map();
  for(const st of data.stopTimes){if(!groups.has(st.trip_id))groups.set(st.trip_id,[]);groups.get(st.trip_id).push(st)}
@@ -25,12 +31,13 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2){
   for(const state of layer){
    for(const entry of indexed.get(state.stop)||[]){
     const {trip,arr,index}=entry;
-    const boarding=seconds(arr[index].departure_time);
-    if(!Number.isFinite(boarding)||boarding<state.time+(state.legs.length?120:0)||boarding>dep+5*3600)continue;
+    const offset=Math.max(0,Math.min(180,Number(delays[trip.trip_id])||0))*60;
+    const boarding=seconds(arr[index].departure_time)+offset;
+    if(boarding<state.time+(state.legs.length?120:0)||boarding>dep+5*3600)continue;
     if(state.used.has(trip.trip_id))continue;
     for(let k=index+1;k<arr.length;k++){
-     const arrival=seconds(arr[k].arrival_time);if(!Number.isFinite(arrival)||arrival<boarding)continue;
-     const leg={line:routes.get(trip.route_id)?.route_short_name||'?',from:state.stop,to:arr[k].stop_id,departure:arr[index].departure_time,arrival:arr[k].arrival_time,headsign:trip.trip_headsign||'',tripId:trip.trip_id};
+     const arrival=seconds(arr[k].arrival_time)+offset;if(!Number.isFinite(arrival))continue;
+     const leg={line:routes.get(trip.route_id)?.route_short_name||'?',from:state.stop,to:arr[k].stop_id,departure:formatGTFSSeconds(boarding),arrival:formatGTFSSeconds(arrival),scheduledDeparture:arr[index].departure_time,scheduledArrival:arr[k].arrival_time,delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id};
      const item={stop:arr[k].stop_id,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
      if(item.stop===toId)answers.push(item);
      else if(!next.has(item.stop)||next.get(item.stop).time>arrival)next.set(item.stop,item);
@@ -40,7 +47,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2){
   layer=[...next.values()];
   if(answers.length>=5)break;
  }
- return answers.sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length).slice(0,5);
+ return answers.sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length).slice(0,5).map(a=>{const first=a.legs[0],last=a.legs.at(-1);const ridingMinutes=a.legs.reduce((n,l)=>n+(durationMinutes(l.departure,l.arrival)||0),0);const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);return {...a,ridingMinutes,waitingMinutes,journeyMinutes:durationMinutes(first.departure,last.arrival),transfers:a.legs.length-1,scheduledOnly:!a.legs.some(l=>l.delayMinutes)}});
 }
 
 export function distanceMeters(a,b){const lat1=Number(a.stop_lat),lon1=Number(a.stop_lon),lat2=Number(b.stop_lat),lon2=Number(b.stop_lon);if(![lat1,lon1,lat2,lon2].every(Number.isFinite)||(!lat1&&!lon1)||(!lat2&&!lon2))return Infinity;const rad=Math.PI/180;const dl=(lat2-lat1)*rad,doLon=(lon2-lon1)*rad;const x=Math.sin(dl/2)**2+Math.cos(lat1*rad)*Math.cos(lat2*rad)*Math.sin(doLon/2)**2;return 12742000*Math.asin(Math.min(1,Math.sqrt(x)))}

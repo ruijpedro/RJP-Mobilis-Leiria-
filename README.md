@@ -1,85 +1,155 @@
-# RJP Mobilis Leiria V3.2
+# RJP Mobilis Leiria V1.9 RC1 — Consolidação e compilação
 
-## Alteração real desta versão
+Esta entrega reúne a V1.8.3 e reforça a compilação automática da WebApp e APK Android (debug).
 
-- Diagnóstico por linha: número de viagens estruturadas com pelo menos duas paragens distintas e horas válidas.
-- Distingue linhas identificadas de carreiras que têm viagens calculáveis.
-- Testes automatizados para ausência de dados, horários isolados e viagens completas.
-- Não são inventados horários. A consulta automática de fontes não equivale a ter os horários convertidos.
+**Importante:** devido a erro DNS EAI_AGAIN ao aceder a registry.npmjs.org, não foi possível instalar dependências nem executar localmente a compilação web/Android. A compilação deve ser validada em GitHub Actions. Não está incluída uma APK pré-compilada.
 
-## Situação dos dados
+## Utilização
 
-Ainda não foi identificado GTFS Mobilis público e completo. A app continua a mostrar fontes oficiais e paragens OSM, mas não calcula viagens de toda a rede sem feed validado. As imagens/PDFs oficiais exigem transcrição e verificação da sequência de paragens.
+1. Publicar os ficheiros no repositório GitHub (branch `main`).
+2. Abrir Actions > Compilar WebApp e APK Android > Run workflow.
+3. Descarregar o artefacto WebApp e a APK debug no fim da execução.
+4. Se algum passo falhar, consultar o log desse passo (npm, Vite, Capacitor ou Gradle).
 
-## Executar
+## Cobertura de dados
 
-`npm install` e `npm test`; `npm run build`. Para Android, consultar `.github/workflows/build.yml`.
+Amostra de horários programados das linhas 1, 7 e 8; restantes linhas com cobertura parcial de trajetos. Os cálculos usam somente passagens registadas, e os atrasos são introduzidos pelo utilizador. Sem garantia de tempos reais.
 
-# RJP Mobilis Leiria V3.1
+## Código
 
-**Evolução verificada:** data de pesquisa conforme fuso local do telemóvel (em vez de UTC); diagnóstico específico para identificar se existem viagens com pelo menos duas paragens utilizáveis. Incluídos testes automatizados.
+Mantêm-se os ficheiros do projeto anterior: `src`, `public`, `data`, `scripts`, `tests` e workflows de fontes OSM.
 
-**Cobertura real:** não foi encontrado e validado um GTFS oficial público completo Mobilis em 30-10-2026. A V3.1 não afirma conter horários completos e ainda não resolve todos os percursos. A app conserva o comportamento anterior (mapa OSM, GPS, fontes, planeador GTFS, favoritos).
+# RJP Mobilis Leiria V1.5
 
-Executar: `npm ci` (quando existir lockfile) ou `npm install`; `npm test`; `npm run build`. A APK exige o workflow Android e dependências disponíveis.
+Planeador independente de transportes urbanos de Leiria (WebApp e Android).
 
-# RJP Mobilis Leiria V2.7 — Fontes visuais oficiais
+## Instalação
 
-Evolução da V2.6: auditoria das páginas das linhas 1 a 9, incluindo imagens PNG/JPEG/WebP de horários (não apenas PDF/SVG); validação das assinaturas dos ficheiros, indicação de formato e acesso direto aos documentos na secção Oficiais. A atualização do índice ocorre pelo GitHub Actions duas vezes por dia.
+```sh
+npm install
+npm test
+npm run dev
+npm run build
+```
 
-**Limite de cobertura:** imagens e PDFs são referências oficiais, mas não são uma tabela de partidas processável. A V2.7 não calcula, por si só, todos os trajetos por paragem até existir GTFS verificado ou transcrição validada integral. Não inventa viagens, tempos nem linhas.
+No GitHub Actions, o workflow gera `dist/` e uma APK Android de depuração. A app utiliza React, Vite e Capacitor.
 
-**Execução:** `npm install`, `npm run dev`, `npm test`, `npm run build`. Para atualizar o índice: `python scripts/update_sources.py`; a Internet é necessária nesse passo. O fluxo Android está em `.github/workflows/build.yml`.
+## Funcionalidades
 
-# RJP Mobilis Leiria V2.6 — Catálogo oficial com ligações verificadas
+- Importação manual de GTFS Schedule `.zip` e persistência offline em IndexedDB.
+- Pesquisa de paragens e de locais conhecidos (ex.: Teatro José Lúcio da Silva, Vidigal, Campo Amarelo), associando nomes a paragens quando existem correspondências.
+- Planeamento por horário e data, viagens diretas ou até 2 transbordos, horários de passagem.
+- Localização GPS de paragens mais próximas, favoritos e partida pela paragem escolhida.
 
-Preserva todas as funcionalidades de mapa, GPS, paragens, roteamento GTFS e ícones da V2.5.
+## Limitações e transparência
 
-## O que mudou
+**Não inclui dados GTFS oficiais integrados**: o operador deve disponibilizar ficheiro autorizado. Não há garantia de disponibilidade de GTFS público ou informação em tempo real. Nomes de locais são aproximações textuais às paragens e não implicam que o destino seja na própria paragem. A app não verifica percursos pedonais, nem transbordos a pé entre paragens distintas. O horário é programado e pode divergir do real.
 
-- Na secção **Oficiais**, cada linha apresenta ligações diretas a PDFs ou SVG de horários **quando os anexos são acessíveis e verificados pelo workflow**.
-- O workflow verifica a assinatura dos anexos (não basta a página devolver HTTP 200).
-- Falhas transitórias não eliminam a referência a um GTFS previamente validado.
-- Identificação da versão V2.6 na interface.
+Fonte de consulta: https://mobilis.pt/linhas/linha-7/
 
-## Como atualizar
+## V1.3 — Mapa OpenStreetMap
 
-O workflow `.github/workflows/update-sources.yml` é executado duas vezes ao dia e publica `public/data/mobilis-sources.json` no repositório. Para atualizações na APK **após a instalação**, configurar `VITE_MOBILIS_CATALOG_URL` no build para um URL HTTPS público que sirva esse JSON. Sem isso, o ficheiro incluído na APK não muda automaticamente.
+- Novo separador **Mapa** com Leaflet e paragens de Leiria obtidas automaticamente pela API Overpass (consultas ocasionais; fontes com tolerância a falhas).
+- Inclui `highway=bus_stop` e `public_transport=platform` com `bus=yes`, incluindo plataformas cartografadas como *ways*.
+- Pesquisa por nome, toque numa paragem e seleção como origem/destino.
+- Com um ficheiro GTFS previamente importado, tenta associar cada paragem OSM a uma paragem GTFS com nome compatível num raio de 90 metros; só então mostra próximas partidas programadas e destinos.
+- Dados OSM guardados localmente durante sete dias, com botão para atualização manual e possibilidade de reutilizar cache em falha de rede.
+- Os pontos OSM não são, por si, prova de serviço ativo; sem GTFS não há horários confirmados, nem linhas ou rotas inventadas.
+- Base cartográfica © OpenStreetMap contributors (ODbL), com atribuição no mapa. Fonte de horários: GTFS fornecido pelo utilizador.
 
-A variável opcional `MOBILIS_VERIFIED_GTFS_URL` só deve apontar para uma fonte GTFS de Leiria legítima. Se não existir, as ligações aos PDFs continuam a ser mostradas, mas **não são criadas viagens automaticamente**.
+**Nota:** a consulta da área `admin_level=6` abrange o concelho, e não só a rede urbana. APIs Overpass públicas têm disponibilidade variável. Instalar dependências com `npm install` antes de `npm test` e `npm run build`. Não foi possível executar build local neste ambiente porque o acesso ao npm registry falhou (EAI_AGAIN).
 
-**Limitação:** ainda não está disponível uma base estruturada e validada de todos os horários por paragem. O cálculo de viagens depende dessa base.
-
-## Testes
-
-`python -m unittest discover -s scripts -p 'test_*.py'`
-
-`npm test`
-
-`npm run build`
-
-## V2.8 — Fila de validação dos horários
-
-O workflow gera `public/data/mobilis-review-queue.json`, que reúne **candidatos** extraídos de PDFs oficiais acessíveis (URL, SHA-256 e horas reconhecidas). Estes dados **não** são usados para calcular percursos até serem associados manualmente a paragem, sentido, coluna/viagem e calendário. Documentos PNG/JPG continuam apenas listados como fontes visuais. A app deixa de apresentar os horários históricos da linha 7 como se estivessem confirmados.
-
-**Limite atual:** esta versão não contém GTFS Mobilis completo, não apresenta horas reais por todas as paragens e não garante a compilação Android. O workflow necessita de permissões de escrita para atualizar ficheiros.
-
-
-## V2.9 — Conversão segura para GTFS
-
-Adicionado `scripts/build_reviewed_gtfs.py`, que transforma viagens **revistas manualmente** em GTFS para o planeador, com validação de paragens, sequência, horários, datas e rastreio da fonte oficial. Aceita horas GTFS depois da meia-noite (24:xx).
-
-Amostra em `dados/reviewed-trips.schema-example.json`: **é fictícia e intencionalmente não aprovada**, logo não é integrada na aplicação. Para gerar GTFS a partir de viagens efetivamente verificadas: `python scripts/build_reviewed_gtfs.py DADOS_APROVADOS.json mobilis-validado.zip`.
-
-Os horários reais de toda a rede ainda não foram validados nem pré-carregados nesta versão. A atualização automática mantém-se preparada, mas depende de publicar um feed GTFS revisto.
-
-Teste: `python -m unittest discover -s tests -p 'test_reviewed_gtfs.py'`.
+## V1.3 — Mapa principal
+- O ecrã inicial é agora o **Mapa**.
+- Agrupamento de marcadores com Leaflet.markercluster e expansão com zoom.
+- Pesquisa por nome, GPS e painel de paragem com partidas GTFS quando disponíveis.
+- Seletor de linha baseado em GTFS; trajeto tracejado **esquemático**, não assente na geometria das ruas.
+- Aviso explícito quando não há dados GTFS (não inventa horários).
+- Este ZIP é código-fonte completo para GitHub Actions gerar WebApp e APK; não inclui APK pré-compilada.
 
 
-## V3.0 — Primeira referência externa identificada por paragem
+## Atualização automática de paragens OSM (V1.4)
 
-Inclui duas passagens publicadas para **Escola Básica do Vidigal, Linha 7** (dias úteis: 07:17 e 08:07), provenientes da página Moovit referente ao percurso via Pousos. São **dados de uma fonte independente**, não horários oficialmente homologados pela Mobilis. A interface mostra a fonte e o aviso; estes valores **não alimentam o cálculo de viagens** porque não temos a viagem completa com paragens e coordenadas confirmadas.
+Os ficheiros de paragens são exportados por `scripts/export_osm_stops.py` e
+o GitHub Actions `.github/workflows/update-osm-stops.yml` executa o processo
+semanalmente ou manualmente (`Actions > Atualizar paragens OSM > Run workflow`).
 
-A aplicação continua a necessitar de horários oficiais completos e georreferenciados para planear toda a rede. A verificação de fontes continua no workflow.
+São gerados `public/data/osm-stops-leiria.json` e `.geojson`. A app tenta
+consultar a API Overpass, depois usa a cache local e, se necessário, a cópia
+incluída com a app. A primeira compilação deve ser precedida pela execução
+do workflow de paragens para criar a cópia. Sem essa cópia, a app continua a
+tentar o Overpass.
 
-Verificar: `node --test tests/referenceTimes.test.mjs`.
+A exportação usa uma caixa geográfica da área urbana de Leiria, não todos
+os limites do concelho. Os pontos não comprovam linhas ou horários ativos.
+A atualização do repositório apenas altera os dados na próxima publicação
+da WebApp ou na próxima atualização da APK.
+
+## V1.5 — Catálogo oficial e caminho para horários por paragem
+
+- Separador **Linhas**: páginas das linhas 1 a 9 da Mobilis, com links PDF quando verificados pelo workflow. A consulta das páginas NÃO implica dados de horários importados.
+- `scripts/update_mobilis_sources.py`: lê páginas oficiais semanalmente, extrai links PDF identificáveis, mantém o catálogo anterior em falhas de rede; `.github/workflows/update-mobilis-sources.yml` corre às segundas às 05:15 UTC ou manualmente.
+- `scripts/build_reviewed_gtfs.py`: converte uma tabela CSV **preenchida, conferida e assinada como revista** num GTFS sem interpolar horas. O modelo de colunas está em `data/reviewed-departures-template.csv`. Coloca a tabela validada em `data/reviewed-departures.csv` e executa `python scripts/build_reviewed_gtfs.py` para obter `public/data/mobilis-reviewed-gtfs.zip`.
+- Para importar o GTFS criado, usa o separador Dados da app. A versão 1.5 não contém horários já transcritos, nem ligações confirmadas para todas as paragens.
+- O catálogo automático nunca publica GTFS fictício. É necessário validar documentalmente cada horário, dia útil/fim de semana e sentido, com base nos originais Mobilis.
+- A rede de referência contém linhas 1 a 9. A alegada linha 10 no exemplo Vidigal–Campo Amarelo continua não confirmada.
+
+**Validação local:** `node --test tests/official.test.mjs`; `python -m py_compile scripts/*.py`. A compilação completa necessita de `npm install` com acesso ao registo npm.
+
+
+## V1.6 — Traçados reais de relações OpenStreetMap
+O workflow `update-osm-network.yml` executa `export_osm_stops.py` e `osm_network.py` todas as segundas às 04:30 UTC. Requer Actions com permissões de escrita e a branch sem proteção contra pushes do bot (ou substituição por PR). Os traçados surgem no filtro «Traçados OSM» depois de o workflow produzir `public/data/osm-network.json`. Não são horários nem posições em tempo real. A app preserva segmentos descontínuos e permite selecionar separadamente as linhas GTFS.
+
+
+## V1.7 — Atrasos comunicados pelo utilizador
+O planeador aceita correções em minutos identificadas pelo `trip_id` GTFS. Sempre que um atraso é alterado num dos autocarros apresentados, o percurso é recalculado integralmente: uma ligação perdida deixa de ser proposta. O atraso é local à sessão e não se propaga a outras viagens da mesma linha. Os horários-base exigem dados GTFS de origem e validade confirmadas; este projeto não inclui horas artificiais.
+
+### Redundância de fontes
+1. GTFS atual autorizado do operador/TRENMO (a solicitar).
+2. Horários oficiais atuais publicados pela Mobilis, depois de digitalizados e revistos.
+3. GTFS histórico de terceiros apenas para comparação, nunca como calendário em vigor.
+4. OSM para geometria e localização, não para horários.
+
+
+## V1.8 — Arranque com amostra publicada (31/10/2026)
+- O projeto arranca sem upload: `public/data/mobilis-sample.json` contém **apenas duas viagens matinais** da linha 7, com 17 paragens consecutivas do troço entre R. Capitão Mouzinho de Albuquerque e Escola Básica Touria, em dias úteis; os horários foram transcritos da [tabela pública Moovit](https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-time-7-Lisboa-2460-3784393-309401193-10954025-0), indicada como atualizada em 25/10/2026. 
+- O conjunto é **parcial e não é um GTFS oficial**. Não cria horários das restantes linhas, não assume cadências nem viagens fora da tabela, e não valida feriados ou períodos escolares. Cuidado com as regras de reutilização de dados antes de distribuição comercial.
+- O mapa OSM mantém-se independente, e a associação aos horários incluídos só ocorre quando há correspondência exata e não ambígua de nome; sem coordenadas da amostra, a posição exata precisa de confirmação.
+- Um GTFS completo importado pelo utilizador prevalece sobre a amostra. A alteração não inclui geolocalização em direto.
+
+
+## V1.8 — Arranque com amostra programada
+
+Incluído `public/data/mobilis-sample.json`, com **apenas amostras verificadas** de algumas circulações das linhas 1, 7 e 8, obtidas das páginas públicas Moovit (31/10/2026). Fonte e atualização assinaladas na app. **Não representa cobertura de todas as linhas, horários ou sentidos.** A linha 1 contém somente quatro paragens por circulação; a linha 8 tem apenas o troço publicado na extração verificada; a linha 7 inclui uma sequência longa mas ainda exige verificação do sentido e dos dias especiais. A lista de fontes das linhas 1–9 está em `public/data/coverage.json`.
+
+O sistema de planeamento só deve apresentar resultados dentro da amostra e nunca garantir a melhor alternativa para a rede completa. Os nomes de paragem não incluem coordenadas GPS nesta amostra: mapa cartográfico obtém-nas do OSM, com associação por nome quando verificável. Dados oficiais GTFS autorizados substituem a amostra quando importados no dispositivo. A reutilização sistemática ou redistribuição de dados de terceiros exige verificação das condições de licença; este conjunto é uma amostra de desenvolvimento, não uma redistribuição integral.
+
+Validação de futuras transcrições: `python scripts/validate_stop_schedule.py data/reviewed-stop-schedule.csv`. Não publicamos partidas inventadas nem extrações automáticas de terceiros sem autorização.
+
+## V1.8.1 — Tempos entre paragens
+
+- As passagens da base parcial são usadas como horários **programados** no planeador; o tempo de viagem de cada troço é a diferença entre horas sucessivas da mesma circulação.
+- Mostra duração total, tempo a bordo, espera e número de transbordos. Um atraso indicado para uma viagem recalcula os transbordos, podendo eliminar uma ligação inviável.
+- A base integrada continua parcial (linhas 1, 7 e 8) e tem calendários genéricos ainda por confirmar. Não usar para garantir horários de fins de semana/feriados ou para afirmar que uma ligação ausente não existe.
+- As posições de paragens sem coordenadas GTFS não são inventadas: a camada OSM continua a fornecê-las separadamente.
+
+
+## V1.8.2 — consulta pública de paragens (01-11-2026)
+- Sequência documentada de **18 paragens** num sentido da linha 3, em `public/data/published-stop-sequences.json`, com ligação à fonte pública Moovit. Sem horários nem coordenadas: não é integrada no motor de cálculo nem apresentada como GTFS.
+- Corrigida a data inicial da pesquisa para respeitar o dia local (em vez de UTC).
+- Mantida a base parcial de 312 passagens programadas para cálculo apenas dos percursos cobertos.
+- A atribuição e os direitos de reutilização da fonte externa devem ser verificados antes de distribuição pública da sequência transcrita.
+
+
+## V1.8.3 — Novas sequências publicadas
+
+- Linha 4: 32 posições na sequência circular via Andrinos, consultadas no Moovit (consulta em 1-11-2026).
+- Linha 5: excerto de 15 posições na sequência circular via Pinheiros; a página anuncia 38 paragens, pelo que não deve ser tratado como completo.
+- Linha 3: mantido o excerto anterior (18 posições).
+- Esta informação aparece apenas na consulta de linhas; **não** gera viagens, horários nem tempos de paragem falsos.
+- Fontes: https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-line-4-Lisboa-2460-3784393-309401190-0 e https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-line-5-Lisboa-2460-3784393-309401191-0 . Verificar condições de reutilização antes de distribuição pública.
+- A linha 9 sofreu supressões temporárias em fevereiro de 2026; a situação atual precisa de confirmação.
+
+
+## RC2: Localização e percurso a pé
+Ao primeiro arranque, a app apresenta uma explicação e botão para pedir autorização de GPS. A autorização real é gerida pelo Android/navegador; pode ser recusada e reativada com o botão GPS. É necessário HTTPS na WebApp. A opção «Como chegar a pé» na ficha de qualquer paragem abre o Google Maps em modo pedonal, tendo a posição GPS como origem se tiver sido autorizada; caso contrário o serviço de mapas determina a origem. A rota e a duração não são calculadas internamente pela aplicação e requerem serviço de mapas disponível.

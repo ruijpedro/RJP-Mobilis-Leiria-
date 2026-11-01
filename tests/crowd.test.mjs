@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {buildObservation,summarizeObservations,nextObserved,lisbonParts} from '../src/crowd.js';
+const stop={stop_id:'osm:node:1',stop_lat:'39.7440',stop_lon:'-8.8070'};
+test('recusa longe e aceita perto, sem coordenadas',()=>{assert.ok(buildObservation({stop,line:'7',userLat:39.76,userLon:-8.80,uid:'u'}).error);const r=buildObservation({stop,line:'7',direction:'Terminal',userLat:39.744,userLon:-8.8071,uid:'u',now:new Date('2026-11-02T08:15:00Z')});assert.equal(r.doc.minuteOfDay,495);assert.equal(r.doc.dayType,'util');assert.equal(r.doc.userLat,undefined)});
+test('fuso de Lisboa',()=>assert.equal(lisbonParts(new Date('2026-11-01T12:00:00Z')).dayType,'domingo'));
+const mk=(date,uid,m)=>({stopId:'s',line:'7',direction:'T',dayType:'util',localDate:date,uid,minuteOfDay:m});
+test('confirma 3 dias e 2 dispositivos',()=>{const s=summarizeObservations([mk('2026-11-02','a',495),mk('2026-11-03','b',496),mk('2026-11-04','a',494),mk('2026-11-02','a',600)]);assert.equal(s.length,1);assert.equal(s[0].time,'08:15');assert.equal(s[0].days,3);assert.equal(s[0].devices,2);assert.equal(summarizeObservations([mk('2026-11-02','a',495),mk('2026-11-03','a',495),mk('2026-11-04','a',495)]).length,0);assert.equal(nextObserved(s,{stopId:'s',line:'7',nowMinute:490,dayType:'util'}).inMinutes,5)});

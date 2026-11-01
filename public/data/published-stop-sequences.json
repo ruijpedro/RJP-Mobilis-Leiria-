@@ -1,0 +1,92 @@
+{
+  "asOf": "2026-11-01",
+  "description": "Sequências de paragens publicadas online. Apenas a linha 4 contém a sequência completa para o sentido indicado; as linhas 3 e 5 são excertos. Não contêm horas de passagem nem coordenadas.",
+  "routes": {
+    "3": {
+      "source": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-line-3-Lisboa-2460-3784393-309401189-0",
+      "direction": "Leiria (Estádio/Terminal) — via Telheiro",
+      "stops": [
+        "Rua Imaculada Conceição 127",
+        "(X) Rua Dom Miguel Bolhões / Centro Escolar",
+        "Rua Padre Leandro de Sousa Saraiva",
+        "Rua Imaculada Conceição / (X) Rua da Paz",
+        "Rua Imaculada Conceição / Escola Primária",
+        "Rua Imaculada Conceição / Quartel",
+        "Rua Lino António (Rua Poeta José da Cruz)",
+        "Rua Lino António (Rua Titto Larcher)",
+        "Rua D. José Alves Correia Silva",
+        "Colégio Conciliar de Maria Imaculada",
+        "Prisão Escola",
+        "Bairro dos Sargentos",
+        "Largo da República",
+        "Bairro dos Capuchos",
+        "Esc. Domingos Sequeira",
+        "Av. 25 de Abril",
+        "Av. 25 de Abril / Castelo de Leiria",
+        "Av. Bernardo Pimenta (Estádio)"
+      ],
+      "completePublishedSequence": false
+    },
+    "4": {
+      "source": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-line-4-Lisboa-2460-3784393-309401190-0",
+      "direction": "Circular via Andrinos",
+      "completePublishedSequence": true,
+      "stops": [
+        "Av. Bernardo Pimenta (Terminal)",
+        "R. Capitão Mouzinho de Albuquerque",
+        "Largo Cónego Maia / Sé",
+        "Fonte das 3 Bicas",
+        "Ponte Hintze Ribeiro",
+        "Bombeiros Municipais",
+        "Rua das Olhalvas / Hospital Santo André",
+        "Escola Correia Mateus",
+        "Rua Paulo VI",
+        "Escola Primária Andrinos",
+        "Rua Principal EN350",
+        "Q. Sirol. R. Calmeira",
+        "Q. Sirol R. Pinhal Cotelo",
+        "Andrinos R. Font.",
+        "X Rua 13 de Junho",
+        "Rua Paulo VI / (X) Rua Vale Sepal",
+        "Rua Costas",
+        "Rua Paulo VI / (X) Marinheiros",
+        "Rua Paulo VI / (X) N350",
+        "Rua Paulo VI",
+        "Escola Correia Mateus",
+        "Rua das Olhalvas / Hospital Santo André",
+        "Rua de Santo André",
+        "Rua das Olhalvas",
+        "Bombeiros Municipais",
+        "Ponte Hintze Ribeiro",
+        "Mercado Sant'ana",
+        "Bairro dos Capuchos",
+        "Esc. Domingos Sequeira",
+        "Av. 25 de Abril",
+        "Av. 25 de Abril / Castelo de Leiria",
+        "Av. Bernardo Pimenta (Terminal)"
+      ]
+    },
+    "5": {
+      "source": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-line-5-Lisboa-2460-3784393-309401191-0",
+      "direction": "Circular via Pinheiros",
+      "completePublishedSequence": false,
+      "stops": [
+        "Av. Bernardo Pimenta (Estádio)",
+        "R. Capitão Mouzinho de Albuquerque",
+        "Largo Cónego Maia / Sé",
+        "Rua Dr. Américo Cortez Pinto",
+        "Av. Cidade Maringá / Mercado Municipal",
+        "Arrabalde da Ponte",
+        "Quinta da Matinha",
+        "Esc. Formação Social",
+        "Residência Paroquial",
+        "Estrada de S. Tiago / Igreja Marrazes",
+        "Estrada de S. Tiago / JF Marrazes",
+        "Estrada de S. Tiago / (X) Cemitério",
+        "Estrada de S. Tiago",
+        "(X) Rua Casal do Cego | Marrazes (Rua das Laranjeiras)",
+        "Estrada de Pinheiros"
+      ]
+    }
+  }
+}

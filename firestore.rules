@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  match /observations/{id} { allow read, write: if false; }
+  match /crowdRateLimits/{id} { allow read, write: if false; }
+  match /verifiedStops/{id} { allow read, write: if false; }
+  match /observedSchedules/{id} { allow read: if true; allow write: if false; }
+ }
+}

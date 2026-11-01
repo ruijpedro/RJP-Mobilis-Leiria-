@@ -1,0 +1,51 @@
+{
+  "asOf": "2026-10-31",
+  "lines": {
+    "1": {
+      "officialPage": "https://mobilis.pt/linhas/linha-1/",
+      "localStopTimetable": true,
+      "complete": false
+    },
+    "2": {
+      "officialPage": "https://mobilis.pt/linhas/linha-2/",
+      "localStopTimetable": false,
+      "complete": false
+    },
+    "3": {
+      "officialPage": "https://mobilis.pt/linhas/linha-3/",
+      "localStopTimetable": false,
+      "complete": false
+    },
+    "4": {
+      "officialPage": "https://mobilis.pt/linhas/linha-4/",
+      "localStopTimetable": false,
+      "complete": false
+    },
+    "5": {
+      "officialPage": "https://mobilis.pt/linhas/linha-5/",
+      "localStopTimetable": false,
+      "complete": false
+    },
+    "6": {
+      "officialPage": "https://mobilis.pt/linhas/linha-6/",
+      "localStopTimetable": false,
+      "complete": false
+    },
+    "7": {
+      "officialPage": "https://mobilis.pt/linhas/linha-7/",
+      "localStopTimetable": true,
+      "complete": false
+    },
+    "8": {
+      "officialPage": "https://mobilis.pt/linhas/linha-8/",
+      "localStopTimetable": true,
+      "complete": false
+    },
+    "9": {
+      "officialPage": "https://mobilis.pt/linhas/linha-9/",
+      "localStopTimetable": false,
+      "complete": false
+    }
+  },
+  "note": "Não implica serviço ativo ou precisão de 2026 em todas as partidas. Verificar horários publicados e exceções de feriados."
+}

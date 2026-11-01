@@ -1,0 +1,2683 @@
+{
+  "stops": [
+    {
+      "stop_id": "s-avbernardopimentaestádio",
+      "stop_name": "Av. Bernardo Pimenta (Estádio)",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-rcapitãomouzinhodealbuquerque",
+      "stop_name": "R. Capitão Mouzinho de Albuquerque",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-largocónegomaiasé",
+      "stop_name": "Largo Cónego Maia / Sé",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-fontedas3bicas",
+      "stop_name": "Fonte das 3 Bicas",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_name": "Ponte Hintze Ribeiro",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_name": "Bombeiros Municipais",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-guimarota",
+      "stop_name": "Guimarota",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_name": "Escola Profissional / ISLA",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_name": "Rua da Cooperativa / (X) Casal dos Matos",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruansfátima",
+      "stop_name": "Rua N. S. Fátima",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_name": "Vidigal de Baixo: Rua 29 Junho",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-escolabásicadovidigal",
+      "stop_name": "Escola Básica do Vidigal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-vidigaldecimaavprincipal",
+      "stop_name": "Vidigal de Cima: Av. Principal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-vidigaldecimaxruadobairro",
+      "stop_name": "Vidigal de Cima: (X) Rua do Bairro",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-vidigaldecimacemitériovidigal",
+      "stop_name": "Vidigal de Cima: Cemitério Vidigal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avprincipal",
+      "stop_name": "Av. Principal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avprincipalxruacruzouruabailadouro",
+      "stop_name": "Av. Principal / (X) Rua Cruz ou Rua Bailadouro",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-escolabásicatouria",
+      "stop_name": "Escola Básica Touria",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruamonten113",
+      "stop_name": "Rua Monte N113",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruavirgíliomonteiro",
+      "stop_name": "Rua Virgílio Monteiro",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruavirgíliomonteirocemitério",
+      "stop_name": "Rua Virgílio Monteiro / Cemitério",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-rotundadosfilarmónicos",
+      "stop_name": "Rotunda dos Filarmónicos",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-estcasalmatos",
+      "stop_name": "Est. Casal Matos",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-juntafreguesiapousos",
+      "stop_name": "Junta Freguesia Pousos",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-xcasaldematos",
+      "stop_name": "(X) Casal de Matos",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-rprofabílioalvesdebritofarmácia",
+      "stop_name": "R. Prof. Abílio Alves de Brito / Farmácia",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruacoroneljosépereirapascoal",
+      "stop_name": "Rua Coronel José Pereira Pascoal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-escolacorreiamateus",
+      "stop_name": "Escola Correia Mateus",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruadasolhalvashospitalsantoandré",
+      "stop_name": "Rua das Olhalvas / Hospital Santo André",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruadesantoandré",
+      "stop_name": "Rua de Santo André",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruadasolhalvas",
+      "stop_name": "Rua das Olhalvas",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_name": "Av. Bernardo Pimenta (Terminal)",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-largosantoagostinho",
+      "stop_name": "Largo Santo Agostinho",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_name": "Av. General Humberto Delgado 1",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_name": "Av. General Humberto Delgado 2",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_name": "Escola Básica da Guimarota",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-moinhonovo",
+      "stop_name": "Moinho Novo",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-lourais",
+      "stop_name": "Lourais",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-xrfilarmónica",
+      "stop_name": "(X) R. Filarmónica",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_name": "Junta Freguesia / Rua Helena Aboim L. Vieira",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruasantamaria",
+      "stop_name": "Rua Santa Maria",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-estradadaribeira",
+      "stop_name": "Estrada da Ribeira",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-zambujordobarrolo",
+      "stop_name": "Zambujo (R. do Barrolo)",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-vidigaldebaixo",
+      "stop_name": "Vidigal de Baixo",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avnsfátima",
+      "stop_name": "Av. N. S. Fátima",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_name": "Av. N. S. Fátima / Sra. da Encarnação",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-jardimluísdecamões",
+      "stop_name": "Jardim Luís de Camões",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_name": "Rua Dr. Américo Cortez Pinto",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_name": "Av. Cidade Maringá / Mercado Municipal",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-arrabaldedaponte",
+      "stop_name": "Arrabalde da Ponte",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-novaleiria",
+      "stop_name": "Nova Leiria",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_name": "Almoínha Grande | Arrabalde da Ponte",
+      "stop_lat": "",
+      "stop_lon": ""
+    },
+    {
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_name": "Bairro das Almoínhas",
+      "stop_lat": "",
+      "stop_lon": ""
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "route-1",
+      "route_short_name": "1",
+      "route_long_name": "Circular Leiria via Estação",
+      "route_url": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-time-1-Lisboa-2460-3784393-309401187-10089061-0"
+    },
+    {
+      "route_id": "route-7",
+      "route_short_name": "7",
+      "route_long_name": "Circular via Vidigal, Touria e Pousos",
+      "route_url": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-time-7-Lisboa-2460-3784393-309401193-10954025-0"
+    },
+    {
+      "route_id": "route-8",
+      "route_short_name": "8",
+      "route_long_name": "Circular via Cortes",
+      "route_url": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-time-8-Lisboa-2460-3784393-309401194-10089062-0"
+    }
+  ],
+  "trips": [
+    {
+      "trip_id": "l7-0-weekdays",
+      "route_id": "route-7",
+      "service_id": "weekdays",
+      "trip_headsign": "Pousos (via Vidigal)"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "route_id": "route-7",
+      "service_id": "weekdays",
+      "trip_headsign": "Pousos (via Vidigal)"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "route_id": "route-7",
+      "service_id": "weekends",
+      "trip_headsign": "Pousos (via Vidigal)"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "route_id": "route-8",
+      "service_id": "weekdays",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "route_id": "route-8",
+      "service_id": "weekdays",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "route_id": "route-8",
+      "service_id": "weekdays",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "route_id": "route-8",
+      "service_id": "weekdays",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "route_id": "route-8",
+      "service_id": "weekends",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "route_id": "route-8",
+      "service_id": "weekends",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "route_id": "route-8",
+      "service_id": "weekends",
+      "trip_headsign": "Cortes"
+    },
+    {
+      "trip_id": "l1-0-weekdays",
+      "route_id": "route-1",
+      "service_id": "weekdays",
+      "trip_headsign": "Circular via Estação"
+    },
+    {
+      "trip_id": "l1-30-weekdays",
+      "route_id": "route-1",
+      "service_id": "weekdays",
+      "trip_headsign": "Circular via Estação"
+    },
+    {
+      "trip_id": "l1-0-saturday",
+      "route_id": "route-1",
+      "service_id": "saturday",
+      "trip_headsign": "Circular via Estação"
+    },
+    {
+      "trip_id": "l1-90-saturday",
+      "route_id": "route-1",
+      "service_id": "saturday",
+      "trip_headsign": "Circular via Estação"
+    },
+    {
+      "trip_id": "l1-30-sunday",
+      "route_id": "route-1",
+      "service_id": "sunday",
+      "trip_headsign": "Circular via Estação"
+    },
+    {
+      "trip_id": "l1-150-sunday",
+      "route_id": "route-1",
+      "service_id": "sunday",
+      "trip_headsign": "Circular via Estação"
+    }
+  ],
+  "stopTimes": [
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-avbernardopimentaestádio",
+      "stop_sequence": "1",
+      "arrival_time": "07:00:00",
+      "departure_time": "07:00:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-rcapitãomouzinhodealbuquerque",
+      "stop_sequence": "2",
+      "arrival_time": "07:01:00",
+      "departure_time": "07:01:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "3",
+      "arrival_time": "07:02:00",
+      "departure_time": "07:02:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "4",
+      "arrival_time": "07:03:00",
+      "departure_time": "07:03:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "5",
+      "arrival_time": "07:04:00",
+      "departure_time": "07:04:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "6",
+      "arrival_time": "07:04:00",
+      "departure_time": "07:04:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "07:11:00",
+      "departure_time": "07:11:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "8",
+      "arrival_time": "07:12:00",
+      "departure_time": "07:12:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "9",
+      "arrival_time": "07:13:00",
+      "departure_time": "07:13:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "10",
+      "arrival_time": "07:14:00",
+      "departure_time": "07:14:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "11",
+      "arrival_time": "07:16:00",
+      "departure_time": "07:16:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-escolabásicadovidigal",
+      "stop_sequence": "12",
+      "arrival_time": "07:17:00",
+      "departure_time": "07:17:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-vidigaldecimaavprincipal",
+      "stop_sequence": "13",
+      "arrival_time": "07:17:00",
+      "departure_time": "07:17:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-vidigaldecimaxruadobairro",
+      "stop_sequence": "14",
+      "arrival_time": "07:18:00",
+      "departure_time": "07:18:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-vidigaldecimacemitériovidigal",
+      "stop_sequence": "15",
+      "arrival_time": "07:19:00",
+      "departure_time": "07:19:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-avprincipal",
+      "stop_sequence": "16",
+      "arrival_time": "07:20:00",
+      "departure_time": "07:20:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-avprincipalxruacruzouruabailadouro",
+      "stop_sequence": "17",
+      "arrival_time": "07:21:00",
+      "departure_time": "07:21:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-escolabásicatouria",
+      "stop_sequence": "18",
+      "arrival_time": "07:22:00",
+      "departure_time": "07:22:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruamonten113",
+      "stop_sequence": "19",
+      "arrival_time": "07:23:00",
+      "departure_time": "07:23:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruavirgíliomonteiro",
+      "stop_sequence": "20",
+      "arrival_time": "07:24:00",
+      "departure_time": "07:24:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruavirgíliomonteirocemitério",
+      "stop_sequence": "21",
+      "arrival_time": "07:26:00",
+      "departure_time": "07:26:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-rotundadosfilarmónicos",
+      "stop_sequence": "22",
+      "arrival_time": "07:30:00",
+      "departure_time": "07:30:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-estcasalmatos",
+      "stop_sequence": "23",
+      "arrival_time": "07:30:00",
+      "departure_time": "07:30:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-juntafreguesiapousos",
+      "stop_sequence": "24",
+      "arrival_time": "07:31:00",
+      "departure_time": "07:31:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-xcasaldematos",
+      "stop_sequence": "25",
+      "arrival_time": "07:33:00",
+      "departure_time": "07:33:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-rprofabílioalvesdebritofarmácia",
+      "stop_sequence": "26",
+      "arrival_time": "07:34:00",
+      "departure_time": "07:34:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruacoroneljosépereirapascoal",
+      "stop_sequence": "27",
+      "arrival_time": "07:34:00",
+      "departure_time": "07:34:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-escolacorreiamateus",
+      "stop_sequence": "28",
+      "arrival_time": "07:38:00",
+      "departure_time": "07:38:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruadasolhalvashospitalsantoandré",
+      "stop_sequence": "29",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruadesantoandré",
+      "stop_sequence": "30",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-ruadasolhalvas",
+      "stop_sequence": "31",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "32",
+      "arrival_time": "07:41:00",
+      "departure_time": "07:41:00"
+    },
+    {
+      "trip_id": "l7-0-weekdays",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "33",
+      "arrival_time": "07:41:00",
+      "departure_time": "07:41:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-avbernardopimentaestádio",
+      "stop_sequence": "1",
+      "arrival_time": "07:50:00",
+      "departure_time": "07:50:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-rcapitãomouzinhodealbuquerque",
+      "stop_sequence": "2",
+      "arrival_time": "07:51:00",
+      "departure_time": "07:51:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "3",
+      "arrival_time": "07:52:00",
+      "departure_time": "07:52:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "4",
+      "arrival_time": "07:53:00",
+      "departure_time": "07:53:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "5",
+      "arrival_time": "07:54:00",
+      "departure_time": "07:54:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "6",
+      "arrival_time": "07:54:00",
+      "departure_time": "07:54:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "08:01:00",
+      "departure_time": "08:01:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "8",
+      "arrival_time": "08:02:00",
+      "departure_time": "08:02:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "9",
+      "arrival_time": "08:03:00",
+      "departure_time": "08:03:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "10",
+      "arrival_time": "08:04:00",
+      "departure_time": "08:04:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "11",
+      "arrival_time": "08:06:00",
+      "departure_time": "08:06:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-escolabásicadovidigal",
+      "stop_sequence": "12",
+      "arrival_time": "08:07:00",
+      "departure_time": "08:07:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-vidigaldecimaavprincipal",
+      "stop_sequence": "13",
+      "arrival_time": "08:07:00",
+      "departure_time": "08:07:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-vidigaldecimaxruadobairro",
+      "stop_sequence": "14",
+      "arrival_time": "08:08:00",
+      "departure_time": "08:08:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-vidigaldecimacemitériovidigal",
+      "stop_sequence": "15",
+      "arrival_time": "08:09:00",
+      "departure_time": "08:09:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-avprincipal",
+      "stop_sequence": "16",
+      "arrival_time": "08:10:00",
+      "departure_time": "08:10:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-avprincipalxruacruzouruabailadouro",
+      "stop_sequence": "17",
+      "arrival_time": "08:11:00",
+      "departure_time": "08:11:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-escolabásicatouria",
+      "stop_sequence": "18",
+      "arrival_time": "08:12:00",
+      "departure_time": "08:12:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruamonten113",
+      "stop_sequence": "19",
+      "arrival_time": "08:13:00",
+      "departure_time": "08:13:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruavirgíliomonteiro",
+      "stop_sequence": "20",
+      "arrival_time": "08:14:00",
+      "departure_time": "08:14:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruavirgíliomonteirocemitério",
+      "stop_sequence": "21",
+      "arrival_time": "08:16:00",
+      "departure_time": "08:16:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-rotundadosfilarmónicos",
+      "stop_sequence": "22",
+      "arrival_time": "08:20:00",
+      "departure_time": "08:20:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-estcasalmatos",
+      "stop_sequence": "23",
+      "arrival_time": "08:20:00",
+      "departure_time": "08:20:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-juntafreguesiapousos",
+      "stop_sequence": "24",
+      "arrival_time": "08:21:00",
+      "departure_time": "08:21:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-xcasaldematos",
+      "stop_sequence": "25",
+      "arrival_time": "08:23:00",
+      "departure_time": "08:23:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-rprofabílioalvesdebritofarmácia",
+      "stop_sequence": "26",
+      "arrival_time": "08:24:00",
+      "departure_time": "08:24:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruacoroneljosépereirapascoal",
+      "stop_sequence": "27",
+      "arrival_time": "08:24:00",
+      "departure_time": "08:24:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-escolacorreiamateus",
+      "stop_sequence": "28",
+      "arrival_time": "08:28:00",
+      "departure_time": "08:28:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruadasolhalvashospitalsantoandré",
+      "stop_sequence": "29",
+      "arrival_time": "08:29:00",
+      "departure_time": "08:29:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruadesantoandré",
+      "stop_sequence": "30",
+      "arrival_time": "08:29:00",
+      "departure_time": "08:29:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-ruadasolhalvas",
+      "stop_sequence": "31",
+      "arrival_time": "08:29:00",
+      "departure_time": "08:29:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "32",
+      "arrival_time": "08:31:00",
+      "departure_time": "08:31:00"
+    },
+    {
+      "trip_id": "l7-50-weekdays",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "33",
+      "arrival_time": "08:31:00",
+      "departure_time": "08:31:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-avbernardopimentaestádio",
+      "stop_sequence": "1",
+      "arrival_time": "07:00:00",
+      "departure_time": "07:00:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-rcapitãomouzinhodealbuquerque",
+      "stop_sequence": "2",
+      "arrival_time": "07:01:00",
+      "departure_time": "07:01:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "3",
+      "arrival_time": "07:02:00",
+      "departure_time": "07:02:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "4",
+      "arrival_time": "07:03:00",
+      "departure_time": "07:03:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "5",
+      "arrival_time": "07:04:00",
+      "departure_time": "07:04:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "6",
+      "arrival_time": "07:04:00",
+      "departure_time": "07:04:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "07:11:00",
+      "departure_time": "07:11:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "8",
+      "arrival_time": "07:12:00",
+      "departure_time": "07:12:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "9",
+      "arrival_time": "07:13:00",
+      "departure_time": "07:13:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "10",
+      "arrival_time": "07:14:00",
+      "departure_time": "07:14:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "11",
+      "arrival_time": "07:16:00",
+      "departure_time": "07:16:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-escolabásicadovidigal",
+      "stop_sequence": "12",
+      "arrival_time": "07:17:00",
+      "departure_time": "07:17:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-vidigaldecimaavprincipal",
+      "stop_sequence": "13",
+      "arrival_time": "07:17:00",
+      "departure_time": "07:17:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-vidigaldecimaxruadobairro",
+      "stop_sequence": "14",
+      "arrival_time": "07:18:00",
+      "departure_time": "07:18:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-vidigaldecimacemitériovidigal",
+      "stop_sequence": "15",
+      "arrival_time": "07:19:00",
+      "departure_time": "07:19:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-avprincipal",
+      "stop_sequence": "16",
+      "arrival_time": "07:20:00",
+      "departure_time": "07:20:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-avprincipalxruacruzouruabailadouro",
+      "stop_sequence": "17",
+      "arrival_time": "07:21:00",
+      "departure_time": "07:21:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-escolabásicatouria",
+      "stop_sequence": "18",
+      "arrival_time": "07:22:00",
+      "departure_time": "07:22:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruamonten113",
+      "stop_sequence": "19",
+      "arrival_time": "07:23:00",
+      "departure_time": "07:23:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruavirgíliomonteiro",
+      "stop_sequence": "20",
+      "arrival_time": "07:24:00",
+      "departure_time": "07:24:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruavirgíliomonteirocemitério",
+      "stop_sequence": "21",
+      "arrival_time": "07:26:00",
+      "departure_time": "07:26:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-rotundadosfilarmónicos",
+      "stop_sequence": "22",
+      "arrival_time": "07:30:00",
+      "departure_time": "07:30:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-estcasalmatos",
+      "stop_sequence": "23",
+      "arrival_time": "07:30:00",
+      "departure_time": "07:30:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-juntafreguesiapousos",
+      "stop_sequence": "24",
+      "arrival_time": "07:31:00",
+      "departure_time": "07:31:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-xcasaldematos",
+      "stop_sequence": "25",
+      "arrival_time": "07:33:00",
+      "departure_time": "07:33:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-rprofabílioalvesdebritofarmácia",
+      "stop_sequence": "26",
+      "arrival_time": "07:34:00",
+      "departure_time": "07:34:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruacoroneljosépereirapascoal",
+      "stop_sequence": "27",
+      "arrival_time": "07:34:00",
+      "departure_time": "07:34:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-escolacorreiamateus",
+      "stop_sequence": "28",
+      "arrival_time": "07:38:00",
+      "departure_time": "07:38:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruadasolhalvashospitalsantoandré",
+      "stop_sequence": "29",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruadesantoandré",
+      "stop_sequence": "30",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-ruadasolhalvas",
+      "stop_sequence": "31",
+      "arrival_time": "07:39:00",
+      "departure_time": "07:39:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-bombeirosmunicipais",
+      "stop_sequence": "32",
+      "arrival_time": "07:41:00",
+      "departure_time": "07:41:00"
+    },
+    {
+      "trip_id": "l7-0-weekends",
+      "stop_id": "s-pontehintzeribeiro",
+      "stop_sequence": "33",
+      "arrival_time": "07:41:00",
+      "departure_time": "07:41:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "08:30:00",
+      "departure_time": "08:30:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "08:32:00",
+      "departure_time": "08:32:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "08:33:00",
+      "departure_time": "08:33:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "08:33:00",
+      "departure_time": "08:33:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "08:34:00",
+      "departure_time": "08:34:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "08:35:00",
+      "departure_time": "08:35:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "08:36:00",
+      "departure_time": "08:36:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "08:37:00",
+      "departure_time": "08:37:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "08:41:00",
+      "departure_time": "08:41:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "08:45:00",
+      "departure_time": "08:45:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "08:49:00",
+      "departure_time": "08:49:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "08:50:00",
+      "departure_time": "08:50:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "08:51:00",
+      "departure_time": "08:51:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "08:52:00",
+      "departure_time": "08:52:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "08:53:00",
+      "departure_time": "08:53:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "08:54:00",
+      "departure_time": "08:54:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "08:55:00",
+      "departure_time": "08:55:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "08:56:00",
+      "departure_time": "08:56:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "08:57:00",
+      "departure_time": "08:57:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "08:58:00",
+      "departure_time": "08:58:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "08:59:00",
+      "departure_time": "08:59:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "08:59:00",
+      "departure_time": "08:59:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "09:00:00",
+      "departure_time": "09:00:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "09:01:00",
+      "departure_time": "09:01:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "09:03:00",
+      "departure_time": "09:03:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "09:04:00",
+      "departure_time": "09:04:00"
+    },
+    {
+      "trip_id": "l8-0-weekdays",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "09:07:00",
+      "departure_time": "09:07:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "09:45:00",
+      "departure_time": "09:45:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "09:47:00",
+      "departure_time": "09:47:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "09:48:00",
+      "departure_time": "09:48:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "09:48:00",
+      "departure_time": "09:48:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "09:49:00",
+      "departure_time": "09:49:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "09:50:00",
+      "departure_time": "09:50:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "09:51:00",
+      "departure_time": "09:51:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "09:52:00",
+      "departure_time": "09:52:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "09:56:00",
+      "departure_time": "09:56:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "10:00:00",
+      "departure_time": "10:00:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "10:04:00",
+      "departure_time": "10:04:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "10:05:00",
+      "departure_time": "10:05:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "10:06:00",
+      "departure_time": "10:06:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "10:07:00",
+      "departure_time": "10:07:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "10:08:00",
+      "departure_time": "10:08:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "10:09:00",
+      "departure_time": "10:09:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "10:10:00",
+      "departure_time": "10:10:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "10:11:00",
+      "departure_time": "10:11:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "10:12:00",
+      "departure_time": "10:12:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "10:13:00",
+      "departure_time": "10:13:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "10:14:00",
+      "departure_time": "10:14:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "10:14:00",
+      "departure_time": "10:14:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "10:15:00",
+      "departure_time": "10:15:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "10:16:00",
+      "departure_time": "10:16:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "10:18:00",
+      "departure_time": "10:18:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "10:19:00",
+      "departure_time": "10:19:00"
+    },
+    {
+      "trip_id": "l8-75-weekdays",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "10:22:00",
+      "departure_time": "10:22:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "12:45:00",
+      "departure_time": "12:45:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "12:47:00",
+      "departure_time": "12:47:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "12:48:00",
+      "departure_time": "12:48:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "12:48:00",
+      "departure_time": "12:48:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "12:49:00",
+      "departure_time": "12:49:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "12:50:00",
+      "departure_time": "12:50:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "12:51:00",
+      "departure_time": "12:51:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "12:52:00",
+      "departure_time": "12:52:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "12:56:00",
+      "departure_time": "12:56:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "13:00:00",
+      "departure_time": "13:00:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "13:04:00",
+      "departure_time": "13:04:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "13:05:00",
+      "departure_time": "13:05:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "13:06:00",
+      "departure_time": "13:06:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "13:07:00",
+      "departure_time": "13:07:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "13:08:00",
+      "departure_time": "13:08:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "13:09:00",
+      "departure_time": "13:09:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "13:10:00",
+      "departure_time": "13:10:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "13:11:00",
+      "departure_time": "13:11:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "13:12:00",
+      "departure_time": "13:12:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "13:13:00",
+      "departure_time": "13:13:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "13:14:00",
+      "departure_time": "13:14:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "13:14:00",
+      "departure_time": "13:14:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "13:15:00",
+      "departure_time": "13:15:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "13:16:00",
+      "departure_time": "13:16:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "13:18:00",
+      "departure_time": "13:18:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "13:19:00",
+      "departure_time": "13:19:00"
+    },
+    {
+      "trip_id": "l8-255-weekdays",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "13:22:00",
+      "departure_time": "13:22:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "16:15:00",
+      "departure_time": "16:15:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "16:17:00",
+      "departure_time": "16:17:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "16:18:00",
+      "departure_time": "16:18:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "16:18:00",
+      "departure_time": "16:18:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "16:19:00",
+      "departure_time": "16:19:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "16:20:00",
+      "departure_time": "16:20:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "16:21:00",
+      "departure_time": "16:21:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "16:22:00",
+      "departure_time": "16:22:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "16:26:00",
+      "departure_time": "16:26:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "16:30:00",
+      "departure_time": "16:30:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "16:34:00",
+      "departure_time": "16:34:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "16:35:00",
+      "departure_time": "16:35:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "16:36:00",
+      "departure_time": "16:36:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "16:37:00",
+      "departure_time": "16:37:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "16:38:00",
+      "departure_time": "16:38:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "16:39:00",
+      "departure_time": "16:39:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "16:40:00",
+      "departure_time": "16:40:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "16:41:00",
+      "departure_time": "16:41:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "16:42:00",
+      "departure_time": "16:42:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "16:43:00",
+      "departure_time": "16:43:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "16:44:00",
+      "departure_time": "16:44:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "16:44:00",
+      "departure_time": "16:44:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "16:45:00",
+      "departure_time": "16:45:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "16:46:00",
+      "departure_time": "16:46:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "16:48:00",
+      "departure_time": "16:48:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "16:49:00",
+      "departure_time": "16:49:00"
+    },
+    {
+      "trip_id": "l8-465-weekdays",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "16:52:00",
+      "departure_time": "16:52:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "08:30:00",
+      "departure_time": "08:30:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "08:32:00",
+      "departure_time": "08:32:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "08:33:00",
+      "departure_time": "08:33:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "08:33:00",
+      "departure_time": "08:33:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "08:34:00",
+      "departure_time": "08:34:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "08:35:00",
+      "departure_time": "08:35:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "08:36:00",
+      "departure_time": "08:36:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "08:37:00",
+      "departure_time": "08:37:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "08:41:00",
+      "departure_time": "08:41:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "08:45:00",
+      "departure_time": "08:45:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "08:49:00",
+      "departure_time": "08:49:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "08:50:00",
+      "departure_time": "08:50:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "08:51:00",
+      "departure_time": "08:51:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "08:52:00",
+      "departure_time": "08:52:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "08:53:00",
+      "departure_time": "08:53:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "08:54:00",
+      "departure_time": "08:54:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "08:55:00",
+      "departure_time": "08:55:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "08:56:00",
+      "departure_time": "08:56:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "08:57:00",
+      "departure_time": "08:57:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "08:58:00",
+      "departure_time": "08:58:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "08:59:00",
+      "departure_time": "08:59:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "08:59:00",
+      "departure_time": "08:59:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "09:00:00",
+      "departure_time": "09:00:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "09:01:00",
+      "departure_time": "09:01:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "09:03:00",
+      "departure_time": "09:03:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "09:04:00",
+      "departure_time": "09:04:00"
+    },
+    {
+      "trip_id": "l8-0-weekends",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "09:07:00",
+      "departure_time": "09:07:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "12:30:00",
+      "departure_time": "12:30:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "12:32:00",
+      "departure_time": "12:32:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "12:33:00",
+      "departure_time": "12:33:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "12:33:00",
+      "departure_time": "12:33:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "12:34:00",
+      "departure_time": "12:34:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "12:35:00",
+      "departure_time": "12:35:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "12:36:00",
+      "departure_time": "12:36:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "12:37:00",
+      "departure_time": "12:37:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "12:41:00",
+      "departure_time": "12:41:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "12:45:00",
+      "departure_time": "12:45:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "12:49:00",
+      "departure_time": "12:49:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "12:50:00",
+      "departure_time": "12:50:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "12:51:00",
+      "departure_time": "12:51:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "12:52:00",
+      "departure_time": "12:52:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "12:53:00",
+      "departure_time": "12:53:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "12:54:00",
+      "departure_time": "12:54:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "12:55:00",
+      "departure_time": "12:55:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "12:56:00",
+      "departure_time": "12:56:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "12:57:00",
+      "departure_time": "12:57:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "12:58:00",
+      "departure_time": "12:58:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "12:59:00",
+      "departure_time": "12:59:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "12:59:00",
+      "departure_time": "12:59:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "13:00:00",
+      "departure_time": "13:00:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "13:01:00",
+      "departure_time": "13:01:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "13:03:00",
+      "departure_time": "13:03:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "13:04:00",
+      "departure_time": "13:04:00"
+    },
+    {
+      "trip_id": "l8-240-weekends",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "13:07:00",
+      "departure_time": "13:07:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avbernardopimentaterminal",
+      "stop_sequence": "1",
+      "arrival_time": "16:15:00",
+      "departure_time": "16:15:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-largocónegomaiasé",
+      "stop_sequence": "2",
+      "arrival_time": "16:17:00",
+      "departure_time": "16:17:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-fontedas3bicas",
+      "stop_sequence": "3",
+      "arrival_time": "16:18:00",
+      "departure_time": "16:18:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "4",
+      "arrival_time": "16:18:00",
+      "departure_time": "16:18:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado1",
+      "stop_sequence": "5",
+      "arrival_time": "16:19:00",
+      "departure_time": "16:19:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avgeneralhumbertodelgado2",
+      "stop_sequence": "6",
+      "arrival_time": "16:20:00",
+      "departure_time": "16:20:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "7",
+      "arrival_time": "16:21:00",
+      "departure_time": "16:21:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-escolabásicadaguimarota",
+      "stop_sequence": "8",
+      "arrival_time": "16:22:00",
+      "departure_time": "16:22:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-moinhonovo",
+      "stop_sequence": "9",
+      "arrival_time": "16:26:00",
+      "departure_time": "16:26:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-lourais",
+      "stop_sequence": "10",
+      "arrival_time": "16:30:00",
+      "departure_time": "16:30:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-xrfilarmónica",
+      "stop_sequence": "11",
+      "arrival_time": "16:34:00",
+      "departure_time": "16:34:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-juntafreguesiaruahelenaaboimlvieira",
+      "stop_sequence": "12",
+      "arrival_time": "16:35:00",
+      "departure_time": "16:35:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-ruasantamaria",
+      "stop_sequence": "13",
+      "arrival_time": "16:36:00",
+      "departure_time": "16:36:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-estradadaribeira",
+      "stop_sequence": "14",
+      "arrival_time": "16:37:00",
+      "departure_time": "16:37:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-zambujordobarrolo",
+      "stop_sequence": "15",
+      "arrival_time": "16:38:00",
+      "departure_time": "16:38:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-vidigaldebaixorua29junho",
+      "stop_sequence": "16",
+      "arrival_time": "16:39:00",
+      "departure_time": "16:39:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-vidigaldebaixo",
+      "stop_sequence": "17",
+      "arrival_time": "16:40:00",
+      "departure_time": "16:40:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-ruansfátima",
+      "stop_sequence": "18",
+      "arrival_time": "16:41:00",
+      "departure_time": "16:41:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-ruadacooperativaxcasaldosmatos",
+      "stop_sequence": "19",
+      "arrival_time": "16:42:00",
+      "departure_time": "16:42:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-escolaprofissionalisla",
+      "stop_sequence": "20",
+      "arrival_time": "16:43:00",
+      "departure_time": "16:43:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-guimarota",
+      "stop_sequence": "21",
+      "arrival_time": "16:44:00",
+      "departure_time": "16:44:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avnsfátima",
+      "stop_sequence": "22",
+      "arrival_time": "16:44:00",
+      "departure_time": "16:44:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avnsfátimasradaencarnação",
+      "stop_sequence": "23",
+      "arrival_time": "16:45:00",
+      "departure_time": "16:45:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-largosantoagostinho",
+      "stop_sequence": "24",
+      "arrival_time": "16:46:00",
+      "departure_time": "16:46:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-jardimluísdecamões",
+      "stop_sequence": "25",
+      "arrival_time": "16:48:00",
+      "departure_time": "16:48:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-ruadraméricocortezpinto",
+      "stop_sequence": "26",
+      "arrival_time": "16:49:00",
+      "departure_time": "16:49:00"
+    },
+    {
+      "trip_id": "l8-465-weekends",
+      "stop_id": "s-avcidademaringámercadomunicipal",
+      "stop_sequence": "27",
+      "arrival_time": "16:52:00",
+      "departure_time": "16:52:00"
+    },
+    {
+      "trip_id": "l1-0-weekdays",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "06:41:00",
+      "departure_time": "06:41:00"
+    },
+    {
+      "trip_id": "l1-0-weekdays",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "06:42:00",
+      "departure_time": "06:42:00"
+    },
+    {
+      "trip_id": "l1-0-weekdays",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "06:43:00",
+      "departure_time": "06:43:00"
+    },
+    {
+      "trip_id": "l1-0-weekdays",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "06:46:00",
+      "departure_time": "06:46:00"
+    },
+    {
+      "trip_id": "l1-30-weekdays",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "07:11:00",
+      "departure_time": "07:11:00"
+    },
+    {
+      "trip_id": "l1-30-weekdays",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "07:12:00",
+      "departure_time": "07:12:00"
+    },
+    {
+      "trip_id": "l1-30-weekdays",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "07:13:00",
+      "departure_time": "07:13:00"
+    },
+    {
+      "trip_id": "l1-30-weekdays",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "07:16:00",
+      "departure_time": "07:16:00"
+    },
+    {
+      "trip_id": "l1-0-saturday",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "06:41:00",
+      "departure_time": "06:41:00"
+    },
+    {
+      "trip_id": "l1-0-saturday",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "06:42:00",
+      "departure_time": "06:42:00"
+    },
+    {
+      "trip_id": "l1-0-saturday",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "06:43:00",
+      "departure_time": "06:43:00"
+    },
+    {
+      "trip_id": "l1-0-saturday",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "06:46:00",
+      "departure_time": "06:46:00"
+    },
+    {
+      "trip_id": "l1-90-saturday",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "08:11:00",
+      "departure_time": "08:11:00"
+    },
+    {
+      "trip_id": "l1-90-saturday",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "08:12:00",
+      "departure_time": "08:12:00"
+    },
+    {
+      "trip_id": "l1-90-saturday",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "08:13:00",
+      "departure_time": "08:13:00"
+    },
+    {
+      "trip_id": "l1-90-saturday",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "08:16:00",
+      "departure_time": "08:16:00"
+    },
+    {
+      "trip_id": "l1-30-sunday",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "07:11:00",
+      "departure_time": "07:11:00"
+    },
+    {
+      "trip_id": "l1-30-sunday",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "07:12:00",
+      "departure_time": "07:12:00"
+    },
+    {
+      "trip_id": "l1-30-sunday",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "07:13:00",
+      "departure_time": "07:13:00"
+    },
+    {
+      "trip_id": "l1-30-sunday",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "07:16:00",
+      "departure_time": "07:16:00"
+    },
+    {
+      "trip_id": "l1-150-sunday",
+      "stop_id": "s-arrabaldedaponte",
+      "stop_sequence": "1",
+      "arrival_time": "09:11:00",
+      "departure_time": "09:11:00"
+    },
+    {
+      "trip_id": "l1-150-sunday",
+      "stop_id": "s-novaleiria",
+      "stop_sequence": "2",
+      "arrival_time": "09:12:00",
+      "departure_time": "09:12:00"
+    },
+    {
+      "trip_id": "l1-150-sunday",
+      "stop_id": "s-almoínhagrandearrabaldedaponte",
+      "stop_sequence": "3",
+      "arrival_time": "09:13:00",
+      "departure_time": "09:13:00"
+    },
+    {
+      "trip_id": "l1-150-sunday",
+      "stop_id": "s-bairrodasalmoínhas",
+      "stop_sequence": "4",
+      "arrival_time": "09:16:00",
+      "departure_time": "09:16:00"
+    }
+  ],
+  "calendar": [
+    {
+      "service_id": "weekdays",
+      "monday": "1",
+      "tuesday": "1",
+      "wednesday": "1",
+      "thursday": "1",
+      "friday": "1",
+      "saturday": "0",
+      "sunday": "0",
+      "start_date": "20260101",
+      "end_date": "20261231"
+    },
+    {
+      "service_id": "weekends",
+      "monday": "0",
+      "tuesday": "0",
+      "wednesday": "0",
+      "thursday": "0",
+      "friday": "0",
+      "saturday": "1",
+      "sunday": "1",
+      "start_date": "20260101",
+      "end_date": "20261231"
+    },
+    {
+      "service_id": "saturday",
+      "monday": "0",
+      "tuesday": "0",
+      "wednesday": "0",
+      "thursday": "0",
+      "friday": "0",
+      "saturday": "1",
+      "sunday": "0",
+      "start_date": "20260101",
+      "end_date": "20261231"
+    },
+    {
+      "service_id": "sunday",
+      "monday": "0",
+      "tuesday": "0",
+      "wednesday": "0",
+      "thursday": "0",
+      "friday": "0",
+      "saturday": "0",
+      "sunday": "1",
+      "start_date": "20260101",
+      "end_date": "20261231"
+    }
+  ],
+  "calendarDates": [],
+  "updatedAt": "2026-10-31T00:00:00Z",
+  "source": "Moovit — amostra verificada por paragem (NÃO GTFS oficial)",
+  "sourceUrl": "https://moovitapp.com/index/pt/transportes_p%C3%BAblicos-lines-Lisboa-2460-3784393",
+  "partial": true,
+  "coverage": "Linhas 1 (4 paragens), 7 (33 posições), 8 (27 posições); só circulações verificadas. Não cobre todos os horários e sentidos.",
+  "notOfficialGTFS": true
+}
