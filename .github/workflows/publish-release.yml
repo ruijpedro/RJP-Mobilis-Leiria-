@@ -54,6 +54,7 @@ jobs:
         run: |
           if [ ! -d android ]; then npx cap add android; fi
           npx cap sync android
+          python scripts/ensure_gps_permissions.py
           python -m pip install --disable-pip-version-check Pillow
           python scripts/generate_android_icons.py
       - name: Configurar versão Android
