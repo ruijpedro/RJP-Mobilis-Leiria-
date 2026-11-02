@@ -1,6 +1,6 @@
 {
   "name": "rjp-mobilis-leiria",
-  "version": "1.9.0-rc.3.5-firebase",
+  "version": "1.10.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -20,7 +20,7 @@
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
     "firebase": "^12.5.0",
-    "@capacitor/geolocation": "^7.1.5"
+    "@capacitor/geolocation": "^7.1.0"
   },
   "devDependencies": {}
 }
