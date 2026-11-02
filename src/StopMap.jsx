@@ -7,7 +7,7 @@ import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import {loadOSM,associateGTFS} from './osm';
-import {upcoming,nearbyStops} from './gtfs';
+import {upcoming,nearbyStops,normalise} from './gtfs';
 import {availableLines,routeStopSequence,routeColor} from './routes.js';
 import {loadOsmNetwork,routeDescription} from './osmNetwork.js';
 import {walkingDirectionsUrl} from './walking.js';
@@ -17,7 +17,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
  const [crowdMessage,setCrowdMessage]=useState(''),[crowdBusy,setCrowdBusy]=useState(false),[crowdLine,setCrowdLine]=useState(''),[osm,setOsm]=useState([]),[status,setStatus]=useState('A obter paragens OpenStreetMap…'),[active,setActive]=useState(null),[filter,setFilter]=useState(''),[busy,setBusy]=useState(false),[line,setLine]=useState(''),[osmRoutes,setOsmRoutes]=useState([]),[osmLine,setOsmLine]=useState('');
  const gtfs=data?.stops||[];
  const lines=useMemo(()=>data?availableLines(data):[],[data]);
- const visible=useMemo(()=>{const q=filter.trim().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLocaleLowerCase('pt');return q?osm.filter(s=>s.stop_name.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLocaleLowerCase('pt').includes(q)):osm},[osm,filter]);
+ const visible=useMemo(()=>{const q=normalise(filter);return q?osm.filter(stop=>normalise(stop.stop_name).includes(q)):osm},[osm,filter]);
  async function refresh(force=false){setBusy(true);try{const res=await loadOSM({force});setOsm(res.stops);setStatus(`${res.stops.length} paragens cartografadas · ${res.cache?'cópia local':'OpenStreetMap'}${res.warning?' · '+res.warning:''}`)}catch(e){setStatus('Não foi possível carregar as paragens: '+e.message)}finally{setBusy(false)}}
  useEffect(()=>{refresh(false);loadOsmNetwork().then(setOsmRoutes)},[]);
  useEffect(()=>{if(!div.current||map.current)return;const m=L.map(div.current,{zoomControl:true}).setView([39.743,-8.806],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(m);map.current=m;markers.current=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:48,disableClusteringAtZoom:17});m.addLayer(markers.current);routeLayer.current=L.layerGroup().addTo(m);gpsLayer.current=L.layerGroup().addTo(m);const resize=setTimeout(()=>m.invalidateSize(),150);return()=>{clearTimeout(resize);m.remove();map.current=null}},[]);
