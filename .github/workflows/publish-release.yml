@@ -82,6 +82,14 @@ jobs:
         run: |
           chmod +x android/gradlew
           cd android && ./gradlew assembleRelease --stacktrace
+      - name: Verificar ícone personalizado dentro da APK
+        run: |
+          set -euo pipefail
+          APK="android/app/build/outputs/apk/release/app-release-unsigned.apk"
+          unzip -Z1 "$APK" | grep -E 'res/mipmap-[^/]+/ic_launcher[^/]*\\.png' > "$RUNNER_TEMP/mobilis-icon-resources.txt"
+          test "$(wc -l < "$RUNNER_TEMP/mobilis-icon-resources.txt")" -ge 5 || { echo 'Ícones Android ausentes do pacote'; exit 1; }
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | grep -E '^application:|^application-icon-' | head -n 12
+          echo 'APK inclui ícones personalizados RJP Mobilis.'
       - name: Assinar e verificar APK
         env:
           ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
