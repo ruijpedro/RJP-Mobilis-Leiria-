@@ -25,3 +25,9 @@ O `measurementId` foi guardado, mas Analytics não é inicializado na app para e
 **Atenção ao App Check:** `submitObservedPassage` usa `enforceAppCheck:true`. Para funcionar, é preciso criar/configurar um provedor App Check, definir `VITE_FIREBASE_APPCHECK_SITE_KEY` no ambiente de compilação e validar a solução para Android WebView. Sem isto, o servidor rejeita a submissão. Não desativar a proteção numa implantação pública só para ultrapassar a configuração.
 
 **Ainda necessário na consola:** ativar Authentication > Anonymous, criar Firestore, publicar regras e Cloud Function, e importar `verifiedStops` por um processo administrativo. Não foi possível comprovar essas ativações apenas pela configuração Web.
+
+
+## Correção RC3.1 (02/11/2026)
+- `activeService`: sem calendário GTFS explícito não se presume circulação.
+- Testes de duração: calendário de dias úteis declarado no cenário de teste e ausência de ligação expressa por `[]`.
+- Horários provisórios que se pretendam usar no planeador precisam de calendário assumido e identificado como tal; nenhum horário foi inventado nesta correção.
