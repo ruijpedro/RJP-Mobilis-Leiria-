@@ -153,3 +153,8 @@ Validação de futuras transcrições: `python scripts/validate_stop_schedule.py
 
 ## RC2: Localização e percurso a pé
 Ao primeiro arranque, a app apresenta uma explicação e botão para pedir autorização de GPS. A autorização real é gerida pelo Android/navegador; pode ser recusada e reativada com o botão GPS. É necessário HTTPS na WebApp. A opção «Como chegar a pé» na ficha de qualquer paragem abre o Google Maps em modo pedonal, tendo a posição GPS como origem se tiver sido autorizada; caso contrário o serviço de mapas determina a origem. A rota e a duração não são calculadas internamente pela aplicação e requerem serviço de mapas disponível.
+
+
+## RC3.2 — correção dos testes GTFS
+Os testes de demonstração de transbordos e atrasos incluem agora calendários GTFS explícitos. Foi reposta a cobertura de `src/mapdata.js` e os respetivos testes. A aplicação continua a recusar previsões sem calendário confirmado.
+A instalação de npm e compilação Android devem ser validadas no GitHub Actions.

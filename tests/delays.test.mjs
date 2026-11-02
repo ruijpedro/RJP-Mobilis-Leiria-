@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {plan} from '../src/gtfs.js';
-const data={stops:[],routes:[{route_id:'7',route_short_name:'7'},{route_id:'10',route_short_name:'10'}], trips:[{trip_id:'a',route_id:'7',service_id:'x'},{trip_id:'b',route_id:'10',service_id:'x'},{trip_id:'c',route_id:'10',service_id:'x'}],calendar:[],calendarDates:[],stopTimes:[
+const data={stops:[],routes:[{route_id:'7',route_short_name:'7'},{route_id:'10',route_short_name:'10'}], trips:[{trip_id:'a',route_id:'7',service_id:'x'},{trip_id:'b',route_id:'10',service_id:'x'},{trip_id:'c',route_id:'10',service_id:'x'}],calendar:[{service_id:'x',start_date:'20261001',end_date:'20261231',monday:'1',tuesday:'1',wednesday:'1',thursday:'1',friday:'1',saturday:'1',sunday:'1'}],calendarDates:[],stopTimes:[
  {trip_id:'a',stop_id:'vidigal',stop_sequence:'1',departure_time:'14:20:00',arrival_time:'14:20:00'},
  {trip_id:'a',stop_id:'campo',stop_sequence:'2',departure_time:'14:35:00',arrival_time:'14:35:00'},
  {trip_id:'b',stop_id:'campo',stop_sequence:'1',departure_time:'14:40:00',arrival_time:'14:40:00'},
