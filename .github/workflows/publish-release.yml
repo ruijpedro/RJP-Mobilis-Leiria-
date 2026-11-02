@@ -104,5 +104,4 @@ jobs:
           gh release create "$RELEASE_VERSION" RJP-Mobilis-Leiria.apk RJP-Mobilis-WebApp.zip \
             --target "$GITHUB_SHA" \
             --title "RJP Mobilis Leiria $RELEASE_VERSION" \
-            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real." \
-            --verify-tag
+            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real."
