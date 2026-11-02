@@ -16,3 +16,38 @@
 .gps-modal-backdrop{position:fixed;inset:0;background:#071d32ad;z-index:10000;display:grid;place-items:center;padding:18px}.gps-modal{width:min(100%,420px);background:white;color:#17334b;border-radius:18px;padding:24px;box-shadow:0 20px 70px #0005}.gps-modal h2{margin-top:0}.gps-modal p{line-height:1.5}.gps-modal-actions{display:grid;gap:9px}.gps-modal-actions button:not(.primary){border:1px solid #cedae5;background:white;border-radius:11px;padding:13px;color:#17334b}.walk-button{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:9px;background:#176b51;color:white;text-decoration:none;font-weight:750;font-size:13px}.walk-button:focus-visible{outline:3px solid #f1b43b;outline-offset:2px}
 
 .crowd-panel{border:1px solid #d6e1e9;padding:12px;margin:12px 0;border-radius:12px;background:#f8fafb}.crowd-panel input{min-width:120px;max-width:190px;padding:9px;border:1px solid #cbd5e1;border-radius:8px}.crowd-panel button:disabled{opacity:.5}
+
+/* RJP Mobilis V1.10.2 — identidade visual baseada no ícone IconKitchen */
+:root{
+  --mobilis-navy:#062e59;
+  --mobilis-deep:#061b37;
+  --mobilis-blue:#1768a5;
+  --mobilis-yellow:#ffc51d;
+  --mobilis-cream:#f5f8fc;
+  --mobilis-border:#dce6ef;
+  color:#112e4d;
+  background:var(--mobilis-cream);
+}
+body{background:var(--mobilis-cream)}
+header{background:linear-gradient(115deg,var(--mobilis-deep),var(--mobilis-navy) 67%,#12578b);border-bottom:4px solid var(--mobilis-yellow)}
+.brandicon{background:transparent;border-radius:13px;padding:0;display:grid;place-items:center;overflow:hidden;width:51px;height:51px;flex-shrink:0}
+.brandicon img{width:100%;height:100%;display:block;object-fit:contain}
+.brand b{color:#fff;letter-spacing:1px}
+.brand small,.version{color:#d7e7f4}
+.version{white-space:nowrap;background:#ffffff18;border:1px solid #ffffff35;border-radius:30px;padding:5px 9px}
+.hero h1{color:var(--mobilis-navy)}
+.hero p{color:#506b83}
+.tabs button{color:#486782}
+.tabs button.active{border-color:var(--mobilis-yellow);color:var(--mobilis-navy)}
+.panel{border-color:var(--mobilis-border)}
+.primary,.upload{background:var(--mobilis-yellow);color:var(--mobilis-deep);box-shadow:0 2px 0 #c88e0a}
+.primary:focus-visible,.upload:focus-within,.tabs button:focus-visible,.gps-button:focus-visible{outline:3px solid #ffc51d;outline-offset:3px}
+.gps-button{background:var(--mobilis-navy);color:#fff}
+.line,.line-chip{background:var(--mobilis-navy);color:#fff}
+.rjp-marker{border:2px solid var(--mobilis-navy);background:var(--mobilis-yellow)}
+.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--mobilis-navy);color:#fff}
+.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:#f6c326af}
+.mapdetails{border-left-color:var(--mobilis-yellow)}
+.walk-button{background:var(--mobilis-blue)}
+a{accent-color:var(--mobilis-blue)}
+@media(max-width:420px){header{padding:13px 14px}.brand b{font-size:16px}.brandicon{width:44px;height:44px}.version{font-size:11px}}
