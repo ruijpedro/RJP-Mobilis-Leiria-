@@ -16,5 +16,11 @@ for permission in ("android.permission.ACCESS_FINE_LOCATION", "android.permissio
         el = ET.Element("uses-permission")
         el.set(f"{{{android}}}name", permission)
         root.insert(0, el)
+# Capacitor pode recriar o Manifest: garantir ícones personalizados.
+application = root.find("application")
+if application is None:
+    raise SystemExit("Application em falta no AndroidManifest.xml")
+application.set(f"{{{android}}}icon", "@mipmap/ic_launcher")
+application.set(f"{{{android}}}roundIcon", "@mipmap/ic_launcher_round")
 tree.write(path, encoding="utf-8", xml_declaration=True)
-print("Manifest Android com permissões GPS verificadas.")
+print("Manifest Android: GPS e ícones personalizados associados explicitamente.")
