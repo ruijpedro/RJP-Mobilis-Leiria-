@@ -35,7 +35,7 @@ jobs:
           python scripts/verify_web_icons.py
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-WebApp-V1.10.3
+          name: RJP-Mobilis-WebApp-V1.10.4
           path: dist/
           if-no-files-found: error
   android:
@@ -86,6 +86,6 @@ jobs:
           unzip -Z1 "$APK" | grep -Eq 'res/mipmap-[^/]+/ic_launcher[^/]*\\.png' || { echo 'Ícone RJP não encontrado na APK'; exit 1; }
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-Android-debug-V1.10.3
+          name: RJP-Mobilis-Android-debug-V1.10.4
           path: android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
