@@ -33,13 +33,13 @@ jobs:
       - name: Confirmar versão e assinatura configurada
         env:
           RELEASE_VERSION: ${{ inputs.version }}
-          KEYSTORE_B64: ${{ secrets.MOBILIS_KEYSTORE_BASE64 }}
+          ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.MOBILIS_KEY_ALIAS }}
+          KEY_ALIAS: rjp-mobilis
           KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
         run: |
           [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Versão inválida (usar v1.9.1)'; exit 1; }
-          for v in KEYSTORE_B64 KEYSTORE_PASSWORD KEY_ALIAS KEY_PASSWORD; do
+          for v in ENCRYPTION_PASSWORD KEYSTORE_PASSWORD KEY_PASSWORD; do
             if [ -z "${!v}" ]; then echo "Falta secret $v"; exit 1; fi
           done
       - name: Instalar e testar
@@ -80,13 +80,16 @@ jobs:
           cd android && ./gradlew assembleRelease --stacktrace
       - name: Assinar e verificar APK
         env:
-          KEYSTORE_B64: ${{ secrets.MOBILIS_KEYSTORE_BASE64 }}
+          ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.MOBILIS_KEY_ALIAS }}
+          KEY_ALIAS: rjp-mobilis
           KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
         run: |
           set -euo pipefail
-          echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/mobilis.jks"
+          test -f signing/mobilis.jks.enc || { echo "Executa primeiro Criar chave Android Mobilis"; exit 1; }
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 \
+            -in signing/mobilis.jks.enc -out "$RUNNER_TEMP/mobilis.jks" \
+            -pass env:ENCRYPTION_PASSWORD
           APK="android/app/build/outputs/apk/release/app-release-unsigned.apk"
           test -f "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/zipalign" -f -p 4 "$APK" "$RUNNER_TEMP/aligned.apk"
