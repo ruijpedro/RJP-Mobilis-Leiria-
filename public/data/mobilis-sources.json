@@ -1,5 +1,78 @@
 {
- "note": "Catálogo de páginas oficiais. NÃO contém horários ou ligações GTFS validadas.",
- "lines": [],
- "last_checked": null
+  "last_checked": "2026-11-02T13:27:15.523101+00:00",
+  "lines": [
+    {
+      "id": "1",
+      "page": "https://mobilis.pt/linhas/linha-1/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "2",
+      "page": "https://mobilis.pt/linhas/linha-2/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "3",
+      "page": "https://mobilis.pt/linhas/linha-3/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "4",
+      "page": "https://mobilis.pt/linhas/linha-4/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "5",
+      "page": "https://mobilis.pt/linhas/linha-5/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "6",
+      "page": "https://mobilis.pt/linhas/linha-6/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "7",
+      "page": "https://mobilis.pt/linhas/linha-7/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "8",
+      "page": "https://mobilis.pt/linhas/linha-8/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "9",
+      "page": "https://mobilis.pt/linhas/linha-9/",
+      "pdfs": [
+        "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf"
+      ],
+      "status": "checked"
+    }
+  ],
+  "note": "Ligações para consulta; horários ainda não foram transcritos/validados."
 }
