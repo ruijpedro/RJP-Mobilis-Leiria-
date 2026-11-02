@@ -44,7 +44,7 @@ jobs:
           done
       - name: Instalar e testar
         run: |
-          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+          npm install --no-audit --no-fund
           npm test
           npm run build
       - name: Criar pacote WebApp
