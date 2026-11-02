@@ -66,3 +66,10 @@ a{accent-color:var(--mobilis-blue)}
 
 .show-journey{border:1px solid #062e59;background:#fff;color:#062e59;border-radius:9px;padding:9px 12px;font-weight:750;cursor:pointer;min-height:42px}
 .show-journey:hover,.show-journey:focus-visible{background:#fff6d9;outline:2px solid #ffc51d}
+
+/* Localização de paragens e acessibilidade táctil */
+.stop-search-results{margin:9px 0;padding:10px;border:1px solid #dce6f0;border-radius:12px;background:#f5f9ff;display:grid;gap:7px;max-height:255px;overflow-y:auto}
+.stop-search-results strong{font-size:13px;color:#062e59}
+.stop-search-results button{min-height:46px;border:1px solid #d7e5ef;border-radius:9px;text-align:left;background:white;color:#123957;padding:9px 11px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-weight:650}
+.stop-search-results button span{font-size:11px;color:#1768a5;white-space:nowrap}
+.stop-distance{padding:9px 11px;background:#fff7da;border-radius:9px;font-size:13px;color:#2f4a61}
