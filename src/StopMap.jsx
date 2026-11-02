@@ -1,3 +1,4 @@
+import {currentLocation} from './location.js';
 import {crowdConfigured,crowdAvailable,submitObservedPassage} from './firebaseCrowd.js';
 import React,{useEffect,useRef,useState,useMemo} from 'react';
 import L from 'leaflet';
@@ -24,7 +25,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate}){
  useEffect(()=>{const layer=routeLayer.current;if(!layer||!map.current)return;layer.clearLayers();if(osmLine){const chosen=osmRoutes.find(r=>String(r.osm_id)===osmLine);if(chosen){const segments=chosen.shape_segments||[];const group=L.featureGroup();for(const segment of segments){if(segment.length>1)L.polyline(segment,{color:'#e45429',weight:5,opacity:.9}).addTo(group).addTo(layer)}if(group.getLayers().length)map.current.fitBounds(group.getBounds(),{padding:[35,35],maxZoom:15});}return;}if(!data||!line)return;const coords=routeStopSequence(data,line);if(coords.length>1){const path=L.polyline(coords,{color:routeColor(line),weight:5,opacity:.8,dashArray:'8 7'}).addTo(layer);map.current.fitBounds(path.getBounds(),{padding:[35,35],maxZoom:15})}},[data,line,osmLine,osmRoutes]);
  useEffect(()=>{const layer=gpsLayer.current;if(!layer)return;layer.clearLayers();if(geo){L.circleMarker([geo.lat,geo.lon],{radius:9,color:'#176bd0',fillColor:'#176bd0',fillOpacity:.85}).addTo(layer).bindPopup('A tua localização GPS');map.current?.setView([geo.lat,geo.lon],15)}},[geo]);
 
- async function reportPassage(){if(!active||crowdBusy)return;if(!crowdLine.trim()){setCrowdMessage('Indica o número da linha.');return}if(!navigator.geolocation){setCrowdMessage('GPS indisponível.');return}setCrowdBusy(true);setCrowdMessage('A confirmar posição GPS…');try{const pos=await new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{enableHighAccuracy:true,maximumAge:0,timeout:15000}));const r=await submitObservedPassage({stop:active,line:crowdLine.trim(),direction:'',lat:pos.coords.latitude,lon:pos.coords.longitude});setCrowdMessage(r.notice||'Observação recebida.')}catch(e){setCrowdMessage(e.message||'Falha na comunicação.')}finally{setCrowdBusy(false)}}
+ async function reportPassage(){if(!active||crowdBusy)return;if(!crowdLine.trim()){setCrowdMessage('Indica o número da linha.');return}setCrowdBusy(true);setCrowdMessage('A confirmar posição GPS…');try{const pos=await currentLocation();const r=await submitObservedPassage({stop:active,line:crowdLine.trim(),direction:'',lat:pos.lat,lon:pos.lon});setCrowdMessage(r.notice||'Observação recebida.')}catch(e){setCrowdMessage(e.message||'Falha na comunicação.')}finally{setCrowdBusy(false)}}
  const match=active?associateGTFS(active,gtfs):null;
  const departures=match&&data?upcoming(data,match.stop_id,date,12):[];
  const closest=geo?nearbyStops(osm,geo.lat,geo.lon,5):[];
