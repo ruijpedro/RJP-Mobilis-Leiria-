@@ -3,7 +3,7 @@
   "short_name": "RJP Mobilis",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#062e59",
+  "background_color": "#f5f8fc",
   "theme_color": "#062e59",
   "icons": [
     {
