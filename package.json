@@ -1,6 +1,6 @@
 {
   "name": "rjp-mobilis-leiria",
-  "version": "1.9.0-rc.3",
+  "version": "1.9.0-rc.3-firebase",
   "private": true,
   "type": "module",
   "scripts": {

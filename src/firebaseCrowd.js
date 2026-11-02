@@ -3,8 +3,8 @@ import {initializeApp} from 'firebase/app';
 import {getAuth,signInAnonymously} from 'firebase/auth';
 import {getFunctions,httpsCallable} from 'firebase/functions';
 import {initializeAppCheck,ReCaptchaEnterpriseProvider} from 'firebase/app-check';
+import {firebaseConfig as config} from './firebaseConfig.js';
 const env=import.meta.env;
-const config={apiKey:env.VITE_FIREBASE_API_KEY,authDomain:env.VITE_FIREBASE_AUTH_DOMAIN,projectId:env.VITE_FIREBASE_PROJECT_ID,appId:env.VITE_FIREBASE_APP_ID};
 export const crowdConfigured=Boolean(config.apiKey&&config.authDomain&&config.projectId&&config.appId);
 let app,auth,functions;
 export async function submitObservedPassage({stop,line,direction,lat,lon}){

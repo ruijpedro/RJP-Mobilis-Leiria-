@@ -16,3 +16,12 @@ O botão **Vi o autocarro passar** está integrado nas fichas das paragens, mas 
 - Localização não fica guardada; `nearMeters` e UID anónimo **continuam a ser dados potencialmente pessoais**. Preparar informação de privacidade e retenção/eliminação por período antes de produção.
 - `summarizeObservations` exige 3 dias diferentes e 2 UID para um agrupamento de ±3 min. **Ainda não há um processo programado a publicar os agregados** em `observedSchedules`.
 - Os registos históricos nunca devem ser apresentados como posição em direto nem alterar os horários oficiais sem indicação clara.
+
+## Configuração do projeto recebida (1 novembro 2026)
+A configuração Web de `rjp-mobilis-leiria` está agora em `src/firebaseConfig.js`.
+Não é necessário criar um `.env` para estes identificadores públicos; a funcionalidade continua dependente dos serviços e da função no Firebase. Para outro projeto, usar as variáveis `VITE_FIREBASE_*`.
+O `measurementId` foi guardado, mas Analytics não é inicializado na app para evitar dependências desnecessárias do ambiente WebView.
+
+**Atenção ao App Check:** `submitObservedPassage` usa `enforceAppCheck:true`. Para funcionar, é preciso criar/configurar um provedor App Check, definir `VITE_FIREBASE_APPCHECK_SITE_KEY` no ambiente de compilação e validar a solução para Android WebView. Sem isto, o servidor rejeita a submissão. Não desativar a proteção numa implantação pública só para ultrapassar a configuração.
+
+**Ainda necessário na consola:** ativar Authentication > Anonymous, criar Firestore, publicar regras e Cloud Function, e importar `verifiedStops` por um processo administrativo. Não foi possível comprovar essas ativações apenas pela configuração Web.
