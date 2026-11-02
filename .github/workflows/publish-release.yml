@@ -47,6 +47,8 @@ jobs:
         run: |
           npm install --no-audit --no-fund
           npm test
+          python -m pip install --disable-pip-version-check Pillow
+          python scripts/generate_web_icons.py
           npm run build
       - name: Criar pacote WebApp
         run: |
