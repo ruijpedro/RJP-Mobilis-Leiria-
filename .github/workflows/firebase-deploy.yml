@@ -1,0 +1,60 @@
+name: Publicar Firebase (sem instalar no PC)
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_target:
+        description: 'O que publicar'
+        required: true
+        default: 'functions'
+        type: choice
+        options:
+          - functions
+          - firestore:rules
+          - functions,firestore:rules
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: mobilis-firebase-deploy
+  cancel-in-progress: false
+
+jobs:
+  firebase:
+    name: Publicar no Firebase
+    runs-on: ubuntu-latest
+    environment: firebase-production
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar segredos de autenticação
+        env:
+          WIF_PROVIDER: ${{ secrets.GCP_WIF_PROVIDER }}
+          SERVICE_ACCOUNT: ${{ secrets.GCP_WIF_SERVICE_ACCOUNT }}
+        run: |
+          test -n "$WIF_PROVIDER" || { echo 'Falta secret GCP_WIF_PROVIDER'; exit 1; }
+          test -n "$SERVICE_ACCOUNT" || { echo 'Falta secret GCP_WIF_SERVICE_ACCOUNT'; exit 1; }
+      - name: Autenticação segura no Google Cloud (OIDC / WIF)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_WIF_SERVICE_ACCOUNT }}
+          project_id: rjp-mobilis-leiria
+          create_credentials_file: true
+          export_environment_variables: true
+      - name: Instalar dependências das Cloud Functions
+        if: contains(inputs.deploy_target, 'functions')
+        run: npm install --prefix functions --no-audit --no-fund
+      - name: Validar sintaxe da função
+        if: contains(inputs.deploy_target, 'functions')
+        run: node --check functions/index.js
+      - name: Publicar
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
+        run: npx --yes firebase-tools@latest deploy --only '${{ inputs.deploy_target }}' --project rjp-mobilis-leiria --non-interactive
