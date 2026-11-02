@@ -19,7 +19,8 @@
     "react-dom": "^19.1.0",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
-    "firebase": "^12.5.0"
+    "firebase": "^12.5.0",
+    "@capacitor/geolocation": "^7.1.5"
   },
   "devDependencies": {}
 }
