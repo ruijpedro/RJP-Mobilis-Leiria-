@@ -5,6 +5,7 @@ Runs in GitHub Actions; requires Pillow. Does not depend on existing Android pro
 from pathlib import Path
 from PIL import Image
 import io
+import base64
 
 ROOT = Path(__file__).resolve().parents[1]
 ANDROID = ROOT / "android/app/src/main/res"
@@ -14,8 +15,19 @@ SIZES = {"mdpi":48,"hdpi":72,"xhdpi":96,"xxhdpi":144,"xxxhdpi":192}
 
 if not ANDROID.exists():
     raise SystemExit(f"Android resources unavailable: {ANDROID}. Run cap add/sync first.")
-main = Image.open(ICON).convert("RGBA")
-fg = Image.open(FOREGROUND).convert("RGBA")
+# Usar os ícones IconKitchen fornecidos pelo autor. As cópias em Base64
+# são versões PNG otimizadas para permitir a distribuição via GitHub.
+def load_icon(name, fallback):
+    candidate = ROOT / "assets/icon" / name
+    if candidate.exists():
+        data = base64.b64decode(candidate.read_text(encoding="ascii").strip(), validate=True)
+        picture = Image.open(io.BytesIO(data)).convert("RGBA")
+        picture.load()
+        return picture
+    return Image.open(fallback).convert("RGBA")
+
+main = load_icon("iconkit-launcher.b64", ICON)
+fg = load_icon("iconkit-foreground.b64", FOREGROUND)
 for scale, pixels in SIZES.items():
     folder = ANDROID / f"mipmap-{scale}"
     folder.mkdir(parents=True, exist_ok=True)
