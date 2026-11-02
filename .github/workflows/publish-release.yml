@@ -66,8 +66,10 @@ jobs:
           s=p.read_text()
           if not re.search(r'\bversionCode\s+\d+',s): raise SystemExit("versionCode não encontrado")
           if not re.search(r'\bversionName\s+"[^"]+"',s): raise SystemExit("versionName não encontrado")
-          # O run_number é crescente neste workflow: mantém atualizações dentro desta série.
-          code=int(os.environ["GITHUB_RUN_NUMBER"])+1000
+          # Código de versão crescente entre versões semânticas.
+          major,minor,patch=map(int,os.environ["RELEASE_VERSION"][1:].split("."))
+          code=major*1000000+minor*10000+patch*100
+          if code > 2100000000: raise SystemExit("versionCode excede limite Android")
           s=re.sub(r'\bversionCode\s+\d+',f'versionCode {code}',s,count=1)
           s=re.sub(r'\bversionName\s+"[^"]+"',f'versionName "{os.environ["RELEASE_VERSION"][1:]}"',s,count=1)
           p.write_text(s)
