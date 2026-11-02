@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão da release (formato v1.10.1)'
+        description: 'Versão da release (formato v1.10.2)'
         required: true
         type: string
-        default: 'v1.10.1'
+        default: 'v1.10.2'
 
 permissions:
   contents: write
@@ -39,7 +39,7 @@ jobs:
           KEY_ALIAS: rjp-mobilis
           KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
         run: |
-          [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Versão inválida. Usa v1.10.1 (três números, sem espaços)'; exit 1; }
+          [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Versão inválida. Usa v1.10.2 (três números, sem espaços)'; exit 1; }
           for v in ENCRYPTION_PASSWORD KEYSTORE_PASSWORD KEY_PASSWORD; do
             if [ -z "${!v}" ]; then echo "Falta secret $v"; exit 1; fi
           done
