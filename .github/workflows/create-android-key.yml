@@ -1,0 +1,60 @@
+name: Criar chave Android Mobilis (sem instalar Java)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mobilis-signing-key
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Verificar segredos e existência da chave
+        env:
+          STORE_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
+          ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$STORE_PASSWORD" || { echo 'Falta MOBILIS_KEYSTORE_PASSWORD'; exit 1; }
+          test -n "$KEY_PASSWORD" || { echo 'Falta MOBILIS_KEY_PASSWORD'; exit 1; }
+          test -n "$ENCRYPTION_PASSWORD" || { echo 'Falta MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD'; exit 1; }
+          test ! -e signing/mobilis.jks.enc || { echo 'Chave cifrada já existe; não substituir!'; exit 1; }
+      - name: Gerar e cifrar a chave
+        env:
+          STORE_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
+          ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
+        run: |
+          set -euo pipefail
+          umask 077
+          keytool -genkeypair -noprompt -alias rjp-mobilis \
+            -keyalg RSA -keysize 3072 -validity 10000 -storetype JKS \
+            -keystore "$RUNNER_TEMP/mobilis.jks" \
+            -storepass:env STORE_PASSWORD -keypass:env KEY_PASSWORD \
+            -dname "CN=RJP Mobilis Leiria, OU=Apps, O=RJP, L=Leiria, C=PT"
+          mkdir -p signing
+          openssl enc -aes-256-cbc -salt -pbkdf2 -iter 200000 \
+            -in "$RUNNER_TEMP/mobilis.jks" -out signing/mobilis.jks.enc \
+            -pass env:ENCRYPTION_PASSWORD
+          rm -f "$RUNNER_TEMP/mobilis.jks"
+      - name: Guardar chave cifrada no repositório
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signing/mobilis.jks.enc
+          git commit -m "Guardar chave Android cifrada para futuras APKs"
+          git push
