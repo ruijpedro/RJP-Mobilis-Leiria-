@@ -20,7 +20,7 @@ for permission in ("android.permission.ACCESS_FINE_LOCATION", "android.permissio
 application = root.find("application")
 if application is None:
     raise SystemExit("Application em falta no AndroidManifest.xml")
-application.set(f"{{{android}}}icon", "@mipmap/ic_launcher")
-application.set(f"{{{android}}}roundIcon", "@mipmap/ic_launcher_round")
+application.set(f"{{{android}}}icon", "@mipmap/rjp_mobilis_launcher")
+application.set(f"{{{android}}}roundIcon", "@mipmap/rjp_mobilis_round")
 tree.write(path, encoding="utf-8", xml_declaration=True)
-print("Manifest Android: GPS e ícones personalizados associados explicitamente.")
+print("Manifest Android: GPS e launcher exclusivo RJP Mobilis configurados.")
