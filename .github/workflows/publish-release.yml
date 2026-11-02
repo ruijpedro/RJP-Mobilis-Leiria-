@@ -82,14 +82,33 @@ jobs:
         run: |
           chmod +x android/gradlew
           cd android && ./gradlew assembleRelease --stacktrace
-      - name: Verificar ícone personalizado dentro da APK
+      - name: Verificar ícone Android incluído na APK
         run: |
           set -euo pipefail
           APK="android/app/build/outputs/apk/release/app-release-unsigned.apk"
-          unzip -Z1 "$APK" | grep -E 'res/mipmap-[^/]+/ic_launcher[^/]*\\.png' > "$RUNNER_TEMP/mobilis-icon-resources.txt"
-          test "$(wc -l < "$RUNNER_TEMP/mobilis-icon-resources.txt")" -ge 5 || { echo 'Ícones Android ausentes do pacote'; exit 1; }
-          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | grep -E '^application:|^application-icon-' | head -n 12
-          echo 'APK inclui ícones personalizados RJP Mobilis.'
+          test -s "$APK" || { echo 'APK não encontrada'; exit 1; }
+          AAPT="$ANDROID_HOME/build-tools/35.0.0/aapt"
+          "$AAPT" dump badging "$APK" > "$RUNNER_TEMP/mobilis-badging.txt"
+          grep '^application:' "$RUNNER_TEMP/mobilis-badging.txt" || { echo 'Metadados do ícone Android em falta'; exit 1; }
+          # O Android AAPT2 compila/renomeia recursos. Não procurar caminhos
+          # res/mipmap-.../ic_launcher.png no ZIP: esses caminhos podem deixar
+          # de existir apesar de o ícone estar corretamente embutido.
+          python - <<'PY'
+          import re, zipfile
+          from pathlib import Path
+          apk=Path("android/app/build/outputs/apk/release/app-release-unsigned.apk")
+          badging=Path(__import__('os').environ["RUNNER_TEMP"]+"/mobilis-badging.txt").read_text()
+          match=re.search(r"^application:.*?icon='([^']+)'",badging,re.M)
+          if not match:
+              raise SystemExit("APK sem ícone de launcher nos metadados")
+          icon=match.group(1)
+          with zipfile.ZipFile(apk) as z:
+              if icon not in z.namelist():
+                  raise SystemExit(f"Recurso de ícone não incluído no APK: {icon}")
+              if z.getinfo(icon).file_size < 100:
+                  raise SystemExit(f"Recurso de ícone vazio: {icon}")
+          print(f"Ícone Android confirmado na APK: {icon}")
+          PY
       - name: Assinar e verificar APK
         env:
           ENCRYPTION_PASSWORD: ${{ secrets.MOBILIS_KEYSTORE_ENCRYPTION_PASSWORD }}
