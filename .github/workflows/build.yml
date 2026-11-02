@@ -1,26 +1,40 @@
-name: WebApp e Android
+name: Compilar WebApp e APK Android
 on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: mobilis-build-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  web:
+  validate:
+    name: Testes e compilação Web
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install
-      - run: npm test
-      - env:
-          VITE_MOBILIS_CATALOG_URL: ${{ vars.VITE_MOBILIS_CATALOG_URL }}
+      - name: Instalar dependências
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+      - name: Testes JavaScript
+        run: npm test
+      - name: Testes Python
+        run: python -m unittest discover -s tests -p '*.test.py' || (python tests/reviewed-gtfs.test.py && python tests/osm-network.test.py)
+      - name: Compilar WebApp
         run: npm run build
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-WebApp
+          name: RJP-Mobilis-WebApp-V1.9-RC1
           path: dist/
+          if-no-files-found: error
   android:
+    name: Compilar APK debug
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,35 +45,22 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      - name: Preparar Android SDK (sdkmanager por caminho absoluto)
-        shell: bash
+      - uses: android-actions/setup-android@v3
+      - name: Instalar dependências
         run: |
-          set -euo pipefail
-          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
-          echo "ANDROID_HOME=$SDK_ROOT" >> "$GITHUB_ENV"
-          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> "$GITHUB_ENV"
-          SDKMANAGER="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
-          if [ ! -x "$SDKMANAGER" ]; then
-            SDKMANAGER="$(find "$SDK_ROOT/cmdline-tools" -mindepth 3 -maxdepth 3 -path '*/bin/sdkmanager' -type f 2>/dev/null | sort -V | tail -1)"
-          fi
-          if [ -z "$SDKMANAGER" ] || [ ! -x "$SDKMANAGER" ]; then
-            echo "Não foi encontrado sdkmanager em $SDK_ROOT/cmdline-tools" >&2
-            exit 1
-          fi
-          echo "sdkmanager: $SDKMANAGER"
-          "$SDKMANAGER" --version
-          (yes | "$SDKMANAGER" --sdk_root="$SDK_ROOT" --licenses > /dev/null) || true
-          "$SDKMANAGER" --sdk_root="$SDK_ROOT" --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
-      - run: npm install
-      - env:
-          VITE_MOBILIS_CATALOG_URL: ${{ vars.VITE_MOBILIS_CATALOG_URL }}
+          if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+      - name: Compilar WebApp
         run: npm run build
-      - run: npx cap add android
-      - run: npx cap sync android
-      - name: Aplicar ícone RJP Mobilis na APK
-        run: python3 scripts/install_android_icons.py
-      - run: chmod +x android/gradlew && cd android && ./gradlew assembleDebug
+      - name: Criar projeto Android
+        run: |
+          if [ ! -d android ]; then npx cap add android; fi
+          npx cap sync android
+      - name: Gerar APK
+        run: |
+          chmod +x android/gradlew
+          cd android && ./gradlew assembleDebug --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-APK-debug
+          name: RJP-Mobilis-Android-debug-V1.9-RC1
           path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

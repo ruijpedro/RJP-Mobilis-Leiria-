@@ -1,0 +1,25 @@
+name: Atualizar paragens e linhas OSM
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 4 * * 1'
+permissions:
+  contents: write
+jobs:
+  osm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exportar paragens OSM de Leiria
+        run: python scripts/export_osm_stops.py
+      - name: Exportar linhas e traçados OSM
+        run: python scripts/osm_network.py
+      - name: Guardar ficheiros atualizados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/osm-stops-leiria.json public/data/osm-stops-leiria.geojson public/data/osm-network.json
+          git diff --cached --quiet || (git commit -m 'Atualizar paragens e linhas OSM de Leiria' && git push)
