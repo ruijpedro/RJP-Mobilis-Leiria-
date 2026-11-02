@@ -63,3 +63,6 @@ a{accent-color:var(--mobilis-blue)}
 .summary{background:#f0f6ff}
 .trip:first-of-type{border:2px solid #ffc51d}
 .results .trip{margin-bottom:18px}
+
+.show-journey{border:1px solid #062e59;background:#fff;color:#062e59;border-radius:9px;padding:9px 12px;font-weight:750;cursor:pointer;min-height:42px}
+.show-journey:hover,.show-journey:focus-visible{background:#fff6d9;outline:2px solid #ffc51d}
