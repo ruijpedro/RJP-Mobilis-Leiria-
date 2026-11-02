@@ -37,6 +37,11 @@ for scale, pixels in SIZES.items():
     drawable = ANDROID / f"drawable-{scale}"
     drawable.mkdir(parents=True, exist_ok=True)
     fg.resize((pixels*108//48,pixels*108//48),Image.Resampling.LANCZOS).save(drawable/'ic_launcher_foreground.png')
+    # Android 13+ themed icon: must belong to RJP, not to Capacitor.
+    mask = fg.getchannel('A').resize((pixels*108//48,pixels*108//48),Image.Resampling.LANCZOS)
+    mono = Image.new('RGBA', mask.size, (255,255,255,0))
+    mono.putalpha(mask)
+    mono.save(drawable/'ic_launcher_monochrome.png')
 
 (ANDROID/'values').mkdir(parents=True,exist_ok=True)
 (ANDROID/'values'/'mobilis_icon_background.xml').write_text(
@@ -48,9 +53,14 @@ folder.mkdir(parents=True, exist_ok=True)
 adaptive="""<?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/mobilis_icon_background" />
-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />\n    <monochrome android:drawable="@drawable/ic_launcher_monochrome" />
 </adaptive-icon>
 """
 for filename in ('ic_launcher.xml','ic_launcher_round.xml'):
     (folder/filename).write_text(adaptive, encoding='utf-8')
-print('Mobilis launcher icons generated for five densities and adaptive Android.')
+# Falhar a compilação se algum recurso essencial estiver em falta.
+for name in ('ic_launcher.png','ic_launcher_round.png'):
+    assert all((ANDROID/f'mipmap-{scale}'/name).is_file() for scale in SIZES)
+assert (ANDROID/'mipmap-anydpi-v26'/'ic_launcher.xml').is_file()
+assert main.size[0] >= 96 and fg.size[0] >= 96
+print('Ícone RJP Mobilis confirmado: cinco densidades, adaptativo, redondo e monocromático.')
