@@ -9,7 +9,7 @@ const date=new Date(2026,10,3,6,50); // Terça-feira
 test('dados oficiais incluem circulações das linhas 2 e 7',()=>{
  assert.equal(file.services.filter(s=>s.line==='2').length,36);
  assert.equal(file.services.filter(s=>s.line==='7').length,16);
- assert.equal(gtfs.trips.length,52);
+ assert.equal(gtfs.trips.filter(t=>['2','7'].includes(gtfs.routes.find(r=>r.route_id===t.route_id)?.route_short_name)).length,52);
 });
 test('linha 7 Vidigal → Pousos cruza tempos publicados',()=>{
  const routes=plan(gtfs,'mobilis:l7:vidigal','mobilis:l7:pousos',date);
@@ -32,5 +32,5 @@ test('linha 7 não inventa partidas entre os pontos de referência',()=>{
 });
 test('linha 2 não assume serviço ao domingo sem tabela publicada',()=>{
  const sunday=new Date(2026,10,8,7,0);
- assert.equal(upcoming(gtfs,'mobilis:l2:terminal',sunday,4).length,0);
+ assert.equal(upcoming(gtfs,'mobilis:l2:terminal',sunday,100).filter(x=>x.line==='2').length,0);
 });
