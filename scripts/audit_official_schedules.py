@@ -83,7 +83,7 @@ def audit(catalog, out):
             refs = []
         # Priorizar as tabelas de horários e esquemas de paragens reais;
         # não guardar SVG de logótipos e ícones decorativos.
-        candidates = list(dict.fromkeys(refs + line.get("images", []) + line.get("pdfs", [])))
+        candidates = list(dict.fromkeys(refs if refs else (line.get("images", []) + line.get("pdfs", []))))
         candidates = [u for u in candidates if any(token in urlparse(u).path.lower()
                           for token in ("horarios-linha", "espinha-linha", "pdf-linha-", "linha-3.pdf"))]
         for url in candidates:
