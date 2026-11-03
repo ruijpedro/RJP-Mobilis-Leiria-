@@ -65,7 +65,7 @@ def fetch():
                         headers={'User-Agent':'RJP-Mobilis-Leiria/1.10 OSM-routes',
                                  'Accept':'application/json',
                                  'Content-Type':'application/x-www-form-urlencoded'})
-                    with urllib.request.urlopen(req,timeout=150) as response:
+                    with urllib.request.urlopen(req,timeout=70) as response:
                         payload=json.load(response)
                         if not isinstance(payload.get('elements'),list):
                             raise ValueError('Resposta Overpass sem elementos')
