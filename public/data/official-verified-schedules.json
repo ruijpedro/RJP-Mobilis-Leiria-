@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Transcrição conferida visualmente dos quadros oficiais de 1 de setembro de 2026 das linhas 2 e 7. Apenas horas nos pontos de referência da tabela (não nas restantes paragens do percurso). A validade até 31-12-2026 é um limite conservador de revisão na aplicação, NÃO uma data de fim de vigência anunciada pelo operador. Feriados que calhem em dias úteis carecem de calendário específico e devem ser confirmados. Linhas restantes ainda não estão digitalizadas.",
+  "note": "Transcrições dos PDFs oficiais Mobilis de setembro de 2026, nos pontos de referência indicados nos quadros (linhas 2, 4, 7, 8 e 9). Datas até 2026-12-31 constituem limite técnico conservador de revisão, NÃO data anunciada para o fim dos horários. Calendários de feriados e paragens intermédias incompletos. A linha 9 indica que algumas circulações não se realizam em julho/agosto; esta base termina em dezembro e essas restrições devem ser modeladas antes da utilização nesse período.",
   "services": [
     {
       "id": "l2-weekdays-0650",
@@ -2473,6 +2473,1574 @@
           "time": "19:23"
         }
       ]
+    },
+    {
+      "id": "l4-weekdays-0700",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:00"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "07:18"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "07:29"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "07:37"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "07:42"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:48"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-0750",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "08:00"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "08:08"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "08:19"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "08:27"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "08:32"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:38"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-0900",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "09:10"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "09:18"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "09:29"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "09:37"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "09:42"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:48"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1030",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:30"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "10:40"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "10:48"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "10:59"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "11:07"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "11:12"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "11:18"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1210",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "12:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "12:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "12:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "12:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "12:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:58"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1400",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "14:00"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "14:10"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "14:18"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "14:29"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "14:37"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "14:42"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "14:48"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1620",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "16:30"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "16:38"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "16:57"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "17:02"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:08"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1720",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "17:38"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "17:49"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "17:57"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "18:02"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:08"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1810",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "18:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "18:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "18:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "18:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:58"
+        }
+      ]
+    },
+    {
+      "id": "l4-weekdays-1930",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "19:30"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "19:40"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "19:48"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "19:59"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "20:07"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "20:12"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "20:18"
+        }
+      ]
+    },
+    {
+      "id": "l4-saturday-0750",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "08:00"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "08:08"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "08:19"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "08:27"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "08:32"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:38"
+        }
+      ]
+    },
+    {
+      "id": "l4-saturday-1210",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "12:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "12:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "12:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "12:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "12:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:58"
+        }
+      ]
+    },
+    {
+      "id": "l4-saturday-1810",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "18:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "18:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "18:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "18:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:58"
+        }
+      ]
+    },
+    {
+      "id": "l4-sunday-0750",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "08:00"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "08:08"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "08:19"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "08:27"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "08:32"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:38"
+        }
+      ]
+    },
+    {
+      "id": "l4-sunday-1210",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "12:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "12:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "12:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "12:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "12:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:58"
+        }
+      ]
+    },
+    {
+      "id": "l4-sunday-1810",
+      "line": "4",
+      "direction": "Leiria — Andrinos",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l4:olhalvas",
+          "stopName": "R. das Olhalvas / Hospital Sto André",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l4:escola-andrinos",
+          "stopName": "Escola Primária Andrinos",
+          "time": "18:28"
+        },
+        {
+          "stopId": "mobilis:l4:vale-sepal",
+          "stopName": "Vale Sepal",
+          "time": "18:39"
+        },
+        {
+          "stopId": "mobilis:l4:bombeiros",
+          "stopName": "Bombeiros Municipais",
+          "time": "18:47"
+        },
+        {
+          "stopId": "mobilis:l4:capuchos",
+          "stopName": "Bairro dos Capuchos",
+          "time": "18:52"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:58"
+        }
+      ]
+    },
+    {
+      "id": "l8-weekdays-0830",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:30"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "08:36"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "08:41"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "08:50"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "08:58"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:04"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:08"
+        }
+      ]
+    },
+    {
+      "id": "l8-weekdays-0945",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:45"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "09:51"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "09:56"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "10:05"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "10:13"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "10:19"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:23"
+        }
+      ]
+    },
+    {
+      "id": "l8-weekdays-1245",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:45"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "12:51"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "12:56"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "13:05"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "13:13"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:19"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "13:23"
+        }
+      ]
+    },
+    {
+      "id": "l8-weekdays-1615",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:15"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "16:21"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "16:26"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "16:35"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "16:43"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:53"
+        }
+      ]
+    },
+    {
+      "id": "l8-saturday-0830",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:30"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "08:36"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "08:41"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "08:50"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "08:58"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:04"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:08"
+        }
+      ]
+    },
+    {
+      "id": "l8-saturday-1230",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:30"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "12:36"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "12:41"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "12:50"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "12:58"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:04"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "13:08"
+        }
+      ]
+    },
+    {
+      "id": "l8-saturday-1615",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:15"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "16:21"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "16:26"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "16:35"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "16:43"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:53"
+        }
+      ]
+    },
+    {
+      "id": "l8-sunday-0830",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:30"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "08:36"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "08:41"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "08:50"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "08:58"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:04"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:08"
+        }
+      ]
+    },
+    {
+      "id": "l8-sunday-1230",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:30"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "12:36"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "12:41"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "12:50"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "12:58"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:04"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "13:08"
+        }
+      ]
+    },
+    {
+      "id": "l8-sunday-1615",
+      "line": "8",
+      "direction": "Leiria — Cortes",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:15"
+        },
+        {
+          "stopId": "mobilis:l8:guimarota",
+          "stopName": "Guimarota",
+          "time": "16:21"
+        },
+        {
+          "stopId": "mobilis:l8:moinho-novo",
+          "stopName": "Moinho Novo",
+          "time": "16:26"
+        },
+        {
+          "stopId": "mobilis:l8:cortes",
+          "stopName": "Cortes",
+          "time": "16:35"
+        },
+        {
+          "stopId": "mobilis:l8:sao-romao",
+          "stopName": "São Romão/Isla",
+          "time": "16:43"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:53"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-0710",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "07:23"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "07:34"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:50"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-0750",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "08:03"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "08:14"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:30"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-0830",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:30"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "08:54"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:10"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-0920",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:20"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "09:33"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "09:44"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1200",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:00"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "12:13"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "12:24"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:40"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1240",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:40"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "12:53"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "13:04"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:20"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1320",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:20"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "13:33"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "13:44"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:00"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1700",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:00"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "17:13"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "17:24"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:40"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1740",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:40"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "17:53"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:04"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:20"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1820",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "18:33"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:44"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1900",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:00"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "19:13"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "19:24"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:40"
+        }
+      ]
+    },
+    {
+      "id": "l9-weekdays-1945",
+      "line": "9",
+      "direction": "Leiria — Campus 2 ULO",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:45"
+        },
+        {
+          "stopId": "mobilis:l9:marques-pombal",
+          "stopName": "Av. Marquês de Pombal",
+          "time": "19:58"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "20:09"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:25"
+        }
+      ]
     }
   ],
   "sourcesAudit": {
@@ -2484,14 +4052,20 @@
     "method": "transcrição visual dos PDFs oficiais, tabelas de horários por pontos de referência",
     "lines": [
       "2",
-      "7"
+      "4",
+      "7",
+      "8",
+      "9"
     ],
     "referenceDate": "2026-09-01",
     "technicalReviewUntil": "2026-12-31",
-    "missing": "Horas de paragens intermédias, calendário de feriados e validação de correspondência espacial das plataformas",
+    "missing": "Horários das linhas 1,3,5,6; paragens intermédias; feriados; confirmação física das plataformas e calendário académico da linha 9",
     "documents": [
       "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf",
-      "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf"
+      "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf",
+      "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf",
+      "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf",
+      "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf"
     ]
   }
 }
