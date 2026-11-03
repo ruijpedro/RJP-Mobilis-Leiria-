@@ -1,5 +1,107 @@
 {
- "note": "Catálogo de páginas oficiais. NÃO contém horários ou ligações GTFS validadas.",
- "lines": [],
- "last_checked": null
+  "note": "Catálogo de imagens de horários extraídas das páginas Mobilis; URLs descobertas publicamente mas ainda não validadas contra a versão mais recente. Não são partidas GTFS.",
+  "last_checked": null,
+  "lines": [
+    {
+      "id": "1",
+      "page": "https://mobilis.pt/linhas/linha-1/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-1_HORARIO_-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "2",
+      "page": "https://mobilis.pt/linhas/linha-2/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-2_HORARIO_-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "3",
+      "page": "https://mobilis.pt/linhas/linha-3/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-3_HORARIO_PART1-1.svg",
+        "https://mobilis.pt/media/2016/04/LINHA-3_HORARIO_PART2-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "4",
+      "page": "https://mobilis.pt/linhas/linha-4/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-4_HORARIO_-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "5",
+      "page": "https://mobilis.pt/linhas/linha-5/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-5_HORARIO_-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "6",
+      "page": "https://mobilis.pt/linhas/linha-6/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-6_HORARIO_PART1-1.svg",
+        "https://mobilis.pt/media/2016/04/LINHA-6_HORARIO_PART2-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "7",
+      "page": "https://mobilis.pt/linhas/linha-7/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-7_HORARIO-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "8",
+      "page": "https://mobilis.pt/linhas/linha-8/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-8_HORARIO-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    },
+    {
+      "id": "9",
+      "page": "https://mobilis.pt/linhas/linha-9/",
+      "images": [
+        "https://mobilis.pt/media/2016/04/LINHA-9_HORARIO-1.svg"
+      ],
+      "pdfs": [],
+      "status": "discovered-unverified",
+      "last_checked": null,
+      "format": "official-reference-only"
+    }
+  ]
 }
