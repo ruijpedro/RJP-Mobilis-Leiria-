@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Exporta relações OSM de autocarros de Leiria e a geometria por troços, sem inventar ligações entre vias descontínuas."""
-import json, math, sys, urllib.parse, urllib.request
+import json, math, sys, time, urllib.parse, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
-ENDPOINTS = ['https://overpass.kumi.systems/api/interpreter','https://overpass-api.de/api/interpreter']
+ENDPOINTS = ['https://overpass.private.coffee/api/interpreter','https://overpass-api.de/api/interpreter','https://overpass.nchc.org.tw/api/interpreter']
 BBOX='39.68,-8.89,39.81,-8.72'
 QUERY=f'[out:json][timeout:120];rel["type"="route"]["route"="bus"]({BBOX});out geom;'
 STOP_ROLES={'stop','stop_entry_only','stop_exit_only','platform','platform_entry_only','platform_exit_only'}
@@ -52,13 +52,31 @@ def parse_network(payload,known_stops=None):
         routes.append({'osm_id':rel['id'],'ref':tags.get('ref',''),'name':tags.get('name',''),'from':tags.get('from',''),'to':tags.get('to',''),'network':tags.get('network',''),'operator':tags.get('operator',''),'mobilis':any(x in txt for x in HINTS),'stops':stops,'shape_segments':shape_segments})
     return sorted(routes,key=lambda r:(r['ref'].zfill(4),r['osm_id']))
 def fetch():
-    last=None
-    for endpoint in ENDPOINTS:
-        try:
-            req=urllib.request.Request(endpoint,data=urllib.parse.urlencode({'data':QUERY}).encode(),headers={'User-Agent':'RJP-Mobilis-Leiria/1.6 (OSM export)'})
-            with urllib.request.urlopen(req,timeout=150) as response:return json.load(response)
-        except Exception as exc:last=exc
-    raise SystemExit(f'Falha Overpass: {last}')
+    last = None
+    for attempt in range(2):
+        for endpoint in ENDPOINTS:
+            for method in ('POST','GET'):
+                try:
+                    encoded = urllib.parse.urlencode({'data':QUERY})
+                    url = endpoint if method == 'POST' else endpoint+'?'+encoded
+                    req = urllib.request.Request(
+                        url,
+                        data=encoded.encode() if method == 'POST' else None,
+                        headers={'User-Agent':'RJP-Mobilis-Leiria/1.10 OSM-routes',
+                                 'Accept':'application/json',
+                                 'Content-Type':'application/x-www-form-urlencoded'})
+                    with urllib.request.urlopen(req,timeout=150) as response:
+                        payload=json.load(response)
+                        if not isinstance(payload.get('elements'),list):
+                            raise ValueError('Resposta Overpass sem elementos')
+                        print(f'Overpass OK: {endpoint} ({method}), {len(payload["elements"])} elementos',flush=True)
+                        return payload
+                except (urllib.error.URLError, TimeoutError, ValueError, json.JSONDecodeError) as exc:
+                    last=exc
+                    print(f'Overpass {endpoint} ({method}), tentativa {attempt+1}: {exc}',file=sys.stderr,flush=True)
+        if attempt==0:time.sleep(8)
+    raise SystemExit(f'Todos os servidores Overpass falharam; sem novas rotas. Último erro: {last}')
+
 def main():
     s=Path('public/data/osm-stops-leiria.json')
     known=json.loads(s.read_text(encoding='utf-8')) if s.exists() else []
