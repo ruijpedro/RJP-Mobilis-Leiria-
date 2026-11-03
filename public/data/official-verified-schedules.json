@@ -1,5 +1,10 @@
 {
   "schemaVersion": 1,
   "note": "Os horários publicados no site Mobilis são tabelas visuais. Apenas circulações transcritas e verificadas contra a fonte oficial e a data de validade podem ser adicionadas. Sem viagens fabricadas.",
-  "services": []
+  "services": [],
+  "sourcesAudit": {
+    "workflow": ".github/workflows/audit-official-schedules.yml",
+    "status": "review-required",
+    "instructions": "Consultar o artefacto mobilis-horarios-oficiais-para-revisao do GitHub Actions; verificar tabela, sentido, dia e vigência antes de adicionar services."
+  }
 }
