@@ -134,6 +134,42 @@ jobs:
             --out RJP-Mobilis-Leiria.apk "$RUNNER_TEMP/aligned.apk"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose RJP-Mobilis-Leiria.apk
           rm -f "$RUNNER_TEMP/mobilis.jks"
+      - name: Confirmar identidade e assinatura Android
+        run: |
+          set -euo pipefail
+          APK="RJP-Mobilis-Leiria.apk"
+          AAPT="$ANDROID_HOME/build-tools/35.0.0/aapt"
+          SIGNER="$ANDROID_HOME/build-tools/35.0.0/apksigner"
+          "$AAPT" dump badging "$APK" > "$RUNNER_TEMP/mobilis-release-badging.txt"
+          "$SIGNER" verify --print-certs "$APK" > "$RUNNER_TEMP/mobilis-release-certs.txt"
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          import os
+          badging=Path(os.environ["RUNNER_TEMP"],"mobilis-release-badging.txt").read_text()
+          certs=Path(os.environ["RUNNER_TEMP"],"mobilis-release-certs.txt").read_text()
+          package=re.search(r"^package: name='([^']+)' versionCode='([^']+)' versionName='([^']+)'",badging,re.M)
+          digest=re.search(r"Signer #1 certificate SHA-256 digest: ([a-fA-F0-9]+)",certs)
+          if not package: raise SystemExit("Não foi possível ler a identidade da APK")
+          if package.group(1)!="pt.rjp.mobilisleiria":
+              raise SystemExit(f"Identificador Android inesperado: {package.group(1)}")
+          if not digest: raise SystemExit("Assinatura Android não encontrada")
+          info=(f"Pacote: {package.group(1)}\\n"
+                f"versionCode: {package.group(2)}\\n"
+                f"versionName: {package.group(3)}\\n"
+                f"Certificado SHA-256: {digest.group(1)}\\n"
+                "Canal: release assinada; não instalar APK debug para atualizar.\\n")
+          Path("RJP-Mobilis-Identidade-Android.txt").write_text(info,encoding="utf-8")
+          print(info)
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a",encoding="utf-8") as out:
+              out.write("### Identidade da APK assinada\\n```\\n"+info+"```\\n")
+          PY
+      - name: Publicar diagnóstico de identidade Android
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Identidade-Android
+          path: RJP-Mobilis-Identidade-Android.txt
+          if-no-files-found: error
       - name: Disponibilizar APK assinada para teste
         uses: actions/upload-artifact@v4
         with:
