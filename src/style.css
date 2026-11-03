@@ -116,3 +116,9 @@ a{accent-color:var(--mobilis-blue)}
 .timetable-image{margin:9px 0;padding:9px;border:1px solid #dbe5ef;border-radius:10px;background:#fff;overflow:hidden}
 .timetable-image img{display:block;max-width:100%;width:100%;height:auto;max-height:560px;object-fit:contain}
 .timetable-image small{display:block;margin:0 0 7px;color:#49637c}
+
+/* V1.10.9 — navegação GPS por paragem e horários oficiais */
+.map-legend{padding:10px 12px;margin:8px 0;background:#f4f8fc;color:#264964;font-size:12px;line-height:1.5;border-radius:10px}
+.closest .nearest-routable{background:#ffc51d;color:#062e59;border:2px solid #062e59;padding:13px 11px;border-radius:10px;font-weight:800;min-height:50px}
+.popup-official{border-top:1px solid #dce5ef;margin-top:8px;padding-top:7px;font-size:12px;line-height:1.7}
+.popup-official a{color:#064f91;text-decoration:underline}
