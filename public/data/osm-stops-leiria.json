@@ -1,0 +1,2639 @@
+[
+ {
+  "stop_id": "osm:node:653972057",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7543762",
+  "stop_lon": "-8.8542715",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:983907136",
+  "stop_name": "Rua do Cruzeiro (Largo)",
+  "stop_lat": "39.7296615",
+  "stop_lon": "-8.8358146",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:2025772346",
+  "stop_name": "Bairro das Almoínhas",
+  "stop_lat": "39.7546095",
+  "stop_lon": "-8.8205354",
+  "osm": true,
+  "ref": "7",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2077019474",
+  "stop_name": "Estação",
+  "stop_lat": "39.7565584",
+  "stop_lon": "-8.8272651",
+  "osm": true,
+  "ref": "16",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2128191245",
+  "stop_name": "Largo da República",
+  "stop_lat": "39.7406584",
+  "stop_lon": "-8.8101116",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:2128191271",
+  "stop_name": "Bairro dos Capuchos",
+  "stop_lat": "39.7425324",
+  "stop_lon": "-8.8112008",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:2128191361",
+  "stop_name": "Avenida Marquês de Pombal",
+  "stop_lat": "39.7397831",
+  "stop_lon": "-8.8061806",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:2143320878",
+  "stop_name": "Paragem da Albergaria",
+  "stop_lat": "39.7454291",
+  "stop_lon": "-8.8892297",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:2381889991",
+  "stop_name": "Escola Afonso Lopes Vieira",
+  "stop_lat": "39.7631893",
+  "stop_lon": "-8.82294",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:2677149650",
+  "stop_name": "Largo José Lúcio",
+  "stop_lat": "39.7464302",
+  "stop_lon": "-8.8039466",
+  "osm": true,
+  "ref": "1",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2677151056",
+  "stop_name": "Avenida Heróis de Angola",
+  "stop_lat": "39.7478863",
+  "stop_lon": "-8.8039572",
+  "osm": true,
+  "ref": "2",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2677253638",
+  "stop_name": "Avenida Cidade de Maringá / Mercado Municipal",
+  "stop_lat": "39.7497275",
+  "stop_lon": "-8.8065165",
+  "osm": true,
+  "ref": "3",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2677321653",
+  "stop_name": "Nova Leiria",
+  "stop_lat": "39.7524031",
+  "stop_lon": "-8.8086902",
+  "osm": true,
+  "ref": "5",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2725114760",
+  "stop_name": "Piscinas Municipais",
+  "stop_lat": "39.7496782",
+  "stop_lon": "-8.8091839",
+  "osm": true,
+  "ref": "20",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2725114914",
+  "stop_name": "Estádio Magalhães Pessoa",
+  "stop_lat": "39.7507085",
+  "stop_lon": "-8.812495",
+  "osm": true,
+  "ref": "19",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:2748752532",
+  "stop_name": "Rua Paulo VI",
+  "stop_lat": "39.7467319",
+  "stop_lon": "-8.7952646",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:2755158949",
+  "stop_name": "Guimarota",
+  "stop_lat": "39.734038",
+  "stop_lon": "-8.7991048",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:2756331230",
+  "stop_name": "Fonte das 3 Bicas",
+  "stop_lat": "39.7431501",
+  "stop_lon": "-8.8061382",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:2840118065",
+  "stop_name": "Escola Afonso Lopes Vieira",
+  "stop_lat": "39.76296",
+  "stop_lon": "-8.8225752",
+  "osm": true,
+  "ref": "12",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282507023",
+  "stop_name": "Almoínha Grande",
+  "stop_lat": "39.7542939",
+  "stop_lon": "-8.8116931",
+  "osm": true,
+  "ref": "6",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282524003",
+  "stop_name": "Avenida 25 de Abril",
+  "stop_lat": "39.7466964",
+  "stop_lon": "-8.8154528",
+  "osm": true,
+  "ref": "21",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282534137",
+  "stop_name": "Bairro dos Capuchos",
+  "stop_lat": "39.7429528",
+  "stop_lon": "-8.8119708",
+  "osm": true,
+  "ref": "23",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282544701",
+  "stop_name": "Câmara Municipal / ESEL",
+  "stop_lat": "39.7410803",
+  "stop_lon": "-8.8112157",
+  "osm": true,
+  "ref": "24",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282573712",
+  "stop_name": "Porto Moniz / Esc. Francisco Rodrigues Lobo",
+  "stop_lat": "39.7394246",
+  "stop_lon": "-8.8159116",
+  "osm": true,
+  "ref": "25",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282577998",
+  "stop_name": "Rotunda Alto do Vieiro",
+  "stop_lat": "39.7351849",
+  "stop_lon": "-8.8232447",
+  "osm": true,
+  "ref": "28",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282582069",
+  "stop_name": "Centro de Saúde Gorjão Henriques / Residências IPL",
+  "stop_lat": "39.7368273",
+  "stop_lon": "-8.8108016",
+  "osm": true,
+  "ref": "32",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282617733",
+  "stop_name": "Bairro dos Sargentos",
+  "stop_lat": "39.7391091",
+  "stop_lon": "-8.8089601",
+  "osm": true,
+  "ref": "33",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3282617734",
+  "stop_name": "Avenida Marquês de Pombal",
+  "stop_lat": "39.7396407",
+  "stop_lon": "-8.8061682",
+  "osm": true,
+  "ref": "34",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284858661",
+  "stop_name": "Guimarota",
+  "stop_lat": "39.7340642",
+  "stop_lon": "-8.7994137",
+  "osm": true,
+  "ref": "37",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284858662",
+  "stop_name": "Escola Profissional / ISLA",
+  "stop_lat": "39.731975",
+  "stop_lon": "-8.7949602",
+  "osm": true,
+  "ref": "38",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284861691",
+  "stop_name": "São Romão - Rua da Esperança CETL",
+  "stop_lat": "39.7360232",
+  "stop_lon": "-8.793812",
+  "osm": true,
+  "ref": "41",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284861692",
+  "stop_name": "São Romão - Rua da Fonte",
+  "stop_lat": "39.7351432",
+  "stop_lon": "-8.7925494",
+  "osm": true,
+  "ref": "40",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284863106",
+  "stop_name": "Hospital - Visitas",
+  "stop_lat": "39.7438946",
+  "stop_lon": "-8.793757",
+  "osm": true,
+  "ref": "42",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284880051",
+  "stop_name": "Hospital - Consultas Externas",
+  "stop_lat": "39.7424658",
+  "stop_lon": "-8.7945005",
+  "osm": true,
+  "ref": "43",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284899928",
+  "stop_name": "Escola Correia Mateus",
+  "stop_lat": "39.7444802",
+  "stop_lon": "-8.7922542",
+  "osm": true,
+  "ref": "44",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284899929",
+  "stop_name": "Bombeiros Municipais",
+  "stop_lat": "39.7414769",
+  "stop_lon": "-8.799912",
+  "osm": true,
+  "ref": "48",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284899930",
+  "stop_name": "Ponte Hintze Ribeiro",
+  "stop_lat": "39.7426274",
+  "stop_lon": "-8.8018884",
+  "osm": true,
+  "ref": "49",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284899931",
+  "stop_name": "Jardim Luís de Camões",
+  "stop_lat": "39.7452193",
+  "stop_lon": "-8.8062194",
+  "osm": true,
+  "ref": "50",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284910662",
+  "stop_name": "Ponte Hintze Ribeiro",
+  "stop_lat": "39.7425856",
+  "stop_lon": "-8.8019795",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284911570",
+  "stop_name": "Bombeiros Municipais",
+  "stop_lat": "39.7413407",
+  "stop_lon": "-8.7997988",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284928373",
+  "stop_name": "Escola Correia Mateus",
+  "stop_lat": "39.7450085",
+  "stop_lon": "-8.7926268",
+  "osm": true,
+  "ref": "43",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284928374",
+  "stop_name": "São Romão - Rua da Esperança CETL",
+  "stop_lat": "39.7359881",
+  "stop_lon": "-8.7939031",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997877",
+  "stop_name": "São Romão - Rua da Fonte",
+  "stop_lat": "39.7348334",
+  "stop_lon": "-8.7925234",
+  "osm": true,
+  "ref": "",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:3284997878",
+  "stop_name": "São Romão - Rua Coronel Pereira Pascoal",
+  "stop_lat": "39.7336099",
+  "stop_lon": "-8.7956173",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997879",
+  "stop_name": "Avenida Nossa Senhora de Fátima",
+  "stop_lat": "39.737137",
+  "stop_lon": "-8.7998298",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997880",
+  "stop_name": "Avenida Nossa Senhora de Fátima / Senhora da Encarnação",
+  "stop_lat": "39.7394237",
+  "stop_lon": "-8.8027244",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:3284997881",
+  "stop_name": "Bairro dos Sargentos",
+  "stop_lat": "39.7388617",
+  "stop_lon": "-8.8090357",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997882",
+  "stop_name": "Centro de Saúde Gorjão Henriques - B",
+  "stop_lat": "39.7370251",
+  "stop_lon": "-8.8108128",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997883",
+  "stop_name": "Porto Moniz / Esc. Francisco Rodrigues Lobo",
+  "stop_lat": "39.7393091",
+  "stop_lon": "-8.8157365",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997884",
+  "stop_name": "Escola Domingos Sequeira",
+  "stop_lat": "39.7457726",
+  "stop_lon": "-8.8139217",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997885",
+  "stop_name": "Avenida 25 De Abril",
+  "stop_lat": "39.7467946",
+  "stop_lon": "-8.8150744",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:3284997886",
+  "stop_name": "Piscinas Municipais",
+  "stop_lat": "39.7497908",
+  "stop_lon": "-8.8089227",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:3284997887",
+  "stop_name": "Estádio Magalhães Pessoa",
+  "stop_lat": "39.7508838",
+  "stop_lon": "-8.8125142",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:3284997888",
+  "stop_name": "Almoínha Grande",
+  "stop_lat": "39.7541158",
+  "stop_lon": "-8.8122243",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:3284997889",
+  "stop_name": "Nova Leiria",
+  "stop_lat": "39.7523244",
+  "stop_lon": "-8.8086951",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997890",
+  "stop_name": "Rua Capitão Mouzinho de Alburquerque",
+  "stop_lat": "39.7485187",
+  "stop_lon": "-8.805783",
+  "osm": true,
+  "ref": "",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3284997891",
+  "stop_name": "Largo Cónego Maia/Sé",
+  "stop_lat": "39.745777",
+  "stop_lon": "-8.8059083",
+  "osm": true,
+  "ref": "137",
+  "operator": "Mobilis"
+ },
+ {
+  "stop_id": "osm:node:3285000740",
+  "stop_name": "Rotunda Alto do Vieiro",
+  "stop_lat": "39.7351797",
+  "stop_lon": "-8.8236351",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:4341338036",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7980601",
+  "stop_lon": "-8.8588149",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:5801635104",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7814589",
+  "stop_lon": "-8.7222443",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:5809044535",
+  "stop_name": "N109 / Matoeira",
+  "stop_lat": "39.7894714",
+  "stop_lon": "-8.8289776",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:5809044536",
+  "stop_name": "Rua Rossio dos Borges",
+  "stop_lat": "39.7502121",
+  "stop_lon": "-8.8074732",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6348193706",
+  "stop_name": "Campus 2 IPL",
+  "stop_lat": "39.7331625",
+  "stop_lon": "-8.820949",
+  "osm": true,
+  "ref": "27",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6428683476",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6996367",
+  "stop_lon": "-8.8342639",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6428684201",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6959311",
+  "stop_lon": "-8.8415797",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6436895825",
+  "stop_name": "Largo José Lúcio",
+  "stop_lat": "39.7464525",
+  "stop_lon": "-8.8035845",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6436895826",
+  "stop_name": "Largo José Lúcio",
+  "stop_lat": "39.746717",
+  "stop_lon": "-8.8032609",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6542907203",
+  "stop_name": "Rua Lino António (Rua Titto Larcher)",
+  "stop_lat": "39.7272733",
+  "stop_lon": "-8.8091857",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6543272227",
+  "stop_name": "Escola José Saraiva",
+  "stop_lat": "39.7270185",
+  "stop_lon": "-8.8122653",
+  "osm": true,
+  "ref": "29",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6545217779",
+  "stop_name": "Rua Lino António (Rua Poeta José da Cruz)",
+  "stop_lat": "39.7254778",
+  "stop_lon": "-8.8073491",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6545217780",
+  "stop_name": "Rua Lino António (Rua Poeta José da Cruz)",
+  "stop_lat": "39.7254466",
+  "stop_lon": "-8.8074595",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6545217781",
+  "stop_name": "Rua D. José Alves Correia Silva",
+  "stop_lat": "39.7291256",
+  "stop_lon": "-8.8082324",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6547934432",
+  "stop_name": "Rua Lino António (Rua Titto Larcher)",
+  "stop_lat": "39.7269235",
+  "stop_lon": "-8.8091495",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6549996841",
+  "stop_name": "Colégio Conciliar De Maria Imaculada",
+  "stop_lat": "39.7315734",
+  "stop_lon": "-8.8082572",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6549996842",
+  "stop_name": "Colégio Conciliar De Maria Imaculada",
+  "stop_lat": "39.7311237",
+  "stop_lon": "-8.8084044",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6554102279",
+  "stop_name": "Rua D. José Alves Correia Silva",
+  "stop_lat": "39.7293917",
+  "stop_lon": "-8.8083619",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6554678385",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7542083",
+  "stop_lon": "-8.8546674",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6580278277",
+  "stop_name": "Rua Imaculada Conceição/Quartel",
+  "stop_lat": "39.7230782",
+  "stop_lon": "-8.805315",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6587755956",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7109023",
+  "stop_lon": "-8.7904987",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6615083282",
+  "stop_name": "Prisão Escola",
+  "stop_lat": "39.7345744",
+  "stop_lon": "-8.8083577",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6615083283",
+  "stop_name": "Prisão Escola",
+  "stop_lat": "39.7345663",
+  "stop_lon": "-8.8085177",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6615188423",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7022044",
+  "stop_lon": "-8.7966051",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6659052048",
+  "stop_name": "Milagres (Rotunda)",
+  "stop_lat": "39.7862231",
+  "stop_lon": "-8.7872699",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6659052049",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7835136",
+  "stop_lon": "-8.7863091",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6738781424",
+  "stop_name": "Rua da Cooperativa/X Casal dos Matos",
+  "stop_lat": "39.7298663",
+  "stop_lon": "-8.7932861",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6738781425",
+  "stop_name": "Rua da Cooperativa/X Casal dos Matos",
+  "stop_lat": "39.7297252",
+  "stop_lon": "-8.7930346",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6738781445",
+  "stop_name": "Rua Nossa Senhora de Fátima",
+  "stop_lat": "39.7267959",
+  "stop_lon": "-8.7905465",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6738781446",
+  "stop_name": "Rua Nossa Senhora de Fátima",
+  "stop_lat": "39.7268628",
+  "stop_lon": "-8.7904814",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6739044129",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.725152",
+  "stop_lon": "-8.7806605",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6739044132",
+  "stop_name": "Vidigal de Baixo",
+  "stop_lat": "39.7246757",
+  "stop_lon": "-8.7867928",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6779376381",
+  "stop_name": "Bairro das Almoínhas",
+  "stop_lat": "39.7545056",
+  "stop_lon": "-8.8206941",
+  "osm": true,
+  "ref": "18",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6813180453",
+  "stop_name": "Rua J. S. Cêa Simões / Agrup. Esc. Marrazes",
+  "stop_lat": "39.7637316",
+  "stop_lon": "-8.8066281",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6864543231",
+  "stop_name": "Bairro Sá Carneiro",
+  "stop_lat": "39.7635134",
+  "stop_lon": "-8.8123039",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6864543232",
+  "stop_name": "Bairro Sá Carneiro",
+  "stop_lat": "39.7633659",
+  "stop_lon": "-8.8122564",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6867666287",
+  "stop_name": "Rua das Olhalvas",
+  "stop_lat": "39.7411195",
+  "stop_lon": "-8.7984199",
+  "osm": true,
+  "ref": "47",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6871047709",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7446143",
+  "stop_lon": "-8.8152726",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6871047710",
+  "stop_name": "Avenida Papa Francisco",
+  "stop_lat": "39.7443493",
+  "stop_lon": "-8.8141724",
+  "osm": true,
+  "ref": "22",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6928938996",
+  "stop_name": "Rua das Olhalvas / Hospital Santo André",
+  "stop_lat": "39.7432333",
+  "stop_lon": "-8.7925121",
+  "osm": true,
+  "ref": "45",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:6928939003",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.743014",
+  "stop_lon": "-8.7927929",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6938637462",
+  "stop_name": "Estrada de S. Tiago / JF Marrazes",
+  "stop_lat": "39.7631844",
+  "stop_lon": "-8.8054654",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6946060559",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.790399",
+  "stop_lon": "-8.7475271",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6946060560",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7902402",
+  "stop_lon": "-8.7478396",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727488",
+  "stop_name": "Rua Imaculada Conceição/Escola Primária",
+  "stop_lat": "39.7205009",
+  "stop_lon": "-8.8042885",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727489",
+  "stop_name": "Rua Imaculada Conceição/Escola Primária",
+  "stop_lat": "39.7204917",
+  "stop_lon": "-8.8043977",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727492",
+  "stop_name": "Rua Imaculada Conceição/Rua da Paz",
+  "stop_lat": "39.7174402",
+  "stop_lon": "-8.8033606",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727493",
+  "stop_name": "Rua Imaculada Conceição/Rua da Paz",
+  "stop_lat": "39.7176174",
+  "stop_lon": "-8.8032636",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727507",
+  "stop_name": "Rua Imaculada Conceição 127",
+  "stop_lat": "39.7140256",
+  "stop_lon": "-8.8015698",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727522",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7101823",
+  "stop_lon": "-8.7991496",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727534",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6973561",
+  "stop_lon": "-8.7953487",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955727581",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6932037",
+  "stop_lon": "-8.7942236",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:6955731910",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6804625",
+  "stop_lon": "-8.7966569",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7119645763",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7353238",
+  "stop_lon": "-8.827481",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7127363919",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.701266",
+  "stop_lon": "-8.8285677",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7144499982",
+  "stop_name": "Estrada da Ribeira",
+  "stop_lat": "39.7141136",
+  "stop_lon": "-8.7864133",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7189312478",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7299973",
+  "stop_lon": "-8.7632635",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7246363640",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6981197",
+  "stop_lon": "-8.8288456",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7299541912",
+  "stop_name": "Centro de Saúde Dr. Arnaldo Sampaio",
+  "stop_lat": "39.7645812",
+  "stop_lon": "-8.8085189",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7299541913",
+  "stop_name": "Centro de Saúde Dr. Arnaldo Sampaio",
+  "stop_lat": "39.7644237",
+  "stop_lon": "-8.8083819",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7308352751",
+  "stop_name": "Zicofa 2",
+  "stop_lat": "39.7708868",
+  "stop_lon": "-8.7791264",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7387805973",
+  "stop_name": "Largo da República",
+  "stop_lat": "39.7409263",
+  "stop_lon": "-8.8100423",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7793254043",
+  "stop_name": "Largo Santo Agostinho",
+  "stop_lat": "39.7411244",
+  "stop_lon": "-8.8027947",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7793254044",
+  "stop_name": "Largo Santo Agostinho",
+  "stop_lat": "39.741243",
+  "stop_lon": "-8.8026772",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:7836017194",
+  "stop_name": "Rua de Santo André",
+  "stop_lat": "39.7410798",
+  "stop_lon": "-8.7957812",
+  "osm": true,
+  "ref": "46",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:7898973308",
+  "stop_name": "Paragem da Albergaria",
+  "stop_lat": "39.7453686",
+  "stop_lon": "-8.8887053",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8128110829",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7947754",
+  "stop_lon": "-8.7793331",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8128136420",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7869292",
+  "stop_lon": "-8.8077744",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8128176659",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7885882",
+  "stop_lon": "-8.8157241",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8128176664",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7881077",
+  "stop_lon": "-8.8188319",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8256122263",
+  "stop_name": "Rua João de Deus",
+  "stop_lat": "39.7567393",
+  "stop_lon": "-8.8233557",
+  "osm": true,
+  "ref": "9",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256122264",
+  "stop_name": "Estrada da Estação",
+  "stop_lat": "39.7555284",
+  "stop_lon": "-8.8235204",
+  "osm": true,
+  "ref": "8",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189951",
+  "stop_name": "Arrabalde da Ponte",
+  "stop_lat": "39.7520892",
+  "stop_lon": "-8.8075415",
+  "osm": true,
+  "ref": "4",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189952",
+  "stop_name": "Rua da Pilada",
+  "stop_lat": "39.7588116",
+  "stop_lon": "-8.8217042",
+  "osm": true,
+  "ref": "10",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189953",
+  "stop_name": "Estrada da Figueira da Foz",
+  "stop_lat": "39.7608256",
+  "stop_lon": "-8.8216136",
+  "osm": true,
+  "ref": "11",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189962",
+  "stop_name": "Travessa da Maligueira",
+  "stop_lat": "39.7641824",
+  "stop_lon": "-8.8249775",
+  "osm": true,
+  "ref": "13",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189963",
+  "stop_name": "Rotunda R. Dom Carlos I",
+  "stop_lat": "39.7615848",
+  "stop_lon": "-8.8243282",
+  "osm": true,
+  "ref": "14",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256189964",
+  "stop_name": "Estrada da Estação",
+  "stop_lat": "39.7552374",
+  "stop_lon": "-8.8228846",
+  "osm": true,
+  "ref": "17",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256357775",
+  "stop_name": "Rua Dom Carlos I",
+  "stop_lat": "39.7590024",
+  "stop_lon": "-8.8254517",
+  "osm": true,
+  "ref": "15",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256477217",
+  "stop_name": "Rua Quinta do Seminário / Centro Comercial",
+  "stop_lat": "39.7336892",
+  "stop_lon": "-8.8231645",
+  "osm": true,
+  "ref": "26",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256477230",
+  "stop_name": "Rua da Malaposta",
+  "stop_lat": "39.7299266",
+  "stop_lon": "-8.8101449",
+  "osm": true,
+  "ref": "30",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8256477231",
+  "stop_name": "Prisão Escola",
+  "stop_lat": "39.7327932",
+  "stop_lon": "-8.8095933",
+  "osm": true,
+  "ref": "31",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8259920046",
+  "stop_name": "São Romão - Rua Florentino Pedro Lopes",
+  "stop_lat": "39.7320962",
+  "stop_lon": "-8.7915134",
+  "osm": true,
+  "ref": "39",
+  "operator": "Rodoviária do Lis"
+ },
+ {
+  "stop_id": "osm:node:8419748300",
+  "stop_name": "Rua da Matinha",
+  "stop_lat": "39.7560085",
+  "stop_lon": "-8.807473",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8419776430",
+  "stop_name": "Quinta da Matinha",
+  "stop_lat": "39.7558043",
+  "stop_lon": "-8.8081146",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8419776435",
+  "stop_name": "Quinta da Matinha",
+  "stop_lat": "39.755474",
+  "stop_lon": "-8.8079056",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8430116652",
+  "stop_name": "Mercado Sant'ana",
+  "stop_lat": "39.7429363",
+  "stop_lon": "-8.8068683",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8813668962",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7379702",
+  "stop_lon": "-8.8235171",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8907588987",
+  "stop_name": "Quinta do Pisão",
+  "stop_lat": "39.7354584",
+  "stop_lon": "-8.827537",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:8969806547",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7559239",
+  "stop_lon": "-8.8188717",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9074716891",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.8029181",
+  "stop_lon": "-8.839086",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9074878077",
+  "stop_name": "Av. 25 de Abril / Castelo de Leiria",
+  "stop_lat": "39.7486096",
+  "stop_lon": "-8.8096571",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9101506983",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7004506",
+  "stop_lon": "-8.788525",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9101506984",
+  "stop_name": "X Rua da Filarmónica",
+  "stop_lat": "39.7005036",
+  "stop_lon": "-8.7882751",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9115237424",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7609553",
+  "stop_lon": "-8.7684029",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9251507401",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7588679",
+  "stop_lon": "-8.7744739",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9288582283",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7549965",
+  "stop_lon": "-8.7357449",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9288582284",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7588621",
+  "stop_lon": "-8.7280409",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9342100870",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7603252",
+  "stop_lon": "-8.7384183",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9342100873",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7705951",
+  "stop_lon": "-8.7238499",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9532677719",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7560922",
+  "stop_lon": "-8.842461",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9548426047",
+  "stop_name": "Rua Dom Miguel Bolhões/Centro Escolar",
+  "stop_lat": "39.7163338",
+  "stop_lon": "-8.7996392",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9794727820",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7215466",
+  "stop_lon": "-8.7847107",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812058105",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7220155",
+  "stop_lon": "-8.8307211",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812092416",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7149023",
+  "stop_lon": "-8.8318864",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812092585",
+  "stop_name": "Junta Freguesia Azoia",
+  "stop_lat": "39.7121419",
+  "stop_lon": "-8.830506",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812117950",
+  "stop_name": "Igreja Azoia",
+  "stop_lat": "39.7092651",
+  "stop_lon": "-8.8293266",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812120723",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6979852",
+  "stop_lon": "-8.8291203",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812126797",
+  "stop_name": "Rua Santa Catarina",
+  "stop_lat": "39.7061001",
+  "stop_lon": "-8.8276443",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812128066",
+  "stop_name": "Câmara Municipal / ESEL",
+  "stop_lat": "39.7397054",
+  "stop_lon": "-8.8124026",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9812133418",
+  "stop_name": "Junta Freguesia Azoia",
+  "stop_lat": "39.7122667",
+  "stop_lon": "-8.8306775",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9877677354",
+  "stop_name": "Rua Principal EN350",
+  "stop_lat": "39.7561727",
+  "stop_lon": "-8.7794132",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9877677355",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7608697",
+  "stop_lon": "-8.7637972",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:9988336930",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6847243",
+  "stop_lon": "-8.8890625",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:10002884404",
+  "stop_name": "Milagres (Santuário)",
+  "stop_lat": "39.7893101",
+  "stop_lon": "-8.7945188",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:10143256633",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.698954",
+  "stop_lon": "-8.8047565",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:10216013135",
+  "stop_name": "Av. General Humberto Delgado 1",
+  "stop_lat": "39.7390804",
+  "stop_lon": "-8.8040778",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:10777008220",
+  "stop_name": "Rua Paulo VI",
+  "stop_lat": "39.7468306",
+  "stop_lon": "-8.7953721",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11037584099",
+  "stop_name": "Rua 20 de Junho / Igreja Marinheiros",
+  "stop_lat": "39.7588298",
+  "stop_lon": "-8.7958035",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11405532760",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6869895",
+  "stop_lon": "-8.8189378",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822106012",
+  "stop_name": "Rua Padre Leandro de Sousa Saraiva",
+  "stop_lat": "39.71818",
+  "stop_lon": "-8.8010619",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822106013",
+  "stop_name": "Rua Imaculada Conceição/Quartel",
+  "stop_lat": "39.7233531",
+  "stop_lon": "-8.8053066",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780892",
+  "stop_name": "Rua Rossio dos Borges",
+  "stop_lat": "39.7500861",
+  "stop_lon": "-8.8077068",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780893",
+  "stop_name": "Arrabalde da Ponte",
+  "stop_lat": "39.7520687",
+  "stop_lon": "-8.8076202",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780894",
+  "stop_name": "Rua da Matinha",
+  "stop_lat": "39.7536383",
+  "stop_lon": "-8.8061695",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780895",
+  "stop_name": "Estrada Dos Marinheiros / Instituto Seg. Social",
+  "stop_lat": "39.7565191",
+  "stop_lon": "-8.8039003",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780896",
+  "stop_name": "Estrada Dos Marinheiros / Instituto Seg. Social",
+  "stop_lat": "39.7565362",
+  "stop_lon": "-8.8040334",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780897",
+  "stop_name": "Estrada Dos Marinheiros / X Travessa Oliveiras",
+  "stop_lat": "39.7585878",
+  "stop_lon": "-8.8009116",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780898",
+  "stop_name": "Estrada Dos Marinheiros / X Travessa Oliveiras",
+  "stop_lat": "39.7584204",
+  "stop_lon": "-8.8012045",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780899",
+  "stop_name": "Estrada dos Marinheiros",
+  "stop_lat": "39.7585432",
+  "stop_lon": "-8.7986352",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780900",
+  "stop_name": "Rua das Oliveiras / X Rua 20 de Junho",
+  "stop_lat": "39.7610421",
+  "stop_lon": "-8.7986507",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780901",
+  "stop_name": "Rua das Oliveiras / X Rua 20 de Junho",
+  "stop_lat": "39.7611562",
+  "stop_lon": "-8.7989328",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780902",
+  "stop_name": "Estrada S. Tiago",
+  "stop_lat": "39.7633234",
+  "stop_lon": "-8.7994661",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822780903",
+  "stop_name": "Estrada S. Tiago",
+  "stop_lat": "39.7634759",
+  "stop_lon": "-8.7996491",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831008",
+  "stop_name": "Estrada de S. Tiago / X Cemitério",
+  "stop_lat": "39.7640144",
+  "stop_lon": "-8.8016975",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831009",
+  "stop_name": "Estrada de S. Tiago / X Cemitério",
+  "stop_lat": "39.7638499",
+  "stop_lon": "-8.8014444",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831010",
+  "stop_name": "Estrada de S. Tiago / JF Marrazes",
+  "stop_lat": "39.7633129",
+  "stop_lon": "-8.8055138",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831011",
+  "stop_name": "Rua Carreira de Tiro",
+  "stop_lat": "39.7636923",
+  "stop_lon": "-8.8172488",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831012",
+  "stop_name": "Rua Carreira de Tiro",
+  "stop_lat": "39.7634954",
+  "stop_lon": "-8.817496",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831013",
+  "stop_name": "Rua 25 de Abril / X Rua da Baquelite",
+  "stop_lat": "39.7653755",
+  "stop_lon": "-8.8231772",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831014",
+  "stop_name": "Rua 25 de Abril / X Rua da Baquelite",
+  "stop_lat": "39.7655798",
+  "stop_lon": "-8.8233436",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831015",
+  "stop_name": "Rua 25 de Abril / X Amor",
+  "stop_lat": "39.7688349",
+  "stop_lon": "-8.8250511",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831016",
+  "stop_name": "Rua 25 de Abril / X Amor",
+  "stop_lat": "39.7689568",
+  "stop_lon": "-8.82518",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831017",
+  "stop_name": "Rua 25 de Abril / Capela da Gândara",
+  "stop_lat": "39.773297",
+  "stop_lon": "-8.824718",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831018",
+  "stop_name": "Rua 25 de Abril / Capela da Gândara",
+  "stop_lat": "39.7733861",
+  "stop_lon": "-8.8249004",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831019",
+  "stop_name": "Rua 25 de Abril / X Cemitério",
+  "stop_lat": "39.7778465",
+  "stop_lon": "-8.8254053",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831020",
+  "stop_name": "Rua 25 de Abril / X Cemitério",
+  "stop_lat": "39.7784829",
+  "stop_lon": "-8.8257946",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831021",
+  "stop_name": "N109 / Chãs",
+  "stop_lat": "39.7873933",
+  "stop_lon": "-8.8267092",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11822831022",
+  "stop_name": "N109 / Chãs",
+  "stop_lat": "39.7870997",
+  "stop_lon": "-8.8266156",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603394",
+  "stop_name": "Av. General Humberto Delgado 2",
+  "stop_lat": "39.7368867",
+  "stop_lon": "-8.8007863",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603395",
+  "stop_name": "Esc. Básica Guimarota (N356-2)",
+  "stop_lat": "39.7302416",
+  "stop_lon": "-8.79807",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603396",
+  "stop_name": "Moinho Novo",
+  "stop_lat": "39.7134046",
+  "stop_lon": "-8.7889761",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603397",
+  "stop_name": "Lourais",
+  "stop_lat": "39.7070024",
+  "stop_lon": "-8.7929659",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603398",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7060647",
+  "stop_lon": "-8.7928694",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603399",
+  "stop_name": "Junta Freguesia/Rua Helena Aboim L. Vieira",
+  "stop_lat": "39.7007632",
+  "stop_lon": "-8.7868653",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827603400",
+  "stop_name": "Rua Santa Maria",
+  "stop_lat": "39.7062833",
+  "stop_lon": "-8.7877599",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805231",
+  "stop_name": "Vidigal de Baixo : Rua 29 de Junho",
+  "stop_lat": "39.7213844",
+  "stop_lon": "-8.7845546",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805232",
+  "stop_name": "Escola Profissional/ISLA",
+  "stop_lat": "39.7323907",
+  "stop_lon": "-8.7951966",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805233",
+  "stop_name": "Escola Básica do Vidigal",
+  "stop_lat": "39.7217818",
+  "stop_lon": "-8.7811251",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805234",
+  "stop_name": "Vidigal de Cima: Av. Principal",
+  "stop_lat": "39.7231988",
+  "stop_lon": "-8.7801959",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805235",
+  "stop_name": "Vidigal de Cima: X Rua do Bairro",
+  "stop_lat": "39.724589",
+  "stop_lon": "-8.7772314",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805236",
+  "stop_name": "Vidigal de Cima: Cemitério Vidigal",
+  "stop_lat": "39.7249865",
+  "stop_lon": "-8.7744975",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805237",
+  "stop_name": "Avenida Principal",
+  "stop_lat": "39.7277007",
+  "stop_lon": "-8.7660583",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805238",
+  "stop_name": "Av. Principal / X Rua Cruz ou Rua Bailadouro",
+  "stop_lat": "39.7300311",
+  "stop_lon": "-8.7631142",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805239",
+  "stop_name": "Escola Básica Touria",
+  "stop_lat": "39.7300856",
+  "stop_lon": "-8.7590426",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805240",
+  "stop_name": "RSCL",
+  "stop_lat": "39.7415279",
+  "stop_lon": "-8.7526474",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805241",
+  "stop_name": "Rua do Monte N113",
+  "stop_lat": "39.7334313",
+  "stop_lon": "-8.7596753",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805242",
+  "stop_name": "Rua Virgílio Monteiro",
+  "stop_lat": "39.7334963",
+  "stop_lon": "-8.7618402",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805243",
+  "stop_name": "Rua Virgílio Monteiro / Cemitério",
+  "stop_lat": "39.7350482",
+  "stop_lon": "-8.7695585",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11827805244",
+  "stop_name": "Rotunda dos Filarmónicos",
+  "stop_lat": "39.7334261",
+  "stop_lon": "-8.7835627",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828045967",
+  "stop_name": "Rua Paulo VI / X N350",
+  "stop_lat": "39.7507538",
+  "stop_lon": "-8.792453",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828045968",
+  "stop_name": "Rua Paulo VI / X N350",
+  "stop_lat": "39.7507738",
+  "stop_lon": "-8.7926351",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828135275",
+  "stop_name": "Estrada Casal dos Matos",
+  "stop_lat": "39.7335669",
+  "stop_lon": "-8.7802108",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828135276",
+  "stop_name": "Junta Freguesia Pousos",
+  "stop_lat": "39.7339442",
+  "stop_lon": "-8.7751591",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828135277",
+  "stop_name": "Casal dos Matos (X)",
+  "stop_lat": "39.7389344",
+  "stop_lon": "-8.7736915",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828135278",
+  "stop_name": "Rua Prof. Abílio Alves Brito/Farmácia",
+  "stop_lat": "39.7411757",
+  "stop_lon": "-8.7766513",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828135279",
+  "stop_name": "Rua Coronel José Pereira Pascoal",
+  "stop_lat": "39.7407556",
+  "stop_lon": "-8.7794914",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196369",
+  "stop_name": "Rua Paulo VI / X Marinheiros",
+  "stop_lat": "39.7540518",
+  "stop_lon": "-8.7898327",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196370",
+  "stop_name": "Rua Paulo VI / X Marinheiros",
+  "stop_lat": "39.7551756",
+  "stop_lon": "-8.7886859",
+  "osm": true,
+  "ref": "Rua Paulo VI / X Marinheiros",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196371",
+  "stop_name": "Rua dos Costas",
+  "stop_lat": "39.7578403",
+  "stop_lon": "-8.7887449",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196372",
+  "stop_name": "Rua dos Costas",
+  "stop_lat": "39.757948",
+  "stop_lon": "-8.7888364",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196373",
+  "stop_name": "Rua Paulo VI / X Rua Vale Sepal",
+  "stop_lat": "39.7581241",
+  "stop_lon": "-8.7861429",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196374",
+  "stop_name": "Rua Paulo VI / X Rua Vale Sepal",
+  "stop_lat": "39.7583234",
+  "stop_lon": "-8.7861171",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196375",
+  "stop_name": "X Rua 13 de Junho",
+  "stop_lat": "39.7605497",
+  "stop_lon": "-8.7835513",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196376",
+  "stop_name": "Rua 13 de Junho",
+  "stop_lat": "39.7570412",
+  "stop_lon": "-8.7802737",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196377",
+  "stop_name": "Rua Principal EN350",
+  "stop_lat": "39.7561445",
+  "stop_lon": "-8.7790717",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196378",
+  "stop_name": "Escola Primária Andrinos",
+  "stop_lat": "39.7548854",
+  "stop_lon": "-8.7820883",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196379",
+  "stop_name": "Escola Primária Andrinos",
+  "stop_lat": "39.7544075",
+  "stop_lon": "-8.7828514",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196380",
+  "stop_name": "Quinta do Sirol Rua da Calmeira",
+  "stop_lat": "39.759665",
+  "stop_lon": "-8.7775534",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196381",
+  "stop_name": "Quinta do Sirol Rua Pinhal Cotelo",
+  "stop_lat": "39.7641947",
+  "stop_lon": "-8.7794547",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828196382",
+  "stop_name": "Andrinos Rua da Fontinha",
+  "stop_lat": "39.7622108",
+  "stop_lon": "-8.7804467",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382718",
+  "stop_name": "Igreja Azoia",
+  "stop_lat": "39.7095169",
+  "stop_lon": "-8.8293781",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382719",
+  "stop_name": "N356-1/ X Estrada da Maceira",
+  "stop_lat": "39.7149007",
+  "stop_lon": "-8.8324979",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382720",
+  "stop_name": "N356-1/ X Estrada da Maceira",
+  "stop_lat": "39.715131",
+  "stop_lon": "-8.8329561",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382721",
+  "stop_name": "Rua Serrada Nova",
+  "stop_lat": "39.7191304",
+  "stop_lon": "-8.8357698",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382722",
+  "stop_name": "Rua Serrada Nova",
+  "stop_lat": "39.7191435",
+  "stop_lon": "-8.8359145",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382723",
+  "stop_name": "Largo do Rossio",
+  "stop_lat": "39.722487",
+  "stop_lon": "-8.8374665",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382724",
+  "stop_name": "Largo do Rossio",
+  "stop_lat": "39.7228166",
+  "stop_lon": "-8.837112",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382725",
+  "stop_name": "Rua do Cruzeiro (Brogal)",
+  "stop_lat": "39.725201",
+  "stop_lon": "-8.8360156",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382726",
+  "stop_name": "Rua do Cruzeiro (Brogal)",
+  "stop_lat": "39.7252679",
+  "stop_lon": "-8.8360848",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382727",
+  "stop_name": "Rua do Cruzeiro (Largo)",
+  "stop_lat": "39.7293403",
+  "stop_lon": "-8.8358557",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382730",
+  "stop_name": "X Rua de Santa Maria",
+  "stop_lat": "39.7326544",
+  "stop_lon": "-8.8310135",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382731",
+  "stop_name": "X Rua de Santa Maria",
+  "stop_lat": "39.7328245",
+  "stop_lon": "-8.830994",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382732",
+  "stop_name": "Casal de Santa Clara",
+  "stop_lat": "39.7380625",
+  "stop_lon": "-8.8248041",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382733",
+  "stop_name": "Rua da Quinta (Rua do Convento)",
+  "stop_lat": "39.7397667",
+  "stop_lon": "-8.8246332",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382734",
+  "stop_name": "Rua da Quinta (Rotunda Edifoz)",
+  "stop_lat": "39.7406857",
+  "stop_lon": "-8.8263846",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382735",
+  "stop_name": "Rua da Carvalha",
+  "stop_lat": "39.7404821",
+  "stop_lon": "-8.8278868",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382736",
+  "stop_name": "Incubadora IPL",
+  "stop_lat": "39.7409626",
+  "stop_lon": "-8.8288356",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382737",
+  "stop_name": "Rua de Santa Clara (Rotunda Edifoz)",
+  "stop_lat": "39.740805",
+  "stop_lon": "-8.8257927",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828382738",
+  "stop_name": "Rua de Santa Clara (Rotunda Aéria)",
+  "stop_lat": "39.7380746",
+  "stop_lon": "-8.8237975",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475792",
+  "stop_name": "Rua do Cruzeiro (Largo)",
+  "stop_lat": "39.7298692",
+  "stop_lon": "-8.836187",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475793",
+  "stop_name": "Escola Formaçao Social",
+  "stop_lat": "39.7577524",
+  "stop_lon": "-8.8084163",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475794",
+  "stop_name": "Escola Formação Social",
+  "stop_lat": "39.7577518",
+  "stop_lon": "-8.8085147",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475795",
+  "stop_name": "Residência Paroquial",
+  "stop_lat": "39.7606689",
+  "stop_lon": "-8.8088378",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475796",
+  "stop_name": "Residência Paroquial",
+  "stop_lat": "39.7608751",
+  "stop_lon": "-8.8085702",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475797",
+  "stop_name": "Estrada de S. Tiago / Igreja Marrazes",
+  "stop_lat": "39.7625675",
+  "stop_lon": "-8.8070227",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475798",
+  "stop_name": "Estrada de S. Tiago / Igreja Marrazes",
+  "stop_lat": "39.7624853",
+  "stop_lon": "-8.8069078",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475799",
+  "stop_name": "Rua Casal do Cego",
+  "stop_lat": "39.7675498",
+  "stop_lon": "-8.79275",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475800",
+  "stop_name": "Estrada dos Pinheiros",
+  "stop_lat": "39.7733437",
+  "stop_lon": "-8.7888658",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475801",
+  "stop_name": "X Rua Principal",
+  "stop_lat": "39.7772196",
+  "stop_lon": "-8.7873331",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475802",
+  "stop_name": "Milagres (Rotunda)",
+  "stop_lat": "39.7862503",
+  "stop_lon": "-8.7871084",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475803",
+  "stop_name": "Milagres (Escola)",
+  "stop_lat": "39.7884098",
+  "stop_lon": "-8.7911587",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475804",
+  "stop_name": "CERCILEI",
+  "stop_lat": "39.7750592",
+  "stop_lon": "-8.7812813",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475805",
+  "stop_name": "Zicofa 1",
+  "stop_lat": "39.7722386",
+  "stop_lon": "-8.7761533",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475806",
+  "stop_name": "Zona Comercial",
+  "stop_lat": "39.7668795",
+  "stop_lon": "-8.7809743",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475807",
+  "stop_name": "Rua Outeiro do Pomar (Rua da Agricultura)",
+  "stop_lat": "39.7637964",
+  "stop_lon": "-8.7843654",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475808",
+  "stop_name": "Rua Outeiro do Pomar (Beco José da Silva)",
+  "stop_lat": "39.7631923",
+  "stop_lon": "-8.7892824",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828475809",
+  "stop_name": "Rua Outeiro do Pomar (Rua dos Marinheiros)",
+  "stop_lat": "39.7629612",
+  "stop_lon": "-8.7971043",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:11828545441",
+  "stop_name": "Rua Cidade de Tokushima",
+  "stop_lat": "39.7429291",
+  "stop_lon": "-8.813609",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:12169333241",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.680577",
+  "stop_lon": "-8.8686479",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:12169345795",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6807666",
+  "stop_lon": "-8.8725106",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:node:12956502461",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7423292",
+  "stop_lon": "-8.723071",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:way:473189533",
+  "stop_name": "Linha 1",
+  "stop_lat": "39.7569587",
+  "stop_lon": "-8.8277853",
+  "osm": true,
+  "ref": "1",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:way:473189534",
+  "stop_name": "Linhas 3, 2",
+  "stop_lat": "39.7569651",
+  "stop_lon": "-8.8279421",
+  "osm": true,
+  "ref": "3;2",
+  "operator": ""
+ },
+ {
+  "stop_id": "osm:way:1070038831",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.7453638",
+  "stop_lon": "-8.805029",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ }
+]
