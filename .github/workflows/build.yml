@@ -23,6 +23,8 @@ jobs:
           npm install --no-audit --no-fund
       - name: Testes JavaScript
         run: npm test
+      - name: Verificar dados OSM locais
+        run: python scripts/verify_osm_data.py
       - name: Testes Python
         run: python -m unittest discover -s tests -p '*.test.py' || (python tests/reviewed-gtfs.test.py && python tests/osm-network.test.py)
       - name: Gerar ícones personalizados WebApp
@@ -35,7 +37,7 @@ jobs:
           python scripts/verify_web_icons.py
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-WebApp-V1.10.9
+          name: RJP-Mobilis-WebApp-V1.10.13
           path: dist/
           if-no-files-found: error
   android:
@@ -88,6 +90,6 @@ jobs:
           echo "APK debug inclui ícone de launcher."
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-Android-debug-V1.10.9
+          name: RJP-Mobilis-Android-debug-V1.10.13
           path: android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
