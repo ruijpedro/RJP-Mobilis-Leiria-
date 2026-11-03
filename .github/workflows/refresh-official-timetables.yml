@@ -1,0 +1,38 @@
+name: Atualizar catálogo de horários oficiais Mobilis
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: mobilis-official-sources
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Consultar as nove linhas no site oficial Mobilis
+        run: python scripts/update_official_timetables.py
+      - name: Verificar catálogo
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('public/data/mobilis-sources.json').read_text())
+          assert [str(x['id']) for x in j['lines']]==list(map(str,range(1,10)))
+          assert all(x['page'].startswith('https://mobilis.pt/linhas/linha-') for x in j['lines'])
+          print('Catálogo validado: 9 linhas')
+          PY
+      - name: Guardar fontes encontradas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/mobilis-sources.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualizar links oficiais dos horários Mobilis"
+            git push
+          else
+            echo "Sem alterações nos links de horários."
+          fi
