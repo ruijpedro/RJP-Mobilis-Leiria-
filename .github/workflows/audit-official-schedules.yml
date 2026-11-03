@@ -1,0 +1,32 @@
+name: Auditar horários oficiais Mobilis
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 8 * * 3'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extrair referências e metadados das tabelas Mobilis
+        run: |
+          python scripts/audit_official_schedules.py --out audit/horarios
+      - name: Resumo da auditoria
+        if: always()
+        run: |
+          if [ -f audit/horarios/RESUMO.md ]; then cat audit/horarios/RESUMO.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobilis-horarios-oficiais-para-revisao
+          path: audit/horarios/
+          if-no-files-found: warn
