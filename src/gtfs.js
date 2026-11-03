@@ -12,42 +12,83 @@ export function formatGTFSSeconds(value){
 // Correções de atraso por viagem GTFS, nunca por todas as circulações de uma linha.
 export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  const dep=date.getHours()*3600+date.getMinutes()*60;
- const groups=new Map();
- for(const st of data.stopTimes){if(!groups.has(st.trip_id))groups.set(st.trip_id,[]);groups.get(st.trip_id).push(st)}
- const routes=new Map(data.routes.map(r=>[r.route_id,r]));
- const indexed=new Map();
- for(const trip of data.trips){
-  if(!activeService(trip.service_id,date,data.calendar,data.calendarDates))continue;
-  const arr=(groups.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence));
-  for(let i=0;i<arr.length;i++){
-   const st=arr[i];if(!indexed.has(st.stop_id))indexed.set(st.stop_id,[]);
-   indexed.get(st.stop_id).push({trip,arr,index:i});
-  }
+ if(!data||fromId===toId||!fromId||!toId)return [];
+ const routeMap=new Map((data.routes||[]).map(r=>[r.route_id,r]));
+ const trips=new Map((data.trips||[]).filter(t=>activeService(t.service_id,date,data.calendar||[],data.calendarDates||[]))
+  .map(t=>[t.trip_id,t]));
+ const grouped=new Map();
+ for(const st of data.stopTimes||[]){
+   if(!trips.has(st.trip_id))continue;
+   if(!grouped.has(st.trip_id))grouped.set(st.trip_id,[]);
+   grouped.get(st.trip_id).push(st);
  }
- let layer=[{stop:fromId,time:dep,legs:[],used:new Set()}];
- const answers=[];
- for(let transfer=0;transfer<=maxTransfers;transfer++){
-  const next=new Map();
-  for(const state of layer){
-   for(const entry of indexed.get(state.stop)||[]){
-    const {trip,arr,index}=entry;
-    const offset=Math.max(0,Math.min(180,Number(delays[trip.trip_id])||0))*60;
-    const boarding=seconds(arr[index].departure_time)+offset;
-    if(boarding<state.time+(state.legs.length?120:0)||boarding>dep+5*3600)continue;
-    if(state.used.has(trip.trip_id))continue;
-    for(let k=index+1;k<arr.length;k++){
-     const arrival=seconds(arr[k].arrival_time)+offset;if(!Number.isFinite(arrival))continue;
-     const leg={line:routes.get(trip.route_id)?.route_short_name||'?',from:state.stop,to:arr[k].stop_id,departure:formatGTFSSeconds(boarding),arrival:formatGTFSSeconds(arrival),scheduledDeparture:arr[index].departure_time,scheduledArrival:arr[k].arrival_time,delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id};
-     const item={stop:arr[k].stop_id,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
-     if(item.stop===toId)answers.push(item);
-     else if(!next.has(item.stop)||next.get(item.stop).time>arrival)next.set(item.stop,item);
-    }
+ const boardings=new Map();
+ for(const [tripId,stops] of grouped){
+   stops.sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence));
+   const trip=trips.get(tripId);
+   const offset=Math.max(0,Math.min(180,Number(delays[tripId])||0))*60;
+   for(let i=0;i<stops.length-1;i++){
+     const departure=seconds(stops[i].departure_time)+offset;
+     if(!Number.isFinite(departure))continue;
+     const item={trip,stops,i,departure,offset};
+     if(!boardings.has(stops[i].stop_id))boardings.set(stops[i].stop_id,[]);
+     boardings.get(stops[i].stop_id).push(item);
    }
-  }
-  layer=[...next.values()];
-  if(answers.length>=5)break;
  }
- return answers.sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length).slice(0,5).map(a=>{const first=a.legs[0],last=a.legs.at(-1);const ridingMinutes=a.legs.reduce((n,l)=>n+(durationMinutes(l.departure,l.arrival)||0),0);const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);return {...a,ridingMinutes,waitingMinutes,journeyMinutes:durationMinutes(first.departure,last.arrival),transfers:a.legs.length-1,scheduledOnly:!a.legs.some(l=>l.delayMinutes)}});
+ for(const options of boardings.values())options.sort((a,b)=>a.departure-b.departure);
+ const collected=[];
+ let frontier=[{stop:fromId,time:dep,legs:[],used:new Set()}];
+ const signature=state=>state.legs.map(l=>l.tripId+':'+l.from+':'+l.to).join('|');
+ for(let depth=0;depth<=Math.max(0,Math.min(2,maxTransfers))&&frontier.length;depth++){
+   const next=new Map();
+   for(const state of frontier){
+     const earliest=state.time+(depth?120:0);
+     for(const option of boardings.get(state.stop)||[]){
+       if(option.departure<earliest)continue;
+       if(option.departure>dep+5*3600)break;
+       if(state.used.has(option.trip.trip_id))continue;
+       const {trip,stops,i,offset,departure}=option;
+       for(let j=i+1;j<stops.length;j++){
+         const arrival=seconds(stops[j].arrival_time)+offset;
+         if(!Number.isFinite(arrival)||arrival<departure)continue;
+         const line=routeMap.get(trip.route_id);
+         const leg={line:line?.route_short_name||line?.route_long_name||'?',
+           from:state.stop,to:stops[j].stop_id,
+           departure:formatGTFSSeconds(departure),arrival:formatGTFSSeconds(arrival),
+           scheduledDeparture:stops[i].departure_time,scheduledArrival:stops[j].arrival_time,
+           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id};
+         const item={stop:leg.to,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
+         if(item.stop===toId){collected.push(item);continue;}
+         if(depth===maxTransfers)continue;
+         const choices=next.get(item.stop)||[];
+         if(!choices.some(x=>signature(x)===signature(item))){
+           choices.push(item);
+           choices.sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length);
+           // Guardar alternativas distintas, não apenas a primeira chegada
+           // à paragem; diferentes carreiras podem permitir transbordos.
+           if(choices.length>8)choices.length=8;
+           next.set(item.stop,choices);
+         }
+       }
+     }
+   }
+   frontier=[...next.values()].flat().sort((a,b)=>a.time-b.time).slice(0,1500);
+ }
+ const unique=new Map();
+ for(const state of collected){
+   const key=signature(state);
+   if(!unique.has(key)||unique.get(key).time>state.time)unique.set(key,state);
+ }
+ return [...unique.values()]
+  .sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length)
+  .slice(0,8).map(a=>{
+    const first=a.legs[0],last=a.legs.at(-1);
+    const ridingMinutes=a.legs.reduce((n,l)=>n+(durationMinutes(l.departure,l.arrival)||0),0);
+    const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);
+    return {...a,ridingMinutes,waitingMinutes,
+      journeyMinutes:durationMinutes(first.departure,last.arrival),
+      transfers:a.legs.length-1,scheduledOnly:!a.legs.some(l=>l.delayMinutes)};
+  });
 }
 
 export function distanceMeters(a,b){const lat1=Number(a.stop_lat),lon1=Number(a.stop_lon),lat2=Number(b.stop_lat),lon2=Number(b.stop_lon);if(![lat1,lon1,lat2,lon2].every(Number.isFinite)||(!lat1&&!lon1)||(!lat2&&!lon2))return Infinity;const rad=Math.PI/180;const dl=(lat2-lat1)*rad,doLon=(lon2-lon1)*rad;const x=Math.sin(dl/2)**2+Math.cos(lat1*rad)*Math.cos(lat2*rad)*Math.sin(doLon/2)**2;return 12742000*Math.asin(Math.min(1,Math.sqrt(x)))}
