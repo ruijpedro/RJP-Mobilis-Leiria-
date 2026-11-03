@@ -122,3 +122,12 @@ a{accent-color:var(--mobilis-blue)}
 .closest .nearest-routable{background:#ffc51d;color:#062e59;border:2px solid #062e59;padding:13px 11px;border-radius:10px;font-weight:800;min-height:50px}
 .popup-official{border-top:1px solid #dce5ef;margin-top:8px;padding-top:7px;font-size:12px;line-height:1.7}
 .popup-official a{color:#064f91;text-decoration:underline}
+
+/* V1.10.10 — cobertura comprovada dos horários por linha */
+.coverage-strip{background:#f4f8fc;border:1px solid #d5e4ef;border-radius:12px;margin:12px 0 16px;padding:12px;display:grid;gap:9px}
+.coverage-strip strong{color:#062e59;font-size:13px}
+.coverage-strip>div{display:flex;gap:6px;flex-wrap:wrap}
+.coverage-strip a{height:37px;min-width:37px;display:inline-grid;place-items:center;border-radius:9px;text-decoration:none;font-weight:900;border:1px solid #bfcede}
+.coverage-strip a.with-schedule{background:#062e59;color:#fff;border-color:#062e59}
+.coverage-strip a.without-schedule{background:#e7edf2;color:#506477}
+.coverage-strip small{color:#5e7182;line-height:1.5}
