@@ -1,6 +1,6 @@
 {
   "note": "Fontes oficiais das 9 linhas Mobilis. Imagens e PDF não equivalem a GTFS nem provam o horário de uma paragem específica.",
-  "last_checked": "2026-11-03T08:13:48Z",
+  "last_checked": "2026-11-03T14:04:35Z",
   "lines": [
     {
       "id": "1",
@@ -12,7 +12,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -25,7 +25,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-2.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -39,7 +39,7 @@
         "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -52,7 +52,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-4.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -65,7 +65,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -79,7 +79,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -92,7 +92,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-7.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -105,7 +105,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-8.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     },
     {
@@ -118,7 +118,7 @@
         "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-9.pdf"
       ],
       "status": "checked",
-      "last_checked": "2026-11-03T08:13:48Z",
+      "last_checked": "2026-11-03T14:04:35Z",
       "format": "official-reference-only"
     }
   ]
