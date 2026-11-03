@@ -12,11 +12,14 @@ import json
 import sys
 import urllib.parse
 import urllib.request
+import urllib.error
+import time
 from pathlib import Path
 
 ENDPOINTS = [
-    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
     "https://overpass-api.de/api/interpreter",
+    "https://overpass.nchc.org.tw/api/interpreter",
 ]
 # Mesma caixa que src/osmStops.js (sul, oeste, norte, este)
 BBOX = "39.68,-8.89,39.81,-8.72"
@@ -71,16 +74,32 @@ def to_geojson(stops):
 
 
 def fetch():
-    data = urllib.parse.urlencode({"data": QUERY}).encode()
     last = None
-    for url in ENDPOINTS:
-        try:
-            with urllib.request.urlopen(urllib.request.Request(url, data=data), timeout=90) as r:
-                return json.load(r)
-        except Exception as exc:  # tenta o servidor seguinte
-            last = exc
-    raise SystemExit(f"Falha ao consultar o Overpass: {last}")
-
+    for attempt in range(2):
+        for url in ENDPOINTS:
+            for method in ("POST", "GET"):
+                try:
+                    body = urllib.parse.urlencode({"data": QUERY})
+                    endpoint = url if method == "POST" else url + "?" + body
+                    request = urllib.request.Request(
+                        endpoint,
+                        data=body.encode() if method == "POST" else None,
+                        headers={"User-Agent": "RJP-Mobilis-Leiria/1.10 OSM-export",
+                                 "Accept": "application/json",
+                                 "Content-Type": "application/x-www-form-urlencoded"},
+                    )
+                    with urllib.request.urlopen(request, timeout=95) as r:
+                        payload = json.load(r)
+                        if not isinstance(payload.get("elements"), list):
+                            raise ValueError("Resposta Overpass sem elementos")
+                        print(f"Overpass OK: {url} ({method}), {len(payload['elements'])} elementos", flush=True)
+                        return payload
+                except (urllib.error.URLError, TimeoutError, ValueError, json.JSONDecodeError) as exc:
+                    last = exc
+                    print(f"Overpass {url} ({method}), tentativa {attempt+1}: {exc}", file=sys.stderr, flush=True)
+        if attempt == 0:
+            time.sleep(8)
+    raise SystemExit(f"Todos os servidores Overpass falharam; sem novos dados. Último erro: {last}")
 
 def main():
     stops = parse_stops(fetch())
