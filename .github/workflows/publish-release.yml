@@ -164,6 +164,64 @@ jobs:
           with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a",encoding="utf-8") as out:
               out.write("### Identidade da APK assinada\\n```\\n"+info+"```\\n")
           PY
+      - name: Comparar com APK assinada anterior
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          # Não alterar chave nem packageId entre versões: impede atualizações.
+          PREVIOUS="$(gh release list --limit 30 --json tagName,isDraft \
+            --jq '[.[] | select(.isDraft == false) | .tagName] | .[]' | \
+            grep -E '^v[0-9]+\.[0-9]+\.[0-9]+
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Identidade-Android
+          path: RJP-Mobilis-Identidade-Android.txt
+          if-no-files-found: error
+      - name: Disponibilizar APK assinada para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-APK-assinada
+          path: RJP-Mobilis-Leiria.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Disponibilizar WebApp para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-WebApp
+          path: RJP-Mobilis-WebApp.zip
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publicar GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          if ! gh release create "$RELEASE_VERSION" RJP-Mobilis-Leiria.apk RJP-Mobilis-WebApp.zip \
+            --target "$GITHUB_SHA" \
+            --title "RJP Mobilis Leiria $RELEASE_VERSION" \
+            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real."; then
+            echo "::warning::Sem permissão para criar GitHub Release. A APK assinada e a WebApp estão disponíveis nos artefactos desta execução."
+            echo "### Download para teste" >> "$GITHUB_STEP_SUMMARY"
+            echo "A publicação da Release falhou por permissões. Descarrega os artefactos APK assinada e WebApp desta execução." >> "$GITHUB_STEP_SUMMARY"
+          fi
+ | grep -Fxv "$RELEASE_VERSION" | head -n 1 || true)"
+          if [ -z "$PREVIOUS" ]; then
+            echo "::notice::Sem Release anterior comparável; identidade atual incluída no artefacto."
+            exit 0
+          fi
+          mkdir -p "$RUNNER_TEMP/mobilis-previous"
+          if ! gh release download "$PREVIOUS" --pattern RJP-Mobilis-Leiria.apk \
+            --dir "$RUNNER_TEMP/mobilis-previous"; then
+            echo "::warning::Não foi possível descarregar a APK anterior para comparar; revê manualmente a assinatura."
+            exit 0
+          fi
+          python scripts/check_android_upgrade.py \
+            "$RUNNER_TEMP/mobilis-previous/RJP-Mobilis-Leiria.apk" \
+            RJP-Mobilis-Leiria.apk \
+            "$ANDROID_HOME/build-tools/35.0.0/aapt" \
+            "$ANDROID_HOME/build-tools/35.0.0/apksigner"
       - name: Publicar diagnóstico de identidade Android
         uses: actions/upload-artifact@v4
         with:
