@@ -12,6 +12,7 @@ import html
 from html.parser import HTMLParser
 import json
 import re
+import subprocess
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
@@ -80,7 +81,11 @@ def audit(catalog, out):
         except Exception as exc:
             record["errors"].append("Página: " + str(exc))
             refs = []
+        # Priorizar as tabelas de horários e esquemas de paragens reais;
+        # não guardar SVG de logótipos e ícones decorativos.
         candidates = list(dict.fromkeys(refs + line.get("images", []) + line.get("pdfs", [])))
+        candidates = [u for u in candidates if any(token in urlparse(u).path.lower()
+                          for token in ("horarios-linha", "espinha-linha", "pdf-linha-", "linha-3.pdf"))]
         for url in candidates:
             if not is_official(url):
                 continue
@@ -88,12 +93,29 @@ def audit(catalog, out):
                 payload, media = fetch(url)
                 is_svg = urlparse(url).path.lower().endswith(".svg")
                 extracted = svg_text(payload) if is_svg else []
+                suffix = ".svg" if is_svg else ".pdf"
+                kind = "horarios" if "horarios-linha" in url.lower() or suffix == ".pdf" else "paragens"
+                folder = out / "fontes" / f"linha-{identifier}"
+                folder.mkdir(parents=True, exist_ok=True)
+                local = folder / f"{kind}-{len(record['documents']) + 1}{suffix}"
+                local.write_bytes(payload)
+                # A maioria dos SVG atuais usa glifos vetorizados, sem texto.
+                # Tentar primeiro extrair texto do PDF, mantendo o original.
+                if not is_svg:
+                    try:
+                        result = subprocess.run(["pdftotext", "-layout", str(local), "-"],
+                            capture_output=True, text=True, timeout=45, check=True)
+                        extracted = [v for v in result.stdout.splitlines() if v.strip()]
+                    except (FileNotFoundError, subprocess.SubprocessError) as exc:
+                        record["errors"].append("Extração PDF: " + str(exc))
                 doc = {"url": url, "sha256": hashlib.sha256(payload).hexdigest(),
                        "bytes": len(payload), "contentType": media,
                        "kind": "svg" if is_svg else "pdf",
                        "textItems": len(extracted),
                        "timeTokens": len(TIME_RE.findall(" ".join(extracted))),
-                       "requiresManualColumnReview": True}
+                       "requiresManualColumnReview": True,
+                       "downloadedFile": str(local.relative_to(out)),
+                       "machineReadableText": bool(extracted)}
                 record["documents"].append(doc)
                 if extracted:
                     (out / f"linha-{identifier}-{len(record['documents'])}.txt").write_text(
@@ -108,7 +130,7 @@ def audit(catalog, out):
         summary.append(f"## Linha {line['line']}")
         summary.append(f"Documentos acessíveis: {len(line['documents'])}")
         for doc in line["documents"]:
-            summary.append(f"- {doc['url']} — {doc['textItems']} elementos de texto, {doc['timeTokens']} referências horárias")
+            summary.append(f"- {doc['url']} — {doc['textItems']} linhas de texto, {doc['timeTokens']} referências horárias — ficheiro: {doc['downloadedFile']}")
         for error in line["errors"]:
             summary.append(f"- Erro: {error}")
         summary.append("")
