@@ -11,21 +11,24 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Instalar ferramentas de leitura PDF
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-por tesseract-ocr-eng
       - name: Extrair referências e metadados das tabelas Mobilis
         run: |
           python scripts/audit_official_schedules.py --out audit/horarios
+      - name: Extrair texto dos PDFs (OCR apenas quando necessário)
+        run: python scripts/extract_official_pdf_for_review.py
       - name: Resumo da auditoria
         if: always()
         run: |
           if [ -f audit/horarios/RESUMO.md ]; then cat audit/horarios/RESUMO.md >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f audit/horarios/transcricoes/indice.json ]; then echo "Transcrições e índice disponíveis no artefacto para revisão das paragens e das horas." >> "$GITHUB_STEP_SUMMARY"; fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
