@@ -98,3 +98,21 @@ a{accent-color:var(--mobilis-blue)}
 .stop-popup .popup-warning{background:#fff4d1;border-radius:6px;padding:6px;font-size:12px}
 .stop-popup small{display:block;color:#627589;font-size:11px;margin-top:7px}
 .leaflet-popup-content{margin:14px!important}
+
+/* V1.10.9 — paragens informativas, consulta de horários oficiais */
+.rjp-marker.rjp-marker-info{width:72px!important;height:76px!important;min-width:72px!important;min-height:76px!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:0;border:3px solid #fff!important;border-radius:15px!important;background:#062e59!important;box-shadow:0 4px 12px #062e5977!important;color:#fff!important;font-size:20px!important;white-space:nowrap;line-height:1.15!important;overflow:hidden}
+.stop-pin-bus{font-size:24px;line-height:26px}
+.stop-pin-lines{font-weight:900;font-size:13px;line-height:17px;color:#ffc51d;letter-spacing:.1px;max-width:66px;overflow:hidden;text-overflow:ellipsis}
+.stop-pin-unknown{color:#d9e3eb}
+.stop-pin-time{font-size:12px;font-weight:800;background:#ffc51d;color:#062e59;border-radius:5px;padding:2px 7px;line-height:15px}
+.stop-popup{min-width:205px;color:#1c3449}
+.stop-popup strong{font-size:15px}
+.popup-departure{border-top:1px solid #e4ebf1;padding:7px 0;font-size:13px}
+.popup-departure b{color:#062e59}
+.popup-warning{background:#fff6db;padding:7px;border-radius:6px;font-size:12px}
+.stop-popup small{font-size:11px;color:#64798e}
+.official-timetable{width:100%;margin-top:10px;border-top:1px solid #dbe5ef;padding-top:8px}
+.official-timetable summary{cursor:pointer;color:#062e59;font-size:13px;font-weight:800;min-height:40px;display:flex;align-items:center}
+.timetable-image{margin:9px 0;padding:9px;border:1px solid #dbe5ef;border-radius:10px;background:#fff;overflow:hidden}
+.timetable-image img{display:block;max-width:100%;width:100%;height:auto;max-height:560px;object-fit:contain}
+.timetable-image small{display:block;margin:0 0 7px;color:#49637c}
