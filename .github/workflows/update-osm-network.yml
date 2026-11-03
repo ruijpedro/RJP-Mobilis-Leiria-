@@ -8,11 +8,14 @@ permissions:
 jobs:
   osm:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verificar sintaxe dos exportadores
+        run: python -m py_compile scripts/export_osm_stops.py scripts/osm_network.py
       - name: Exportar paragens OSM de Leiria
         run: python scripts/export_osm_stops.py
       - name: Exportar linhas e traçados OSM
