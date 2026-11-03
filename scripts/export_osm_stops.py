@@ -88,7 +88,7 @@ def fetch():
                                  "Accept": "application/json",
                                  "Content-Type": "application/x-www-form-urlencoded"},
                     )
-                    with urllib.request.urlopen(request, timeout=95) as r:
+                    with urllib.request.urlopen(request, timeout=40) as r:
                         payload = json.load(r)
                         if not isinstance(payload.get("elements"), list):
                             raise ValueError("Resposta Overpass sem elementos")
