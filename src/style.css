@@ -78,3 +78,23 @@ a{accent-color:var(--mobilis-blue)}
 .served-lines{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0;padding:12px;border:1px solid #dce6f0;border-radius:10px;background:#f5f9ff}
 .served-lines strong{width:100%;font-size:13px;color:#062e59}
 .mapdetails .mapactions button:disabled{opacity:.5;cursor:not-allowed;background:#e8eef4;color:#6c7a86}
+
+/* V1.10.8 — ícones informativos maiores, linhas e próxima partida */
+.leaflet-marker-icon.rjp-marker-info{
+ width:72px!important;height:76px!important;
+ background:#ffc51d!important;color:#061b37!important;
+ border:3px solid #fff!important;border-radius:18px!important;
+ box-shadow:0 3px 0 #062e59,0 7px 16px #061b3770!important;
+ display:flex!important;flex-direction:column;justify-content:center;align-items:center;
+ gap:1px;padding:3px 3px 4px;line-height:1.05;text-align:center;
+}
+.stop-pin-bus{font-size:27px;line-height:29px;filter:none!important}
+.stop-pin-lines{font-size:12px;font-weight:900;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:14px}
+.stop-pin-time{font-size:12px;background:#062e59;color:#fff;border-radius:5px;padding:2px 5px;font-weight:900;letter-spacing:.1px;line-height:14px}
+.stop-pin-unknown{color:#687788}
+.stop-popup{min-width:185px;max-width:260px;line-height:1.5;color:#082b4a}
+.stop-popup strong{display:block;font-size:15px;margin-bottom:6px}
+.stop-popup .popup-departure{padding:6px 0;border-top:1px solid #e4ebf0;font-size:13px}
+.stop-popup .popup-warning{background:#fff4d1;border-radius:6px;padding:6px;font-size:12px}
+.stop-popup small{display:block;color:#627589;font-size:11px;margin-top:7px}
+.leaflet-popup-content{margin:14px!important}
