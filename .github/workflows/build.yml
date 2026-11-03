@@ -37,7 +37,7 @@ jobs:
           python scripts/verify_web_icons.py
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-WebApp-V1.10.13
+          name: RJP-Mobilis-WebApp-V1.10.14
           path: dist/
           if-no-files-found: error
   android:
@@ -90,6 +90,6 @@ jobs:
           echo "APK debug inclui ícone de launcher."
       - uses: actions/upload-artifact@v4
         with:
-          name: RJP-Mobilis-Android-debug-V1.10.13
+          name: RJP-Mobilis-Android-debug-V1.10.14
           path: android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
