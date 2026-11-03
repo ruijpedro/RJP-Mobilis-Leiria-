@@ -57,11 +57,13 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
      '<div class="popup-departure"><b>Linha '+escapeHTML(d.line)+'</b> · '+escapeHTML(d.time.slice(0,5))+
      ' · '+escapeHTML(d.headsign||'sentido não indicado')+'</div>').join(''):
      '<p>Sem partidas programadas disponíveis para esta data/hora.</p>';
+   const official=info.lines.map(x=>x.line).filter(x=>/^[1-9]$/.test(String(x))).slice(0,3)
+     .map(n=>'<a href="https://mobilis.pt/linhas/linha-'+n+'/" target="_blank" rel="noopener noreferrer">Horário oficial linha '+n+'</a>').join(' · ');
    const warning=association.status==='name-only'?
       '<p class="popup-warning">Correspondência só pelo nome. Confirma a plataforma e o sentido.</p>':
       association.status==='position'?'':'<p class="popup-warning">Sem associação segura aos horários GTFS.</p>';
    marker.bindPopup('<div class="stop-popup"><strong>🚌 '+name+'</strong>'+warning+schedule+
-     '<small>Horários programados, não localização em tempo real.</small></div>',{maxWidth:295});
+     '<small>Horários programados, não localização em tempo real.</small>'+(official?'<div class="popup-official">'+official+'</div>':'')+'</div>',{maxWidth:295});
    marker.on('click',()=>setActive(stop));
    g.addLayer(marker);
   }
