@@ -134,12 +134,30 @@ jobs:
             --out RJP-Mobilis-Leiria.apk "$RUNNER_TEMP/aligned.apk"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose RJP-Mobilis-Leiria.apk
           rm -f "$RUNNER_TEMP/mobilis.jks"
+      - name: Disponibilizar APK assinada para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-APK-assinada
+          path: RJP-Mobilis-Leiria.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Disponibilizar WebApp para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-WebApp
+          path: RJP-Mobilis-WebApp.zip
+          if-no-files-found: error
+          retention-days: 30
       - name: Publicar GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_VERSION: ${{ inputs.version }}
         run: |
-          gh release create "$RELEASE_VERSION" RJP-Mobilis-Leiria.apk RJP-Mobilis-WebApp.zip \
+          if ! gh release create "$RELEASE_VERSION" RJP-Mobilis-Leiria.apk RJP-Mobilis-WebApp.zip \
             --target "$GITHUB_SHA" \
             --title "RJP Mobilis Leiria $RELEASE_VERSION" \
-            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real."
+            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real."; then
+            echo "::warning::Sem permissão para criar GitHub Release. A APK assinada e a WebApp estão disponíveis nos artefactos desta execução."
+            echo "### Download para teste" >> "$GITHUB_STEP_SUMMARY"
+            echo "A publicação da Release falhou por permissões. Descarrega os artefactos APK assinada e WebApp desta execução." >> "$GITHUB_STEP_SUMMARY"
+          fi
