@@ -73,3 +73,8 @@ a{accent-color:var(--mobilis-blue)}
 .stop-search-results button{min-height:46px;border:1px solid #d7e5ef;border-radius:9px;text-align:left;background:white;color:#123957;padding:9px 11px;display:flex;gap:8px;align-items:center;justify-content:space-between;font-weight:650}
 .stop-search-results button span{font-size:11px;color:#1768a5;white-space:nowrap}
 .stop-distance{padding:9px 11px;background:#fff7da;border-radius:9px;font-size:13px;color:#2f4a61}
+
+/* V1.10.7 — informação de linhas disponíveis por paragem */
+.served-lines{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0;padding:12px;border:1px solid #dce6f0;border-radius:10px;background:#f5f9ff}
+.served-lines strong{width:100%;font-size:13px;color:#062e59}
+.mapdetails .mapactions button:disabled{opacity:.5;cursor:not-allowed;background:#e8eef4;color:#6c7a86}
