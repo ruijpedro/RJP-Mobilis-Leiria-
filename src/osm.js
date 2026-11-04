@@ -3,12 +3,15 @@ export const OVERPASS_QUERY=`[out:json][timeout:60];(node["highway"="bus_stop"](
 const ENDPOINTS=['https://overpass.private.coffee/api/interpreter','https://overpass-api.de/api/interpreter'];
 const BASE=import.meta.env?.BASE_URL||'/';
 const BUNDLED=`${BASE}data/osm-stops-leiria.json`;
+// OSM pode incluir plataformas ferroviárias chamadas «Linha 1», «Linha 2».
+// Não são paragens de autocarro e nunca devem receber o ícone Mobilis.
+export const isRailPlatformLabel=name=>/^(?:linha|via)\s*\d+[a-z]?$/i.test(normalise(name));
 const valid=s=>s&&s.stop_lat!==''&&s.stop_lon!==''&&Number.isFinite(Number(s.stop_lat))&&Number.isFinite(Number(s.stop_lon))&&Math.abs(Number(s.stop_lat))<=90&&Math.abs(Number(s.stop_lon))<=180;
 export function parseOSM(payload){
- const candidates=(payload.elements||[]).map(e=>({stop_id:`osm:${e.type}:${e.id}`,osm_id:e.id,stop_name:e.tags?.name||e.tags?.['name:pt']||e.tags?.local_ref||e.tags?.ref||'Paragem sem nome',stop_lat:String(e.lat??e.center?.lat??''),stop_lon:String(e.lon??e.center?.lon??''),ref:e.tags?.ref||'',operator:e.tags?.operator||'',source:'OpenStreetMap'})).filter(valid);
+ const candidates=(payload.elements||[]).map(e=>({stop_id:`osm:${e.type}:${e.id}`,osm_id:e.id,stop_name:e.tags?.name||e.tags?.['name:pt']||e.tags?.local_ref||e.tags?.ref||'Paragem sem nome',stop_lat:String(e.lat??e.center?.lat??''),stop_lon:String(e.lon??e.center?.lon??''),ref:e.tags?.ref||'',operator:e.tags?.operator||'',source:'OpenStreetMap'})).filter(s=>valid(s)&&!isRailPlatformLabel(s.stop_name));
  const found=[];for(const stop of candidates){if(!found.some(other=>distanceMeters(other,stop)<15&&normalise(other.stop_name)===normalise(stop.stop_name)))found.push(stop)}return found;
 }
-function validateStops(stops){return Array.isArray(stops)?stops.filter(valid).map(s=>({...s,source:'OpenStreetMap'})):[]}
+function validateStops(stops){return Array.isArray(stops)?stops.filter(s=>valid(s)&&!isRailPlatformLabel(s.stop_name)).map(s=>({...s,source:'OpenStreetMap'})):[]}
 async function bundled(){
  const response=await fetch(BUNDLED,{cache:'no-cache'});
  if(!response.ok)throw Error('Cópia OSM indisponível: HTTP '+response.status);
@@ -37,7 +40,7 @@ export async function loadOSM({force=false}={}){
  try{old=JSON.parse(localStorage.getItem(key)||'null')}catch{}
  if(!force){
   try{const result=await bundled();try{localStorage.setItem(key,JSON.stringify({...result,at:Date.now()}))}catch{}return result}catch(e){
-   if(old?.stops?.length)return {...old,cache:true,warning:'Cópia incluída indisponível; a utilizar a última lista guardada.'};
+   if(old?.stops?.length)return {...old,stops:validateStops(old.stops),cache:true,warning:'Cópia incluída indisponível; a utilizar a última lista guardada.'};
   }
  }
  try{
@@ -46,7 +49,7 @@ export async function loadOSM({force=false}={}){
   return result;
  }catch(e){
   try{const result=await bundled();return {...result,warning:'Consulta Overpass falhou; foram mantidas as paragens incluídas na app.'}}catch{}
-  if(old?.stops?.length)return {...old,cache:true,warning:'Sem rede; a utilizar a última lista guardada.'};
+  if(old?.stops?.length)return {...old,stops:validateStops(old.stops),cache:true,warning:'Sem rede; a utilizar a última lista guardada.'};
   throw e;
  }
 }
