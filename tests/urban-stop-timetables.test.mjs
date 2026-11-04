@@ -34,7 +34,7 @@ test('quadro por paragem mostra linhas e partidas por sentido',()=>{
  assert.ok(t.departures>0);
  assert.ok(t.groups.find(g=>g.line==='1').departures.some(p=>p.time==='07:10:00'));
 });
-test('sem horário no dia escolhido não fabrica partidas',()=>{
- const t=stopTimetable(data,'mobilis:l3:telheiro',new Date(2026,10,8,7,0));
+test('fora do período de validade não fabrica partidas',()=>{
+ const t=stopTimetable(data,'mobilis:l3:telheiro',new Date(2027,0,3,7,0));
  assert.equal(t.length,0);
 });
