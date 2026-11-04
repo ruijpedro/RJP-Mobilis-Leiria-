@@ -1,0 +1,1379 @@
+{
+  "schemaVersion": 1,
+  "note": "Pontos de referência do horário oficial de setembro 2026. Feriados requerem calendar_dates e horários especiais destacados não operam em julho/agosto (fora desta janela técnica de revisão). Paragens sem horário não são interpoladas.",
+  "services": [
+    {
+      "id": "l6-out-weekdays-0710-0",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "07:15"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "07:27"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "07:29"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "07:35"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-0815-1",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:15"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "08:20"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "08:25"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros-desvio",
+          "stopName": "Parceiros (desvio CE)",
+          "time": "08:33"
+        },
+        {
+          "stopId": "mobilis:l6:ce-parceiros",
+          "stopName": "CE Parceiros",
+          "time": "08:37"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "08:41"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "08:49"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1200-2",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:00"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "12:05"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "12:17"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "12:19"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "12:25"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1330-3",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "13:30"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "13:35"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "13:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "13:47"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "13:49"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "13:55"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1430-4",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "14:30"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "14:35"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "14:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "14:47"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "14:49"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "14:55"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1620-5",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "16:25"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "16:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "16:37"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "16:39"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "16:45"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1720-6",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "17:25"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:37"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:39"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:45"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1830-7",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:30"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "18:35"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "18:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "18:47"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "18:49"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "18:55"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-weekdays-1930-8",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "19:30"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "19:35"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "19:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "19:47"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "19:49"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "19:55"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-saturday-0710-0",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "07:15"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "07:27"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "07:29"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "07:35"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-saturday-1000-1",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:00"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "10:05"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "10:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "10:17"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "10:19"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "10:25"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-saturday-1200-2",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:00"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "12:05"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "12:17"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "12:19"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "12:25"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-saturday-1720-3",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "17:25"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:37"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:39"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:45"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-sunday-0840-0",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:40"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "08:45"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "08:50"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "08:57"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "08:59"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "09:05"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-sunday-1000-1",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:00"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "10:05"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "10:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "10:17"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "10:19"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "10:25"
+        }
+      ]
+    },
+    {
+      "id": "l6-out-sunday-1720-2",
+      "line": "6",
+      "direction": "Leiria → Parceiros (Azoia)",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "17:25"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:37"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:39"
+        },
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:45"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-0645-0",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "06:45"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "06:50"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "06:52"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "06:56"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "07:05"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "07:10"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-0735-1",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "07:35"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "07:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "07:42"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "07:46"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "07:55"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-0905-2",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "09:05"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "09:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "09:12"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "09:16"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:30"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1235-3",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "12:35"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "12:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "12:42"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "12:46"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "12:55"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "13:00"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1355-4",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "13:55"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "14:00"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "14:02"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "14:06"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "14:15"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "14:20"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1455-5",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "14:55"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "15:00"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "15:02"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "15:06"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "15:15"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "15:20"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1645-6",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "16:45"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "16:50"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "16:52"
+        },
+        {
+          "stopId": "mobilis:l6:ce-parceiros",
+          "stopName": "CE Parceiros",
+          "time": "16:56"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros-regresso",
+          "stopName": "Parceiros (regresso do CE)",
+          "time": "17:00"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "17:05"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "17:15"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "17:20"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1750-7",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:57"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "18:01"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:15"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1855-8",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "18:55"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "19:00"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "19:02"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "19:06"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "19:15"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "19:20"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-weekdays-1955-9",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "19:55"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "20:00"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "20:02"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "20:06"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "20:15"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "20:20"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-saturday-0735-0",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "07:35"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "07:40"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "07:42"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "07:46"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "07:55"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-saturday-1025-1",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "10:25"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "10:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "10:32"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "10:36"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "10:45"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:50"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-saturday-1225-2",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "12:25"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "12:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "12:32"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "12:36"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "12:45"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "12:50"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-saturday-1750-3",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:57"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "18:01"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:15"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-sunday-0905-0",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "09:05"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "09:10"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "09:12"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "09:16"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "09:30"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-sunday-1025-1",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "10:25"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "10:30"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "10:32"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "10:36"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "10:45"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "10:50"
+        }
+      ]
+    },
+    {
+      "id": "l6-in-sunday-1750-2",
+      "line": "6",
+      "direction": "Parceiros (Azoia) → Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-6.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l6:azoia",
+          "stopName": "Azoia",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l6:brogal",
+          "stopName": "Brogal",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l6:parceiros",
+          "stopName": "Parceiros",
+          "time": "17:57"
+        },
+        {
+          "stopId": "mobilis:l6:santa-clara",
+          "stopName": "Urb. Santa Clara",
+          "time": "18:01"
+        },
+        {
+          "stopId": "mobilis:l6:camara",
+          "stopName": "Câmara Municipal / ESEL",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l2:terminal",
+          "stopName": "Av. Bernardo Pimenta (Terminal)",
+          "time": "18:15"
+        }
+      ]
+    }
+  ]
+}
