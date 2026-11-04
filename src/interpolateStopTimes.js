@@ -12,7 +12,7 @@ function sameReference(publishedName,officialName){
  return official==='vale sepal'&&published.includes('rua vale sepal');
 }
 export function interpolatePublishedStops(data,published){
- if(!data?.trips?.length||!published?.routes)return data;
+ if(!data?.trips?.length||!published?.routes||data.estimatedStopTimes!==undefined)return data;
  const byTrip=new Map();
  for(const st of data.stopTimes||[]){
   if(!byTrip.has(st.trip_id))byTrip.set(st.trip_id,[]);
