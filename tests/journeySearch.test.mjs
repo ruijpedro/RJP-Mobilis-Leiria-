@@ -34,3 +34,9 @@ test('não cria linha 10 quando não consta da base',()=>{
  const partial={...data,trips:data.trips.slice(0,1),stopTimes:data.stopTimes.slice(0,2)};
  assert.equal(findJourneyOptions(partial,'Vidigal','Teatro',date).routes.length,0);
 });
+
+test('planeador reconhece Campus 2 IPL quando base indica Campus 2 ULO',()=>{
+ const rows=[{stop_id:'campus',stop_name:'Campus 2 ULO'},{stop_id:'escola',stop_name:'Esc. Afonso Lopes Vieira'}];
+ assert.deepEqual(resolveStopCandidates(rows,'Campus 2 IPL').map(s=>s.stop_id),['campus']);
+ assert.deepEqual(resolveStopCandidates(rows,'Escola Afonso Lopes Vieira').map(s=>s.stop_id),['escola']);
+});
