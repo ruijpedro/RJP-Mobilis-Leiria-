@@ -5,7 +5,7 @@ const BASE=import.meta.env?.BASE_URL||'/';
 const BUNDLED=`${BASE}data/osm-stops-leiria.json`;
 // OSM pode incluir plataformas ferroviárias chamadas «Linha 1», «Linha 2».
 // Não são paragens de autocarro e nunca devem receber o ícone Mobilis.
-export const isRailPlatformLabel=name=>/^(?:linha|via)\\s*\\d+[a-z]?$/i.test(normalise(name));
+export const isRailPlatformLabel=name=>/^(?:linha|via)\s*\d+[a-z]?$/i.test(normalise(name));
 const valid=s=>s&&s.stop_lat!==''&&s.stop_lon!==''&&Number.isFinite(Number(s.stop_lat))&&Number.isFinite(Number(s.stop_lon))&&Math.abs(Number(s.stop_lat))<=90&&Math.abs(Number(s.stop_lon))<=180;
 export function parseOSM(payload){
  const candidates=(payload.elements||[]).map(e=>({stop_id:`osm:${e.type}:${e.id}`,osm_id:e.id,stop_name:e.tags?.name||e.tags?.['name:pt']||e.tags?.local_ref||e.tags?.ref||'Paragem sem nome',stop_lat:String(e.lat??e.center?.lat??''),stop_lon:String(e.lon??e.center?.lon??''),ref:e.tags?.ref||'',operator:e.tags?.operator||'',source:'OpenStreetMap'})).filter(s=>valid(s)&&!isRailPlatformLabel(s.stop_name));
