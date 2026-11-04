@@ -33,6 +33,6 @@ export function findJourneyOptions(data,origin,destination,date,{fromId='',toId=
  const routes=[...unique.values()].sort((a,b)=>{
    const arrival=a.time-b.time;
    return arrival||a.transfers-b.transfers||a.journeyMinutes-b.journeyMinutes;
- }).slice(0,8);
+ }).slice(0,32);
  return {routes,origins,destinations,reason:routes.length?'':'Não existem ligações confirmadas nestes horários. A base incluída é parcial; para outros autocarros é necessário um GTFS válido e completo.'};
 }
