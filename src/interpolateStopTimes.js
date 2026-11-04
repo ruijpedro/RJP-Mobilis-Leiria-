@@ -4,6 +4,13 @@ import {seconds,formatGTFSSeconds} from './gtfs.js';
 // Estima passagens apenas entre DUAS horas de referência da mesma viagem.
 // É uma aproximação linear por ordem de paragens, não um horário publicado.
 // Não extrapola antes/depois das referências nem usa sequências incompletas.
+function sameReference(publishedName,officialName){
+ const published=canonicalStopName(publishedName).replace(/\\bsto\\b/g,'santo');
+ const official=canonicalStopName(officialName).replace(/\\bsto\\b/g,'santo');
+ if(published===official)return true;
+ // Nome abreviado do mesmo lugar, explicitamente identificado no percurso.
+ return official==='vale sepal'&&published.includes('rua vale sepal');
+}
 export function interpolatePublishedStops(data,published){
  if(!data?.trips?.length||!published?.routes)return data;
  const byTrip=new Map();
@@ -21,13 +28,12 @@ export function interpolatePublishedStops(data,published){
   if(!route?.completePublishedSequence||!Array.isArray(route.stops)||original.length<2){
    rebuilt.push(...original);continue;
   }
-  const names=route.stops.map(canonicalStopName),anchors=[];
+  const anchors=[];
   let previous=-1;
   for(const stopTime of original){
    const stop=stopIndex.get(stopTime.stop_id);
    if(!stop){anchors.length=0;break;}
-   const target=canonicalStopName(stop.stop_name);
-   const next=names.findIndex((name,i)=>i>previous&&name===target);
+   const next=names.findIndex((name,i)=>i>previous&&sameReference(route.stops[i],stop.stop_name));
    if(next<0){anchors.length=0;break;}
    const time=seconds(stopTime.departure_time);
    if(!Number.isFinite(time)){anchors.length=0;break;}
