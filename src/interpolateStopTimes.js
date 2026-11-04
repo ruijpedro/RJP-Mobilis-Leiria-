@@ -23,7 +23,7 @@ export function interpolatePublishedStops(data,published){
  const addedStops=new Map(),rebuilt=[];
  for(const trip of data.trips){
   const original=(byTrip.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence));
-  const route=published.routes[routeIndex.get(trip.route_id)];
+  const route=trip.route_id.startsWith('mobilis-official-')?published.routes[routeIndex.get(trip.route_id)]:null;
   // Sem sequência completa ou pontos suficientes, não há estimativa.
   if(!route?.completePublishedSequence||!Array.isArray(route.stops)||original.length<2){
    rebuilt.push(...original);continue;
