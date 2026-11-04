@@ -136,3 +136,11 @@ a{accent-color:var(--mobilis-blue)}
 .ota-check{border:1px solid #8097aa;border-radius:8px;background:#234664;color:white;font-size:12px;font-weight:650;padding:7px 10px}
 .ota-check:disabled{opacity:.6;cursor:wait}
 .ota-status{margin:12px 0 0;font-size:12px;line-height:1.45}
+
+.journey-map-summary{border:1px solid #cfdde8;background:#f5f9fc;border-radius:14px;padding:14px;margin:12px 0;display:grid;gap:9px}
+.journey-map-summary>strong{color:#17334b;font-size:20px}
+.journey-map-summary>span{font-size:13px;color:#36516a}
+.journey-map-summary>small{color:#607487;line-height:1.45}
+.journey-map-summary>button{justify-self:start;border:1px solid #becede;border-radius:9px;background:white;padding:8px 12px;color:#17334b;font-weight:700}
+.journey-lines{display:flex;flex-wrap:wrap;gap:7px}
+.journey-lines>span{background:white;padding:5px 9px;border:2px solid;border-radius:9px;font-size:12px;font-weight:800}
