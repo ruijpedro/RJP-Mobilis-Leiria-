@@ -45,7 +45,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
      const earliest=state.time+(depth?120:0);
      for(const option of boardings.get(state.stop)||[]){
        if(option.departure<earliest)continue;
-       if(option.departure>dep+5*3600)break;
+       if(option.departure>dep+18*3600)break;
        if(state.used.has(option.trip.trip_id))continue;
        const {trip,stops,i,offset,departure}=option;
        for(let j=i+1;j<stops.length;j++){
@@ -81,7 +81,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  }
  return [...unique.values()]
   .sort((a,b)=>a.time-b.time||a.legs.length-b.legs.length)
-  .slice(0,8).map(a=>{
+  .slice(0,32).map(a=>{
     const first=a.legs[0],last=a.legs.at(-1);
     const ridingMinutes=a.legs.reduce((n,l)=>n+(durationMinutes(l.departure,l.arrival)||0),0);
     const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);
