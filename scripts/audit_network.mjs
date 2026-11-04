@@ -38,6 +38,9 @@ const lines=[...new Set(services.map(s=>s.line))].sort();
 const directoryNames=new Set(Object.values(catalog.routes).flatMap(r=>r.stops.map(canonicalStopName)));
 const anchorNames=new Set(services.flatMap(s=>s.stops.map(x=>canonicalStopName(x.stopName))));
 const shared=[...directoryNames].filter(n=>anchorNames.has(n)).length;
+const stopIdsWithHours=new Set(estimated.stopTimes.map(x=>x.stop_id));
+const timedNames=new Set(estimated.stops.filter(s=>stopIdsWithHours.has(s.stop_id)).map(s=>canonicalStopName(s.stop_name)));
+const routableMatches=[...directoryNames].filter(n=>timedNames.has(n)).length;
 const estimates=estimated.stopTimes.filter(x=>x.timeIsEstimated);
 const officialBefore=new Map(data.stopTimes.map(x=>[x.trip_id+'|'+x.stop_sequence,x.departure_time]));
 const originalPerTrip=new Map();
@@ -58,6 +61,7 @@ for(const line of lines){
 }
 if([...new Set(services.map(x=>x.validUntil))].some(x=>x<='20261231'))
  warnings.push('A validade técnica dos horários termina em 2026-12-31 para pelo menos uma circulação');
+if(routableMatches<directoryNames.size)warnings.push('Nem todos os nomes do catálogo possuem horas digitais, mesmo após interpolação. Não afirmar 100% da rede.');
 if(Object.keys(catalog.routes).length!==9)failures.push('Catálogo não contém nove linhas');
 if(lines.length!==9)failures.push('Horários não cobrem as nove linhas');
 if(estimated.trips.length!==data.trips.length)failures.push('Interpolação alterou número de viagens');
@@ -72,7 +76,7 @@ const report={
  }])),
  publishedRoutePositions:Object.values(catalog.routes).reduce((n,x)=>n+x.stops.length,0),
  uniqueCatalogNames:directoryNames.size,officialReferenceNames:anchorNames.size,
- namesWithExactCanonicalMatch:shared,estimatedStopTimes:estimates.length,
+ namesWithExactCanonicalMatch:shared,namesWithAnyDigitalTime:routableMatches,estimatedStopTimes:estimates.length,
  missingMatchingNames:directoryNames.size-shared,
  warnings,failures
 };
