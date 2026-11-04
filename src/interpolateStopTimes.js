@@ -6,9 +6,10 @@ import {seconds,formatGTFSSeconds} from './gtfs.js';
 // referências consecutivas; nunca prolongar viagens nem inventar sentidos.
 function sameReference(publishedName,officialName){
  const published=canonicalStopName(publishedName).replace(/\bsto\b/g,'santo');
- const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo');
+ const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo').replace(/^campus 2 ulo$/,'campus 2 ipl');
  if(published===official)return true;
- return official==='vale sepal'&&published.includes('rua vale sepal');
+ return (official==='vale sepal'&&published.includes('rua vale sepal'))||
+  (official==='hospital santo andre 1 visitas'&&published==='hospital visitas');
 }
 export function interpolatePublishedStops(data,published){
  if(!data?.trips?.length||!published?.routes||data.estimatedStopTimes!==undefined)return data;
