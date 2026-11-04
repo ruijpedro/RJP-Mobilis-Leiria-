@@ -56,7 +56,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
            from:state.stop,to:stops[j].stop_id,
            departure:formatGTFSSeconds(departure),arrival:formatGTFSSeconds(arrival),
            scheduledDeparture:stops[i].departure_time,scheduledArrival:stops[j].arrival_time,
-           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id};
+           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null};
          const item={stop:leg.to,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
          if(item.stop===toId){collected.push(item);continue;}
          if(depth===maxTransfers)continue;
