@@ -33,7 +33,7 @@ for(const service of services){
  }
 }
 const data=officialSchedulesToGTFS({schemaVersion:1,services});
-const estimated=interpolatePublishedStops(data,sequences);
+const estimated=interpolatePublishedStops(data,sequences,{osmStops:read('osm-stops-leiria.json')});
 const lines=[...new Set(services.map(s=>s.line))].sort();
 const directoryNames=new Set(Object.values(catalog.routes).flatMap(r=>r.stops.map(canonicalStopName)));
 const anchorNames=new Set(services.flatMap(s=>s.stops.map(x=>canonicalStopName(x.stopName))));
@@ -42,6 +42,8 @@ const stopIdsWithHours=new Set(estimated.stopTimes.map(x=>x.stop_id));
 const timedNames=new Set(estimated.stops.filter(s=>stopIdsWithHours.has(s.stop_id)).map(s=>canonicalStopName(s.stop_name)));
 const routableMatches=[...directoryNames].filter(n=>timedNames.has(n)).length;
 const estimates=estimated.stopTimes.filter(x=>x.timeIsEstimated);
+const geographicalEstimates=estimates.filter(x=>x.estimateMethod==='geographical-distance').length;
+const sequentialEstimates=estimates.filter(x=>x.estimateMethod==='linear-stop-order').length;
 const officialBefore=new Map(data.stopTimes.map(x=>[x.trip_id+'|'+x.stop_sequence,x.departure_time]));
 const originalPerTrip=new Map();
 for(const st of data.stopTimes){
@@ -93,6 +95,7 @@ const report={
  publishedRoutePositions:Object.values(catalog.routes).reduce((n,x)=>n+x.stops.length,0),
  uniqueCatalogNames:directoryNames.size,officialReferenceNames:anchorNames.size,
  namesWithExactCanonicalMatch:shared,namesWithAnyDigitalTime:routableMatches,estimatedStopTimes:estimates.length,
+ geographicalEstimates,sequentialEstimates,
  missingMatchingNames:directoryNames.size-shared,
  warnings,failures
 };
