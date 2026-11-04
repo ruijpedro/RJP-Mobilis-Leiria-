@@ -9,14 +9,15 @@ const all={schemaVersion:1,services:[
  ...read('official-verified-schedules.json').services,
  ...read('official-line1-2026.json').services,
  ...read('official-line3-2026.json').services,
- ...read('official-line5-2026.json').services
+ ...read('official-line5-2026.json').services,
+ ...read('official-line6-2026.json').services
 ]};
 const data=officialSchedulesToGTFS(all);
 const wed=new Date(2026,10,4,6,30);
 const officialStopId=name=>{const found=data.stops.find(s=>s.stop_name===name);assert.ok(found,'Paragem em falta: '+name);return found.stop_id;};
-test('linhas 1,2,3,4,5,7,8,9 integradas com circulação e calendário',()=>{
- assert.deepEqual([...new Set(data.routes.map(r=>r.route_short_name))].sort(),['1','2','3','4','5','7','8','9']);
- assert.equal(data.trips.length,90+51+8+19);
+test('linhas 1 a 9 integradas com circulação e calendário',()=>{
+ assert.deepEqual([...new Set(data.routes.map(r=>r.route_short_name))].sort(),['1','2','3','4','5','6','7','8','9']);
+ assert.equal(data.trips.length,90+51+8+19+33);
 });
 test('linha 1: partida 06:40 e chegada 08:00 nos pontos de referência publicados',()=>{
  const trips=plan(data,officialStopId('Av. Bernardo Pimenta (Estádio)'),officialStopId('Campus 2 ULO'),wed);
