@@ -55,9 +55,9 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
    });
    const reported=discoveryStops.get(canonicalStopName(stop.stop_name));
    const lookup=!id&&data?nameBasedStopTimetable(data,stop.stop_name,date):null;
-   const candidateLines=(lookup?.lines||[]).map(line=>({id:'name-'+line,line}));
+   const candidateLines=lookup?.lines||[];
    const candidateDepartures=(lookup?.departures||[]).slice(0,4).map(item=>({...item,headsign:item.direction}));
-   return {stop,association,info:{...(id?stopCache.get(id):{lines:candidateLines,departures:candidateDepartures}),nameOnlyEstimate:!id&&!!lookup?.departures?.length,reportedLines:reported?.lines||[],reportedSources:reported?.sources||[]}};
+   return {stop,association,info:{...(id?stopCache.get(id):{lines:[],departures:candidateDepartures}),nameOnlyEstimate:!id&&!!lookup?.departures?.length,reportedLines:[...new Set([...(reported?.lines||[]),...candidateLines])],reportedSources:reported?.sources||[]}};
   });
  },[visible,data,date,osm,discoveryStops]);
  useEffect(()=>{
