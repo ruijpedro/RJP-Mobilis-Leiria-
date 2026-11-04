@@ -21,7 +21,7 @@ export function stopTimetable(data,stopId,date=new Date()){
   const direction=String(trip.trip_headsign||route.route_long_name||'Sentido não indicado');
   const key=line+'\u0000'+direction;
   const bucket=byLine.get(key)||{line,direction,departures:[],sources:new Set()};
-  bucket.departures.push({time,tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null});
+  bucket.departures.push({time,tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null,estimated:!!st.timeIsEstimated});
   if(trip.sourceUrl)bucket.sources.add(trip.sourceUrl);
   byLine.set(key,bucket);
  }

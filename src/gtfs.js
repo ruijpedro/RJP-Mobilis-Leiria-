@@ -3,7 +3,7 @@ export function csvParse(source){const rows=[];let row=[],field='',quote=false;f
 export async function importGTFS(file){const zip=await JSZip.loadAsync(file);const read=async n=>{const f=Object.values(zip.files).find(f=>f.name.toLowerCase().split('/').pop()===n);return f?csvParse(await f.async('string')):[]};const [stops,routes,trips,stopTimes,calendar,calendarDates]=await Promise.all(['stops.txt','routes.txt','trips.txt','stop_times.txt','calendar.txt','calendar_dates.txt'].map(read));if(!stops.length||!routes.length||!trips.length||!stopTimes.length)throw Error('GTFS incompleto: são necessários stops, routes, trips e stop_times.');return{stops,routes,trips,stopTimes,calendar,calendarDates,updatedAt:new Date().toISOString(),source:file.name}}
 export function seconds(time){const p=String(time||'').split(':').map(Number);return p.length>=2&&p.every(Number.isFinite)?p[0]*3600+p[1]*60+(p[2]||0):NaN}
 export function activeService(service,date,calendar,calendarDates){const d=[date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('');const override=calendarDates.find(c=>c.service_id===service&&c.date===d);if(override)return override.exception_type==='1';const c=calendar.find(c=>c.service_id===service);if(!c)return false;const day=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'][date.getDay()];return c.start_date<=d&&d<=c.end_date&&c[day]==='1'}
-export function upcoming(data,stopId,date=new Date(),limit=20){const trips=new Map(data.trips.map(t=>[t.trip_id,t]));const route=new Map(data.routes.map(r=>[r.route_id,r]));const since=date.getHours()*3600+date.getMinutes()*60;return data.stopTimes.filter(s=>s.stop_id===stopId&&seconds(s.departure_time)>=since).flatMap(s=>{const t=trips.get(s.trip_id);if(!t||!activeService(t.service_id,date,data.calendar,data.calendarDates))return [];const r=route.get(t.route_id);return[{time:s.departure_time,line:r?.route_short_name||r?.route_long_name||'?',headsign:t.trip_headsign||r?.route_long_name||'',tripId:t.trip_id}]}).sort((a,b)=>seconds(a.time)-seconds(b.time)).slice(0,limit)}
+export function upcoming(data,stopId,date=new Date(),limit=20){const trips=new Map(data.trips.map(t=>[t.trip_id,t]));const route=new Map(data.routes.map(r=>[r.route_id,r]));const since=date.getHours()*3600+date.getMinutes()*60;return data.stopTimes.filter(s=>s.stop_id===stopId&&seconds(s.departure_time)>=since).flatMap(s=>{const t=trips.get(s.trip_id);if(!t||!activeService(t.service_id,date,data.calendar,data.calendarDates))return [];const r=route.get(t.route_id);return[{time:s.departure_time,line:r?.route_short_name||r?.route_long_name||'?',headsign:t.trip_headsign||r?.route_long_name||'',tripId:t.trip_id,estimated:!!s.timeIsEstimated}]}).sort((a,b)=>seconds(a.time)-seconds(b.time)).slice(0,limit)}
 export function durationMinutes(a,b){const x=seconds(a),y=seconds(b);return Number.isFinite(x)&&Number.isFinite(y)&&y>=x?Math.round((y-x)/60):null}
 export function formatGTFSSeconds(value){
  const n=Math.round(value);const h=Math.floor(n/3600);const m=Math.floor((n%3600)/60);
@@ -42,8 +42,11 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  for(let depth=0;depth<=Math.max(0,Math.min(2,maxTransfers))&&frontier.length;depth++){
    const next=new Map();
    for(const state of frontier){
-     const earliest=state.time+(depth?120:0);
      for(const option of boardings.get(state.stop)||[]){
+       // Transbordo com passagem estimada exige folga adicional.
+       // Nunca tratar uma interpolação como ligação garantida.
+       const estimatedTransfer=depth>0&&!!(state.legs.at(-1)?.estimated||option.stops[option.i]?.timeIsEstimated);
+       const earliest=state.time+(depth?(estimatedTransfer?600:120):0);
        if(option.departure<earliest)continue;
        if(option.departure>dep+18*3600)break;
        if(state.used.has(option.trip.trip_id))continue;
@@ -56,7 +59,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
            from:state.stop,to:stops[j].stop_id,
            departure:formatGTFSSeconds(departure),arrival:formatGTFSSeconds(arrival),
            scheduledDeparture:stops[i].departure_time,scheduledArrival:stops[j].arrival_time,
-           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null};
+           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null,estimated:!!(stops[i].timeIsEstimated||stops[j].timeIsEstimated)};
          const item={stop:leg.to,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
          if(item.stop===toId){collected.push(item);continue;}
          if(depth===maxTransfers)continue;
@@ -87,7 +90,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
     const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);
     return {...a,ridingMinutes,waitingMinutes,
       journeyMinutes:durationMinutes(first.departure,last.arrival),
-      transfers:a.legs.length-1,scheduledOnly:!a.legs.some(l=>l.delayMinutes)};
+      transfers:a.legs.length-1,estimated:a.legs.some(l=>l.estimated),scheduledOnly:!a.legs.some(l=>l.delayMinutes||l.estimated)};
   });
 }
 
