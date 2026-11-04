@@ -19,6 +19,10 @@ export function resolveStopCandidates(stops,text,selectedId='',limit=7){
 }
 export function findJourneyOptions(data,origin,destination,date,{fromId='',toId='',delays={},maxTransfers=2}={}){
  if(!data?.stops?.length)return {routes:[],origins:[],destinations:[],reason:'Ainda não existem dados de horários.'};
+ const day=[date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('');
+ const availableDate=(data.calendar||[]).some(c=>c.start_date<=day&&day<=c.end_date)||
+  (data.calendarDates||[]).some(c=>c.date===day&&c.exception_type==='1');
+ if(!availableDate)return {routes:[],origins:[],destinations:[],reason:'Os horários guardados não abrangem a data selecionada. Confirma as tabelas atuais da Mobilis; não são garantidas passagens para este dia.'};
  const origins=resolveStopCandidates(data.stops,origin,fromId);
  const destinations=resolveStopCandidates(data.stops,destination,toId);
  if(!origins.length||!destinations.length)return {routes:[],origins,destinations,reason:'Não foram encontradas paragens com horários para ambos os locais. Consulta o mapa ou importa um GTFS completo.'};
