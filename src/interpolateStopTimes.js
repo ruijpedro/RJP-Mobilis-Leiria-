@@ -1,14 +1,13 @@
 import {canonicalStopName} from './stopMatching.js';
 import {seconds,formatGTFSSeconds} from './gtfs.js';
 
-// Estima passagens apenas entre DUAS horas de referência da mesma viagem.
-// É uma aproximação linear por ordem de paragens, não um horário publicado.
-// Não extrapola antes/depois das referências nem usa sequências incompletas.
+// Estima exclusivamente ENTRE duas passagens publicadas da mesma circulação.
+// Uma sequência parcial permite interpolar apenas os troços cobertos por duas
+// referências consecutivas; nunca prolongar viagens nem inventar sentidos.
 function sameReference(publishedName,officialName){
  const published=canonicalStopName(publishedName).replace(/\bsto\b/g,'santo');
  const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo');
  if(published===official)return true;
- // Nome abreviado do mesmo lugar, explicitamente identificado no percurso.
  return official==='vale sepal'&&published.includes('rua vale sepal');
 }
 export function interpolatePublishedStops(data,published){
@@ -23,43 +22,47 @@ export function interpolatePublishedStops(data,published){
  const addedStops=new Map(),rebuilt=[];
  for(const trip of data.trips){
   const original=(byTrip.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence));
-  const route=trip.route_id.startsWith('mobilis-official-')?published.routes[routeIndex.get(trip.route_id)]:null;
-  // Sem sequência completa ou pontos suficientes, não há estimativa.
-  if(!route?.completePublishedSequence||!Array.isArray(route.stops)||original.length<2){
+  const line=routeIndex.get(trip.route_id);
+  const route=trip.route_id.startsWith('mobilis-official-')?published.routes[line]:null;
+  if(!route?.stops?.length||original.length<2){rebuilt.push(...original);continue;}
+  // Identificar paragens-âncora por nome e ordem, sem assumir plataformas.
+  const indices=[];let previous=-1;
+  for(const item of original){
+   const stop=stopIndex.get(item.stop_id);
+   const index=stop?route.stops.findIndex((name,i)=>i>previous&&sameReference(name,stop.stop_name)):-1;
+   indices.push(index);
+   if(index>=0)previous=index;
+  }
+  // Exigir correspondência integral quando a sequência é dita completa.
+  // Em excertos, nunca interpolar através de uma âncora não encontrada.
+  if(route.completePublishedSequence&&indices.some(index=>index<0)){
    rebuilt.push(...original);continue;
   }
-  const anchors=[];
-  let previous=-1;
-  for(const stopTime of original){
-   const stop=stopIndex.get(stopTime.stop_id);
-   if(!stop){anchors.length=0;break;}
-   const next=route.stops.findIndex((name,i)=>i>previous&&sameReference(name,stop.stop_name));
-   if(next<0){anchors.length=0;break;}
-   const time=seconds(stopTime.departure_time);
-   if(!Number.isFinite(time)){anchors.length=0;break;}
-   anchors.push({index:next,time,stopTime});
-   previous=next;
-  }
-  if(anchors.length<2){rebuilt.push(...original);continue;}
-  const items=original.map((st,i)=>({...st,stop_sequence:String(anchors[i].index+1)}));
-  for(let i=0;i<anchors.length-1;i++){
-   const a=anchors[i],b=anchors[i+1];
-   const gap=b.index-a.index,elapsed=b.time-a.time;
-   if(gap<=1||elapsed<=0||elapsed>90*60)continue;
-   for(let j=a.index+1;j<b.index;j++){
-    const estimatedSeconds=Math.round((a.time+(elapsed*(j-a.index)/gap))/60)*60;
-    const name=route.stops[j],id='mobilis:interpolated:'+routeIndex.get(trip.route_id)+':'+j;
-    if(!addedStops.has(id)&&!stopIndex.has(id))addedStops.set(id,{
-      stop_id:id,stop_name:name,stop_lat:'',stop_lon:'',interpolatedStop:true
+  const pairs=[];
+  for(let i=0;i<original.length;i++){
+   pairs.push({order:i,stopTime:original[i]});
+   if(i===original.length-1)continue;
+   const start=indices[i],end=indices[i+1];
+   if(start<0||end<0||end<=start+1)continue;
+   const t0=seconds(original[i].departure_time),t1=seconds(original[i+1].arrival_time);
+   if(!Number.isFinite(t0)||!Number.isFinite(t1)||t1<=t0||t1-t0>90*60)continue;
+   for(let k=start+1;k<end;k++){
+    const time=Math.round((t0+(t1-t0)*(k-start)/(end-start))/60)*60;
+    const id='mobilis:interpolated:'+line+':'+k;
+    if(!stopIndex.has(id)&&!addedStops.has(id))addedStops.set(id,{
+      stop_id:id,stop_name:route.stops[k],stop_lat:'',stop_lon:'',interpolatedStop:true
     });
-    items.push({trip_id:trip.trip_id,stop_id:id,
-      stop_sequence:String(j+1),arrival_time:formatGTFSSeconds(estimatedSeconds),
-      departure_time:formatGTFSSeconds(estimatedSeconds),timeIsEstimated:true,
-      estimateMethod:'linear-stop-order',estimateFrom:a.stopTime.stop_id,estimateTo:b.stopTime.stop_id});
+    pairs.push({order:i+(k-start)/(end-start),stopTime:{
+      trip_id:trip.trip_id,stop_id:id,
+      arrival_time:formatGTFSSeconds(time),departure_time:formatGTFSSeconds(time),
+      timeIsEstimated:true,estimateMethod:'linear-stop-order',
+      estimateFrom:original[i].stop_id,estimateTo:original[i+1].stop_id
+    }});
    }
   }
-  rebuilt.push(...items.sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence)));
+  pairs.sort((a,b)=>a.order-b.order);
+  rebuilt.push(...pairs.map((item,i)=>({...item.stopTime,stop_sequence:String(i+1)})));
  }
  return {...data,stops:[...(data.stops||[]),...addedStops.values()],stopTimes:rebuilt,
-  estimatedStopTimes:rebuilt.filter(st=>st.timeIsEstimated).length};
+   estimatedStopTimes:rebuilt.filter(st=>st.timeIsEstimated).length};
 }
