@@ -1,0 +1,1518 @@
+{
+  "schemaVersion": 1,
+  "note": "Amostra de colunas de dias úteis e circulações completas de sábado e domingo dos dois sentidos da tabela oficial da linha 3 (vigente desde setembro 2026). Outras colunas e serviços parciais ainda por digitalizar. Não extrapolar para paragens sem hora publicada.",
+  "services": [
+    {
+      "id": "l3-out-weekdays-0",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "07:00"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:30"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "07:33"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "07:38"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "07:43"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:04"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-weekdays-1",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "07:30"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:40"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "07:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "07:58"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:03"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:10"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:24"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-weekdays-2",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "08:10"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "08:20"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "08:30"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:40"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "08:48"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:53"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "09:14"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-weekdays-3",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:05"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "09:15"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:35"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "09:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "09:43"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "09:48"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:55"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "10:09"
+        }
+      ]
+    },
+    {
+      "id": "l3-in-weekdays-0",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "06:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "06:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "06:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "06:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "06:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "06:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "07:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "07:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-in-weekdays-1",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "07:28"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "07:33"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "07:39"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:45"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:53"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "08:03"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "08:10"
+        }
+      ]
+    },
+    {
+      "id": "l3-in-weekdays-2",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:05"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:15"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:23"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "08:28"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "08:34"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:40"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "08:48"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "08:58"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:05"
+        }
+      ]
+    },
+    {
+      "id": "l3-in-weekdays-3",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:25"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:35"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "08:48"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "08:54"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "09:08"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "09:18"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:25"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-saturday-0720-0",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "07:30"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:40"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "07:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "07:58"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:03"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:10"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:24"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-saturday-0935-1",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:35"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "09:45"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "09:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:05"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "10:08"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "10:13"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "10:18"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "10:25"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "10:39"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-saturday-1430-2",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "14:30"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "14:40"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "14:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:00"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "15:03"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "15:08"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "15:13"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:20"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "15:34"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-saturday-1620-3",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "16:30"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "16:40"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:50"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "16:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "16:58"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "17:03"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "17:10"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "17:24"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-saturday-1720-4",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "17:40"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "17:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "17:58"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "18:03"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "18:24"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-sunday-0905-0",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:05"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "09:15"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:35"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "09:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "09:43"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "09:48"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:55"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "10:09"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-sunday-1135-1",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "11:35"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "11:45"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "11:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:05"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "12:08"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "12:13"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "12:18"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "12:25"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "12:39"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-sunday-1430-2",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "14:30"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "14:40"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "14:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:00"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "15:03"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "15:08"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "15:13"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:20"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "15:34"
+        }
+      ]
+    },
+    {
+      "id": "l3-out-sunday-1720-3",
+      "line": "3",
+      "direction": "Telheiro → Ponte da Pedra",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "17:30"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "17:40"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "17:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "17:58"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "18:03"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "18:24"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-0620-0",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "06:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "06:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "06:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "06:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "06:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "06:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "07:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "07:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "07:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-0825-1",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "08:25"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:35"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "08:48"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "08:54"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "09:08"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "09:18"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "09:25"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-1330-2",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "13:30"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:40"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "13:48"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "13:53"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "13:59"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:05"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "14:13"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "14:23"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-1520-3",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "15:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "15:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "15:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "15:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "16:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "16:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "16:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-1620-4",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "16:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "16:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "17:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "17:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "17:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-saturday-1835-5",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "18:35"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:45"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "18:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "18:58"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "19:04"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:10"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "19:18"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "19:28"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "19:35"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-sunday-1020-0",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "10:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "10:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "10:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "10:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "10:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "11:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "11:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "11:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-sunday-1330-1",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "13:30"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:40"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "13:48"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "13:53"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "13:59"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:05"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "14:13"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "14:23"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-sunday-1620-2",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:30"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "16:38"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "16:43"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:55"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "17:03"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "17:13"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "17:20"
+        }
+      ]
+    },
+    {
+      "id": "l3-inn-sunday-1835-3",
+      "line": "3",
+      "direction": "Ponte da Pedra → Telheiro",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2016/04/linha-3.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l3:ponte-pedra",
+          "stopName": "Ponte da Pedra",
+          "time": "18:35"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:45"
+        },
+        {
+          "stopId": "mobilis:l3:marrazes",
+          "stopName": "Marrazes",
+          "time": "18:53"
+        },
+        {
+          "stopId": "mobilis:l3:marinheiros",
+          "stopName": "Marinheiros",
+          "time": "18:58"
+        },
+        {
+          "stopId": "mobilis:l3:quinta-bispo",
+          "stopName": "Quinta do Bispo",
+          "time": "19:04"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:10"
+        },
+        {
+          "stopId": "mobilis:l3:largo-republica",
+          "stopName": "Largo da República",
+          "time": "19:18"
+        },
+        {
+          "stopId": "mobilis:l3:cruz-areia",
+          "stopName": "Cruz da Areia",
+          "time": "19:28"
+        },
+        {
+          "stopId": "mobilis:l3:telheiro",
+          "stopName": "Telheiro",
+          "time": "19:35"
+        }
+      ]
+    }
+  ]
+}

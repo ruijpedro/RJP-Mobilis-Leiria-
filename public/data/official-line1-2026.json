@@ -1,0 +1,2312 @@
+{
+  "schemaVersion": 1,
+  "note": "Pontos horários de referência da tabela Mobilis de setembro de 2026 (linha 1). Horas após meia-noite normalizadas para GTFS 24:xx/25:xx para manter a ordem temporal. Paragens intermédias sem hora publicada não foram geradas. Limite técnico de validade até dezembro 2026. A última partida noturna de 01:20 é parcial: só estão publicados os primeiros três pontos horários (até 01:41); os restantes ficam omissos.",
+  "services": [
+    {
+      "id": "l1-weekdays-0640-0",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "06:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "06:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "07:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "07:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "07:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0710-1",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "07:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "08:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "08:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0740-2",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "07:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "08:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "08:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "08:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0810-3",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "08:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "09:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0840-4",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "09:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "09:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0910-5",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "09:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "10:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "10:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-0940-6",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "10:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "10:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "10:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1010-7",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "10:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "10:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "11:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "11:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1040-8",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "10:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "11:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "11:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "11:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1110-9",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "11:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "11:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "12:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "12:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1140-10",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "11:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "12:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "12:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "12:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1210-11",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "12:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "12:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "13:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1240-12",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "12:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "13:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "13:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1310-13",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "13:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "14:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "14:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1340-14",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "14:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "14:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "14:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1410-15",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "14:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "14:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "15:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "15:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1440-16",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "14:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "15:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "15:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "15:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1510-17",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "15:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "16:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1540-18",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "16:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "16:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1610-19",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "16:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "17:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1640-20",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "17:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "17:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1710-21",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "17:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "17:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "18:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "18:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1740-22",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "17:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "18:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "18:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1810-23",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "19:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1840-24",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "19:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "19:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1910-25",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "19:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "19:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "20:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "20:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-1940-26",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "19:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "20:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "20:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "20:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-2110-27",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "21:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "21:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "22:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "22:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "22:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-2240-28",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "22:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "22:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "23:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "23:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "23:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "23:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-2400-29",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:00"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "24:10"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:21"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "24:34"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "25:06"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "25:15"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:20"
+        }
+      ]
+    },
+    {
+      "id": "l1-weekdays-2520-30",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "25:30"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:41"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-0640-0",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "06:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "06:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "07:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "07:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "07:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-0810-1",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "08:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "08:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "09:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-0940-2",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "10:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "10:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "10:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1110-3",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "11:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "11:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "12:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "12:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1340-4",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "14:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "14:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "14:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1510-5",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "15:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "15:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "16:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1640-6",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "17:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "17:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1810-7",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "19:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-1940-8",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "19:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "20:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "20:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "20:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-2110-9",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "21:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "21:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "22:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "22:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "22:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-2240-10",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "22:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "22:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "23:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "23:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "23:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "23:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-2400-11",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:00"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "24:10"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "24:21"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "24:34"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "25:06"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "25:15"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:20"
+        }
+      ]
+    },
+    {
+      "id": "l1-saturday-2520-12",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:20"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "25:30"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "25:41"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-0710-0",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "07:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "07:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "08:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "08:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-0910-1",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "09:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "09:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "10:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "10:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-1040-2",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "10:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "10:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "11:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "11:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "11:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-1310-3",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "13:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "13:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "14:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "14:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "14:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-1640-4",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "16:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "17:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "17:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-1810-5",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:10"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "18:20"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:31"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "18:44"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "19:16"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:25"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:30"
+        }
+      ]
+    },
+    {
+      "id": "l1-sunday-1940-6",
+      "line": "1",
+      "direction": "Circular Leiria — sentido Estação",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-1.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:40"
+        },
+        {
+          "stopId": "mobilis:l1:afonso-lopes",
+          "stopName": "Escola Afonso Lopes Vieira",
+          "time": "19:50"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:01"
+        },
+        {
+          "stopId": "mobilis:l2:campus-2",
+          "stopName": "Campus 2 ULO",
+          "time": "20:14"
+        },
+        {
+          "stopId": "mobilis:l1:hospital-visitas",
+          "stopName": "Hospital Santo André 1 (Visitas)",
+          "time": "20:46"
+        },
+        {
+          "stopId": "mobilis:l7:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "20:55"
+        },
+        {
+          "stopId": "mobilis:l7:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "21:00"
+        }
+      ]
+    }
+  ]
+}
