@@ -25,6 +25,13 @@ jobs:
         run: npm test
       - name: Auditar nove linhas, referências e horários estimados
         run: node scripts/audit_network.mjs
+      - name: Validar paragens sem horário e produzir lista de revisão
+        run: node scripts/audit_remaining_stops.mjs --write
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Auditoria-Paragens
+          path: docs/paragens-pendentes-auditoria.json
+          if-no-files-found: error
       - name: Verificar dados OSM locais
         run: python scripts/verify_osm_data.py
       - name: Testes Python
