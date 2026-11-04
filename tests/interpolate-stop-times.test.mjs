@@ -65,3 +65,18 @@ test('transbordo após hora aproximada exige margem conservadora',()=>{
  assert.equal(journeys[0].legs.at(-1).departure,'08:21:00');
  assert.equal(journeys[0].estimated,true);
 });
+
+test('excerto da linha 3 interpola apenas entre Largo da República e Estádio',()=>{
+ const services=read('official-line3-2026.json').services;
+ const outbound=services.filter(x=>x.direction.startsWith('Telheiro'));
+ const line3=officialSchedulesToGTFS({schemaVersion:1,services:outbound});
+ const result=interpolatePublishedStops(line3,published);
+ assert.ok(result.estimatedStopTimes>0);
+ const trip=line3.trips[0].trip_id;
+ const original=line3.stopTimes.filter(x=>x.trip_id===trip);
+ const estimated=result.stopTimes.filter(x=>x.trip_id===trip&&x.timeIsEstimated);
+ assert.ok(estimated.length>0);
+ const hours=estimated.map(x=>x.departure_time);
+ assert.ok(hours.every(t=>t>='07:20:00'&&t<='07:30:00'));
+ assert.ok(original.every(x=>result.stopTimes.some(y=>y.trip_id===x.trip_id&&y.stop_id===x.stop_id&&y.departure_time===x.departure_time)));
+});
