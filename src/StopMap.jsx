@@ -19,7 +19,7 @@ function markerIconFor(info){
  const next=info?.departures?.[0];
  const html='<span class="stop-pin-bus" aria-hidden="true">🚌</span>'
     +(lines?'<span class="stop-pin-lines">'+lines+'</span>':'<span class="stop-pin-lines stop-pin-unknown">?</span>')
-    +(next?'<span class="stop-pin-time">'+escapeHTML(next.time.slice(0,5))+'</span>':'');
+    +(next?'<span class="stop-pin-time">'+escapeHTML((next.estimated?'≈ ':'')+next.time.slice(0,5))+'</span>':'');
  return L.divIcon({className:'rjp-marker rjp-marker-info',html,iconSize:[72,76],iconAnchor:[36,38],popupAnchor:[0,-31]});
 }
 export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=null}){
@@ -62,7 +62,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
      alt:stop.stop_name+'; '+(info.lines.length?'linhas '+info.lines.map(l=>l.line).join(', '):'sem linhas confirmadas')});
    const name=escapeHTML(stop.stop_name);
    const schedule=info.departures.length?info.departures.slice(0,3).map(d=>
-     '<div class="popup-departure"><b>Linha '+escapeHTML(d.line)+'</b> · '+escapeHTML(d.time.slice(0,5))+
+     '<div class="popup-departure"><b>Linha '+escapeHTML(d.line)+'</b> · '+escapeHTML((d.estimated?'≈ ':'')+d.time.slice(0,5))+
      ' · '+escapeHTML(d.headsign||'sentido não indicado')+'</div>').join(''):
      association.stop?'<p>Sem partidas programadas disponíveis para esta data/hora.</p>':'<p>Esta localização OSM ainda não está ligada a uma paragem com horários digitais. Consulta «Paragens» para veres os horários oficiais por nome.</p>';
    const official=info.lines.map(x=>x.line).filter(x=>/^[1-9]$/.test(String(x))).slice(0,3)
