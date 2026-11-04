@@ -10,8 +10,11 @@ export async function checkAndPrepareOta(onStatus=()=>{}){
  if(!nativeOtaAvailable())return {status:'web'};
  onStatus('A verificar atualizações OTA…');
  const current=await CapacitorUpdater.current();
- const installed=current?.bundle?.version&&current.bundle.version!=='builtin'
-  ?current.bundle.version:OTA_NATIVE_BASE;
+ const reportedVersion=current?.bundle?.version;
+ // O plugin pode devolver um identificador interno, e não uma versão semântica.
+ // O bundle nativo deve ser identificado pela versão da APK; não comparar IDs.
+ const installed=/^v?\d+\.\d+\.\d+$/.test(String(reportedVersion||''))
+  ?String(reportedVersion).replace(/^v/,''):OTA_NATIVE_BASE;
  const response=await fetch(OTA_MANIFEST_URL,{cache:'no-store'});
  if(!response.ok)throw Error('Não foi possível consultar o manifesto OTA ('+response.status+').');
  const manifest=await response.json();
