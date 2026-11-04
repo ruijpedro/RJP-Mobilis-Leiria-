@@ -1,15 +1,24 @@
 import {distanceMeters,normalise} from './gtfs.js';
 
 const hasCoordinates=s=>s&&s.stop_lat!==''&&s.stop_lon!==''&&Number.isFinite(Number(s.stop_lat))&&Number.isFinite(Number(s.stop_lon));
+// Harmonizar apenas abreviaturas inequívocas presentes nas tabelas Mobilis/OSM.
+// Não aproximar paragens diferentes apenas porque partilham palavras.
+export function canonicalStopName(value){
+ return normalise(value)
+  .replace(/^av(?:enida)?\\s+/, 'avenida ')
+  .replace(/^lg(?:o)?\\s+/, 'largo ')
+  .replace(/^r(?:ua)?\\s+/, 'rua ')
+  .replace(/\\s+/g,' ').trim();
+}
 const acceptableName=s=>s&&s.length>=5&&s!=='paragem sem nome';
 
 // Não deduzir que paragens do mesmo nome são a mesma plataforma/direção.
 // Com coordenadas, aceitar apenas proximidade + nome igual; sem coordenadas,
 // aceitar um único nome exato, explicitando que o lado da rua é desconhecido.
 export function matchMappedStop(osmStop,gtfsStops,maximumMetres=70){
-  const name=normalise(osmStop?.stop_name);
+  const name=canonicalStopName(osmStop?.stop_name);
   if(!acceptableName(name))return {status:'unmatched',candidates:[],stop:null};
-  const exact=gtfsStops.filter(s=>normalise(s.stop_name)===name);
+  const exact=gtfsStops.filter(s=>canonicalStopName(s.stop_name)===name);
   if(hasCoordinates(osmStop)){
     const close=exact.filter(hasCoordinates)
       .map(s=>({...s,distance:distanceMeters(osmStop,s)}))
