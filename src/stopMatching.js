@@ -5,10 +5,10 @@ const hasCoordinates=s=>s&&s.stop_lat!==''&&s.stop_lon!==''&&Number.isFinite(Num
 // Não aproximar paragens diferentes apenas porque partilham palavras.
 export function canonicalStopName(value){
  return normalise(value)
-  .replace(/^av(?:enida)?\\s+/, 'avenida ')
-  .replace(/^lg(?:o)?\\s+/, 'largo ')
-  .replace(/^r(?:ua)?\\s+/, 'rua ')
-  .replace(/\\s+/g,' ').trim();
+  .replace(/^av(?:enida)?\s+/, 'avenida ')
+  .replace(/^lg(?:o)?\s+/, 'largo ')
+  .replace(/^r(?:ua)?\s+/, 'rua ')
+  .replace(/\s+/g,' ').trim();
 }
 const acceptableName=s=>s&&s.length>=5&&s!=='paragem sem nome';
 
