@@ -1,8 +1,8 @@
 {
   "appId": "pt.rjp.mobilisleiria",
-  "version": "1.10.17",
+  "version": "1.10.18",
   "minNativeVersion": "1.10.17",
-  "url": null,
-  "checksum": null,
-  "notes": "Versão base OTA. Nenhum pacote remoto publicado."
+  "url": "https://github.com/ruijpedro/RJP-Mobilis-Leiria-/releases/download/ota-v1.10.18/rjp-mobilis-ota-v1.10.18.zip",
+  "checksum": "0c8c4b5ecc19831461bbe0f2e9c32eac36d28a68c7ba71688a2143a4ba0636e0",
+  "notes": "Atualiza\u00e7\u00e3o Web OTA RJP Mobilis 1.10.18"
 }
