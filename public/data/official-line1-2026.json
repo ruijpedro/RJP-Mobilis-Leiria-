@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Pontos horários de referência da tabela Mobilis de setembro de 2026 (linha 1). Horas após meia-noite normalizadas para GTFS 24:xx/25:xx para manter a ordem temporal. Paragens intermédias sem hora publicada não foram geradas. Limite técnico de validade até dezembro 2026.",
+  "note": "Pontos horários de referência da tabela Mobilis de setembro de 2026 (linha 1). Horas após meia-noite normalizadas para GTFS 24:xx/25:xx para manter a ordem temporal. Paragens intermédias sem hora publicada não foram geradas. Limite técnico de validade até dezembro 2026. A última partida noturna de 01:20 é parcial: só estão publicados os primeiros três pontos horários (até 01:41); os restantes ficam omissos.",
   "services": [
     {
       "id": "l1-weekdays-0640-0",
@@ -1405,26 +1405,6 @@
           "stopId": "mobilis:l7:estadio",
           "stopName": "Av. Bernardo Pimenta (Estádio)",
           "time": "25:41"
-        },
-        {
-          "stopId": "mobilis:l2:campus-2",
-          "stopName": "Campus 2 ULO",
-          "time": "25:54"
-        },
-        {
-          "stopId": "mobilis:l1:hospital-visitas",
-          "stopName": "Hospital Santo André 1 (Visitas)",
-          "time": "26:26"
-        },
-        {
-          "stopId": "mobilis:l7:largo-jose-lucio",
-          "stopName": "Largo José Lúcio",
-          "time": "26:35"
-        },
-        {
-          "stopId": "mobilis:l7:estadio",
-          "stopName": "Av. Bernardo Pimenta (Estádio)",
-          "time": "26:40"
         }
       ]
     },
@@ -2003,26 +1983,6 @@
           "stopId": "mobilis:l7:estadio",
           "stopName": "Av. Bernardo Pimenta (Estádio)",
           "time": "25:41"
-        },
-        {
-          "stopId": "mobilis:l2:campus-2",
-          "stopName": "Campus 2 ULO",
-          "time": "25:54"
-        },
-        {
-          "stopId": "mobilis:l1:hospital-visitas",
-          "stopName": "Hospital Santo André 1 (Visitas)",
-          "time": "26:26"
-        },
-        {
-          "stopId": "mobilis:l7:largo-jose-lucio",
-          "stopName": "Largo José Lúcio",
-          "time": "26:35"
-        },
-        {
-          "stopId": "mobilis:l7:estadio",
-          "stopName": "Av. Bernardo Pimenta (Estádio)",
-          "time": "26:40"
         }
       ]
     },
