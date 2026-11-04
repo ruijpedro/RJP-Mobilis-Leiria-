@@ -10,12 +10,11 @@ try:
  from pypdf import PdfReader
 except ImportError:
  PdfReader=None
-for line in index.get('officialLines',[]):
- for item in line.get('timetables',[]):
-  if not item.get('reachable') or item.get('format')!='PDF': continue
-  url=item['url']; host=urllib.parse.urlparse(url).hostname
+for line in index.get('lines',[]):
+ for url in line.get('pdfs',[]):
+  host=urllib.parse.urlparse(url).hostname
   if host not in ('mobilis.pt','www.mobilis.pt'): continue
-  record={'line':line['number'],'url':url,'verified':False,'requiresReview':True,'status':'sem_extração','timesCandidate':[]}
+  record={'line':line['id'],'url':url,'verified':False,'requiresReview':True,'status':'sem_extração','timesCandidate':[]}
   try:
    req=urllib.request.Request(url,headers={'User-Agent':'RJP-Mobilis-Leiria/2.8'})
    with urllib.request.urlopen(req,timeout=20) as response: data=response.read(10_000_001)
