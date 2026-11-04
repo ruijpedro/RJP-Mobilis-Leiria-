@@ -5,12 +5,22 @@ import {buildOsmPositionIndex,routeDistanceFractions} from './geoStopProgress.js
 // Estima exclusivamente ENTRE duas passagens publicadas da mesma circulação.
 // Uma sequência parcial permite interpolar apenas os troços cobertos por duas
 // referências consecutivas; nunca prolongar viagens nem inventar sentidos.
-function sameReference(publishedName,officialName){
+function sameReference(publishedName,officialName,line,index){
  const published=canonicalStopName(publishedName).replace(/\bsto\b/g,'santo');
  const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo').replace(/^campus 2 ulo$/,'campus 2 ipl');
  if(published===official)return true;
- return (official==='vale sepal'&&published.includes('rua vale sepal'))||
-  (official==='hospital santo andre 1 visitas'&&published==='hospital visitas');
+ if(official==='vale sepal'&&published.includes('rua vale sepal'))return true;
+ if(official==='hospital santo andre 1 visitas'&&published==='hospital visitas')return true;
+ // Correspondências restritas a um índice do percurso: não promovem a
+ // plataforma real a validada; apenas permitem interpolar entre âncoras.
+ if(line==='7'&&official==='r das olhalvas hospital santo andre ida'&&
+    published==='rua das olhalvas hospital santo andre'&&index===7)return true;
+ if(line==='7'&&official==='r das olhalvas hospital santo andre regresso'&&
+    published==='rua das olhalvas hospital santo andre'&&index===29)return true;
+ // "ZICOFA" é uma referência genérica do horário. A primeira paragem
+ // ZICOFA do trajeto serve apenas de referência aproximada para o cálculo.
+ if(line==='5'&&official==='zicofa'&&published==='zicofa 1'&&index===23)return true;
+ return false;
 }
 export function interpolatePublishedStops(data,published,{osmStops=[]}={}){
  if(!data?.trips?.length||!published?.routes||data.estimatedStopTimes!==undefined)return data;
@@ -32,7 +42,7 @@ export function interpolatePublishedStops(data,published,{osmStops=[]}={}){
   const indices=[];let previous=-1;
   for(const item of original){
    const stop=stopIndex.get(item.stop_id);
-   const index=stop?route.stops.findIndex((name,i)=>i>previous&&sameReference(name,stop.stop_name)):-1;
+   const index=stop?route.stops.findIndex((name,i)=>i>previous&&sameReference(name,stop.stop_name,line,i)):-1;
    indices.push(index);
    if(index>=0)previous=index;
   }
