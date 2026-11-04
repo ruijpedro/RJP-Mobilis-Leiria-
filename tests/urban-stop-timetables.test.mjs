@@ -13,12 +13,13 @@ const all={schemaVersion:1,services:[
 ]};
 const data=officialSchedulesToGTFS(all);
 const wed=new Date(2026,10,4,6,30);
+const officialStopId=name=>{const found=data.stops.find(s=>s.stop_name===name);assert.ok(found,'Paragem em falta: '+name);return found.stop_id;};
 test('linhas 1,2,3,4,5,7,8,9 integradas com circulação e calendário',()=>{
  assert.deepEqual([...new Set(data.routes.map(r=>r.route_short_name))].sort(),['1','2','3','4','5','7','8','9']);
  assert.equal(data.trips.length,90+51+8+19);
 });
 test('linha 1: partida 06:40 e chegada 08:00 nos pontos de referência publicados',()=>{
- const trips=plan(data,'mobilis:l7:estadio','mobilis:l2:campus-2',wed);
+ const trips=plan(data,officialStopId('Av. Bernardo Pimenta (Estádio)'),officialStopId('Campus 2 ULO'),wed);
  assert.ok(trips.some(x=>x.legs.some(l=>l.line==='1'&&l.departure.slice(0,5)==='06:40'&&l.arrival.slice(0,5)==='07:14')));
 });
 test('linha 3: 07:00 do Telheiro para Ponte da Pedra, 08:04',()=>{
@@ -26,7 +27,7 @@ test('linha 3: 07:00 do Telheiro para Ponte da Pedra, 08:04',()=>{
  assert.ok(x.some(j=>j.legs.some(l=>l.line==='3'&&l.departure.slice(0,5)==='07:00'&&l.arrival.slice(0,5)==='08:04')));
 });
 test('quadro por paragem mostra linhas e partidas por sentido',()=>{
- const t=stopTimetableSummary(data,'mobilis:l7:estadio',new Date(2026,10,4,7,0));
+ const t=stopTimetableSummary(data,officialStopId('Av. Bernardo Pimenta (Estádio)'),new Date(2026,10,4,7,0));
  assert.ok(t.lines.includes('1'));
  assert.ok(t.lines.includes('3'));
  assert.ok(t.departures>0);
