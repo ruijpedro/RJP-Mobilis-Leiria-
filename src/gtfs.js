@@ -42,8 +42,11 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  for(let depth=0;depth<=Math.max(0,Math.min(2,maxTransfers))&&frontier.length;depth++){
    const next=new Map();
    for(const state of frontier){
-     const earliest=state.time+(depth?120:0);
      for(const option of boardings.get(state.stop)||[]){
+       // Transbordo com passagem estimada exige folga adicional.
+       // Nunca tratar uma interpolação como ligação garantida.
+       const estimatedTransfer=depth>0&&!!(state.legs.at(-1)?.estimated||option.stops[option.i]?.timeIsEstimated);
+       const earliest=state.time+(depth?(estimatedTransfer?600:120):0);
        if(option.departure<earliest)continue;
        if(option.departure>dep+18*3600)break;
        if(state.used.has(option.trip.trip_id))continue;
@@ -87,7 +90,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
     const waitingMinutes=a.legs.slice(1).reduce((n,l,i)=>n+(durationMinutes(a.legs[i].arrival,l.departure)||0),0);
     return {...a,ridingMinutes,waitingMinutes,
       journeyMinutes:durationMinutes(first.departure,last.arrival),
-      transfers:a.legs.length-1,scheduledOnly:!a.legs.some(l=>l.delayMinutes)};
+      transfers:a.legs.length-1,estimated:a.legs.some(l=>l.estimated),scheduledOnly:!a.legs.some(l=>l.delayMinutes||l.estimated)};
   });
 }
 
