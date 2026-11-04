@@ -1,4 +1,5 @@
 import {Capacitor} from '@capacitor/core';
+import pkg from '../package.json';
 import {CapacitorUpdater} from '@capgo/capacitor-updater';
 import {OTA_NATIVE_BASE,OTA_MANIFEST_URL,verifyOtaManifest} from './otaManifest.js';
 export const nativeOtaAvailable=()=>Capacitor.isNativePlatform();
@@ -14,7 +15,7 @@ export async function checkAndPrepareOta(onStatus=()=>{}){
  // O plugin pode devolver um identificador interno, e não uma versão semântica.
  // O bundle nativo deve ser identificado pela versão da APK; não comparar IDs.
  const installed=/^v?\d+\.\d+\.\d+$/.test(String(reportedVersion||''))
-  ?String(reportedVersion).replace(/^v/,''):OTA_NATIVE_BASE;
+  ?String(reportedVersion).replace(/^v/,''):pkg.version;
  const response=await fetch(OTA_MANIFEST_URL,{cache:'no-store'});
  if(!response.ok)throw Error('Não foi possível consultar o manifesto OTA ('+response.status+').');
  const manifest=await response.json();
