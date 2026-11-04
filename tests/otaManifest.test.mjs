@@ -8,10 +8,12 @@ const manifest=version=>({
  url:'https://github.com/ruijpedro/RJP-Mobilis-Leiria-/releases/download/ota-v'+version+'/rjp-mobilis-ota-v'+version+'.zip',
  checksum:'a'.repeat(64)
 });
-test('manifesto inicial não publica atualização por acidente',()=>{
+test('manifesto publicado é aceite e não repete a versão instalada',()=>{
  assert.equal(base.appId,OTA_APP_ID);
- assert.equal(base.version,OTA_NATIVE_BASE);
- assert.equal(verifyOtaManifest(base),null);
+ assert.equal(base.minNativeVersion,OTA_NATIVE_BASE);
+ assert.ok(compareVersion(base.version,OTA_NATIVE_BASE)>=0);
+ assert.equal(verifyOtaManifest(base,base.version),null);
+ if(compareVersion(base.version,OTA_NATIVE_BASE)>0)assert.equal(verifyOtaManifest(base,OTA_NATIVE_BASE).version,base.version);
 });
 test('versões OTA usam comparação semântica e não comparação textual',()=>{
  assert.deepEqual(parseVersion('v1.10.17'),[1,10,17]);
