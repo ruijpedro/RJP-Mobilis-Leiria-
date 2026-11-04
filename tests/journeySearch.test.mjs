@@ -40,3 +40,9 @@ test('planeador reconhece Campus 2 IPL quando base indica Campus 2 ULO',()=>{
  assert.deepEqual(resolveStopCandidates(rows,'Campus 2 IPL').map(s=>s.stop_id),['campus']);
  assert.deepEqual(resolveStopCandidates(rows,'Escola Afonso Lopes Vieira').map(s=>s.stop_id),['escola']);
 });
+
+test('data fora da vigência devolve aviso sem inventar serviço nem itinerário',()=>{
+ const result=findJourneyOptions(data,'Vidigal de Baixo','Campo Amarelo',new Date(2029,0,5,8,0));
+ assert.equal(result.routes.length,0);
+ assert.match(result.reason,/não abrangem a data selecionada/);
+});
