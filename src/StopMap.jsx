@@ -7,7 +7,7 @@ import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import {loadOSM} from './osm';
-import {matchMappedStop,linesAtStop} from './stopMatching.js';
+import {matchMappedStop,linesAtStop,canonicalStopName} from './stopMatching.js';
 import {upcoming,nearbyStops,normalise} from './gtfs';
 import {availableLines,routeStopSequence,routeColor} from './routes.js';
 import {loadOsmNetwork,routeDescription} from './osmNetwork.js';
@@ -30,17 +30,17 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
  async function refresh(force=false){setBusy(true);try{const res=await loadOSM({force});setOsm(res.stops);setStatus(`${res.stops.length} paragens cartografadas · ${res.cache?'cópia local':'OpenStreetMap'}${res.warning?' · '+res.warning:''}`)}catch(e){setStatus('Não foi possível carregar as paragens: '+e.message)}finally{setBusy(false)}}
  useEffect(()=>{refresh(false);loadOsmNetwork().then(setOsmRoutes)},[]);
  useEffect(()=>{if(!div.current||map.current)return;const m=L.map(div.current,{zoomControl:true}).setView([39.743,-8.806],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(m);map.current=m;markers.current=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:48,disableClusteringAtZoom:17});m.addLayer(markers.current);routeLayer.current=L.layerGroup().addTo(m);gpsLayer.current=L.layerGroup().addTo(m);const resize=setTimeout(()=>m.invalidateSize(),150);return()=>{clearTimeout(resize);m.remove();map.current=null}},[]);
- const closestMapped=useMemo(()=>{if(!geo)return [];const counts=new Map();osm.forEach(x=>{const name=normalise(x.stop_name);counts.set(name,(counts.get(name)||0)+1)});return nearbyStops(osm,geo.lat,geo.lon,8).map(stop=>{let association=matchMappedStop(stop,gtfs);if(association.status==='name-only'&&counts.get(normalise(stop.stop_name))>1)association={status:'ambiguous',stop:null,candidates:association.candidates};return {stop,association}})},[geo,osm,gtfs]);
+ const closestMapped=useMemo(()=>{if(!geo)return [];const counts=new Map();osm.forEach(x=>{const name=canonicalStopName(x.stop_name);counts.set(name,(counts.get(name)||0)+1)});return nearbyStops(osm,geo.lat,geo.lon,8).map(stop=>{let association=matchMappedStop(stop,gtfs);if(association.status==='name-only'&&counts.get(canonicalStopName(stop.stop_name))>1)association={status:'ambiguous',stop:null,candidates:association.candidates};return {stop,association}})},[geo,osm,gtfs]);
  const closestRoutable=closestMapped.find(item=>item.association.stop);
  const mappedStops=useMemo(()=>{
   const stopCache=new Map();
   const nameCount=new Map();
-  for(const stop of osm){const name=normalise(stop.stop_name);if(name)nameCount.set(name,(nameCount.get(name)||0)+1)}
+  for(const stop of osm){const name=canonicalStopName(stop.stop_name);if(name)nameCount.set(name,(nameCount.get(name)||0)+1)}
   return visible.map(stop=>{
    let association=matchMappedStop(stop,gtfs);
    // Se o GTFS não identifica a posição, nomes repetidos no OSM podem
    // representar plataformas de sentidos opostos. Não atribuir horários a ambas.
-   if(association.status==='name-only'&&(nameCount.get(normalise(stop.stop_name))||0)>1)
+   if(association.status==='name-only'&&(nameCount.get(canonicalStopName(stop.stop_name))||0)>1)
      association={status:'ambiguous',stop:null,candidates:association.candidates};
 
    const id=association.stop?.stop_id;
@@ -63,12 +63,12 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
    const schedule=info.departures.length?info.departures.slice(0,3).map(d=>
      '<div class="popup-departure"><b>Linha '+escapeHTML(d.line)+'</b> · '+escapeHTML(d.time.slice(0,5))+
      ' · '+escapeHTML(d.headsign||'sentido não indicado')+'</div>').join(''):
-     '<p>Sem partidas programadas disponíveis para esta data/hora.</p>';
+     association.stop?'<p>Sem partidas programadas disponíveis para esta data/hora.</p>':'<p>Esta localização OSM ainda não está ligada a uma paragem com horários digitais. Consulta «Paragens» para veres os horários oficiais por nome.</p>';
    const official=info.lines.map(x=>x.line).filter(x=>/^[1-9]$/.test(String(x))).slice(0,3)
      .map(n=>'<a href="https://mobilis.pt/linhas/linha-'+n+'/" target="_blank" rel="noopener noreferrer">Horário oficial linha '+n+'</a>').join(' · ');
    const warning=association.status==='name-only'?
       '<p class="popup-warning">Correspondência só pelo nome. Confirma a plataforma e o sentido.</p>':
-      association.status==='position'?'':'<p class="popup-warning">Sem associação segura aos horários GTFS.</p>';
+      association.status==='position'?'':'<p class="popup-warning">Paragem OSM sem correspondência segura aos horários digitais.</p>';
    marker.bindPopup('<div class="stop-popup"><strong>🚌 '+name+'</strong>'+warning+schedule+
      '<small>Horários programados, não localização em tempo real.</small>'+(official?'<div class="popup-official">'+official+'</div>':'')+'</div>',{maxWidth:295});
    marker.on('click',()=>setActive(stop));
