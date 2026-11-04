@@ -131,3 +131,8 @@ a{accent-color:var(--mobilis-blue)}
 .coverage-strip a.with-schedule{background:#062e59;color:#fff;border-color:#062e59}
 .coverage-strip a.without-schedule{background:#e7edf2;color:#506477}
 .coverage-strip small{color:#5e7182;line-height:1.5}
+
+.ota-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ota-check{border:1px solid #8097aa;border-radius:8px;background:#234664;color:white;font-size:12px;font-weight:650;padding:7px 10px}
+.ota-check:disabled{opacity:.6;cursor:wait}
+.ota-status{margin:12px 0 0;font-size:12px;line-height:1.45}
