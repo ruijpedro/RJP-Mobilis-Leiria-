@@ -26,8 +26,25 @@ for(const s of osm){
  const name=canonicalStopName(s.stop_name);
  if(name==='paragem sem nome'||!name)continue;
  const arr=osmNames.get(name)||[];
- arr.push({stopId:s.stop_id,lat:s.stop_lat,lon:s.stop_lon,ref:s.ref||null,operator:s.operator||null});
+ arr.push({name:s.stop_name,stopId:s.stop_id,lat:s.stop_lat,lon:s.stop_lon,ref:s.ref||null,operator:s.operator||null});
  osmNames.set(name,arr);
+}
+// Sugestões para revisão humana; nunca usadas para atribuir linhas ou horários.
+const common=new Set(['rua','avenida','largo','escola','estrada','rotunda','do','da','de','dos','das','e','x','n','s','1','2']);
+const words=value=>[...new Set(canonicalStopName(value).split(' ').filter(w=>w.length>2&&!common.has(w)))];
+function suggestions(name){
+ const a=words(name);
+ if(a.length<2)return [];
+ const options=[];
+ for(const [key,list] of osmNames){
+  if(key===canonicalStopName(name))continue;
+  const b=words(key);
+  if(b.length<2)continue;
+  const overlap=a.filter(w=>b.includes(w)).length;
+  const score=overlap/Math.max(a.length,b.length);
+  if(score>=0.65&&overlap>=2)options.push({name:list[0].name||key,osmName:key,score:Number(score.toFixed(2)),candidateCount:list.length});
+ }
+ return options.sort((x,y)=>y.score-x.score||x.osmName.localeCompare(y.osmName,'pt')).slice(0,3);
 }
 const rows=directoryStopList(catalog).map(x=>{
  const key=canonicalStopName(x.stop_name);
@@ -44,6 +61,7 @@ const rows=directoryStopList(catalog).map(x=>{
   name:x.stop_name,linesFromRouteListing:x.lines,status,
   hasDigitalTime:times,hasOfficialReference:fromOfficial,
   osmCandidates:matched,
+  possibleOsmNamesToReview:matched.length?[]:suggestions(x.stop_name),
   sources:x.sources,
   // A lista de percursos não comprova orientação nem serviço.
   platformValidated:false,directionValidated:false,
