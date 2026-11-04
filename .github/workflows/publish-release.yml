@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão da release (formato v1.10.15)'
+        description: 'Versão da release (formato v1.10.16)'
         required: true
         type: string
-        default: 'v1.10.15'
+        default: 'v1.10.16'
 
 permissions:
   contents: write
@@ -39,7 +39,7 @@ jobs:
           KEY_ALIAS: rjp-mobilis
           KEY_PASSWORD: ${{ secrets.MOBILIS_KEY_PASSWORD }}
         run: |
-          [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Versão inválida. Usa v1.10.15 (três números, sem espaços)'; exit 1; }
+          [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Versão inválida. Usa v1.10.16 (três números, sem espaços)'; exit 1; }
           for v in ENCRYPTION_PASSWORD KEYSTORE_PASSWORD KEY_PASSWORD; do
             if [ -z "${!v}" ]; then echo "Falta secret $v"; exit 1; fi
           done
@@ -172,13 +172,13 @@ jobs:
           set -euo pipefail
           PREVIOUS="$(gh release list --limit 30 --json tagName --jq '.[].tagName' | grep -Fxv "$RELEASE_VERSION" | head -n 1 || true)"
           if [ -z "$PREVIOUS" ]; then
-            echo "::notice::Sem versão anterior disponível para comparação."
-            exit 0
+            echo "::error::Sem versão anterior: é necessária comparação com APK base antes da release."
+            exit 1
           fi
           mkdir -p "$RUNNER_TEMP/previous-mobilis"
           if ! gh release download "$PREVIOUS" --pattern 'RJP-Mobilis-Leiria.apk' --dir "$RUNNER_TEMP/previous-mobilis"; then
-            echo "::warning::APK anterior indisponível. Comparação manual necessária."
-            exit 0
+            echo "::error::APK anterior indisponível. Publicação bloqueada para não trocar inadvertidamente o certificado."
+            exit 1
           fi
           python scripts/check_android_upgrade.py "$RUNNER_TEMP/previous-mobilis/RJP-Mobilis-Leiria.apk" RJP-Mobilis-Leiria.apk "$ANDROID_HOME/build-tools/35.0.0/aapt" "$ANDROID_HOME/build-tools/35.0.0/apksigner"
       - name: Publicar diagnóstico de identidade Android
@@ -201,6 +201,15 @@ jobs:
           path: RJP-Mobilis-WebApp.zip
           if-no-files-found: error
           retention-days: 30
+      - name: Bloquear publicação se o tag já existir
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          if gh release view "$RELEASE_VERSION" >/dev/null 2>&1; then
+            echo "::error::Release já existente. Usa uma versão superior para permitir atualização Android."
+            exit 1
+          fi
       - name: Publicar GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
