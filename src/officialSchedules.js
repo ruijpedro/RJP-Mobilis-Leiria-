@@ -32,8 +32,35 @@ export function validateOfficialSchedule(payload){
  }
  return today;
 }
+// Só conciliar paragens com o MESMO nome normalizado e nunca quando
+// dois IDs aparecem na mesma circulação (possíveis sentidos/lados distintos).
+// Não juntar por distância estimada nem por nomes apenas semelhantes.
+export function sharedOfficialStopIds(services){
+ const name=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-PT').replace(/[^a-z0-9]+/g,' ').trim();
+ const grouped=new Map(),ambiguous=new Set();
+ for(const service of services){
+   const within=new Map();
+   for(const stop of service.stops){
+     const key=name(stop.stopName);
+     if(!key)continue;
+     if(!within.has(key))within.set(key,new Set());
+     within.get(key).add(stop.stopId);
+     if(!grouped.has(key))grouped.set(key,new Set());
+     grouped.get(key).add(stop.stopId);
+   }
+   for(const [key,ids] of within)if(ids.size>1)ambiguous.add(key);
+ }
+ const canonical=new Map();
+ for(const [key,ids] of grouped){
+   if(ambiguous.has(key)||ids.size<2)continue;
+   const preferred=[...ids].sort()[0];
+   for(const id of ids)canonical.set(id,preferred);
+ }
+ return canonical;
+}
 export function officialSchedulesToGTFS(payload){
  const services=validateOfficialSchedule(payload);
+ const shared=sharedOfficialStopIds(services);
  const routes=[],stops=[],trips=[],stopTimes=[],calendar=[];
  const routeSeen=new Set(),stopSeen=new Set();
  const dayMask={
@@ -50,11 +77,12 @@ export function officialSchedulesToGTFS(payload){
    calendar.push({service_id:serviceId,start_date:service.validFrom,end_date:service.validUntil,...weekly});
    trips.push({trip_id:tripId,route_id:routeId,service_id:serviceId,trip_headsign:service.direction,sourceUrl:service.source});
    service.stops.forEach((stop,i)=>{
-     if(!stopSeen.has(stop.stopId)){
-       stopSeen.add(stop.stopId);
-       stops.push({stop_id:stop.stopId,stop_name:stop.stopName,stop_lat:stop.lat==null?'':String(stop.lat),stop_lon:stop.lon==null?'':String(stop.lon)});
+     const sharedId=shared.get(stop.stopId)||stop.stopId;
+     if(!stopSeen.has(sharedId)){
+       stopSeen.add(sharedId);
+       stops.push({stop_id:sharedId,stop_name:stop.stopName,stop_lat:stop.lat==null?'':String(stop.lat),stop_lon:stop.lon==null?'':String(stop.lon)});
      }
-     stopTimes.push({trip_id:tripId,stop_id:stop.stopId,stop_sequence:String(i+1),arrival_time:cleanTime(stop.time),departure_time:cleanTime(stop.time)});
+     stopTimes.push({trip_id:tripId,stop_id:sharedId,stop_sequence:String(i+1),arrival_time:cleanTime(stop.time),departure_time:cleanTime(stop.time)});
    });
  }
  return {stops,routes,trips,stopTimes,calendar,calendarDates:[],source:'Horários oficiais Mobilis (validados)',updatedAt:new Date().toISOString(),officialScheduleSources:[...new Set(services.map(s=>s.source))]};
