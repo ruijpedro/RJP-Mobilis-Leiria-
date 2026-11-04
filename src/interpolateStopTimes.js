@@ -13,9 +13,9 @@ function sameReference(publishedName,officialName,line,index){
  if(official==='hospital santo andre 1 visitas'&&published==='hospital visitas')return true;
  // Correspondências restritas a um índice do percurso: não promovem a
  // plataforma real a validada; apenas permitem interpolar entre âncoras.
- if(line==='7'&&official==='r das olhalvas hospital santo andre ida'&&
+ if(line==='7'&&official==='rua das olhalvas hospital santo andre ida'&&
     published==='rua das olhalvas hospital santo andre'&&index===7)return true;
- if(line==='7'&&official==='r das olhalvas hospital santo andre regresso'&&
+ if(line==='7'&&official==='rua das olhalvas hospital santo andre regresso'&&
     published==='rua das olhalvas hospital santo andre'&&index===29)return true;
  // "ZICOFA" é uma referência genérica do horário. A primeira paragem
  // ZICOFA do trajeto serve apenas de referência aproximada para o cálculo.
