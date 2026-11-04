@@ -38,3 +38,13 @@ test('fora do período de validade não fabrica partidas',()=>{
  const t=stopTimetable(data,'mobilis:l3:telheiro',new Date(2027,0,3,7,0));
  assert.equal(t.length,0);
 });
+
+test('linha 1 última viagem noturna não cria passagens após o fim publicado',()=>{
+ const line1=read('official-line1-2026.json');
+ const night=line1.services.filter(x=>x.stops[0]?.time==='25:20');
+ assert.equal(night.length,2);
+ for(const service of night){
+  assert.equal(service.stops.length,3);
+  assert.equal(service.stops.at(-1).time,'25:41');
+ }
+});
