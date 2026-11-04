@@ -30,3 +30,14 @@ test('parseOSM rejeita coordenadas ausentes e conserva paragens válidas',()=>{
  ]});
  assert.deepEqual(result.map(s=>s.stop_name),['Vidigal']);
 });
+
+test('não mostra a plataforma ferroviária Linha 1 como paragem de autocarro',async()=>{
+ const oldFetch=globalThis.fetch,oldStorage=globalThis.localStorage;
+ globalThis.localStorage={getItem:()=>null,setItem:()=>{}};
+ globalThis.fetch=async()=>({ok:true,json:async()=>[
+  {stop_id:'osm:way:473189533',stop_name:'Linha 1',stop_lat:'39.7569587',stop_lon:'-8.8277853'},
+  {stop_id:'osm:node:2677149650',stop_name:'Largo José Lúcio',stop_lat:'39.7464302',stop_lon:'-8.8039466'}
+ ]});
+ try{assert.deepEqual((await loadOSM()).stops.map(x=>x.stop_name),['Largo José Lúcio'])}
+ finally{globalThis.fetch=oldFetch;globalThis.localStorage=oldStorage}
+});
