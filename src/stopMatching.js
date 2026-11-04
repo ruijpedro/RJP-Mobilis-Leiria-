@@ -8,6 +8,9 @@ export function canonicalStopName(value){
   .replace(/^av(?:enida)?\s+/, 'avenida ')
   .replace(/^lg(?:o)?\s+/, 'largo ')
   .replace(/^r(?:ua)?\s+/, 'rua ')
+  .replace(/^esc\s+/, 'escola ')
+  .replace(/\bsto\b/g, 'santo')
+  .replace(/^campus 2 ulo$/, 'campus 2 ipl')
   .replace(/\s+/g,' ').trim();
 }
 const acceptableName=s=>s&&s.length>=5&&s!=='paragem sem nome';

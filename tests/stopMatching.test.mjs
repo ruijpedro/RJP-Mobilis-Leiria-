@@ -36,3 +36,19 @@ test('não associa nomes parecidos que designam paragens distintas',()=>{
  const result=matchMappedStop(osm,[{stop_id:'m',stop_name:'Av. Bernardo Pimenta (Terminal)',stop_lat:'',stop_lon:''}]);
  assert.equal(result.status,'unmatched');
 });
+
+test('associa designações Campus 2 ULO e Campus 2 IPL apenas como candidato único',()=>{
+ const result=matchMappedStop({stop_name:'Campus 2 IPL',stop_lat:'39.739',stop_lon:'-8.811'},
+   [{stop_id:'campus',stop_name:'Campus 2 ULO',stop_lat:'',stop_lon:''}]);
+ assert.equal(result.status,'name-only');
+ assert.equal(result.stop.stop_id,'campus');
+});
+test('normaliza abreviaturas de escola e Santo André sem juntar plataformas repetidas',()=>{
+ const result=matchMappedStop({stop_name:'Escola Afonso Lopes Vieira',stop_lat:'39.74',stop_lon:'-8.8'},
+   [{stop_id:'esc',stop_name:'Esc. Afonso Lopes Vieira',stop_lat:'',stop_lon:''}]);
+ assert.equal(result.status,'name-only');
+ const other=matchMappedStop({stop_name:'Rua das Olhalvas / Hospital Santo André',stop_lat:'39.74',stop_lon:'-8.8'},
+   [{stop_id:'a',stop_name:'R. das Olhalvas / Hospital Sto André',stop_lat:'',stop_lon:''},
+    {stop_id:'b',stop_name:'R. das Olhalvas / Hospital Sto André',stop_lat:'',stop_lon:''}]);
+ assert.equal(other.status,'ambiguous');
+});

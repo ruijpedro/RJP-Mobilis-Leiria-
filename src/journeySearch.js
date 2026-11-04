@@ -1,3 +1,4 @@
+import {canonicalStopName} from './stopMatching.js';
 import {plan,searchStops,normalise} from './gtfs.js';
 
 // Pesquisa segura: apenas itinerários presentes nos horários disponíveis.
@@ -6,10 +7,13 @@ export function resolveStopCandidates(stops,text,selectedId='',limit=7){
   if(selectedId) return stops.filter(s=>s.stop_id===selectedId);
   const q=normalise(text);
   if(!q||q.length<2) return [];
-  const candidates=searchStops(stops,text,18);
+  const cq=canonicalStopName(text);
+  const direct=searchStops(stops,text,18);
+  const alias=stops.filter(s=>canonicalStopName(s.stop_name).includes(cq));
+  const candidates=[...new Map([...direct,...alias].map(s=>[s.stop_id,s])).values()];
   return candidates.sort((a,b)=>{
-    const aa=normalise(a.stop_name),bb=normalise(b.stop_name);
-    const score=x=>x===q?0:x.startsWith(q)?1:x.includes(q)?2:3;
+    const aa=canonicalStopName(a.stop_name),bb=canonicalStopName(b.stop_name);
+    const score=x=>x===cq?0:x.startsWith(cq)?1:x.includes(cq)?2:3;
     return score(aa)-score(bb)||aa.localeCompare(bb,'pt');
   }).slice(0,limit);
 }
