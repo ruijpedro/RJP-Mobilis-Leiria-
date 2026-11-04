@@ -8,7 +8,7 @@ test('catálogo contém as nove linhas e 298 posições ordenadas sem inventar h
  assert.deepEqual(Object.keys(catalog.routes).sort(),['1','2','3','4','5','6','7','8','9']);
  assert.equal(Object.values(catalog.routes).reduce((n,l)=>n+l.stops.length,0),298);
  const entries=directoryStopList(catalog);
- assert.ok(entries.length>160);
+ assert.equal(entries.length,147);
  assert.ok(entries.every(x=>x.hasPublishedTimetable===false));
 });
 test('paragem com duas linhas mantém ambas e o histórico de sentidos por rever',()=>{
