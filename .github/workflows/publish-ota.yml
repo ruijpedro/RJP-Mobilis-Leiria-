@@ -1,0 +1,150 @@
+name: Publicar RJP Mobilis OTA (Web sem reinstalar APK)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versão do pacote OTA, ex. 1.10.18'
+        required: true
+        type: string
+      confirm_publish:
+        description: 'Escrever PUBLICAR para ativar OTA nos telemóveis'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rjp-mobilis-ota-production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: ${{ inputs.confirm_publish == 'PUBLICAR' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar APK base e versão
+        env:
+          OTA_VERSION: ${{ inputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view v1.10.17 >/dev/null || { echo '::error::Publica primeiro a APK base assinada v1.10.17'; exit 1; }
+          if gh release view "ota-v${OTA_VERSION}" >/dev/null 2>&1; then
+            echo '::error::Esta versão OTA já existe'
+            exit 1
+          fi
+          python3 - <<'PY'
+          import json,os,re,subprocess
+          v=os.environ['OTA_VERSION']
+          assert re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',v),'Versão inválida'
+          current=json.load(open('ota/manifest.json'))
+          def parts(x):return tuple(map(int,x.split('.')))
+          assert parts(v)>parts(current['version']),'OTA não pode retroceder a versão'
+          assert parts(v)>parts('1.10.17'),'Versão OTA deve superar a APK base'
+          package=json.load(open('package.json'))
+          assert package['version']==v,'package.json deve ter a versão exata de OTA'
+          base=json.loads(subprocess.check_output(['git','show','v1.10.17:package.json'],text=True))
+          assert package['dependencies']==base['dependencies'],'Alteração de dependências exige nova APK'
+          changed=subprocess.check_output(['git','diff','--name-only','v1.10.17','HEAD'],text=True).splitlines()
+          forbidden=[p for p in changed if p.startswith(('android/','ios/','signing/')) or p=='capacitor.config.json']
+          assert not forbidden,'Alterações nativas requerem APK assinada: '+str(forbidden)
+          print('Pacote Web compatível com a APK base.')
+          PY
+      - name: Instalar e validar dados
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+          node scripts/audit_network.mjs
+          python scripts/verify_osm_data.py
+          python -m pip install --disable-pip-version-check Pillow
+          python scripts/generate_web_icons.py
+          npm run build
+          python scripts/verify_web_icons.py
+      - name: Empacotar e calcular checksum SHA-256
+        env:
+          OTA_VERSION: ${{ inputs.version }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os,zipfile,hashlib,json
+          version=os.environ['OTA_VERSION']
+          zipfile_path=Path(f'rjp-mobilis-ota-v{version}.zip')
+          with zipfile.ZipFile(zipfile_path,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+            for f in sorted(Path('dist').rglob('*')):
+              if f.is_file():z.write(f,f.relative_to('dist'))
+          with zipfile.ZipFile(zipfile_path) as z:
+            assert 'index.html' in z.namelist(),'ZIP não tem index.html na raiz'
+          digest=hashlib.sha256(zipfile_path.read_bytes()).hexdigest()
+          manifest={
+            'appId':'pt.rjp.mobilisleiria','version':version,'minNativeVersion':'1.10.17',
+            'url':f'https://github.com/ruijpedro/RJP-Mobilis-Leiria-/releases/download/ota-v{version}/rjp-mobilis-ota-v{version}.zip',
+            'checksum':digest,'notes':'Atualização Web OTA RJP Mobilis '+version
+          }
+          Path('ota-manifest-pending.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          Path('ota-sha256.txt').write_text(digest+'  '+str(zipfile_path)+'\n')
+          print('SHA-256:',digest)
+          PY
+      - name: Publicar pacote OTA na Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OTA_VERSION: ${{ inputs.version }}
+        run: |
+          gh release create "ota-v${OTA_VERSION}" \
+            "rjp-mobilis-ota-v${OTA_VERSION}.zip" ota-sha256.txt \
+            --target "$GITHUB_SHA" \
+            --title "RJP Mobilis OTA ${OTA_VERSION}" \
+            --notes "Atualização apenas dos recursos Web. Exige APK base assinada v1.10.17 ou superior."
+      - name: Confirmar artefacto público e SHA-256
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,urllib.request
+          m=json.load(open('ota-manifest-pending.json'))
+          request=urllib.request.Request(m['url'],headers={'User-Agent':'RJP-Mobilis-OTA-Validation'})
+          with urllib.request.urlopen(request,timeout=90) as response:
+            body=response.read()
+          actual=hashlib.sha256(body).hexdigest()
+          assert actual==m['checksum'],f'Checksum do pacote remoto divergente: {actual}'
+          print('Pacote remoto e SHA-256 confirmados')
+          PY
+      - name: Ativar manifesto OTA no main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64,json,os,urllib.request
+          repo=os.environ['GITHUB_REPOSITORY']
+          url=f'https://api.github.com/repos/{repo}/contents/ota/manifest.json'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+                   'Accept':'application/vnd.github+json',
+                   'X-GitHub-Api-Version':'2022-11-28','User-Agent':'RJP-Mobilis-OTA'}
+          def call(method,payload=None):
+            data=json.dumps(payload).encode() if payload is not None else None
+            req=urllib.request.Request(url,headers=headers,data=data,method=method)
+            with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)
+          old=call('GET')
+          current=json.loads(base64.b64decode(old['content']))
+          new=json.load(open('ota-manifest-pending.json'))
+          version=lambda x:tuple(map(int,x.split('.')))
+          assert version(new['version'])>version(current['version']),'Versão remota já não é superior'
+          body=json.dumps(new,indent=2)+'\n'
+          call('PUT',{'message':'ota: ativar '+new['version'],
+                      'content':base64.b64encode(body.encode()).decode(),
+                      'sha':old['sha'],'branch':'main'})
+          print('Manifesto OTA ativo:',new['version'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-OTA-${{ inputs.version }}
+          path: |
+            rjp-mobilis-ota-v*.zip
+            ota-manifest-pending.json
+            ota-sha256.txt
+          if-no-files-found: error
