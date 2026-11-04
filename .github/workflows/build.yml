@@ -23,6 +23,8 @@ jobs:
           npm install --no-audit --no-fund
       - name: Testes JavaScript
         run: npm test
+      - name: Auditar nove linhas, referências e horários estimados
+        run: node scripts/audit_network.mjs
       - name: Verificar dados OSM locais
         run: python scripts/verify_osm_data.py
       - name: Testes Python
