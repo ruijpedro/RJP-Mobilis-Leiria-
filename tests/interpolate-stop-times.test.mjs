@@ -18,7 +18,7 @@ test('a linha 4 ganha horas aproximadas estritamente entre referências oficiais
  assert.ok(estimated.length>2);
  assert.ok(estimated.every(s=>s.estimateMethod==='linear-stop-order'));
  for(const item of original){
-  const same=enriched.stopTimes.find(s=>s.trip_id===item.trip_id&&s.stop_id===item.stop_id);
+  const same=enriched.stopTimes.find(s=>s.trip_id===item.trip_id&&s.stop_id===item.stop_id&&s.departure_time===item.departure_time);
   assert.equal(same.departure_time,item.departure_time);
   assert.notEqual(same.timeIsEstimated,true);
  }
