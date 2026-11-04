@@ -54,6 +54,22 @@ for(const [tripId,orig] of originalPerTrip){
   failures.push('Alteração de hora oficial ao interpolar: '+tripId);
  }
 }
+// Verificar que cada estimativa está delimitada por horas reais na mesma viagem.
+const enhancedByTrip=new Map();
+for(const row of estimated.stopTimes){const items=enhancedByTrip.get(row.trip_id)||[];items.push(row);enhancedByTrip.set(row.trip_id,items);}
+for(const [tripId,rows] of enhancedByTrip){
+ const ordered=rows.sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence));
+ for(let i=0;i<ordered.length;i++){
+  const row=ordered[i];if(!row.timeIsEstimated)continue;
+  let before=i-1,after=i+1;
+  while(before>=0&&ordered[before].timeIsEstimated)before--;
+  while(after<ordered.length&&ordered[after].timeIsEstimated)after++;
+  if(before<0||after>=ordered.length||
+    mins(ordered[before].departure_time)>mins(row.departure_time)||
+    mins(row.departure_time)>mins(ordered[after].arrival_time))
+   failures.push('Estimativa fora de duas referências oficiais: '+tripId+' / '+row.stop_id);
+ }
+}
 for(const line of lines){
  const list=services.filter(s=>s.line===line);
  const days=new Set(list.map(x=>x.days));
