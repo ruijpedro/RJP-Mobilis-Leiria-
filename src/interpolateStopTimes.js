@@ -33,7 +33,7 @@ export function interpolatePublishedStops(data,published){
   for(const stopTime of original){
    const stop=stopIndex.get(stopTime.stop_id);
    if(!stop){anchors.length=0;break;}
-   const next=names.findIndex((name,i)=>i>previous&&sameReference(route.stops[i],stop.stop_name));
+   const next=route.stops.findIndex((name,i)=>i>previous&&sameReference(name,stop.stop_name));
    if(next<0){anchors.length=0;break;}
    const time=seconds(stopTime.departure_time);
    if(!Number.isFinite(time)){anchors.length=0;break;}
