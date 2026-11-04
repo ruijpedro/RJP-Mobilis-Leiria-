@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "note": "Transcrição dos pontos de horário publicados pela Mobilis em setembro de 2026. Julho e agosto: serviços destacados (09:00 e 15:00 em dias úteis) não se realizam, mas o presente conjunto vigora apenas de setembro a dezembro. Feriados carecem de exceções GTFS específicas. Não inventar passagens intermédias.",
+  "services": [
+    {
+      "id": "l5-weekdays-0645-0",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "06:45"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "06:49"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "06:56"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "07:09"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "07:16"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "07:28"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "07:35"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-0800-1",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "08:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "08:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "08:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "08:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-0900-2",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "09:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "09:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "09:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "09:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1100-3",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "11:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "11:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "11:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "11:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "11:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "11:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1200-4",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "12:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "12:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "12:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "12:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "12:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "12:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1300-5",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "13:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "13:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "13:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "13:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1500-6",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "15:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "15:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "15:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "15:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "15:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "15:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1645-7",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:45"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "16:56"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "17:09"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "17:16"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "17:28"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:35"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1735-8",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:35"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:39"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "17:46"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "17:59"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "18:06"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "18:18"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:25"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1830-9",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:30"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "18:34"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "18:41"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "18:54"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "19:01"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "19:13"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:20"
+        }
+      ]
+    },
+    {
+      "id": "l5-weekdays-1920-10",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "weekdays",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:20"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:24"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "19:31"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "19:44"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "19:51"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "20:03"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:10"
+        }
+      ]
+    },
+    {
+      "id": "l5-saturday-0800-0",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "08:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "08:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "08:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "08:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "08:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "08:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-saturday-1300-1",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "13:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "13:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "13:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "13:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "13:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "13:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-saturday-1645-2",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:45"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "16:56"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "17:09"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "17:16"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "17:28"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:35"
+        }
+      ]
+    },
+    {
+      "id": "l5-saturday-1735-3",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:35"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "17:39"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "17:46"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "17:59"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "18:06"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "18:18"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:25"
+        }
+      ]
+    },
+    {
+      "id": "l5-saturday-1830-4",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "saturday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "18:30"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "18:34"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "18:41"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "18:54"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "19:01"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "19:13"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:20"
+        }
+      ]
+    },
+    {
+      "id": "l5-sunday-0900-0",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:00"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "09:04"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "09:11"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "09:24"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "09:31"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "09:43"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "09:50"
+        }
+      ]
+    },
+    {
+      "id": "l5-sunday-1645-1",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "16:45"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "16:49"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "16:56"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "17:09"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "17:16"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "17:28"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "17:35"
+        }
+      ]
+    },
+    {
+      "id": "l5-sunday-1920-2",
+      "line": "5",
+      "direction": "Leiria — Pinheiros — Leiria",
+      "days": "sunday",
+      "validFrom": "20260901",
+      "validUntil": "20261231",
+      "source": "https://mobilis.pt/wp-content/uploads/2026/08/00-1857-356-03-CM-Leiria-PDF-LINHA-5.pdf",
+      "stops": [
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "19:20"
+        },
+        {
+          "stopId": "mobilis:l5:largo-jose-lucio",
+          "stopName": "Largo José Lúcio",
+          "time": "19:24"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-ida",
+          "stopName": "Marrazes (ida)",
+          "time": "19:31"
+        },
+        {
+          "stopId": "mobilis:l5:milagres",
+          "stopName": "Milagres (Santuário)",
+          "time": "19:44"
+        },
+        {
+          "stopId": "mobilis:l5:zico",
+          "stopName": "Zicofa",
+          "time": "19:51"
+        },
+        {
+          "stopId": "mobilis:l5:marrazes-volta",
+          "stopName": "Marrazes (regresso)",
+          "time": "20:03"
+        },
+        {
+          "stopId": "mobilis:l5:estadio",
+          "stopName": "Av. Bernardo Pimenta (Estádio)",
+          "time": "20:10"
+        }
+      ]
+    }
+  ]
+}
