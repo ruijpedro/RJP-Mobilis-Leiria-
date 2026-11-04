@@ -5,8 +5,8 @@ import {seconds,formatGTFSSeconds} from './gtfs.js';
 // É uma aproximação linear por ordem de paragens, não um horário publicado.
 // Não extrapola antes/depois das referências nem usa sequências incompletas.
 function sameReference(publishedName,officialName){
- const published=canonicalStopName(publishedName).replace(/\\bsto\\b/g,'santo');
- const official=canonicalStopName(officialName).replace(/\\bsto\\b/g,'santo');
+ const published=canonicalStopName(publishedName).replace(/\bsto\b/g,'santo');
+ const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo');
  if(published===official)return true;
  // Nome abreviado do mesmo lugar, explicitamente identificado no percurso.
  return official==='vale sepal'&&published.includes('rua vale sepal');
