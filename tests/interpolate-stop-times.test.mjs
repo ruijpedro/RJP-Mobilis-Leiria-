@@ -40,9 +40,15 @@ test('horas estimadas aparecem devidamente identificadas no ecrã e no planeador
  const routes=plan(enriched,origin.stop_id,example.stop_id,new Date(2026,10,4,6,55));
  assert.ok(routes.some(r=>r.legs.some(l=>l.estimated)));
 });
-test('não estima linhas com sequências incompletas nem GTFS importados',()=>{
+test('sequência parcial só estima segmentos ancorados e nunca GTFS externo',()=>{
  const other=officialSchedulesToGTFS({schemaVersion:1,services:raw.services.filter(s=>s.line==='7')});
- assert.equal(interpolatePublishedStops(other,published).estimatedStopTimes,0);
+ const result=interpolatePublishedStops(other,published);
+ assert.ok(result.estimatedStopTimes>0);
+ for(const st of other.stopTimes){
+  assert.ok(result.stopTimes.some(s=>s.trip_id===st.trip_id&&s.stop_id===st.stop_id&&s.departure_time===st.departure_time&&!s.timeIsEstimated));
+ }
+ const foreign={...other,trips:other.trips.map(t=>({...t,route_id:'imported-route'})),routes:[{route_id:'imported-route',route_short_name:'7'}]};
+ assert.equal(interpolatePublishedStops(foreign,published).estimatedStopTimes,0);
 });
 
 test('transbordo após hora aproximada exige margem conservadora',()=>{
