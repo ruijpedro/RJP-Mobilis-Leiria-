@@ -171,7 +171,60 @@ jobs:
           RELEASE_VERSION: ${{ inputs.version }}
         run: |
           set -euo pipefail
-          PREVIOUS="$(gh release list --limit 30 --json tagName --jq '.[].tagName' | grep -Fxv "$RELEASE_VERSION" | head -n 1 || true)"
+          PREVIOUS="$(gh release list --limit 50 --json tagName --jq '.[].tagName' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+
+          if [ -z "$PREVIOUS" ]; then
+            echo "::error::Sem versão anterior: é necessária comparação com APK base antes da release."
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/previous-mobilis"
+          if ! gh release download "$PREVIOUS" --pattern 'RJP-Mobilis-Leiria.apk' --dir "$RUNNER_TEMP/previous-mobilis"; then
+            echo "::error::APK anterior indisponível. Publicação bloqueada para não trocar inadvertidamente o certificado."
+            exit 1
+          fi
+          python scripts/check_android_upgrade.py "$RUNNER_TEMP/previous-mobilis/RJP-Mobilis-Leiria.apk" RJP-Mobilis-Leiria.apk "$ANDROID_HOME/build-tools/35.0.0/aapt" "$ANDROID_HOME/build-tools/35.0.0/apksigner"
+      - name: Publicar diagnóstico de identidade Android
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Identidade-Android
+          path: RJP-Mobilis-Identidade-Android.txt
+          if-no-files-found: error
+      - name: Disponibilizar APK assinada para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-APK-assinada
+          path: RJP-Mobilis-Leiria.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Disponibilizar WebApp para teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: RJP-Mobilis-Leiria-WebApp
+          path: RJP-Mobilis-WebApp.zip
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bloquear publicação se o tag já existir
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          if gh release view "$RELEASE_VERSION" >/dev/null 2>&1; then
+            echo "::error::Release já existente. Usa uma versão superior para permitir atualização Android."
+            exit 1
+          fi
+      - name: Publicar GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          if ! gh release create "$RELEASE_VERSION" RJP-Mobilis-Leiria.apk RJP-Mobilis-WebApp.zip \
+            --target "$GITHUB_SHA" \
+            --title "RJP Mobilis Leiria $RELEASE_VERSION" \
+            --notes "APK Android assinada e WebApp. Horários programados; não equivalem a localização em tempo real."; then
+            echo "::warning::Sem permissão para criar GitHub Release. A APK assinada e a WebApp estão disponíveis nos artefactos desta execução."
+            echo "### Download para teste" >> "$GITHUB_STEP_SUMMARY"
+            echo "A publicação da Release falhou por permissões. Descarrega os artefactos APK assinada e WebApp desta execução." >> "$GITHUB_STEP_SUMMARY"
+          fi
+ | grep -Fxv "$RELEASE_VERSION" | head -n 1 || true)"
           if [ -z "$PREVIOUS" ]; then
             echo "::error::Sem versão anterior: é necessária comparação com APK base antes da release."
             exit 1
