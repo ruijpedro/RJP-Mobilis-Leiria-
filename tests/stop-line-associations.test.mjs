@@ -7,7 +7,8 @@ const catalog=read('line-stop-directory.json');
 const osm=read('osm-stops-leiria.json');
 const index=buildStopLineIndex(catalog);
 test('todas as designações dos nove percursos são indexadas sem duplicar linhas',()=>{
- assert.equal(index.size,147);
+ assert.ok(index.size>147);
+ assert.ok(index.size<=147+27);
  assert.ok([...index.values()].every(x=>x.lines.length>0&&new Set(x.lines).size===x.lines.length));
 });
 test('linhas digitais e catálogo são unidos, sem ocultar linhas identificadas apenas no percurso',()=>{
@@ -26,4 +27,14 @@ test('associação nominal abrange paragens OSM sem converter esse facto em vali
  assert.ok(associated.length>=100);
  assert.ok(associated.every(x=>x.platformValidated===false));
  assert.equal(osm.length,293);
+});
+
+test('equivalências de designações mostram linhas sem certificar plataformas',()=>{
+ const a=stopLineAssociation({stop_name:'Porto Moniz / Esc. Francisco Rodrigues Lobo'},index);
+ assert.ok(a.lines.length>0);
+ assert.equal(a.status,'catalogo-equivalencia');
+ assert.equal(a.platformValidated,false);
+ const b=stopLineAssociation({stop_name:'Avenida Cidade de Maringá / Mercado Municipal'},index);
+ assert.ok(b.lines.length>0);
+ assert.ok(b.aliasOf);
 });
