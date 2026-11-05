@@ -12,8 +12,19 @@ import {OFFICIAL_LINES,parseManifest} from './official.js';
 import React,{useEffect,useMemo,useState} from 'react';import{createRoot}from'react-dom/client';import{Bus,MapPin,Navigation,Search,Clock,ArrowRightLeft,Download,Route,Info,LocateFixed,Bookmark}from'lucide-react';import{importGTFS,upcoming,plan,searchStops,nearbyStops}from'./gtfs';import{loadData,saveData}from'./store';import './style.css';import StopMap from './StopMap';
 function StopDepartureTable({data,stopId,date}){const report=useMemo(()=>stopTimetableSummary(data,stopId,date),[data,stopId,date.getTime()]);return <div className="timetable-by-stop"><small>{report.lines.length} linha(s) · {report.departures} passagens nesta base e data (≈ indica estimativa)</small>{!report.groups.length&&<p className="muted">Sem horários digitais para esta paragem e data. Consulta também a tabela oficial da linha.</p>}{report.groups.map(group=><div className="timetable-group" key={group.line+'-'+group.direction}><b>Linha {group.line} · {group.direction}</b><div className="departures">{group.departures.map((p,i)=><span key={p.tripId+'-'+i}>{p.estimated?'≈ ':''}{p.time.slice(0,5)}</span>)}</div>{group.sources.map(url=><a className="link" key={url} href={url} target="_blank" rel="noopener noreferrer">Horário oficial ↗</a>)}</div>)}</div>}
 function App(){const[otaStatus,setOtaStatus]=useState(''),[otaBusy,setOtaBusy]=useState(false);
- useEffect(()=>{if(!nativeOtaAvailable())return;otaReady().catch(err=>console.warn('OTA ready:',err));checkAndPrepareOta(setOtaStatus).catch(err=>setOtaStatus('OTA indisponível: '+err.message));},[]);
- const checkOTA=async()=>{if(otaBusy)return;setOtaBusy(true);try{await checkAndPrepareOta(setOtaStatus)}catch(err){setOtaStatus('Não foi possível atualizar: '+err.message)}finally{setOtaBusy(false)}};
+ useEffect(()=>{
+  if(!nativeOtaAvailable())return;
+  let active=true;
+  const status=message=>{if(active)setOtaStatus(message)};
+  // No arranque e sempre que o utilizador regressa à aplicação.
+  const check=()=>checkAndPrepareOta(status,{automatic:true}).catch(err=>console.warn('Verificação automática OTA:',err));
+  otaReady().catch(err=>console.warn('OTA ready:',err));
+  check();
+  const onVisible=()=>{if(document.visibilityState==='visible')check()};
+  document.addEventListener('visibilitychange',onVisible);
+  return()=>{active=false;document.removeEventListener('visibilitychange',onVisible)};
+ },[]);
+ const checkOTA=async()=>{if(otaBusy)return;setOtaBusy(true);try{await checkAndPrepareOta(setOtaStatus,{automatic:false})}catch(err){setOtaStatus('Não foi possível atualizar: '+err.message)}finally{setOtaBusy(false)}};
  const[chosenJourney,setChosenJourney]=useState(0);const[expandedStop,setExpandedStop]=useState('');const[showGPSIntro,setShowGPSIntro]=useState(()=>!localStorage.getItem('rjp-gps-choice-v1')),[data,setData]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[origin,setOrigin]=useState(''),[destination,setDestination]=useState(''),[originId,setOriginId]=useState(''),[destId,setDestId]=useState(''),[tab,setTab]=useState('planner'),[selected,setSelected]=useState(''),[time,setTime]=useState(new Date().toTimeString().slice(0,5)),[date,setDate]=useState([new Date().getFullYear(),String(new Date().getMonth()+1).padStart(2,'0'),String(new Date().getDate()).padStart(2,'0')].join('-')),[results,setResults]=useState(null),[geo,setGeo]=useState(null),[favs,setFavs]=useState(JSON.parse(localStorage.getItem('rjp-favs')||'[]')),[manifest,setManifest]=useState([]),[publishedRoutes,setPublishedRoutes]=useState({}),[delays,setDelays]=useState({}),[dataNotice,setDataNotice]=useState(''),[lineDirectory,setLineDirectory]=useState(null),[osmLocationStops,setOsmLocationStops]=useState([]),[osmReady,setOsmReady]=useState(false);
 useEffect(()=>{Promise.all([loadData().catch(()=>null),fetch(`${import.meta.env.BASE_URL}data/mobilis-sample.json`).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([saved,builtin])=>{const source=saved||builtin;
  Promise.all(['official-verified-schedules.json','official-line1-2026.json','official-line3-2026.json','official-line5-2026.json','official-line6-2026.json']
