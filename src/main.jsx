@@ -41,6 +41,11 @@ useEffect(()=>{Promise.all([loadData().catch(()=>null),fetch(`${import.meta.env.
   return candidates.length===1?candidates[0].stop_id:'';
  };
  const from=mapped(originId,origin),to=mapped(destId,destination);
+ if((String(originId).startsWith('osm:')&&!from)||(String(destId).startsWith('osm:')&&!to)){
+  setResults([]);setChosenJourney(0);
+  setError('A paragem foi selecionada no mapa, mas ainda não existe correspondência única com os horários digitais da Mobilis. A localização fica escolhida; confirma o sentido e a plataforma. Não são calculados percursos com horários não validados.');
+  return;
+ }
  const found=findJourneyOptions(data,origin,destination,getDate(),{fromId:from,toId:to,delays,maxTransfers:2});
  setResults(found.routes);setChosenJourney(0);
  if(!found.routes.length)setError((String(originId).startsWith('osm:')||String(destId).startsWith('osm:'))?'Paragem escolhida no mapa. Ainda não há uma ligação horária inequívoca para calcular este percurso. Confirma a plataforma e os horários Mobilis. '+found.reason:found.reason);
