@@ -144,3 +144,10 @@ a{accent-color:var(--mobilis-blue)}
 .journey-map-summary>button{justify-self:start;border:1px solid #becede;border-radius:9px;background:white;padding:8px 12px;color:#17334b;font-weight:700}
 .journey-lines{display:flex;flex-wrap:wrap;gap:7px}
 .journey-lines>span{background:white;padding:5px 9px;border:2px solid;border-radius:9px;font-size:12px;font-weight:800}
+
+/* Informação oficial: visível no topo em todas as secções. */
+.operator-schedule-notice{display:flex;align-items:flex-start;gap:11px;margin:14px 0 8px;padding:13px 15px;background:#fff8e7;border:1px solid #e8d29c;border-radius:12px;color:#513f1b;font-size:13px;line-height:1.5}
+.operator-schedule-notice svg{flex-shrink:0;margin-top:2px}
+.operator-schedule-notice strong{font-weight:800}
+.operator-schedule-notice a{color:#164a78;font-weight:700;text-decoration:underline}
+@media(max-width:500px){.operator-schedule-notice{font-size:12px;margin:10px 0 4px;padding:11px}}
