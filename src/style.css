@@ -157,3 +157,10 @@ a{accent-color:var(--mobilis-blue)}
 .nearby-alternatives h4{margin:0 0 6px;font-size:14px;color:#17334b}
 .nearby-alternatives button{display:block;width:100%;text-align:left;border:1px solid #e3ebf1;background:#fff;color:#17334b;padding:11px;border-radius:8px;margin:8px 0;line-height:1.4}
 .nearby-alternatives button:hover,.nearby-alternatives button:focus-visible{border-color:#1e75b2;background:#eaf5ff}
+
+/* Consulta de passagens por data/hora, com sentidos separados */
+.timetable-scope{margin:12px 0;padding:12px;border:1px solid #dce8f2;border-radius:11px;background:#f7fbff;font-size:12px;line-height:1.5}
+.timetable-scope-actions{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.timetable-scope-actions button{padding:8px 11px;border-radius:9px;border:1px solid #bdcad7;background:white;color:#17334b;font-weight:650}
+.timetable-scope-actions button.active{background:#173b5c;color:white;border-color:#173b5c}
+.timetable-scope small{display:block;color:#61788a}
