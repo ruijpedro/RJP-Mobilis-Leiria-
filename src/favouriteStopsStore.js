@@ -34,17 +34,22 @@ const storage=()=>{try{return typeof localStorage==='undefined'?null:localStorag
 function readStorage(key){
  try{return unique(JSON.parse(storage()?.getItem(key)||'[]'))}catch{return []}
 }
+let pendingWrite=Promise.resolve();
 export async function loadFavouriteStops(){
  const ids=mergeFavouriteIds(readLegacyFavouriteIds(storage()),readStorage(BACKUP),await readDb().catch(()=>[]));
- if(ids.length)await saveFavouriteStops(ids);
+ // A leitura não regrava automaticamente: evita uma escrita antiga
+ // ultrapassar a escolha do utilizador durante o arranque.
  return ids;
 }
-export async function saveFavouriteStops(ids){
+export function saveFavouriteStops(ids){
  const list=unique(ids),local=storage();
  // Guardar em ambas as chaves para manter compatibilidade com builds antigas.
  try{local?.setItem(LEGACY,JSON.stringify(list));local?.setItem(BACKUP,JSON.stringify(list))}catch{}
- try{await writeDb(list)}catch(error){
-  if(!local)throw error;
- }
- return list;
+ pendingWrite=pendingWrite.catch(()=>{}).then(async()=>{
+  try{await writeDb(list)}catch(error){
+   if(!local)throw error;
+  }
+  return list;
+ });
+ return pendingWrite;
 }
