@@ -7,6 +7,12 @@ export function readLegacyFavouriteIds(storage){
  try{return unique(JSON.parse(storage?.getItem(LEGACY)||'[]'))}catch{return []}
 }
 export function mergeFavouriteIds(...collections){return unique(collections.flatMap(x=>Array.isArray(x)?x:[]))}
+export function toggleFavouriteId(current,id){
+ const key=String(id||'').trim();
+ if(!key)return unique(current);
+ const ids=unique(current);
+ return ids.includes(key)?ids.filter(x=>x!==key):[...ids,key];
+}
 function openDB(){
  return new Promise((resolve,reject)=>{
   const req=indexedDB.open(DB,1);
