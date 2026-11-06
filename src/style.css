@@ -164,3 +164,11 @@ a{accent-color:var(--mobilis-blue)}
 .timetable-scope-actions button{padding:8px 11px;border-radius:9px;border:1px solid #bdcad7;background:white;color:#17334b;font-weight:650}
 .timetable-scope-actions button.active{background:#173b5c;color:white;border-color:#173b5c}
 .timetable-scope small{display:block;color:#61788a}
+
+/* Atalhos persistentes de paragens, incluindo os que são fixados no mapa */
+.pinned-stops{padding:12px;margin:14px 0 18px;border:1px solid #cadbe8;border-radius:12px;background:#f6fbff}
+.pinned-stops h3{margin:0 0 5px}
+.pinned-stop{display:flex;gap:6px;align-items:center;margin:7px 0}
+.pinned-stop>button:first-child{flex:1;min-width:0;text-align:left}
+.pinned-stop .iconbtn{flex:0 0 auto}
+.map-pin-favourite{display:block;width:100%;padding:10px 12px;margin:0 0 12px;border-radius:10px;background:#fff6d9;border:1px solid #d4b350;color:#543a06;font-weight:700}
