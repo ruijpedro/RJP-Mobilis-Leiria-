@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {equivalentStopKeys,sameReviewedStopName} from '../src/stopNameLookup.js';
 import {nameBasedStopTimetable} from '../src/nameBasedStopTimetable.js';
 import {interpolatePublishedStops} from '../src/interpolateStopTimes.js';
+import {buildOsmPositionIndex} from '../src/geoStopProgress.js';
 
 test('equivalências revistas ligam nomes alternativos em ambos os sentidos',()=>{
  assert.ok(sameReviewedStopName('Porto Moniz / Esc. Francisco Rodrigues Lobo','Porto Moniz / Esc. F. Rodrigues Lobo'));
@@ -40,4 +41,12 @@ test('interpolação aceita âncoras de nomes revistos sem extrapolar fora delas
  assert.equal(generated[0].departure_time,'08:06:00');
  assert.equal(result.stops.find(s=>s.stop_id===generated[0].stop_id).stop_name,'Ponte Hintze Ribeiro');
  assert.equal(result.stopTimes.filter(st=>!st.timeIsEstimated).length,2);
+});
+
+test('paragens OSM com nomes equivalentes ajudam a estimar progresso mas não validam plataforma',()=>{
+ const points=buildOsmPositionIndex([{stop_id:'osm:1',stop_name:'Porto Moniz / Esc. Francisco Rodrigues Lobo',stop_lat:'39.744',stop_lon:'-8.807'}]);
+ const alias=points.get('porto moniz esc f rodrigues lobo');
+ assert.ok(alias);
+ assert.ok(alias.quality.startsWith('alias-'));
+ assert.equal(alias.lat,39.744);
 });
