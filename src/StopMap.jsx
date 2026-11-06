@@ -15,7 +15,7 @@ import {matchMappedStop,linesAtStop,canonicalStopName} from './stopMatching.js';
 import {upcoming,nearbyStops,normalise,seconds} from './gtfs';
 import {stopTimetableSummary} from './stopTimetable.js';
 import {nameBasedStopTimetable} from './nameBasedStopTimetable.js';
-import {timetableFromTime,countTimetableDepartures} from './stopTimetableView.js';
+import {timetableFromTime,countTimetableDepartures,nextStopDepartures} from './stopTimetableView.js';
 import {availableLines,routeStopSequence,routeColor} from './routes.js';
 import {loadOsmNetwork,routeDescription} from './osmNetwork.js';
 import {walkingDirectionsUrl} from './walking.js';
@@ -73,9 +73,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
    const candidateLines=lookup?.lines||[];
    // Mostrar no marcador apenas partidas futuras no dia selecionado.
    // Horas por nome continuam provisórias, sem validar a plataforma.
-   const since=date.getHours()*3600+date.getMinutes()*60+date.getSeconds();
-   const candidateDepartures=(lookup?.departures||[])
-     .filter(item=>seconds(item.time)>=since).slice(0,4)
+   const candidateDepartures=nextStopDepartures(lookup?.departures||[],date,4)
      .map(item=>({...item,headsign:item.direction}));
    const schedule=id?stopCache.get(id):{lines:[],departures:candidateDepartures};
    const associationLines=stopLineAssociation(stop,discoveryStops,[...schedule.lines,...candidateLines]);
