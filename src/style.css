@@ -179,3 +179,13 @@ a{accent-color:var(--mobilis-blue)}
 .pinned-timetable{flex:1 0 100%;width:100%;padding:10px 12px;border-radius:9px;border:1px solid #cbdde8;background:#fff}
 .pinned-timetable small{color:#586f81;display:block;margin-bottom:8px}
 @media(max-width:560px){.pinned-stop .iconbtn{padding:8px 9px;font-size:12px}}
+
+/* Atalhos persistentes acessíveis diretamente no planeador */
+.planner-pinned{margin:0 0 16px;padding:12px;border:1px solid #cbdce9;background:#f7fbff;border-radius:12px}
+.planner-pinned-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.planner-pinned-header button{padding:7px 10px;border:1px solid #c8d7e4;border-radius:8px;background:white;color:#214e70}
+.planner-pinned-list{display:grid;gap:8px;max-height:240px;overflow:auto}
+.planner-pinned-stop{display:flex;align-items:center;gap:7px;min-width:0;padding:7px 8px;background:white;border:1px solid #dbe5ec;border-radius:9px}
+.planner-pinned-stop span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.planner-pinned-stop button{flex:0 0 auto;padding:8px 10px;border-radius:7px;border:1px solid #b7d0e2;background:#eaf5ff;color:#123e5c;font-weight:700}
+@media(max-width:500px){.planner-pinned-stop button{padding:7px 8px;font-size:12px}.planner-pinned-header{flex-wrap:wrap}}
