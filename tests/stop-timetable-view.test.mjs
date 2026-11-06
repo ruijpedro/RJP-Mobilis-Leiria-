@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {timetableFromTime,countTimetableDepartures} from '../src/stopTimetableView.js';
+import {timetableFromTime,countTimetableDepartures,nextStopDepartures} from '../src/stopTimetableView.js';
 const groups=[
  {line:'7',direction:'Vidigal',sources:['https://mobilis.pt/'],departures:[{time:'08:00:00',tripId:'a',estimated:false},{time:'09:30:00',tripId:'b',estimated:true}]},
  {line:'10',direction:'Centro',sources:[],departures:[{time:'09:45:00',tripId:'c',estimated:false}]}
@@ -20,4 +20,11 @@ test('o dia completo mantém todas as passagens e sentidos',()=>{
 test('sem mais passagens não inventa uma próxima partida',()=>{
  assert.deepEqual(timetableFromTime(groups,new Date(2026,10,5,22,0)),[]);
  assert.equal(countTimetableDepartures([]),0);
+});
+
+test('marcadores de paragens apresentam apenas próximas partidas, nunca horas passadas',()=>{
+ const rows=[{time:'07:00:00',line:'7'},{time:'10:05:00',line:'2'},{time:'09:40:00',line:'1'},{time:'10:30:00',line:'7'}];
+ assert.deepEqual(nextStopDepartures(rows,new Date(2026,10,6,9,30),2).map(x=>x.time),['09:40:00','10:05:00']);
+ assert.deepEqual(nextStopDepartures(rows,new Date(2026,10,6,23,0)),[]);
+ assert.equal(rows.length,4);
 });
