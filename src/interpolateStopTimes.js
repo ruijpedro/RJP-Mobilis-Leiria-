@@ -1,4 +1,5 @@
 import {canonicalStopName} from './stopMatching.js';
+import {sameReviewedStopName} from './stopNameLookup.js';
 import {seconds,formatGTFSSeconds} from './gtfs.js';
 import {buildOsmPositionIndex,routeDistanceFractions} from './geoStopProgress.js';
 
@@ -8,7 +9,7 @@ import {buildOsmPositionIndex,routeDistanceFractions} from './geoStopProgress.js
 function sameReference(publishedName,officialName,line,index){
  const published=canonicalStopName(publishedName).replace(/\bsto\b/g,'santo');
  const official=canonicalStopName(officialName).replace(/\bsto\b/g,'santo').replace(/^campus 2 ulo$/,'campus 2 ipl');
- if(published===official)return true;
+ if(published===official||sameReviewedStopName(publishedName,officialName))return true;
  if(official==='vale sepal'&&published.includes('rua vale sepal'))return true;
  if(official==='hospital santo andre 1 visitas'&&published==='hospital visitas')return true;
  // Correspondências restritas a um índice do percurso: não promovem a
