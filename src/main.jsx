@@ -2,6 +2,7 @@ import pkg from '../package.json';
 import {otaReady,checkAndPrepareOta,nativeOtaAvailable} from './ota.js';
 import {directoryStopList,directoryCoverage} from './lineStopDirectory.js';
 import {canonicalStopName} from './stopMatching.js';
+import {resolveMapStopForJourney} from './resolveMapStopForJourney.js';
 import {interpolatePublishedStops} from './interpolateStopTimes.js';
 import {stopTimetableSummary} from './stopTimetable.js';
 import {networkCoverageSummary} from './stopCoverage.js';
@@ -46,12 +47,8 @@ useEffect(()=>{Promise.all([loadData().catch(()=>null),fetch(`${import.meta.env.
  setResults(null);setError('');
 };async function upload(e){const file=e.target.files?.[0];if(!file)return;setBusy(true);setError('');try{const parsed=await importGTFS(file);await saveData(parsed);setData(parsed);setDataNotice('');setResults(null)}catch(err){setError(err.message)}finally{setBusy(false);e.target.value=''}}function search(){
  setError('');
- const mapped=(id,name)=>{
-  if(!String(id).startsWith('osm:'))return id;
-  const candidates=resolveStopCandidates(stops,name,'',40).filter(s=>canonicalStopName(s.stop_name)===canonicalStopName(name));
-  return candidates.length===1?candidates[0].stop_id:'';
- };
- const from=mapped(originId,origin),to=mapped(destId,destination);
+ const from=resolveMapStopForJourney({stop_id:originId,stop_name:origin},stops).stopId;
+ const to=resolveMapStopForJourney({stop_id:destId,stop_name:destination},stops).stopId;
  if((String(originId).startsWith('osm:')&&!from)||(String(destId).startsWith('osm:')&&!to)){
   setResults([]);setChosenJourney(0);
   setError('A paragem foi selecionada no mapa, mas ainda não existe correspondência única com os horários digitais da Mobilis. A localização fica escolhida; confirma o sentido e a plataforma. Não são calculados percursos com horários não validados.');
