@@ -172,3 +172,10 @@ a{accent-color:var(--mobilis-blue)}
 .pinned-stop>button:first-child{flex:1;min-width:0;text-align:left}
 .pinned-stop .iconbtn{flex:0 0 auto}
 .map-pin-favourite{display:block;width:100%;padding:10px 12px;margin:0 0 12px;border-radius:10px;background:#fff6d9;border:1px solid #d4b350;color:#543a06;font-weight:700}
+
+/* Horários dos atalhos guardados, sem esconder a paragem da lista */
+.pinned-stop{flex-wrap:wrap}
+.pinned-stop>button:first-child{flex:1 1 170px}
+.pinned-timetable{flex:1 0 100%;width:100%;padding:10px 12px;border-radius:9px;border:1px solid #cbdde8;background:#fff}
+.pinned-timetable small{color:#586f81;display:block;margin-bottom:8px}
+@media(max-width:560px){.pinned-stop .iconbtn{padding:8px 9px;font-size:12px}}
