@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {timetableFromTime,countTimetableDepartures,nextStopDepartures} from '../src/stopTimetableView.js';
+import {timetableFromTime,countTimetableDepartures,nextStopDepartures,summariseTimetableGroups} from '../src/stopTimetableView.js';
 const groups=[
  {line:'7',direction:'Vidigal',sources:['https://mobilis.pt/'],departures:[{time:'08:00:00',tripId:'a',estimated:false},{time:'09:30:00',tripId:'b',estimated:true}]},
  {line:'10',direction:'Centro',sources:[],departures:[{time:'09:45:00',tripId:'c',estimated:false}]}
@@ -27,4 +27,15 @@ test('marcadores de paragens apresentam apenas próximas partidas, nunca horas p
  assert.deepEqual(nextStopDepartures(rows,new Date(2026,10,6,9,30),2).map(x=>x.time),['09:40:00','10:05:00']);
  assert.deepEqual(nextStopDepartures(rows,new Date(2026,10,6,23,0)),[]);
  assert.equal(rows.length,4);
+});
+
+test('resumo por sentido distingue horas publicadas de interpoladas',()=>{
+ const summary=summariseTimetableGroups(groups);
+ assert.deepEqual(summary.lines,['7','10']);
+ assert.equal(summary.directions,2);
+ assert.equal(summary.published,2);
+ assert.equal(summary.estimated,1);
+ assert.deepEqual(summary.rows.map(r=>r.total),[2,1]);
+ assert.equal(summary.rows[0].next.time,'08:00:00');
+ assert.equal(summariseTimetableGroups([]).published,0);
 });
