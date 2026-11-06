@@ -1,5 +1,5 @@
 import pkg from '../package.json';
-import {loadFavouriteStops,saveFavouriteStops,readLegacyFavouriteIds} from './favouriteStopsStore.js';
+import {loadFavouriteStops,saveFavouriteStops,readLegacyFavouriteIds,toggleFavouriteId} from './favouriteStopsStore.js';
 import {otaReady,checkAndPrepareOta,nativeOtaAvailable} from './ota.js';
 import {directoryStopList,directoryCoverage} from './lineStopDirectory.js';
 import {canonicalStopName} from './stopMatching.js';
@@ -91,7 +91,7 @@ useEffect(()=>{let mounted=true;loadFavouriteStops().then(ids=>{
 function toggleFav(id){
  favTouched.current=true;
  const current=favRef.current;
- const next=current.includes(id)?current.filter(x=>x!==id):[...current,id];
+ const next=toggleFavouriteId(current,id);
  favRef.current=next;
  setFavs(next);
  saveFavouriteStops(next).catch(error=>console.warn('Guardar atalhos:',error));
