@@ -1,4 +1,5 @@
 import {canonicalStopName} from './stopMatching.js';
+import {equivalentStopKeys} from './stopNameLookup.js';
 import {stopTimetable} from './stopTimetable.js';
 import {seconds} from './gtfs.js';
 
@@ -11,7 +12,9 @@ import {seconds} from './gtfs.js';
 export function nameBasedStopTimetable(data,name,date=new Date()){
  const key=canonicalStopName(name);
  if(!data||!key||key==='paragem sem nome')return {lines:[],groups:[],departures:[],matchedStopIds:[]};
- const matched=(data.stops||[]).filter(s=>canonicalStopName(s.stop_name)===key);
+ const keys=new Set(equivalentStopKeys(name));
+ const matched=(data.stops||[]).filter(s=>keys.has(canonicalStopName(s.stop_name)));
+ const viaEquivalence=matched.some(s=>canonicalStopName(s.stop_name)!==key);
  const groups=new Map();
  for(const stop of matched){
   for(const group of stopTimetable(data,stop.stop_id,date)){
@@ -33,5 +36,5 @@ export function nameBasedStopTimetable(data,name,date=new Date()){
  })).sort((a,b)=>a.line.localeCompare(b.line,'pt',{numeric:true})||a.direction.localeCompare(b.direction,'pt'));
  const departures=output.flatMap(g=>g.departures.map(d=>({...d,line:g.line,direction:g.direction})))
   .sort((a,b)=>seconds(a.time)-seconds(b.time));
- return {lines:[...new Set(output.map(x=>x.line))],groups:output,departures,matchedStopIds:matched.map(s=>s.stop_id)};
+ return {lines:[...new Set(output.map(x=>x.line))],groups:output,departures,matchedStopIds:matched.map(s=>s.stop_id),viaEquivalence};
 }
