@@ -40,3 +40,17 @@ test('origem do mapa resolve nome equivalente se e só se ID horário for único
  assert.equal(ambiguous.kind,'ambiguous');
  assert.equal(resolveMapStopForJourney({stop_id:'osm:b',stop_name:'Piscinas Municipais'},candidates).kind,'unmatched');
 });
+
+test('linhas provenientes de serviços digitais são incluídas mesmo sem linha no catálogo',()=>{
+ const sample=[{stop_id:'osm:p',stop_name:'Piscinas Municipais'}];
+ const data={
+  stops:[{stop_id:'digital:p',stop_name:'Piscinas Municipais'}],
+  routes:[{route_id:'r',route_short_name:'7'}],
+  trips:[{trip_id:'t',route_id:'r'}],
+  stopTimes:[{stop_id:'digital:p',trip_id:'t',departure_time:'09:15:00'}]
+ };
+ const result=auditMappedStopCoverage(sample,catalog,data);
+ assert.deepEqual(result.rows[0].lines,['7']);
+ assert.equal(result.rows[0].published,1);
+ assert.equal(result.rows[0].platformValidated,false);
+});
