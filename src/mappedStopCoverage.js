@@ -14,6 +14,20 @@ export function auditMappedStopCoverage(osmStops=[],catalog=null,data=null){
   if(st.timeIsEstimated)entry.estimated++;else entry.published++;
   entry.tripIds.add(st.trip_id);stopTimesById.set(st.stop_id,entry);
  }
+ // Linhas de circulações com horas existentes, mesmo que ainda não façam
+ // parte do diretório nominal; nunca atribuir a uma plataforma concreta.
+ const tripById=new Map((data?.trips||[]).map(t=>[t.trip_id,t]));
+ const routeById=new Map((data?.routes||[]).map(r=>[r.route_id,r]));
+ const digitalLinesById=new Map();
+ for(const [stopId,entry] of stopTimesById){
+  const lines=new Set();
+  for(const tripId of entry.tripIds){
+   const route=routeById.get(tripById.get(tripId)?.route_id);
+   const line=route?.route_short_name||route?.route_long_name;
+   if(line)lines.add(String(line));
+  }
+  digitalLinesById.set(stopId,lines);
+ }
  const digitalStopsByName=new Map();
  for(const stop of data?.stops||[]){
   const key=canonicalStopName(stop.stop_name);
@@ -27,10 +41,12 @@ export function auditMappedStopCoverage(osmStops=[],catalog=null,data=null){
   const digital=[...new Map(keys.flatMap(key=>digitalStopsByName.get(key)||[]).map(s=>[s.stop_id,s])).values()];
   const published=digital.reduce((n,s)=>n+(stopTimesById.get(s.stop_id)?.published||0),0);
   const estimated=digital.reduce((n,s)=>n+(stopTimesById.get(s.stop_id)?.estimated||0),0);
-  const lineCount=association.lines.length;
+  const lines=[...new Set([...association.lines,...digital.flatMap(s=>[...(digitalLinesById.get(s.stop_id)||[])])])]
+   .sort((a,b)=>a.localeCompare(b,'pt',{numeric:true}));
+  const lineCount=lines.length;
   const status=published?'horarios-publicados-por-nome':estimated?'horarios-estimados-por-nome':
    lineCount?'linha-sem-horario-digital':'sem-linha-documentada';
-  return {stopId:stop.stop_id,name:stop.stop_name,lines:association.lines,
+  return {stopId:stop.stop_id,name:stop.stop_name,lines,
    published,estimated,matchingDigitalStopIds:digital.map(s=>s.stop_id),
    status,platformValidated:false};
  });
