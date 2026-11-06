@@ -1,4 +1,5 @@
 import {canonicalStopName} from './stopMatching.js';
+import {equivalentStopKeys} from './stopNameLookup.js';
 
 // Geometria de apoio ao cálculo: distância em linha reta entre pontos OSM,
 // NÃO representa a distância rodoviária nem a plataforma confirmada.
@@ -40,6 +41,15 @@ export function buildOsmPositionIndex(stops=[]){
    }
   }
  }
+ // Estender apenas equivalências já revistas, sem suplantar nomes diretos.
+ // Usadas para ponderar tempos entre âncoras, não para validar plataformas.
+ const aliases=[];
+ for(const [name,point] of indexed){
+  for(const key of equivalentStopKeys(name)){
+   if(key!==name&&!indexed.has(key))aliases.push([key,{...point,quality:'alias-'+point.quality}]);
+  }
+ }
+ for(const [key,point] of aliases)if(!indexed.has(key))indexed.set(key,point);
  return indexed;
 }
 export function routeDistanceFractions(names,osmIndex,start,end){
