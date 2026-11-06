@@ -31,7 +31,7 @@ function markerIconFor(info){
 }
 export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=null,lineDirectory=null}){
  const div=useRef(null),map=useRef(null),markers=useRef(null),routeLayer=useRef(null),gpsLayer=useRef(null);
- const [coverageFilter,setCoverageFilter]=useState('all'),const [showAllDay,setShowAllDay]=useState(false),[crowdMessage,setCrowdMessage]=useState(''),[crowdBusy,setCrowdBusy]=useState(false),[crowdLine,setCrowdLine]=useState(''),[osm,setOsm]=useState([]),[status,setStatus]=useState('A obter paragens OpenStreetMap…'),[active,setActive]=useState(null),[filter,setFilter]=useState(''),[busy,setBusy]=useState(false),[line,setLine]=useState(''),[osmRoutes,setOsmRoutes]=useState([]),[osmLine,setOsmLine]=useState('');
+ const [coverageFilter,setCoverageFilter]=useState('all'),[showAllDay,setShowAllDay]=useState(false),[crowdMessage,setCrowdMessage]=useState(''),[crowdBusy,setCrowdBusy]=useState(false),[crowdLine,setCrowdLine]=useState(''),[osm,setOsm]=useState([]),[status,setStatus]=useState('A obter paragens OpenStreetMap…'),[active,setActive]=useState(null),[filter,setFilter]=useState(''),[busy,setBusy]=useState(false),[line,setLine]=useState(''),[osmRoutes,setOsmRoutes]=useState([]),[osmLine,setOsmLine]=useState('');
  const gtfs=data?.stops||[];
  const lines=useMemo(()=>data?availableLines(data):[],[data]);
  const discoveryStops=useMemo(()=>buildStopLineIndex(lineDirectory),[lineDirectory]);
