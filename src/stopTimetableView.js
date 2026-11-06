@@ -21,3 +21,20 @@ export function nextStopDepartures(departures,date,limit=4){
  return (departures||[]).filter(x=>Number.isFinite(seconds(x.time))&&seconds(x.time)>=since)
   .sort((a,b)=>seconds(a.time)-seconds(b.time)).slice(0,Math.max(0,limit));
 }
+
+/** Resumo de informação por linha e sentido, sem criar passagens adicionais. */
+export function summariseTimetableGroups(groups){
+ const rows=(groups||[]).map(group=>{
+  const departures=group.departures||[];
+  return {line:group.line,direction:group.direction,
+   total:departures.length,
+   published:departures.filter(d=>!d.estimated).length,
+   estimated:departures.filter(d=>!!d.estimated).length,
+   next:departures.length?departures.reduce((best,d)=>seconds(d.time)<seconds(best.time)?d:best):null};
+ });
+ return {lines:[...new Set(rows.map(r=>r.line))],
+  directions:rows.length,
+  published:rows.reduce((n,r)=>n+r.published,0),
+  estimated:rows.reduce((n,r)=>n+r.estimated,0),
+  rows};
+}
