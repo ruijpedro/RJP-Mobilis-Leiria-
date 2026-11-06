@@ -71,7 +71,12 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
    });
    const lookup=!id&&data?nameBasedStopTimetable(data,stop.stop_name,date):null;
    const candidateLines=lookup?.lines||[];
-   const candidateDepartures=(lookup?.departures||[]).slice(0,4).map(item=>({...item,headsign:item.direction}));
+   // Mostrar no marcador apenas partidas futuras no dia selecionado.
+   // Horas por nome continuam provisórias, sem validar a plataforma.
+   const since=date.getHours()*3600+date.getMinutes()*60+date.getSeconds();
+   const candidateDepartures=(lookup?.departures||[])
+     .filter(item=>seconds(item.time)>=since).slice(0,4)
+     .map(item=>({...item,headsign:item.direction}));
    const schedule=id?stopCache.get(id):{lines:[],departures:candidateDepartures};
    const associationLines=stopLineAssociation(stop,discoveryStops,[...schedule.lines,...candidateLines]);
    return {stop,association,info:{...schedule,nameOnlyEstimate:!id&&!!lookup?.departures?.length,
@@ -140,7 +145,7 @@ if(osmLine){const chosen=osmRoutes.find(r=>String(r.osm_id)===osmLine);if(chosen
  const displayGroups=showAllDay?timetable.groups:afterTimeGroups;
  const displayByName=useMemo(()=>timetableFromTime(byName?.groups||[],date,{allDay:showAllDay}),[byName,date.getTime(),showAllDay]);
  const futureCount=countTimetableDepartures(afterTimeGroups);
- const reportedForActive=active?stopLineAssociation(active,discoveryStops,servingLines):null;
+ const reportedForActive=active?stopLineAssociation(active,discoveryStops,[...servingLines,...(byName?.lines||[])]):null;
  const nearbyAlternatives=useMemo(()=>active?nearbyIdentifiedStops(active,osm,discoveryStops):[],[active,osm,discoveryStops]);
  const identifiedCount=mappedStops.filter(x=>x.info.routeLines.length>0).length;
  const closest=closestMapped.slice(0,5).map(({stop})=>stop);
