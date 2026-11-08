@@ -9,9 +9,9 @@ dist=Path("dist")
 manifest=json.loads((public/"manifest.webmanifest").read_text(encoding="utf-8"))
 for entry in manifest.get("icons",[]):
     uri=entry["src"]
-    if not uri.startswith("/") or uri.startswith("//"):
+    if uri.startswith("//") or "://" in uri or ".." in Path(uri).parts or not (uri.startswith("/") or uri.startswith("./")):
         raise SystemExit(f"Caminho de ícone PWA inválido: {uri}")
-    target=dist/uri.lstrip("/")
+    target=dist/uri.removeprefix("./").lstrip("/")
     if not target.is_file():
         raise SystemExit(f"Manifesto aponta para ícone em falta: {uri}")
     with Image.open(target) as img:
