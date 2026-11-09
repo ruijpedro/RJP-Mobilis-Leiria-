@@ -37,3 +37,10 @@ export function departureLabel(departure = {}) {
     unknown: 'Horário por confirmar'
   }[status];
 }
+
+/** Catálogo de descoberta para expansão intermunicipal. Não é um feed de horários. */
+export const REGIONAL_DISCOVERY_SOURCES = Object.freeze([
+  {id:'imt-nap-stepp',name:'IMT NAP / STePP',url:'https://www.nap-portugal.imt-ip.pt/nap/multimodal',kind:'open-data-catalog',coverage:'Portugal',formats:['shapefile'],reuse:'verify-dataset-license',hasVerifiedSchedules:false},
+  {id:'stepp-map',name:'STePP SIGWeb',url:'https://www.stepp.pt/sigweb/',kind:'public-map',coverage:'Portugal',formats:['shapefile'],reuse:'verify-dataset-license',hasVerifiedSchedules:false},
+  {id:'cimrl',name:'CIM Região de Leiria — Mobilidade',url:'https://cimregiaodeleiria.pt/mobilidade/mobilidade-regiao-de-leiria/',kind:'official-operator-directory',coverage:'Região de Leiria',operators:['Rodoviária do Lis','Mobilis','TUMG','Pombus'],reuse:'check-per-operator',hasVerifiedSchedules:false}
+]);
