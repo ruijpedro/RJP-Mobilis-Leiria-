@@ -10,7 +10,7 @@ export function formatGTFSSeconds(value){
  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;
 }
 // Correções de atraso por viagem GTFS, nunca por todas as circulações de uma linha.
-export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
+export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={},walkingTransfers=new Map()){
  const dep=date.getHours()*3600+date.getMinutes()*60;
  if(!data||fromId===toId||!fromId||!toId)return [];
  const routeMap=new Map((data.routes||[]).map(r=>[r.route_id,r]));
@@ -42,11 +42,13 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
  for(let depth=0;depth<=Math.max(0,Math.min(2,maxTransfers))&&frontier.length;depth++){
    const next=new Map();
    for(const state of frontier){
-     for(const option of boardings.get(state.stop)||[]){
+     const candidates=[{stop:state.stop,walk:null},...(depth>0?(walkingTransfers.get(state.stop)||[]).map(w=>({stop:w.to,walk:w})):[])];
+     for(const candidate of candidates){
+     for(const option of boardings.get(candidate.stop)||[]){
        // Transbordo com passagem estimada exige folga adicional.
        // Nunca tratar uma interpolação como ligação garantida.
        const estimatedTransfer=depth>0&&!!(state.legs.at(-1)?.estimated||option.stops[option.i]?.timeIsEstimated);
-       const earliest=state.time+(depth?(estimatedTransfer?600:120):0);
+       const earliest=state.time+(candidate.walk?Math.max(candidate.walk.totalSeconds,estimatedTransfer?600:120):(depth?(estimatedTransfer?600:120):0));
        if(option.departure<earliest)continue;
        if(option.departure>dep+18*3600)break;
        if(state.used.has(option.trip.trip_id))continue;
@@ -56,10 +58,10 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
          if(!Number.isFinite(arrival)||arrival<departure)continue;
          const line=routeMap.get(trip.route_id);
          const leg={line:line?.route_short_name||line?.route_long_name||'?',
-           from:state.stop,to:stops[j].stop_id,
+           from:candidate.stop,to:stops[j].stop_id,walkingTransfer:candidate.walk,
            departure:formatGTFSSeconds(departure),arrival:formatGTFSSeconds(arrival),
            scheduledDeparture:stops[i].departure_time,scheduledArrival:stops[j].arrival_time,
-           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null,estimated:!!(stops[i].timeIsEstimated||stops[j].timeIsEstimated)};
+           delayMinutes:offset/60,headsign:trip.trip_headsign||'',tripId:trip.trip_id,sourceUrl:trip.sourceUrl||null,estimated:!!(candidate.walk||stops[i].timeIsEstimated||stops[j].timeIsEstimated)};
          const item={stop:leg.to,time:arrival,legs:[...state.legs,leg],used:new Set([...state.used,trip.trip_id])};
          if(item.stop===toId){collected.push(item);continue;}
          if(depth===maxTransfers)continue;
@@ -74,6 +76,7 @@ export function plan(data,fromId,toId,date=new Date(),maxTransfers=2,delays={}){
          }
        }
      }
+   }
    }
    frontier=[...next.values()].flat().sort((a,b)=>a.time-b.time).slice(0,1500);
  }
