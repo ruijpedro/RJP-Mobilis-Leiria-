@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "routes": [
+    {
+      "id": "rdl-5943",
+      "operator": "Rodoviária do Lis",
+      "number": "5943",
+      "name": "Leiria – Marinha Grande (Rápida via A8)",
+      "source": "https://www.rodoviariadolis.pt/wp-content/uploads/RDLinforma_altera%C3%A7%C3%A3o-rapida_mar2025.pdf",
+      "published": "2025-03-03",
+      "effectiveFrom": "2025-03-06",
+      "reviewStatus": "pending-current-validity",
+      "terminals": [
+        "Leiria (Piscinas 2)",
+        "Marinha Grande (Estádio)"
+      ],
+      "notes": "Aviso oficial de alteração de oferta. Confirmar vigência atual, plataformas, coordenadas, calendário e paragens intermédias antes de publicar horários ou marcadores."
+    }
+  ]
+}
