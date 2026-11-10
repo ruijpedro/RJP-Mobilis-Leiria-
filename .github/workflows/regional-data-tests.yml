@@ -1,0 +1,32 @@
+name: Validar importadores regionais
+
+on:
+  push:
+    paths:
+      - 'scripts/import_regional_*.py'
+      - 'tests/regional_*.test.py'
+      - '.github/workflows/regional-data-tests.yml'
+  pull_request:
+    paths:
+      - 'scripts/import_regional_*.py'
+      - 'tests/regional_*.test.py'
+      - '.github/workflows/regional-data-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar sintaxe dos importadores
+        run: python -m compileall -q scripts/import_regional_stops.py scripts/import_regional_gtfs.py scripts/import_regional_routes.py
+      - name: Testar importação de paragens e linhas
+        run: |
+          python tests/regional_import.test.py
+          python tests/regional_routes.test.py
