@@ -120,9 +120,19 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
   for(let k=0;k<leg.points.length;k++){
    const p=leg.points[k];bounds.push(p.coordinates);
    const terminus=k===0||k===leg.points.length-1;
-   L.circleMarker(p.coordinates,{radius:terminus?9:5,color,fillColor:terminus?'#ffc51d':'#fff',fillOpacity:1,weight:3})
+   L.circleMarker(p.coordinates,{radius:terminus?12:6,color,fillColor:terminus?'#ffc51d':'#fff',fillOpacity:1,weight:3})
+    .bindTooltip(escapeHTML((k===0?(leg===paths[0]?'Embarque: ':'Transbordo: '):k===leg.points.length-1?(leg===paths.at(-1)?'Destino: ':'Saída: '):'')+p.name),{permanent:terminus,direction:'top',offset:[0,-10]})
     .addTo(layer).bindPopup('<strong>'+escapeHTML(p.name)+'</strong><p>Linha '+escapeHTML(leg.line)+' · '+escapeHTML(leg.departure.slice(0,5))+'–'+escapeHTML(leg.arrival.slice(0,5))+'</p><small>Localização aproximada; confirma plataforma e sentido.</small>');
   }
+ }
+ for(const leg of journey.legs){
+ const w=leg.walkingTransfer;if(!w)continue;
+ const find=id=>paths.flatMap(p=>p.points).find(p=>p.stopId===id||p.stop_id===id)?.coordinates||(()=>{const s=gtfs.find(s=>s.stop_id===id);return s&&s.stop_lat&&s.stop_lon?[Number(s.stop_lat),Number(s.stop_lon)]:null})();
+ const a=find(w.from),b=find(w.to);
+ if(a&&b&&[...a,...b].every(Number.isFinite)){
+ L.polyline([a,b],{color:'#475569',weight:4,dashArray:'4 8'}).addTo(layer).bindTooltip('Caminhada estimada · '+Math.ceil(w.walkingSeconds/60)+' min');
+ bounds.push(a,b);
+ }
  }
  if(bounds.length>1)map.current.fitBounds(L.latLngBounds(bounds),{padding:[40,40],maxZoom:15});
  else if(bounds.length===1)map.current.setView(bounds[0],15);
