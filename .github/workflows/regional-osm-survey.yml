@@ -16,13 +16,34 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import urllib.request
+          import json, time, urllib.request, urllib.error
           query=Path('scripts/overpass_leiria_regional.ql').read_bytes()
-          req=urllib.request.Request('https://overpass.kumi.systems/api/interpreter',data=query,headers={'User-Agent':'RJP-Mobilis-Leiria/1.0 (OSM regional survey)','Content-Type':'text/plain; charset=utf-8'})
-          with urllib.request.urlopen(req,timeout=180) as response:
-              data=response.read()
-          Path('regional-overpass.json').write_bytes(data)
-          print('Bytes recebidos:',len(data))
+          endpoints=[
+              'https://overpass.private.coffee/api/interpreter',
+              'https://overpass-api.de/api/interpreter',
+              'https://overpass.kumi.systems/api/interpreter',
+          ]
+          errors=[]
+          for url in endpoints:
+              try:
+                  print('A consultar:',url,flush=True)
+                  req=urllib.request.Request(url,data=query,headers={'User-Agent':'RJP-Mobilis-Leiria/1.0 (regional stop survey)','Content-Type':'text/plain; charset=utf-8'})
+                  with urllib.request.urlopen(req,timeout=75) as response:
+                      payload=response.read()
+                  parsed=json.loads(payload)
+                  if not isinstance(parsed.get('elements'),list):
+                      raise ValueError('Resposta sem lista de elementos OSM')
+                  if not parsed['elements']:
+                      raise ValueError('Resposta vazia; verificar área e consulta')
+                  Path('regional-overpass.json').write_bytes(payload)
+                  print('Elementos recebidos:',len(parsed['elements']),flush=True)
+                  break
+              except (TimeoutError,OSError,ValueError,json.JSONDecodeError) as exc:
+                  errors.append(f'{url}: {exc}')
+                  print('Falha neste servidor:',str(exc),flush=True)
+                  time.sleep(2)
+          else:
+              raise SystemExit('Nenhum servidor Overpass respondeu corretamente. '+ ' | '.join(errors))
           PY
       - name: Extrair candidatos sem publicar no mapa
         run: |
