@@ -33,7 +33,7 @@ function markerIconFor(info){
 export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=null,lineDirectory=null,favoriteIds=[],onToggleFavorite=()=>{}}){
  const div=useRef(null),map=useRef(null),markers=useRef(null),routeLayer=useRef(null),gpsLayer=useRef(null);
  const [networkFilter,setNetworkFilter]=useState('all'),[regionalStops,setRegionalStops]=useState([]),[coverageFilter,setCoverageFilter]=useState('all'),[showAllDay,setShowAllDay]=useState(false),[crowdMessage,setCrowdMessage]=useState(''),[crowdBusy,setCrowdBusy]=useState(false),[crowdLine,setCrowdLine]=useState(''),[osm,setOsm]=useState([]),[status,setStatus]=useState('A obter paragens OpenStreetMap…'),[active,setActive]=useState(null),[filter,setFilter]=useState(''),[busy,setBusy]=useState(false),[line,setLine]=useState(''),[osmRoutes,setOsmRoutes]=useState([]),[osmLine,setOsmLine]=useState('');
- useEffect(()=>{fetch(`${import.meta.env.BASE_URL}data/regional-stops.json`).then(r=>r.ok?r.json():null).then(d=>setRegionalStops((d?.stops||[]).filter(s=>s.reviewStatus==='verified'&&s.source&&s.name&&Number.isFinite(s.lat)&&Number.isFinite(s.lon)))).catch(()=>setRegionalStops([]))},[]);
+ useEffect(()=>{fetch(`${import.meta.env.BASE_URL}data/regional-stops.json`).then(r=>r.ok?r.json():null).then(d=>setRegionalStops((d?.stops||[]).filter(s=>(s.reviewStatus==='verified'||s.reviewStatus==='osm-linked')&&s.source&&s.name&&Number.isFinite(s.lat)&&Number.isFinite(s.lon)))).catch(()=>setRegionalStops([]))},[]);
  const gtfs=data?.stops||[];
  const regionalMatches=useMemo(()=>regionalStops.filter(s=>!filter.trim()||canonicalStopName(s.name).includes(canonicalStopName(filter))),[regionalStops,filter]);
  const lines=useMemo(()=>data?availableLines(data):[],[data]);
