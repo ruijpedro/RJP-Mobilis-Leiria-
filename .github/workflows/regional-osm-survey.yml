@@ -11,7 +11,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Testar extrator
-        run: python -m unittest discover -s tests -p 'osm_regional_routes.test.py'
+        run: python -m unittest discover -s tests -p 'test_osm_regional_routes.py' -v
       - name: Consultar OpenStreetMap via Overpass
         run: |
           python - <<'PY'
