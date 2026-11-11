@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "description": "Associações OSM indicativas; serviço atual por confirmar. Sem horários.",
+  "stops": [
+    {
+      "id": "osm:node:9812128066",
+      "name": "Câmara Municipal / ESEL",
+      "lat": 39.7397054,
+      "lon": -8.8124026,
+      "source": "OpenStreetMap",
+      "operator": "Rodoviária do Lis",
+      "routeNames": [
+        "264"
+      ],
+      "reviewStatus": "osm-linked",
+      "scheduleStatus": "unknown",
+      "osmRouteRelations": [
+        14244355
+      ]
+    },
+    {
+      "id": "osm:node:8127132222",
+      "name": "Estação Rodoviária de Leiria",
+      "lat": 39.7455008,
+      "lon": -8.8049247,
+      "source": "OpenStreetMap",
+      "operator": "Rodoviária do Lis",
+      "routeNames": [
+        "264"
+      ],
+      "reviewStatus": "osm-linked",
+      "scheduleStatus": "unknown",
+      "osmRouteRelations": [
+        14244355
+      ]
+    },
+    {
+      "id": "osm:node:9812092585",
+      "name": "Junta Freguesia Azoia",
+      "lat": 39.7121419,
+      "lon": -8.830506,
+      "source": "OpenStreetMap",
+      "operator": "Rodoviária do Lis",
+      "routeNames": [
+        "264"
+      ],
+      "reviewStatus": "osm-linked",
+      "scheduleStatus": "unknown",
+      "osmRouteRelations": [
+        14244355
+      ]
+    },
+    {
+      "id": "osm:node:9812126797",
+      "name": "Rua Santa Catarina",
+      "lat": 39.7061001,
+      "lon": -8.8276443,
+      "source": "OpenStreetMap",
+      "operator": "Rodoviária do Lis",
+      "routeNames": [
+        "264"
+      ],
+      "reviewStatus": "osm-linked",
+      "scheduleStatus": "unknown",
+      "osmRouteRelations": [
+        14244355
+      ]
+    }
+  ]
+}
