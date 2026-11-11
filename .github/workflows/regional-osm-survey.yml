@@ -1,0 +1,41 @@
+name: Levantamento paragens intermunicipais Leiria
+on:
+  workflow_dispatch:
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Testar extrator
+        run: python -m unittest discover -s tests -p 'osm_regional_routes.test.py'
+      - name: Consultar OpenStreetMap via Overpass
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request
+          query=Path('scripts/overpass_leiria_regional.ql').read_bytes()
+          req=urllib.request.Request('https://overpass.kumi.systems/api/interpreter',data=query,headers={'User-Agent':'RJP-Mobilis-Leiria/1.0 (OSM regional survey)','Content-Type':'text/plain; charset=utf-8'})
+          with urllib.request.urlopen(req,timeout=180) as response:
+              data=response.read()
+          Path('regional-overpass.json').write_bytes(data)
+          print('Bytes recebidos:',len(data))
+          PY
+      - name: Extrair candidatos sem publicar no mapa
+        run: |
+          python scripts/import_osm_regional_routes.py regional-overpass.json regional-candidates.json
+          python - <<'PY'
+          import json
+          d=json.load(open('regional-candidates.json'))
+          print('Paragens para revisão:',len(d['stops']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leiria-regional-candidates
+          path: |
+            regional-candidates.json
+            regional-overpass.json
+          retention-days: 14
