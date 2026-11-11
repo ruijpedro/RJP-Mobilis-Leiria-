@@ -17,8 +17,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Instalar ferramentas de leitura PDF
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-por tesseract-ocr-eng
+      - name: Preparar ferramentas PDF (modo degradado se apt indisponível)
+        shell: bash
+        run: |
+          set -uo pipefail
+          missing=()
+          command -v pdftotext >/dev/null || missing+=(poppler-utils)
+          command -v tesseract >/dev/null || missing+=(tesseract-ocr tesseract-ocr-por tesseract-ocr-eng)
+          if (( ${#missing[@]} )); then
+            echo "::notice::Ferramentas PDF em falta: ${missing[*]}. A tentar instalar."
+            installed=false
+            for attempt in 1 2; do
+              if sudo apt-get update -qq -o Acquire::Retries=1 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 &&
+                 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends -o Acquire::Retries=1 -o Acquire::http::Timeout=15 -o Acquire::https::Timeout=15 "${missing[@]}"; then
+                installed=true
+                break
+              fi
+              echo "::warning::Instalação indisponível (tentativa ${attempt}); a auditoria vai continuar."
+              sleep 3
+            done
+            if [[ "$installed" != true ]]; then
+              echo "::warning::Sem instalação completa; serão conservados os PDF/SVG oficiais e registadas as falhas de extração."
+            fi
+          fi
+          command -v pdftotext >/dev/null && echo "pdftotext: disponível" || echo "pdftotext: indisponível"
+          command -v tesseract >/dev/null && echo "tesseract: disponível" || echo "tesseract: indisponível"
       - name: Verificar scripts de extração
         run: python -m py_compile scripts/audit_official_schedules.py scripts/extract_official_pdf_for_review.py
       - name: Extrair referências e metadados das tabelas Mobilis
