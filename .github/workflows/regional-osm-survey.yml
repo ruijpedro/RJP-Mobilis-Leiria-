@@ -51,7 +51,13 @@ jobs:
           python - <<'PY'
           import json
           d=json.load(open('regional-candidates.json'))
-          print('Paragens para revisão:',len(d['stops']))
+          print('Paragens com carreiras OSM para revisão:',len(d['stops']))
+          raw=json.load(open('regional-overpass.json'))
+          relations=[e for e in raw['elements'] if e.get('type')=='relation' and e.get('tags',{}).get('route')=='bus']
+          nodes=[e for e in raw['elements'] if e.get('type')=='node']
+          print('Relações de carreiras OSM:',len(relations),'| nós consultados:',len(nodes))
+          with open(__import__('os').environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write(f"## Levantamento OSM Leiria\\n\\n- Carreiras OSM: {len(relations)}\\n- Paragens associadas para revisão: {len(d['stops'])}\\n- Nós OSM recebidos: {len(nodes)}\\n\\nDados indicativos; nenhuma paragem publicada automaticamente.\\n")
           PY
       - uses: actions/upload-artifact@v4
         with:
