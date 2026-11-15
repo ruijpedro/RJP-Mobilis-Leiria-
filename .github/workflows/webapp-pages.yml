@@ -27,6 +27,23 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: 'true'
+      - name: Verificar ficheiros da WebApp antes de publicar
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -d dist/assets
+          grep -q '/RJP-Mobilis-Leiria-/assets/' dist/index.html || { echo "::error::O HTML não aponta para os recursos no caminho correto do GitHub Pages"; exit 1; }
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const html=fs.readFileSync('dist/index.html','utf8');
+          const urls=[...html.matchAll(/(?:src|href)="(\/RJP-Mobilis-Leiria-\/assets\/[^"]+)"/g)].map(x=>x[1]);
+          if(!urls.some(u=>u.endsWith('.js')))throw Error('Nenhum JavaScript da WebApp referenciado no HTML');
+          for(const url of urls){
+            const local='dist/'+url.slice('/RJP-Mobilis-Leiria-/'.length);
+            if(!fs.existsSync(local)||!fs.statSync(local).size)throw Error('Recurso em falta: '+local);
+          }
+          console.log('Verificados '+urls.length+' recursos JavaScript/CSS referenciados no HTML.');
+          NODE
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
