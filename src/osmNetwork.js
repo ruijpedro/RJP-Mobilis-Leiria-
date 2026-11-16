@@ -1,10 +1,10 @@
 const URL=`${import.meta.env?.BASE_URL||'/'}data/osm-network.json`;
-export async function loadOsmNetwork(){
+export async function loadOsmNetwork({includeRegional=false}={}){
  try{
   const response=await fetch(URL,{cache:'no-cache'});
   if(!response.ok)throw Error(`HTTP ${response.status}`);
   const doc=await response.json();
-  return Array.isArray(doc.routes)?doc.routes.filter(route=>{const ref=String(route.ref||'').replace(/^linha\s+/i,'').trim();return /^[1-9]$/.test(ref)&&(route.mobilis||String(route.network||'').toLowerCase().includes('mobilis'))&&Array.isArray(route.shape_segments)&&route.shape_segments.length>0;}):[];
+  return Array.isArray(doc.routes)?doc.routes.filter(route=>{if(includeRegional)return Array.isArray(route.shape_segments)&&route.shape_segments.length>0;const ref=String(route.ref||'').replace(/^linha\s+/i,'').trim();return /^[1-9]$/.test(ref)&&(route.mobilis||String(route.network||'').toLowerCase().includes('mobilis'))&&Array.isArray(route.shape_segments)&&route.shape_segments.length>0;}):[];
  }catch{return []}
 }
 export function routeDescription(route){
