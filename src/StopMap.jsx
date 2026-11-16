@@ -36,11 +36,20 @@ function directorySchematic(lineNumber,directory,osmStops){
  const names=directory?.routes?.[String(lineNumber)]?.stops||[];
  const byName=new Map();
  for(const stop of osmStops||[]){const key=canonicalStopName(stop.stop_name);const lat=Number(stop.stop_lat),lon=Number(stop.stop_lon);if(key&&Number.isFinite(lat)&&Number.isFinite(lon)){const arr=byName.get(key)||[];arr.push([lat,lon]);byName.set(key,arr)}}
- const segments=[];let last=null;
- for(const name of names){const choices=byName.get(canonicalStopName(name))||[];if(choices.length!==1){last=null;continue}const point=choices[0];
- if(last){const dy=(point[0]-last[0])*111000,dx=(point[1]-last[1])*86000;
- if(Math.hypot(dx,dy)<2200)segments.push([last,point]);}
- last=point;
+ const located=[];
+ for(const [index,name] of names.entries()){
+  const choices=byName.get(canonicalStopName(name))||[];
+  // Nomes repetidos podem corresponder a plataformas opostas: não adivinhar.
+  if(choices.length===1)located.push({index,point:choices[0]});
+ }
+ const segments=[];
+ for(let i=1;i<located.length;i++){
+  const prev=located[i-1],next=located[i];
+  const dy=(next.point[0]-prev.point[0])*111000,dx=(next.point[1]-prev.point[1])*86000;
+  const distance=Math.hypot(dx,dy);
+  // Liga pontos cartografados mesmo que existam paragens intermédias sem coordenadas.
+  // Saltos muito longos não são desenhados: não representam uma estrada confirmada.
+  if(distance>5&&distance<8000)segments.push([prev.point,next.point]);
  }
  return segments;
 }
