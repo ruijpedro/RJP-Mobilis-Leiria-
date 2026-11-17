@@ -1,15 +1,21 @@
 <!doctype html><html lang="pt"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#062e59"/><title>RJP Mobilis Leiria</title>  <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
-</head><body><div id="root"><div id="rjp-boot" style="padding:28px;font:16px system-ui;color:#062e59;background:#f5f8fc;min-height:100vh">RJP Mobilis Leiria — a iniciar… <small style="display:block;margin-top:12px">Diagnóstico de arranque v4</small></div></div><script>
+</head><body><div id="root"><div id="rjp-boot" style="padding:28px;font:16px system-ui;color:#062e59;background:#f5f8fc;min-height:100vh">RJP Mobilis Leiria — a iniciar… <small style="display:block;margin-top:12px">Diagnóstico de arranque v5</small></div></div><script>
 (function(){
  function show(message){
   var el=document.getElementById('rjp-startup-error');
   if(!el){el=document.createElement('div');el.id='rjp-startup-error';el.style='position:fixed;z-index:999999;inset:0;overflow:auto;background:#f5f8fc;color:#062e59;padding:28px;font:16px system-ui';document.body.appendChild(el)}
   el.textContent='RJP Mobilis Leiria — erro ao iniciar: '+String(message)+'. Envia esta mensagem para corrigirmos.';
  }
- window.addEventListener('error',function(e){show((e.message||'Erro JavaScript')+(e.filename?' em '+e.filename+':'+e.lineno:''))},true);
+ window.addEventListener('error',function(e){
+  var target=e.target;
+  var resource=target&&(target.src||target.href);
+  var message=resource?'Falha ao carregar recurso: '+resource:(e.message||'Erro JavaScript');
+  if(e.filename)message+=' em '+e.filename+':'+e.lineno+':'+e.colno;
+  show(message);
+ },true);
  window.addEventListener('unhandledrejection',function(e){show(e.reason?.message||e.reason||'Falha de carregamento')});
- setTimeout(function(){if(document.getElementById('rjp-boot')){var scripts=[].slice.call(document.querySelectorAll('script[type="module"][src]')).map(function(x){return x.src});show('A interface não iniciou (v4). Módulo publicado: '+(scripts.join(', ')||'nenhum')+'. Verifica a versão e envia esta mensagem.')}},12000);
+ setTimeout(function(){if(document.getElementById('rjp-boot')){var scripts=[].slice.call(document.querySelectorAll('script[type="module"][src]')).map(function(x){return x.src});show('A interface não iniciou (v5). Módulo publicado: '+(scripts.join(', ')||'nenhum')+'. Verifica a versão e envia esta mensagem.')}},12000);
  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(regs){regs.forEach(function(reg){if(reg.scope.includes('/RJP-Mobilis-Leiria-/'))reg.unregister()})}).catch(function(){})}
  if('caches' in window){caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k.startsWith('rjp-mobilis-web-')}).map(function(k){return caches.delete(k)}))}).catch(function(){})}
 })();
