@@ -13,13 +13,4 @@
  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(regs){regs.forEach(function(reg){if(reg.scope.includes('/RJP-Mobilis-Leiria-/'))reg.unregister()})}).catch(function(){})}
  if('caches' in window){caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k.startsWith('rjp-mobilis-web-')}).map(function(k){return caches.delete(k)}))}).catch(function(){})}
 })();
-</script><script type="module">
-import('./src/main.jsx').catch(function(error){
- var message=error&&error.stack||error&&error.message||String(error);
- var el=document.getElementById('rjp-startup-error');
- if(!el){el=document.createElement('div');el.id='rjp-startup-error';document.body.appendChild(el)}
- el.style='position:fixed;z-index:999999;inset:0;overflow:auto;background:#f5f8fc;color:#062e59;padding:28px;font:16px system-ui;white-space:pre-wrap;overflow-wrap:anywhere';
- el.textContent='RJP Mobilis — erro no módulo principal (diagnóstico v3):\n'+message;
- console.error('RJP Mobilis module import failed',error);
-});
-</script></body></html>
+</script><script type="module" src="/src/main.jsx"></script></body></html>
