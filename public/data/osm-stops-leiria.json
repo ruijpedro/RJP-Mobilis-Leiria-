@@ -2610,6 +2610,15 @@
   "operator": ""
  },
  {
+  "stop_id": "osm:node:14384706055",
+  "stop_name": "Paragem sem nome",
+  "stop_lat": "39.6880122",
+  "stop_lon": "-8.8799625",
+  "osm": true,
+  "ref": "",
+  "operator": ""
+ },
+ {
   "stop_id": "osm:way:473189533",
   "stop_name": "Linha 1",
   "stop_lat": "39.7569587",
