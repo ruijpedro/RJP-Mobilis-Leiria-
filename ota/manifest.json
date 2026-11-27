@@ -1,8 +1,8 @@
 {
   "appId": "pt.rjp.mobilisleiria",
-  "version": "1.10.39",
+  "version": "1.10.40",
   "minNativeVersion": "1.10.17",
-  "url": "https://github.com/ruijpedro/RJP-Mobilis-Leiria-/releases/download/ota-v1.10.39/rjp-mobilis-ota-v1.10.39.zip",
-  "checksum": "d0993bf2ca4333f60fce61c22cc95dd9bff3448f8b59b48809e5904c41838156",
-  "notes": "Atualiza\u00e7\u00e3o Web OTA RJP Mobilis 1.10.39"
+  "url": "https://github.com/ruijpedro/RJP-Mobilis-Leiria-/releases/download/ota-v1.10.40/rjp-mobilis-ota-v1.10.40.zip",
+  "checksum": "253f2b483f26f4ba632dcbfc36eefd1cdd8ee6ed22ab0b0f8ae76fce7e61dc17",
+  "notes": "Atualiza\u00e7\u00e3o Web OTA RJP Mobilis 1.10.40"
 }
