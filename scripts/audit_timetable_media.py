@@ -42,6 +42,23 @@ for line in catalog["lines"]:
                 extracted = "\n".join(" ".join(t.itertext()) for t in root.iter() if t.tag.split("}")[-1] == "text")
             else:
                 extracted = ""
+            if not extracted.strip() or not re.search(r"\d{1,2}[:h][0-5]\d", extracted):
+                with tempfile.TemporaryDirectory() as d:
+                    p = Path(d)/("source"+ext)
+                    p.write_bytes(raw)
+                    prefix = Path(d)/"page"
+                    if ext == ".pdf":
+                        subprocess.run(["pdftoppm","-f","1","-l","8","-scale-to","3500","-png",str(p),str(prefix)],check=True,timeout=90)
+                    elif ext == ".svg":
+                        subprocess.run(["rsvg-convert","-w","3500","-o",str(prefix)+".png",str(p)],check=True,timeout=60)
+                    else:
+                        prefix = p
+                    images = sorted(Path(d).glob("page*.png")) if ext in (".pdf",".svg") else [p]
+                    chunks = []
+                    for image in images:
+                        chunks.append(subprocess.check_output(["tesseract",str(image),"stdout","-l","por+eng","--psm","6","tsv"],timeout=90).decode("utf-8","replace"))
+                    extracted = "\n".join(chunks)
+                    entry["method"] = "ocr-tsv-review-only"
             entry["time_tokens"] = len(re.findall(r"(?<!\d)(?:[01]?\d|2[0-9])[:h][0-5]\d(?!\d)", extracted))
             entry["text_file"] = name + ".txt"
             (OUT / entry["text_file"]).write_text(extracted, encoding="utf-8")
