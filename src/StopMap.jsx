@@ -87,7 +87,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
     let pin=pins.get(v.id);
     if(!pin){
      const color=routeColor(v.line);
-     pin=L.marker([v.lat,v.lon],{zIndexOffset:1000,title:'Linha '+v.line+' — posição estimada',alt:'Autocarro da linha '+v.line+' — posição estimada',icon:L.divIcon({className:'rjp-estimated-vehicle',iconSize:[44,44],iconAnchor:[22,22],html:'<span style="box-sizing:border-box;display:flex;width:44px;height:44px;border:3px solid white;border-radius:50%;box-shadow:0 0 0 2px #2229,0 3px 9px #0009;background:'+escapeHTML(color)+'"></span>'})}).addTo(layer);
+     pin=L.marker([v.lat,v.lon],{zIndexOffset:1000,title:'Linha '+v.line+' — posição estimada',alt:'Autocarro da linha '+v.line+' — posição estimada',icon:L.divIcon({className:'rjp-estimated-vehicle',iconSize:[44,44],iconAnchor:[22,22],html:'<span style="box-sizing:border-box;display:flex;width:44px;height:44px;border:3px solid white;border-radius:50%;box-shadow:0 0 0 2px #2229,0 3px 9px #0009;background:'+escapeHTML(color)+';align-items:center;justify-content:center;color:white;font-size:20px;font-weight:800;line-height:1;text-shadow:0 1px 3px #000c">'+escapeHTML(v.line)+'</span>'})}).addTo(layer);
      pin.bindPopup('');pins.set(v.id,pin);
     }
     pin.setLatLng([v.lat,v.lon]);
