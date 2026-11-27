@@ -36,3 +36,14 @@ jobs:
           else
             echo "Sem alterações nos links de horários."
           fi
+      - name: Extrair evidência dos horários oficiais
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+          python scripts/audit_timetable_media.py
+      - name: Guardar relatório para validação
+        uses: actions/upload-artifact@v4
+        with:
+          name: timetable-review
+          path: timetable-review/
+          retention-days: 14
