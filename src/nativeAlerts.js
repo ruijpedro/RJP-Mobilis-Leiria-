@@ -1,5 +1,5 @@
-import {Capacitor} from '@capacitor/core';
-import {LocalNotifications} from '@capacitor/local-notifications';
+import {Capacitor,registerPlugin} from '@capacitor/core';
+const LocalNotifications=registerPlugin('LocalNotifications');
 import {activeService,seconds} from './gtfs.js';
 import {lisbonServiceClock,serviceDateKey} from './scheduledAlerts.js';
 const tag='mobilis-timetable';
