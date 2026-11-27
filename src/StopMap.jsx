@@ -98,7 +98,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
      pin.bindPopup('');pin.on('popupopen',e=>{const el=e.popup.getElement();if(el)el.onclick=ev=>{if(ev.target.closest('[data-trip-detail]')){setDetailId(v.id);map.current?.closePopup();}else if(ev.target.closest('[data-onboard]')){setOnboardId(v.id);setExitStop('');setFollowBus(false);map.current?.closePopup();}};});pins.set(v.id,pin);
     }
     pin.setLatLng([v.lat,v.lon]);
-    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada · '+(v.geometry==='osm-approximation'?'traçado OSM aproximado':v.geometry==='anchor-approximation'?'interpolação entre referências não consecutivas':'linha reta entre paragens')+'. Sem GPS em tempo real.</small><p><button type="button" data-trip-detail>Ver viagem</button> <button type="button" data-onboard>🚌 Estou a bordo</button></p>');
+    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada · '+(v.geometry==='gtfs-shape'?'traçado GTFS da viagem':v.geometry==='osm-approximation'?'traçado OSM aproximado':v.geometry==='anchor-approximation'?'interpolação entre referências não consecutivas':'linha reta entre paragens')+'. Sem GPS em tempo real.</small><p><button type="button" data-trip-detail>Ver viagem</button> <button type="button" data-onboard>🚌 Estou a bordo</button></p>');
    }
    setVehicleCount(vehicles.length);setVehicleDiagnostic(diagnostic);
   }
