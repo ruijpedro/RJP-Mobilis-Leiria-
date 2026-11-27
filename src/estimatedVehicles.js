@@ -1,8 +1,9 @@
+import {matchVehiclePath,pointOnVehiclePath} from './vehicleGeometry.js';
 import {activeService,seconds} from './gtfs.js';
 import {findJourneyStopCoordinates} from './mapJourney.js';
 
 // Scheduled estimates only; never GPS. No external API.
-export function buildEstimatedVehicleIndex(data,osmStops=[]){
+export function buildEstimatedVehicleIndex(data,osmStops=[],osmRoutes=[]){
  const stops=new Map((data?.stops||[]).map(s=>[s.stop_id,s]));
  const routes=new Map((data?.routes||[]).map(r=>[r.route_id,r]));
  const coords=new Map([...stops].map(([id,s])=>[id,findJourneyStopCoordinates(s,osmStops)]));
@@ -14,7 +15,7 @@ export function buildEstimatedVehicleIndex(data,osmStops=[]){
   rows:(grouped.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence)).map(s=>({
    ...s,name:stops.get(s.stop_id)?.stop_name||s.stop_id,point:coords.get(s.stop_id),
    arrival:seconds(s.arrival_time),departure:seconds(s.departure_time)
-  }))})).filter(x=>x.rows.length>=2);
+  }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,path:matchVehiclePath(row.point,x.rows[i+1]?.point,x.route?.route_short_name,osmRoutes)}))}));
 }
 export function estimatedVehicles(index,data,now=new Date()){
  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'}).formatToParts(now).map(p=>[p.type,p.value]));
@@ -32,11 +33,12 @@ export function estimatedVehicles(index,data,now=new Date()){
     const valid=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&p[0]>=39&&p[0]<=41&&p[1]>=-9.5&&p[1]<=-7.5;
     if(!valid(a.point)||!valid(b.point))break;
     const f=t<=a.departure?0:(t-a.departure)/(b.arrival-a.departure);
+    const point=pointOnVehiclePath(a.path,f)||[a.point[0]+f*(b.point[0]-a.point[0]),a.point[1]+f*(b.point[1]-a.point[1])];
     result.push({id:trip.trip_id+':'+serviceDay.toDateString(),tripId:trip.trip_id,
      line:route?.route_short_name||'?',routeId:trip.route_id,headsign:trip.trip_headsign||route?.route_long_name||'',
-     lat:a.point[0]+f*(b.point[0]-a.point[0]),lon:a.point[1]+f*(b.point[1]-a.point[1]),
+     lat:point[0],lon:point[1],
      nextStop:b.name,nextArrival:b.arrival_time,etaMinutes:Math.ceil((b.arrival-t)/60),
-     positionSource:'scheduled',geometry:'straight-line',estimated:true});
+     positionSource:'scheduled',geometry:a.path?'osm-approximation':'straight-line',estimated:true});
     break;
    }
   }
