@@ -7,6 +7,14 @@ export function buildEstimatedVehicleIndex(data,osmStops=[],osmRoutes=[]){
  const stops=new Map((data?.stops||[]).map(s=>[s.stop_id,s]));
  const routes=new Map((data?.routes||[]).map(r=>[r.route_id,r]));
  const coords=new Map([...stops].map(([id,s])=>[id,findJourneyStopCoordinates(s,osmStops)]));
+ const shapes=new Map();
+ for(const p of data?.shapes||[]){
+  if(!p.shape_id||!String(p.shape_pt_lat??'').trim()||!String(p.shape_pt_lon??'').trim())continue;
+  const lat=Number(p.shape_pt_lat),lon=Number(p.shape_pt_lon),seq=Number(p.shape_pt_sequence);
+  if(!Number.isFinite(seq)||!Number.isFinite(lat)||!Number.isFinite(lon)||Math.abs(lat)>90||Math.abs(lon)>180)continue;
+  const list=shapes.get(p.shape_id)||[];list.push({seq,point:[lat,lon]});shapes.set(p.shape_id,list);
+ }
+ for(const [id,list] of shapes)shapes.set(id,list.sort((a,b)=>a.seq-b.seq).map(p=>p.point));
  const grouped=new Map();
  for(const st of data?.stopTimes||[]){
   const list=grouped.get(st.trip_id)||[];list.push(st);grouped.set(st.trip_id,list);
@@ -15,7 +23,7 @@ export function buildEstimatedVehicleIndex(data,osmStops=[],osmRoutes=[]){
   rows:(grouped.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence)).map(s=>({
    ...s,name:stops.get(s.stop_id)?.stop_name||s.stop_id,point:coords.get(s.stop_id),
    arrival:seconds(s.arrival_time),departure:seconds(s.departure_time)
-  }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,path:matchVehiclePath(row.point,x.rows[i+1]?.point,x.route?.route_short_name,osmRoutes)}))}));
+  }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,...(()=>{const line=x.route?.route_short_name;const shape=shapes.get(x.trip.shape_id);const official=shape?matchVehiclePath(row.point,x.rows[i+1]?.point,line,[{ref:line,shape_segments:[shape]}]):null;return {path:official||matchVehiclePath(row.point,x.rows[i+1]?.point,line,osmRoutes),officialPath:!!official};})()}))}));
 }
 export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'}).formatToParts(now).map(p=>[p.type,p.value]));
@@ -47,7 +55,7 @@ export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
      lat:point[0],lon:point[1],
      nextStop:b.name,nextArrival:b.arrival_time,etaMinutes:Math.ceil((b.arrival-t)/60),
      nextIndex:i+1,totalStops:rows.length,finalArrival:rows.at(-1).arrival_time,previousStops:rows.slice(0,i+1).map(r=>({sequence:r.stop_sequence,name:r.name,time:String(r.arrival_time||'').slice(0,5)})),progress:Math.round(100*(i+f)/(rows.length-1)),remainingStops:rows.slice(i+1).filter(r=>Number.isFinite(r.arrival)&&r.arrival>=t).map(r=>({sequence:r.stop_sequence,name:r.name,time:r.arrival_time.slice(0,5),minutes:Math.ceil((r.arrival-t)/60)})),
-     positionSource:'scheduled',geometry:gap?'anchor-approximation':a.path?'osm-approximation':'straight-line',estimated:true});
+     positionSource:'scheduled',geometry:gap?'anchor-approximation':a.officialPath?'gtfs-shape':a.path?'osm-approximation':'straight-line',estimated:true});
     break;
    }
   }
