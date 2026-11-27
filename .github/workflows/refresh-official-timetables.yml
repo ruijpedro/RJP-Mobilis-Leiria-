@@ -39,7 +39,7 @@ jobs:
       - name: Extrair evidência dos horários oficiais
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y poppler-utils
+          sudo apt-get install -y poppler-utils librsvg2-bin tesseract-ocr tesseract-ocr-por tesseract-ocr-eng
           python scripts/audit_timetable_media.py
       - name: Guardar relatório para validação
         uses: actions/upload-artifact@v4
