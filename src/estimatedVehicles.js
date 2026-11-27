@@ -17,7 +17,7 @@ export function buildEstimatedVehicleIndex(data,osmStops=[],osmRoutes=[]){
    arrival:seconds(s.arrival_time),departure:seconds(s.departure_time)
   }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,path:matchVehiclePath(row.point,x.rows[i+1]?.point,x.route?.route_short_name,osmRoutes)}))}));
 }
-export function estimatedVehicles(index,data,now=new Date()){
+export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'}).formatToParts(now).map(p=>[p.type,p.value]));
  const day=new Date(+parts.year,+parts.month-1,+parts.day,12);
  const clock=+parts.hour*3600 + +parts.minute*60 + +parts.second;
@@ -31,14 +31,22 @@ export function estimatedVehicles(index,data,now=new Date()){
     const a=rows[i],b=rows[i+1];
     if(!Number.isFinite(a.arrival)||!Number.isFinite(a.departure)||!Number.isFinite(b.arrival)||a.arrival>a.departure||b.arrival<a.departure||t<a.arrival||t>=b.arrival)continue;
     const valid=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&p[0]>=39&&p[0]<=41&&p[1]>=-9.5&&p[1]<=-7.5;
-    if(!valid(a.point)||!valid(b.point))break;
+    if(diagnostic){const key=route?.route_short_name||'?';diagnostic[key]??={scheduled:0,mapped:0};diagnostic[key].scheduled++;}
+    let left=i,right=i+1;
+    while(left>=0&&!valid(rows[left].point))left--;
+    while(right<rows.length&&!valid(rows[right].point))right++;
+    if(left<0||right>=rows.length)break;
+    const start=rows[left],end=rows[right],gap=left!==i||right!==i+1;
+    if(gap&&(!Number.isFinite(start.departure)||!Number.isFinite(end.arrival)||end.arrival<=start.departure||end.arrival-start.departure>900||right-left>5))break;
+    if(diagnostic)diagnostic[route?.route_short_name||'?'].mapped++;
     const f=t<=a.departure?0:(t-a.departure)/(b.arrival-a.departure);
-    const point=pointOnVehiclePath(a.path,f)||[a.point[0]+f*(b.point[0]-a.point[0]),a.point[1]+f*(b.point[1]-a.point[1])];
+    const ratio=gap?Math.max(0,Math.min(1,(t-start.departure)/(end.arrival-start.departure))):f;
+    const point=pointOnVehiclePath(gap?null:a.path,ratio)||[start.point[0]+ratio*(end.point[0]-start.point[0]),start.point[1]+ratio*(end.point[1]-start.point[1])];
     result.push({id:trip.trip_id+':'+serviceDay.toDateString(),tripId:trip.trip_id,
      line:route?.route_short_name||'?',routeId:trip.route_id,headsign:trip.trip_headsign||route?.route_long_name||'',
      lat:point[0],lon:point[1],
      nextStop:b.name,nextArrival:b.arrival_time,etaMinutes:Math.ceil((b.arrival-t)/60),
-     positionSource:'scheduled',geometry:a.path?'osm-approximation':'straight-line',estimated:true});
+     positionSource:'scheduled',geometry:gap?'anchor-approximation':a.path?'osm-approximation':'straight-line',estimated:true});
     break;
    }
   }

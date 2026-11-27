@@ -1,7 +1,7 @@
 name: Motor 2 experimental validation
 on:
   push:
-    branches: [motor-2-experimental]
+    branches: [motor-2-experimental, motor-2.1]
   workflow_dispatch:
 permissions:
   contents: read
