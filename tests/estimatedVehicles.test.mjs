@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {buildEstimatedVehicleIndex,estimatedVehicles} from '../src/estimatedVehicles.js';
+import {matchVehiclePath,pointOnVehiclePath} from '../src/vehicleGeometry.js';
+const a=[39.74,-8.81],b=[39.74,-8.80];
+const data={stops:[{stop_id:'a',stop_name:'A',stop_lat:a[0],stop_lon:a[1]},{stop_id:'b',stop_name:'B',stop_lat:b[0],stop_lon:b[1]}],routes:[{route_id:'r',route_short_name:'2'}],trips:[{trip_id:'t',route_id:'r',service_id:'s'}],stopTimes:[{trip_id:'t',stop_id:'a',stop_sequence:1,arrival_time:'12:00:00',departure_time:'12:00:00'},{trip_id:'t',stop_id:'b',stop_sequence:2,arrival_time:'12:10:00',departure_time:'12:10:00'}],calendar:[{service_id:'s',start_date:'20260101',end_date:'20261231',friday:'1'}],calendarDates:[]};
+test('scheduled position and next stop',()=>{const v=estimatedVehicles(buildEstimatedVehicleIndex(data),data,new Date('2026-11-27T12:05:00Z'));assert.equal(v.length,1);assert.equal(v[0].etaMinutes,5);assert.equal(v[0].nextStop,'B');assert.ok(Math.abs(v[0].lon+8.805)<1e-8);assert.equal(v[0].positionSource,'scheduled');});
+test('inactive service and finished trip omitted',()=>{const i=buildEstimatedVehicleIndex(data);assert.equal(estimatedVehicles(i,data,new Date('2026-11-28T12:05:00Z')).length,0);assert.equal(estimatedVehicles(i,data,new Date('2026-11-27T12:10:00Z')).length,0);});
+test('missing coordinates omitted',()=>{const d={...data,stops:[data.stops[0],{stop_id:'b',stop_name:'B'}]};assert.equal(estimatedVehicles(buildEstimatedVehicleIndex(d),d,new Date('2026-11-27T12:05:00Z')).length,0);});
+test('unique OSM path follows bend; ambiguous paths rejected',()=>{const r={ref:'2',shape_segments:[[a,[39.742,-8.805],b]]};const p=matchVehiclePath(a,b,'2',[r]);assert.ok(p);assert.ok(pointOnVehiclePath(p,.5)[0]>39.741);assert.equal(matchVehiclePath(a,b,'2',[r,r]),null);});
