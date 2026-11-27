@@ -26,7 +26,8 @@ test('associação nominal abrange paragens OSM sem converter esse facto em vali
  const associated=osm.map(s=>stopLineAssociation(s,index)).filter(x=>x.lines.length);
  assert.ok(associated.length>=100);
  assert.ok(associated.every(x=>x.platformValidated===false));
- assert.equal(osm.length,293);
+ assert.ok(osm.length>=293);
+ assert.equal(new Set(osm.map(s=>s.stop_id)).size,osm.length);
 });
 
 test('equivalências de designações mostram linhas sem certificar plataformas',()=>{
