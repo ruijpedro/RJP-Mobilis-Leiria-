@@ -6,10 +6,12 @@ import {resolveMapStopForJourney} from '../src/resolveMapStopForJourney.js';
 const read=f=>JSON.parse(readFileSync(new URL('../public/data/'+f,import.meta.url),'utf8'));
 const osm=read('osm-stops-leiria.json'),catalog=read('line-stop-directory.json');
 test('audita integralmente todas as paragens cartografadas sem inventar horários',()=>{
+ assert.ok(osm.length>=293);
+ assert.equal(new Set(osm.map(s=>s.stop_id)).size,osm.length);
  const audit=auditMappedStopCoverage(osm,catalog);
- assert.equal(audit.summary.total,293);
- assert.equal(audit.rows.length,293);
- assert.equal(audit.summary.withLines+audit.summary.withoutDocumentedLines,293);
+ assert.equal(audit.summary.total,osm.length);
+ assert.equal(audit.rows.length,osm.length);
+ assert.equal(audit.summary.withLines+audit.summary.withoutDocumentedLines,osm.length);
  assert.equal(audit.summary.withPublishedReference,0);
  assert.equal(audit.summary.withEstimatedReference,0);
  assert.ok(audit.summary.withLines>=185);
