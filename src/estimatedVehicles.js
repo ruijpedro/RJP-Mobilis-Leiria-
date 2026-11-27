@@ -46,6 +46,7 @@ export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
      line:route?.route_short_name||'?',routeId:trip.route_id,headsign:trip.trip_headsign||route?.route_long_name||'',
      lat:point[0],lon:point[1],
      nextStop:b.name,nextArrival:b.arrival_time,etaMinutes:Math.ceil((b.arrival-t)/60),
+     progress:Math.round(100*(i+f)/(rows.length-1)),remainingStops:rows.slice(i+1).filter(r=>Number.isFinite(r.arrival)&&r.arrival>=t).map(r=>({sequence:r.stop_sequence,name:r.name,time:r.arrival_time.slice(0,5),minutes:Math.ceil((r.arrival-t)/60)})),
      positionSource:'scheduled',geometry:gap?'anchor-approximation':a.path?'osm-approximation':'straight-line',estimated:true});
     break;
    }
