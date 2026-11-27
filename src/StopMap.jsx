@@ -59,7 +59,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
  const [regionalLine,setRegionalLine]=useState(''),[allNetworkRoutes,setAllNetworkRoutes]=useState([]); const [routeDirection,setRouteDirection]=useState('all'),[showAllRoutes,setShowAllRoutes]=useState(false),[networkFilter,setNetworkFilter]=useState('all'),[regionalStops,setRegionalStops]=useState([]),[coverageFilter,setCoverageFilter]=useState('all'),[showAllDay,setShowAllDay]=useState(false),[crowdMessage,setCrowdMessage]=useState(''),[crowdBusy,setCrowdBusy]=useState(false),[crowdLine,setCrowdLine]=useState(''),[osm,setOsm]=useState([]),[status,setStatus]=useState('A obter paragens OpenStreetMap…'),[active,setActive]=useState(null),[filter,setFilter]=useState(''),[busy,setBusy]=useState(false),[line,setLine]=useState(''),[osmRoutes,setOsmRoutes]=useState([]),[osmLine,setOsmLine]=useState('');
  useEffect(()=>{fetch(`${import.meta.env.BASE_URL}data/regional-stops.json`).then(r=>r.ok?r.json():null).then(d=>setRegionalStops((d?.stops||[]).filter(s=>(s.reviewStatus==='verified'||s.reviewStatus==='osm-linked')&&s.source&&s.name&&Number.isFinite(s.lat)&&Number.isFinite(s.lon)))).catch(()=>setRegionalStops([]))},[]);
  const [showVehicles,setShowVehicles]=useState(false),[vehicleCount,setVehicleCount]=useState(0);
- const vehicleIndex=useMemo(()=>showVehicles&&data?buildEstimatedVehicleIndex(data,osm):[],[showVehicles,data,osm]);
+ const vehicleIndex=useMemo(()=>showVehicles&&data?buildEstimatedVehicleIndex(data,osm,osmRoutes):[],[showVehicles,data,osm,osmRoutes]);
  const gtfs=data?.stops||[];
  const regionalMatches=useMemo(()=>regionalStops.filter(s=>!filter.trim()||canonicalStopName(s.name).includes(canonicalStopName(filter))),[regionalStops,filter]);
  const lines=useMemo(()=>data?availableLines(data):[],[data]);
@@ -89,7 +89,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
      pin.bindPopup('');pins.set(v.id,pin);
     }
     pin.setLatLng([v.lat,v.lon]);
-    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada em linha reta entre paragens. Sem GPS em tempo real.</small>');
+    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada · '+(v.geometry==='osm-approximation'?'traçado OSM aproximado':'linha reta entre paragens')+'. Sem GPS em tempo real.</small>');
    }
    setVehicleCount(vehicles.length);
   }
