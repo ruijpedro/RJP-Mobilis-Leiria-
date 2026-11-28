@@ -1,6 +1,9 @@
-name: Analisar fonte pública VouJá
+name: Analisar fonte pública JáVou
 on:
   workflow_dispatch:
+  push:
+    branches: [motor-3-experimental]
+    paths: ['.github/workflows/audit-vouja.yml']
 permissions:
   contents: read
 jobs:
@@ -12,7 +15,7 @@ jobs:
         run: |
           mkdir -p vouja-review
           i=0
-          for url in http://vouja.pt/ https://www.vouja.pt/ http://www.vouja.pt/; do
+          for url in https://javou.pt/ https://javou.pt/vehicle/mobilis/g-cninmejv8e; do
             i=$((i+1))
             curl --location --max-redirs 4 --max-time 25 --max-filesize 5000000 --proto '=http,https' --proto-redir '=http,https' --user-agent 'RJP Mobilis source audit' --dump-header "vouja-review/$i-headers.txt" --output "vouja-review/$i.html" --write-out '%{http_code} %{url_effective}\n' "$url" > "vouja-review/$i-status.txt" 2>"vouja-review/$i-error.txt" || true
             cat "vouja-review/$i-status.txt" "vouja-review/$i-error.txt"
@@ -32,7 +35,7 @@ jobs:
                       if u: self.links.append({'tag':tag,'url':u})
           root=Path('vouja-review')
           results=[]
-          for i in range(1,4):
+          for i in range(1,3):
               status=(root/f'{i}-status.txt').read_text().strip()
               p=Parser()
               f=root/f'{i}.html'
