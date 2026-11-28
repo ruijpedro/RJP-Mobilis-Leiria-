@@ -1,3 +1,4 @@
+import {sameReviewedStopName} from './stopNameLookup.js';
 import {canonicalStopName} from './stopMatching.js';
 
 // Desenho esquemático. Não representa as ruas nem caminhos para atravessar.
@@ -11,7 +12,7 @@ export function findJourneyStopCoordinates(stop,osmStops=[]){
  }
  const name=canonicalStopName(stop.stop_name);
  if(!name||name==='paragem sem nome')return null;
- const matches=osmStops.filter(s=>canonicalStopName(s.stop_name)===name&&valid(s.stop_lat)&&valid(s.stop_lon));
+ const matches=osmStops.filter(s=>sameReviewedStopName(stop.stop_name,s.stop_name)&&valid(s.stop_lat)&&valid(s.stop_lon)&&Number(s.stop_lat)>=39&&Number(s.stop_lat)<=41&&Number(s.stop_lon)>=-9.5&&Number(s.stop_lon)<=-7.5);
  if(matches.length!==1)return null;
  return [Number(matches[0].stop_lat),Number(matches[0].stop_lon)];
 }
