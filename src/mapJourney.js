@@ -13,8 +13,12 @@ export function findJourneyStopCoordinates(stop,osmStops=[]){
  const name=canonicalStopName(stop.stop_name);
  if(!name||name==='paragem sem nome')return null;
  const matches=osmStops.filter(s=>sameReviewedStopName(stop.stop_name,s.stop_name)&&valid(s.stop_lat)&&valid(s.stop_lon)&&Number(s.stop_lat)>=39&&Number(s.stop_lat)<=41&&Number(s.stop_lon)>=-9.5&&Number(s.stop_lon)<=-7.5);
- if(matches.length!==1)return null;
- return [Number(matches[0].stop_lat),Number(matches[0].stop_lon)];
+ if(!matches.length)return null;
+ const points=matches.map(s=>[Number(s.stop_lat),Number(s.stop_lon)]);
+ // Nearby opposite platforms can share an approximate vehicle anchor.
+ // Never merge distant homonyms; this does not establish boarding platform.
+ for(const p of points)for(const q of points)if(Math.hypot((p[0]-q[0])*111000,(p[1]-q[1])*86000)>100)return null;
+ return [points.reduce((n,p)=>n+p[0],0)/points.length,points.reduce((n,p)=>n+p[1],0)/points.length];
 }
 export function journeyLegPaths(journey,data,osmStops=[]){
  if(!journey?.legs?.length||!data)return [];
