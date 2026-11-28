@@ -13,6 +13,7 @@ test('fleet coverage by line and service day',()=>{
  const routes=Array.isArray(net)?net:net.routes||[];
  const data=interpolatePublishedStops(mergeOfficialGTFS(read('mobilis-sample.json'),official),read('published-stop-sequences.json'),{osmStops:stops});
  const index=buildEstimatedVehicleIndex(data,stops,routes);
+ for(const line of ['3','5','6','7','8']){const missing=new Map();for(const t of index.filter(t=>String(t.route?.route_short_name)===line))for(const row of t.rows)if(!row.point)missing.set(row.name,(missing.get(row.name)||0)+1);console.log('Missing anchors line '+line+': '+JSON.stringify([...missing].sort((a,b)=>b[1]-a[1]).slice(0,30)));}
  console.log('Coordinate anchors:',index.reduce((n,t)=>n+t.rows.filter(r=>r.point).length,0));
  for(const date of ['2026-11-27','2026-11-28','2026-11-29']){
  const stats=Array.from({length:9},()=>({scheduled:0,mapped:0,peak:0}));
