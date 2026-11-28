@@ -8,10 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Consultar página pública
+      - name: Consultar endereços públicos
         run: |
           mkdir -p vouja-review
-          curl --location --max-redirs 4 --max-time 30 --max-filesize 5000000 --proto '=http,https' --proto-redir '=http,https' --user-agent 'RJP Mobilis source audit' --dump-header vouja-review/headers.txt --output vouja-review/index.html --write-out '%{http_code} %{url_effective}\n' https://vouja.pt/ > vouja-review/status.txt || true
+          i=0
+          for url in http://vouja.pt/ https://www.vouja.pt/ http://www.vouja.pt/; do
+            i=$((i+1))
+            curl --location --max-redirs 4 --max-time 25 --max-filesize 5000000 --proto '=http,https' --proto-redir '=http,https' --user-agent 'RJP Mobilis source audit' --dump-header "vouja-review/$i-headers.txt" --output "vouja-review/$i.html" --write-out '%{http_code} %{url_effective}\n' "$url" > "vouja-review/$i-status.txt" 2>"vouja-review/$i-error.txt" || true
+            cat "vouja-review/$i-status.txt" "vouja-review/$i-error.txt"
+          done
           python3 - <<'PY'
           from html.parser import HTMLParser
           from pathlib import Path
@@ -25,14 +30,22 @@ jobs:
                   if tag in ('script','link','a'):
                       u=a.get('src') or a.get('href')
                       if u: self.links.append({'tag':tag,'url':u})
-          p=Parser()
-          f=Path('vouja-review/index.html')
-          if f.exists(): p.feed(f.read_text(errors='replace'))
-          Path('vouja-review/links.json').write_text(json.dumps(p.links,indent=2))
-          print(Path('vouja-review/status.txt').read_text())
-          print('Public references:',len(p.links))
+          root=Path('vouja-review')
+          results=[]
+          for i in range(1,4):
+              status=(root/f'{i}-status.txt').read_text().strip()
+              p=Parser()
+              f=root/f'{i}.html'
+              if status.startswith('200 ') and f.exists():
+                  p.feed(f.read_text(errors='replace'))
+              results.append({'status':status,'links':p.links})
+          (root/'links.json').write_text(json.dumps(results,indent=2))
+          print('Public references:',sum(len(r['links']) for r in results))
+          if not any(r['links'] for r in results):
+              raise SystemExit('No usable public references collected')
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: vouja-public-source-review
           path: vouja-review/
