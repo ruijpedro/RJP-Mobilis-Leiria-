@@ -25,13 +25,7 @@ import {loadOsmNetwork,routeDescription,osmSegmentsForLine} from './osmNetwork.j
 import {walkingDirectionsUrl} from './walking.js';
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function markerIconFor(info){
- const allLines=info?.routeLines||[];
- const lines=allLines.slice(0,5).map(escapeHTML).join(' · ')+(allLines.length>5?' +'+(allLines.length-5):'');
- const next=info?.departures?.[0];
- const html='<span class="stop-pin-bus" aria-hidden="true">🚌</span>'
-    +(lines?'<span class="stop-pin-lines">'+lines+'</span>':'')
-    +(next?'<span class="stop-pin-time">'+escapeHTML((next.estimated?'≈ ':'')+next.time.slice(0,5))+'</span>':'');
- return L.divIcon({className:'rjp-marker rjp-marker-info',html,iconSize:[72,76],iconAnchor:[36,38],popupAnchor:[0,-31]});
+ return L.divIcon({className:'rjp-stop-dot',html:'<span style="display:block;box-sizing:border-box;width:12px;height:12px;background:white;border:2px solid #52616b;border-radius:50%;margin:8px"></span>',iconSize:[28,28],iconAnchor:[14,14],popupAnchor:[0,-10]});
 }
 // Liga apenas paragens consecutivas identificadas na cartografia.
 // É uma aproximação em linha reta, NÃO um percurso pelas ruas.
@@ -81,7 +75,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
  const visible=useMemo(()=>filterMappedStops(osm,auditByStop,{search:filter,coverage:coverageFilter,lineName:selectedLineName}),[osm,auditByStop,filter,coverageFilter,selectedLineName]);
  async function refresh(force=false){setBusy(true);try{const res=await loadOSM({force});setOsm(res.stops);setStatus(`${res.stops.length} paragens cartografadas · ${res.cache?'cópia local':'OpenStreetMap'}${res.warning?' · '+res.warning:''}`)}catch(e){setStatus('Não foi possível carregar as paragens: '+e.message)}finally{setBusy(false)}}
  useEffect(()=>{refresh(false);loadOsmNetwork().then(setOsmRoutes);loadOsmNetwork({includeRegional:true}).then(setAllNetworkRoutes)},[]);
- useEffect(()=>{if(!div.current||map.current)return;const m=L.map(div.current,{zoomControl:true}).setView([39.743,-8.806],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(m);map.current=m;markers.current=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:48,disableClusteringAtZoom:17});m.addLayer(markers.current);routeLayer.current=L.layerGroup().addTo(m);gpsLayer.current=L.layerGroup().addTo(m);const resize=setTimeout(()=>m.invalidateSize(),150);return()=>{clearTimeout(resize);m.remove();map.current=null}},[]);
+ useEffect(()=>{if(!div.current||map.current)return;const m=L.map(div.current,{zoomControl:true}).setView([39.743,-8.806],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(m);map.current=m;markers.current=L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,maxClusterRadius:48,disableClusteringAtZoom:17,iconCreateFunction:()=>L.divIcon({className:'rjp-stop-cluster',html:'<span style="display:block;width:18px;height:18px;border:3px solid #52616b;background:#fff;border-radius:50%"></span>',iconSize:[24,24]})});m.addLayer(markers.current);routeLayer.current=L.layerGroup().addTo(m);gpsLayer.current=L.layerGroup().addTo(m);const resize=setTimeout(()=>m.invalidateSize(),150);return()=>{clearTimeout(resize);m.remove();map.current=null}},[]);
  useEffect(()=>{
   if(!showVehicles||!data||!map.current||networkFilter==='regional'||routeDirection!=='all'){setVehicleCount(0);setVehicleDiagnostic({});setOnboardVehicles([]);return;}
   const layer=L.layerGroup().addTo(map.current), pins=new Map();
@@ -100,7 +94,7 @@ export default function StopMap({data,date,onPick,onPlan,geo,onLocate,journey=nu
      pin.bindPopup('');pin.on('popupopen',e=>{const el=e.popup.getElement();if(el)el.onclick=ev=>{if(ev.target.closest('[data-trip-detail]')){setDetailId(v.id);map.current?.closePopup();}else if(ev.target.closest('[data-onboard]')){setOnboardId(v.id);setExitStop('');setFollowBus(false);map.current?.closePopup();}};});pins.set(v.id,pin);
     }
     pin.setLatLng([v.lat,v.lon]);
-    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada · '+(v.geometry==='gtfs-shape'?'traçado GTFS da viagem':v.geometry==='osm-approximation'?'traçado OSM aproximado':v.geometry==='anchor-approximation'?'interpolação entre referências não consecutivas':'linha reta entre paragens')+'. Sem GPS em tempo real.</small><p><button type="button" data-trip-detail>Ver viagem</button> <button type="button" data-onboard>🚌 Estou a bordo</button></p>');
+    pin.setPopupContent('<strong>Linha '+escapeHTML(v.line)+'</strong><p>'+escapeHTML(v.headsign)+'</p><p>Próxima paragem: '+escapeHTML(v.nextStop)+' · ≈ '+escapeHTML(v.nextArrival.slice(0,5))+' ('+v.etaMinutes+' min)</p><small>Posição estimada · '+(v.geometry==='gtfs-shape'?'traçado GTFS da viagem':v.geometry==='osm-approximation'?'traçado OSM aproximado':v.geometry==='anchor-route-approximation'?'traçado aproximado entre referências':v.geometry==='anchor-approximation'?'interpolação entre referências não consecutivas':'linha reta entre paragens')+'. Sem GPS em tempo real.</small><p><button type="button" data-trip-detail>Ver viagem</button> <button type="button" data-onboard>🚌 Estou a bordo</button></p>');
    }
    setVehicleCount(vehicles.length);setVehicleDiagnostic(diagnostic);
   }
