@@ -23,7 +23,7 @@ export function buildEstimatedVehicleIndex(data,osmStops=[],osmRoutes=[]){
   rows:(grouped.get(trip.trip_id)||[]).sort((a,b)=>Number(a.stop_sequence)-Number(b.stop_sequence)).map(s=>({
    ...s,name:stops.get(s.stop_id)?.stop_name||s.stop_id,point:coords.get(s.stop_id),
    arrival:seconds(s.arrival_time),departure:seconds(s.departure_time)
-  }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,...(()=>{const line=x.route?.route_short_name;const shape=shapes.get(x.trip.shape_id);const official=shape?matchVehiclePath(row.point,x.rows[i+1]?.point,line,[{ref:line,shape_segments:[shape]}]):null;const bridgePaths=Object.create(null);for(let j=i+2;j<Math.min(x.rows.length,i+6);j++){const target=x.rows[j];const p=(shape?matchVehiclePath(row.point,target.point,line,[{ref:line,shape_segments:[shape]}]):null)||matchVehiclePath(row.point,target.point,line,osmRoutes);if(p)bridgePaths[target.stop_id]=p;}return {path:official||matchVehiclePath(row.point,x.rows[i+1]?.point,line,osmRoutes),officialPath:!!official,bridgePaths};})()}))}));
+  }))})).filter(x=>x.rows.length>=2).map(x=>({...x,rows:x.rows.map((row,i)=>({...row,...(()=>{const line=x.route?.route_short_name;const shape=shapes.get(x.trip.shape_id);const official=shape?matchVehiclePath(row.point,x.rows[i+1]?.point,line,[{ref:line,shape_segments:[shape]}]):null;const bridgePaths=Object.create(null);for(let j=i+2;j<Math.min(x.rows.length,i+11);j++){const target=x.rows[j];const p=(shape?matchVehiclePath(row.point,target.point,line,[{ref:line,shape_segments:[shape]}]):null)||matchVehiclePath(row.point,target.point,line,osmRoutes);if(p)bridgePaths[target.stop_id]=p;}return {path:official||matchVehiclePath(row.point,x.rows[i+1]?.point,line,osmRoutes),officialPath:!!official,bridgePaths};})()}))}));
 }
 export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'}).formatToParts(now).map(p=>[p.type,p.value]));
@@ -45,7 +45,7 @@ export function estimatedVehicles(index,data,now=new Date(),diagnostic=null){
     while(right<rows.length&&!valid(rows[right].point))right++;
     if(left<0||right>=rows.length)break;
     const start=rows[left],end=rows[right],gap=left!==i||right!==i+1;
-    if(gap&&(!Number.isFinite(start.departure)||!Number.isFinite(end.arrival)||end.arrival<=start.departure||end.arrival-start.departure>900||right-left>5))break;
+    if(gap&&(!Number.isFinite(start.departure)||!Number.isFinite(end.arrival)||end.arrival<=start.departure||end.arrival-start.departure>1800||right-left>10))break;
     if(diagnostic)diagnostic[route?.route_short_name||'?'].mapped++;
     const f=t<=a.departure?0:(t-a.departure)/(b.arrival-a.departure);
     const ratio=gap?Math.max(0,Math.min(1,(t-start.departure)/(end.arrival-start.departure))):f;
